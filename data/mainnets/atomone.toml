@@ -1,0 +1,64 @@
+## HOME ##
+Deskripsi=Atomone: The vision behind this AtomOne fork is to be an alternative minimal fork of Gaia ("cosmoshub4") running alongside Gaia to prepare for all contingencies, and also to operate as a political party base in relation to Gaia. We strive to complement the broader Cosmos ecosystem while introducing innovative solutions and perspectives. Our goals are not just to resolve current challenges but are also to set a new precedent for adaptive and responsive self-organization in the multichain multitoken universe that we call the Cosmos.
+
+Sosmed :
+web=
+x=
+discord=
+explorer=https://explorer.shazoes.xyz/atomone-mainnet
+
+Public Endpoints:
+API: https://explorer.shazoes.xyz/atomone-mainnet
+RPC: https://atomone-mainnet-rpc.shazoes.xyz
+gRpc: atomone-mainnet-grpc.shazoes.xyz:443
+
+## End Home ##
+
+"""
+## Installation ##
+Set variabels :
+MONIKER=<YOUR_MONIKER_NAME>
+echo "export MONIKER=$MONIKER" >> $HOME/.bash_profile
+echo "export ATOMONE_CHAIN_ID="atomone-1"" >> $HOME/.bash_profile
+echo "export ATOMONE_PORT="12"" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+
+## End Installation ##
+
+CHAIN_DENOM="uatone"
+CHAIN_FEES="300000"
+
+# Binary
+DAEMON_NAME="atomoned"
+DAEMON_SERVICE="atomone.service"
+DAEMON_HOME="~/.atomone"
+
+# Endpoints
+ENDPOINT_RPC="https://atomone-rpc.noders.services"
+ENDPOINT_API="https://atomone-api.noders.services"
+ENDPOINT_JRPC=""
+ENDPOINT_GRPC="http://atomone-grpc.noders.services:14590"
+ENDPOINT_PEER="auto"
+ENDPOINT_COSMOSLIST="https://cosmoslist.co/mainnet/atomone"
+
+# Social
+SOCIAL_WEBSITE=""
+SOCIAL_GITHUB="https://github.com/atomone-hub/atomone"
+SOCIAL_DISCORD="https://discord.gg/FEgcVkNYBA"
+SOCIAL_X="https://x.com/_atomone"
+SOCIAL_TELEGRAM=""
+
+# Other
+DOWNLOAD_URL="https://config.noders.services/atomone"
+GITHUB_FOLDER_NAME="auto"
+VALIDATOR_LINK="https://ping.pub/atomone/staking/atonevaloper1f2r68y2htcmp4rfe2wfn9f3nvzh9xsq9y0vdyz"
+
+# Updates
+UPDATE_MAIN=true
+UPDATE_CATEGORY=true
+UPDATE_INSTALL=true
+UPDATE_UPGRADE=true
+UPDATE_SNAPSHOT=true
+UPDATE_STATESYNC=true
+UPDATE_LIVE_PEERS=true
+UPDATE_CLI_CHEATSHEET=true

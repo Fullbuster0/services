@@ -1,0 +1,180 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 1rem;
+  /* width: fit-content; */
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.imageRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+}
+
+.imageWrapper {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.image {
+  width: 3.9rem;
+  height: 3.9rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.title {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 0.7rem;
+  display: block;
+  text-align: center;
+  margin-top: -0.3rem;
+  width: 100%;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.arrow {
+  /* gap: 1rem; */
+  height: 3.9rem;
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.arrowIcon {
+  width: 60px;
+  height: 40px;
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  .title {
+    color: white;
+  }
+  .subtitle {
+    color: #66ccff;
+  }
+}
+
+/* 1 KOLOM */
+@media (max-width: 450px) {
+  .card {
+    padding: 0.5rem;
+    width: fit-content;
+    width: 100%;
+    background-color: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 0.8rem;
+  }
+
+  .imageRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .imageWrapper {
+    text-align: center;
+    padding-top: 0, 5rem;
+  }
+
+  .image {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .arrow {
+    margin: 0 1rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 11px;
+  }
+
+  .subtitle {
+    font-size: 9px;
+    margin-top: -0.1rem;
+  }
+}
+
+/* 1 KOLOM */
+@media (max-width: 365px) {
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 2rem; */
+    justify-content: center;
+    /* padding: 2rem; */
+  }
+
+  .card {
+    padding: 0.4rem;
+    background-color: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 0.8rem;
+  }
+
+  .imageRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100px;
+  }
+
+  .imageWrapper {
+    text-align: center;
+    /* padding-top: 1rem; */
+  }
+
+  .image {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .arrow {
+    margin: 0 1rem;
+    height: 2rem;
+    flex-direction: column;
+    /* gap: 2px; */
+  }
+
+  .title {
+    font-size: 9px;
+  }
+
+  .subtitle {
+    font-size: 7px;
+    margin-top: -0.1rem;
+  }
+}

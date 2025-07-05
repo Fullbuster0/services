@@ -1,0 +1,151 @@
+---
+hide_table_of_contents: false
+title: Sync
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import SnapshotCard from "@site/src/components/Snapshot/SnapshotCard";
+import LivePeers from "@site/src/components/Peers/LivePeers";
+
+<div className="h1-with-icon icon-airchain">
+# Airchain Sync
+</div>
+<span className="sub-lines"> 
+Chain ID: `varanasi-1` | Node Version: `v0.3.2`
+</span>
+
+<Tabs>
+  <TabItem value="snapshot" label="Snapshot" default>
+
+## Snapshot
+
+<SnapshotCard
+  jsonUrl="https://snapshot.shazoes.xyz/testnets/metadata-airchain.json"
+/>
+
+### Install dependencies
+
+```bash
+sudo apt install lz4 && sudo apt install aria2
+```
+
+### Stop Service
+
+```bash
+sudo systemctl stop junctiond
+```
+
+### Backup priv_validator_state.json
+
+```bash
+cp $HOME/.junctiond/data/priv_validator_state.json $HOME/.junctiond/priv_validator_state.json.backup
+```
+
+### Reset Chain Data
+
+```bash
+junctiond tendermint unsafe-reset-all --home $HOME/.junctiond --keep-addr-book
+```
+
+### Download Snapshot
+
+```bash
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-airchain.tar.lz4 && lz4 -c -d snapshot-airchain.tar.lz4 | tar -x -C $HOME/.junction && rm snapshot-airchain.tar.lz4
+```
+
+### Restore Backup
+
+```bash
+mv $HOME/.junctiond/priv_validator_state.json.backup $HOME/.junctiond/data/priv_validator_state.json
+```
+
+### Restart Service
+
+```bash
+sudo systemctl restart junctiond && sudo journalctl -fu junctiond -o cat
+```
+
+  </TabItem>
+  <TabItem value="statesync" label="StateSync">
+
+## State Sync
+
+### Stop Service
+
+```bash
+sudo systemctl stop junctiond
+```
+
+### Backup priv_validator_state.json
+
+```bash
+cp $HOME/.junctiond/data/priv_validator_state.json $HOME/.junctiond/priv_validator_state.json.backup
+```
+
+### Reset the data
+
+```bash
+junctiond tendermint unsafe-reset-all --home $HOME/.junctiond
+```
+
+### Add Peers
+
+```bash
+PEERS="db686fcfdf0b4676d601d5beb11faee5ad96bff1@37.27.71.199:28656,8c229309660496e71b8a9d1edee46a18693b8e70@65.109.111.234:19656,0b4e78189c9148dda5b1b98c6e46b764337558a3@91.227.33.18:19656,1d7a1809b616ce2437a5978bebbfcefec4bc3aa0@193.34.212.80:60656,4aaa6f76a1009feccffa90e8a00dd6343ca9b01f@152.53.49.146:19656,3650f3737940af2d6cc8d17244706505648ff639@212.56.32.148:14156,43c265128fd9be02721df03e8ba4bcf8c982a062@1.53.252.54:26656,ca0a4b67fd6ffd6a70ea8d0e3c8d284de0f8222f@37.27.132.57:19656,b57745eecc8c9638a3599c81f82dd69720df0ed8@94.130.164.82:26756"
+SNAP_RPC="https://airchain-testnet-rpc.shazoes.xyz:443"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.junctiond/config/config.toml
+```
+
+### Get Info
+
+```bash
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height);
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000));
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH && sleep 2
+```
+
+### Configure the State Sync
+
+```bash
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ;
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ;
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ;
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ;
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.junctiond/config/config.toml
+```
+
+### Restore Backup
+
+```bash
+mv $HOME/.junctiond/priv_validator_state.json.backup $HOME/.junctiond/data/priv_validator_state.json
+```
+
+### Restart Service
+
+```bash
+sudo systemctl restart junctiond && sudo journalctl -fu junctiond -o cat
+```
+
+</TabItem>
+<TabItem value="genesis" label="Genesis">
+```bash
+wget -O $HOME/.junctiond/config/genesis.json https://files.shazoes.xyz/testnets/airchain/genesis.json
+```
+</TabItem>
+<TabItem value="Addrbook" label="Addrbook">
+```bash
+wget -O $HOME/.junctiond/config/addrbook.json https://files.shazoes.xyz/testnets/airchain/addrbook.json
+```
+</TabItem>
+<TabItem value="livepeers" label="LivePeers">
+<LivePeers
+  rpc="https://airchain-testnet-rpc.shazoes.xyz"
+  homeFolder=".junctiond"
+  binaryName="junctiond"
+  maxPeers={25}
+/>
+</TabItem>
+</Tabs>

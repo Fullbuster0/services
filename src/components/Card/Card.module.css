@@ -1,0 +1,114 @@
+.card {
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  padding: 12px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column; /* Menjaga elemen dalam kolom */
+  align-items: center;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Pastikan lebar 100% agar sesuai dengan kolom */
+  box-sizing: border-box; /* Pastikan padding masuk dalam perhitungan lebar */
+}
+
+.header {
+  display: flex;
+  flex-direction: row; /* Gambar di kiri, title + chain-id di kanan */
+  align-items: flex-start; /* Gambar di atas title */
+  width: 100%;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px; /* Memberikan jarak antara gambar dan teks */
+  /* border: 2px solid rgba(0, 0, 0, 0.2); Border transparan */
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column; /* Teks (title + chain-id) di dalam kolom */
+}
+
+.title {
+  font-size: 20px; /* Memperbesar font title */
+  margin: 0;
+  font-weight: bold;
+}
+
+.chain_id {
+  font-size: 14px; /* Ukuran font chain-id */
+  color: var(--ifm-color-muted); /* Warna chain-id lebih redup */
+  opacity: 0.4;
+  margin-top: 4px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center; /* Tombol berada di tengah */
+  gap: 0.1px;
+  margin-top: 10px; /* Memberikan jarak antara tombol dan bagian atas */
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.button {
+  flex: 1;
+  text-align: center;
+  background-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--ifm-color-emphasis-400);
+}
+
+/* 1 KOLOM */
+@media (max-width: 310px) {
+  .image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 14px; /* Memberikan jarak antara gambar dan teks */
+    /* border: 2px solid rgba(0, 0, 0, 0.2); Border transparan */
+  }
+
+  .title {
+    font-size: 15px; /* Memperbesar font title */
+    margin: 0;
+    font-weight: bold;
+  }
+
+  .buttonGroup {
+    display: flex;
+    justify-content: center; /* Tombol berada di tengah */
+    gap: 0.12px;
+    margin-top: 8px; /* Memberikan jarak antara tombol dan bagian atas */
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    flex: 1;
+    text-align: center;
+    background-color: var(--ifm-color-emphasis-300);
+    color: var(--ifm-font-color-base);
+    font-size: 0.6rem;
+    padding: 2px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+}

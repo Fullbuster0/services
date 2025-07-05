@@ -1,0 +1,543 @@
+/**
+ * GLOBAL CSS REVISI FINAL
+ * Dark mode solid black saat discroll
+ * Replace seluruh file CSS dengan ini
+ */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* ---------- Warna dasar Infima ---------- */
+:root {
+  --ifm-color-primary: #005fcc;
+  --ifm-color-primary-dark: #99ccff;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --ifm-color-primary: #99ccff;
+  --ifm-color-primary-dark: #005fcc;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Konsistensi background ---------- */
+html,
+body,
+#__docusaurus {
+  background-color: #ffffff;
+}
+
+[data-theme="dark"] html,
+[data-theme="dark"] body,
+[data-theme="dark"] #__docusaurus {
+  background-color: #121212 !important;
+  color: #eaeaea;
+}
+
+/* ---------- Navbar ---------- */
+.navbar__inner {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ---------- Heading ---------- */
+.markdown h1,
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  line-height: 1.25;
+}
+
+.markdown h2,
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1.75rem 0 1rem;
+  line-height: 1.3;
+}
+
+.markdown h3,
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+  line-height: 1.3;
+}
+
+.markdown h4,
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  line-height: 1.25;
+}
+
+/* ---------- Link ---------- */
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  margin-right: 1rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
+}
+
+[data-theme="dark"] a:hover,
+[data-theme="dark"] a:focus {
+  color: var(--ifm-color-primary-dark);
+}
+
+/* ---------- Icon ---------- */
+.icon {
+  font-size: 1.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.icon > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.footer a {
+  color: #212529;
+}
+
+.footer a:hover {
+  color: #005fcc;
+}
+
+[data-theme="dark"] .footer {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+[data-theme="dark"] .footer a {
+  color: #f8f9fa;
+}
+
+[data-theme="dark"] .footer a:hover {
+  color: #005fcc;
+}
+
+.footer .social-icons a {
+  margin-right: -1rem;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar-section-with-icon {
+  background-repeat: no-repeat;
+  background-position: 10px 4px;
+  background-size: 124px 124px;
+}
+
+.sidebar-section-with-icon .menu__list-item-collapsible {
+  padding-left: 30px;
+}
+
+/* ---------- Tabs ---------- */
+.tabs__item {
+  font-size: 1.7rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Endpoints ---------- */
+.endpoints-online {
+  padding-top: 0.3rem;
+  margin-top: 2rem;
+  color: #2ee813;
+}
+
+.endpoints-offline {
+  padding-top: 0.3rem;
+  margin-top: 2rem;
+  color: #e83513;
+}
+
+.endpoints {
+  font-size: 1.2rem;
+}
+
+/* ---------- Header with Icon ---------- */
+.h1-with-icon {
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  background-size: 3rem 3rem;
+}
+
+.h1-with-icon h1 {
+  padding-left: 3.5rem;
+}
+
+/* ---------- Media Queries ---------- */
+@media (max-width: 576px) {
+  .h1-with-icon {
+    background-size: 2rem 2rem;
+  }
+  .h1-with-icon h1 {
+    padding-left: 2.5rem;
+    font-size: 1.5rem;
+  }
+  .tabs__item {
+    font-size: 1rem;
+  }
+  .sub-lines {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .h1-with-icon {
+    background-size: 1.5rem 1.5rem;
+  }
+  .h1-with-icon h1 {
+    padding-left: 2.5rem;
+    font-size: 1.1rem;
+  }
+  .tabs__item {
+    font-size: 0.75rem;
+  }
+  .sub-lines {
+    font-size: 0.6rem;
+  }
+}
+
+/* ---------- Icon---------- */
+.icon-atomone {
+  background-image: url("../../static/img/atomone-icon.svg");
+}
+.menu__link[href*="/atomone"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/atomone-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-dhealth {
+  background-image: url("../../static/img/dhealth-icon.svg");
+}
+.menu__link[href*="/dhealth"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/dhealth-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-regen {
+  background-image: url("../../static/img/regen-icon.svg");
+}
+.menu__link[href*="/regen"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/regen-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-selfchain {
+  background-image: url("../../static/img/selfchain-icon.svg");
+}
+.menu__link[href*="/selfchain"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/selfchain-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-seda {
+  background-image: url("../../static/img/seda-icon.svg");
+}
+.menu__link[href*="/seda"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/seda-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-shentu {
+  background-image: url("../../static/img/shentu-icon.svg");
+}
+.menu__link[href*="/shentu"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/shentu-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-synternet {
+  background-image: url("../../static/img/synternet-icon.svg");
+}
+.menu__link[href*="/synternet"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/synternet-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-fuel {
+  background-image: url("../../static/img/fuel-icon.svg");
+}
+.menu__link[href*="/fuel"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/fuel-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-provenance {
+  background-image: url("../../static/img/provenance-icon.svg");
+}
+.menu__link[href*="/provenance"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/provenance-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-babylon {
+  background-image: url("../../static/img/babylon-icon.svg");
+}
+.menu__link[href*="/babylon"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/babylon-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-airchain {
+  background-image: url("../../static/img/airchain-icon.svg");
+}
+.menu__link[href*="/airchain"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/airchain-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-empeiria {
+  background-image: url("../../static/img/empeiria-icon.svg");
+}
+.menu__link[href*="/empeiria"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/empeiria-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-warden {
+  background-image: url("../../static/img/warden-icon.svg");
+}
+.menu__link[href*="/warden"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/warden-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-soarchain {
+  background-image: url("../../static/img/soarchain-icon.svg");
+}
+.menu__link[href*="/soarchain"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/soarchain-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-structs {
+  background-image: url("../../static/img/structs-icon.svg");
+}
+.menu__link[href*="/structs"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/structs-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-symphony {
+  background-image: url("../../static/img/symphony-icon.svg");
+}
+.menu__link[href*="/symphony"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/symphony-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-lumera {
+  background-image: url("../../static/img/lumera-icon.svg");
+}
+.menu__link[href*="/lumera"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/lumera-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-tacchain {
+  background-image: url("../../static/img/tacchain-icon.svg");
+}
+.menu__link[href*="/tacchain"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/tacchain-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-hippo {
+  background-image: url("../../static/img/hippo-icon.svg");
+}
+.menu__link[href*="/hippo"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/hippo-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-story {
+  background-image: url("../../static/img/story-icon.svg");
+}
+.menu__link[href*="/story"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/story-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 1px;
+  vertical-align: middle;
+}
+
+.icon-gnoland {
+  background-image: url("../../static/img/gnoland-icon.svg");
+}
+.menu__link[href*="/gnoland"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/gnoland-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 1px;
+  vertical-align: middle;
+}
