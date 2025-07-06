@@ -40,6 +40,7 @@ sudo systemctl stop gnoland
 
 ```bash
 rm -rf $HOME/gnoland-data/db
+rm -rf $HOME/gnoland-data/wal
 ```
 
 ### Download Snapshot
