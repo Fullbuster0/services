@@ -129,6 +129,8 @@ gnokey add wallet
 
 #### Set Vars
 
+<span><i>Change ADDRESS, MONIKER, DESCRIPTION</i></span>
+
 ```bash
 RPC="https://gnoland-testnet-rpc.shazoes.xyz"
 ADDRESS="g1xxx..."
@@ -152,5 +154,8 @@ gnokey maketx call -pkgpath "gno.land/r/gnoland/valopers" -func "Register" -args
 
 ```bash
 gnokey sign -tx-path call.tx -chainid "test6" -account-number $ACCOUNT_NUMBER -account-sequence $SEQUENCE_NUMBER $ADDRESS
+```
+
+```bash
 gnokey broadcast -remote $RPC call.tx
 ```
