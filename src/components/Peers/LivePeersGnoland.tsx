@@ -67,7 +67,7 @@ sudo systemctl restart ${binaryName} && sudo journalctl -u ${binaryName} -f --no
   return (
     <>
       <p>
-        Number of active Peers: <strong>{usedPeerCount}</strong> dari total <strong>{peerCount}</strong>
+        Number of active Peers: <strong>{usedPeerCount}</strong>
       </p>
       <CodeBlock language="bash">{peersOnly || "Memuat data..."}</CodeBlock>
       <CodeBlock language="bash">{scriptOutput || "Memuat skrip konfigurasi..."}</CodeBlock>

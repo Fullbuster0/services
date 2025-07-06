@@ -48,7 +48,7 @@ sedad tendermint unsafe-reset-all --home $HOME/.sedad --keep-addr-book
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnet/snapshot-seda.tar.lz4 && lz4 -c -d snapshot-seda.tar.lz4 | tar -x -C $HOME/.sedad && rm snapshot-seda.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-seda.tar.lz4 && lz4 -c -d snapshot-seda.tar.lz4 | tar -x -C $HOME/.sedad && rm snapshot-seda.tar.lz4
 ```
 
 ### Restore Backup

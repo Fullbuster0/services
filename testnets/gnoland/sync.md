@@ -45,7 +45,7 @@ rm -rf $HOME/gnoland-data/db
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnet/snapshot-gnoland.tar.lz4 && lz4 -c -d snapshot-gnoland.tar.lz4 | tar -x -C $HOME/gnoland-data && rm snapshot-gnoland.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-gnoland.tar.lz4 && lz4 -c -d snapshot-gnoland.tar.lz4 | tar -x -C $HOME/gnoland-data && rm snapshot-gnoland.tar.lz4
 ```
 
 ### Restart Service

@@ -47,7 +47,7 @@ tacchaind tendermint unsafe-reset-all --home $HOME/.tacchaind --keep-addr-book
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnet/snapshot-tacchain.tar.lz4 && lz4 -c -d snapshot-tacchain.tar.lz4 | tar -x -C $HOME/.tacchaind && rm snapshot-tacchain.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-tacchain.tar.lz4 && lz4 -c -d snapshot-tacchain.tar.lz4 | tar -x -C $HOME/.tacchaind && rm snapshot-tacchain.tar.lz4
 ```
 
 ### Restore Backup

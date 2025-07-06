@@ -112,3 +112,45 @@ source <(curl -s https://files.shazoes.xyz/auto/testnets/gnoland_auto)
 
   </TabItem>
 </Tabs>
+
+##
+
+##
+
+### Register
+
+#### Create Wallet
+
+```bash
+gnokey add wallet
+```
+
+###### make sure you have funds for the next step
+
+#### Set Vars
+
+```bash
+RPC="https://gnoland-testnet-rpc.shazoes.xyz"
+ADDRESS="g1xxx..."
+MONIKER="from Shazoes"
+DESCRIPTION="from Shazoes"
+VALOPER=$(gnoland secrets get validator_key | jq -r '.address')
+PUBKEY=$(gnoland secrets get validator_key | jq -r '.pub_key')
+ACCOUNT_INFO=$(gnokey query -remote $RPC auth/accounts/$ADDRESS)
+ACCOUNT_JSON=$(echo "$ACCOUNT_INFO" | sed -n '/^data:/,$p' | sed 's/^data: //')
+ACCOUNT_NUMBER=$(echo "$ACCOUNT_JSON" | jq -r '.BaseAccount.account_number')
+SEQUENCE_NUMBER=$(echo "$ACCOUNT_JSON" | jq -r '.BaseAccount.sequence')
+```
+
+#### Maketx
+
+```bash
+gnokey maketx call -pkgpath "gno.land/r/gnoland/valopers" -func "Register" -args $MONIKER -args $DESCRIPTION -args $VALOPER -args $PUBKEY -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
+```
+
+#### Sign tx
+
+```bash
+gnokey sign -tx-path call.tx -chainid "test6" -account-number $ACCOUNT_NUMBER -account-sequence $SEQUENCE_NUMBER $ADDRESS
+gnokey broadcast -remote $RPC call.tx
+```

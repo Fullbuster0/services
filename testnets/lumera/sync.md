@@ -51,7 +51,7 @@ lumerad tendermint unsafe-reset-all --home $HOME/.lumera --keep-addr-book
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnet/snapshot-lumera.tar.lz4 && lz4 -c -d snapshot-lumera.tar.lz4 | tar -x -C $HOME/.lumera && rm snapshot-lumera.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-lumera.tar.lz4 && lz4 -c -d snapshot-lumera.tar.lz4 | tar -x -C $HOME/.lumera && rm snapshot-lumera.tar.lz4
 ```
 
 ### Restore Backup

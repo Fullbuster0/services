@@ -47,7 +47,7 @@ rm -rf $HOME/.story/story/data
 ### Download Story Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnet/snapshot-story.tar.lz4 && lz4 -c -d snapshot-story.tar.lz4 | tar -x -C $HOME/.story && rm snapshot-story.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-story.tar.lz4 && lz4 -c -d snapshot-story.tar.lz4 | tar -x -C $HOME/.story && rm snapshot-story.tar.lz4
 ```
 
 ### Restore Backup
@@ -65,7 +65,7 @@ rm -rf $HOME/.story/geth/aeneid/geth/chaindata
 ### Download Geth Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnet/snapshot-story-geth.tar.lz4 && lz4 -c -d snapshot-storygeth.tar.lz4 | tar -x -C $HOME/.story/geth/aeneid/geth
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-story-geth.tar.lz4 && lz4 -c -d snapshot-storygeth.tar.lz4 | tar -x -C $HOME/.story/geth/aeneid/geth
 ```
 
 ### Restart Service
