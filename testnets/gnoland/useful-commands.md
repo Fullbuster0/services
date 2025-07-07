@@ -17,16 +17,18 @@ Chain ID: `test6` | Node Version: `chain/test6`
 </span>
 
 :::note
-First You Need Set Variabels
+You Need Set This Variabels!!!, for address you can generate first
 :::
 
 ```js
 RPC="https://gnoland-testnet-rpc.shazoes.xyz"
 MONIKER="Your_Moniker"
+ADDRESS="Your_Address_Wallet"
 VALOPER=$(gnoland secrets get validator_key | jq -r '.address')
 PUBKEY=$(gnoland secrets get validator_key | jq -r '.pub_key')
 echo "export RPC=\"$RPC\"" >> $HOME/.bash_profile
 echo "export MONIKER=\"$MONIKER\"" >> $HOME/.bash_profile
+echo "export ADDRESS=\"$ADDRESS\"" >> $HOME/.bash_profile
 echo "export VALOPER=\"$VALOPER\"" >> $HOME/.bash_profile
 echo "export PUBKEY=\"$PUBKEY\"" >> $HOME/.bash_profile
 echo "export GNOLAND_CHAIN_ID="test6"" >> $HOME/.bash_profile
