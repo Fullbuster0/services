@@ -303,7 +303,7 @@ gnoland secrets get node_id.p2p_address | sed "s/0\.0\.0\.0/$SERVER_IP/"
 ### Delete Node
 
 ```bash
-sudo systemctl stop gnoland && sudo systemctl disable gnoland && sudo rm /etc/systemd/system/gnoland.service && sudo systemctl daemon-reload && sudo rm -rf $(which gnoland) && sudo rm -rf $(which gnogenesis) && rm -rf $HOME/gnoland-data
+sudo systemctl stop gnoland && sudo systemctl disable gnoland && sudo rm /etc/systemd/system/gnoland.service && sudo systemctl daemon-reload && sudo rm -rf $(which gnoland) && sudo rm -rf $(which gnogenesis) && rm -rf $HOME/gnoland-data && rm -rf $HOME/gno
 ```
 
 </TabItem>
