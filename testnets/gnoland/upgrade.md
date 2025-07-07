@@ -8,7 +8,7 @@ sidebar_position: 4
 # Gnolan Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `test6` | Node Version: `latest`
+Chain ID: `test6` | Node Version: `chain/test6`
 </span>
 
 ## Manual Upgrade
