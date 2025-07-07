@@ -67,15 +67,6 @@ gnokey delete wallet
 ### Check Wallet Balance
 
 ```bash
-gnokey query -remote $RPC auth/accounts/Your_Address
-```
-
-<span>
-Use this if only have one wallet
-</span>
-
-```bash
-ADDRESS=$(gnokey list | grep -o 'addr: [^ ]*' | awk '{print $2}')
 gnokey query -remote $RPC auth/accounts/$ADDRESS
 ```
 
