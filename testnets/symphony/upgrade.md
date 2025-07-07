@@ -19,7 +19,7 @@ Chain ID: `symphony-testnet-4` | Node Version: `v5testnet`
 
 ## Manual Upgrade
 
-### Download and build binaries
+### Download and Build Binaries
 
 ```bash
 cd $HOME

@@ -32,7 +32,7 @@ echo "export DHEALTH_PORT="5"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -63,7 +63,7 @@ sudo mv ignite /usr/local/bin/
 ignite version
 ```
 
-### Download and build binaries
+### Download and Build Binaries
 
 ```bash
 cd $HOME

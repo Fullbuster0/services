@@ -24,7 +24,7 @@ Chain ID: `test6` | Node Version: `chain/test6`
   jsonUrl="https://snapshot.shazoes.xyz/testnets/metadata-gnoland.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

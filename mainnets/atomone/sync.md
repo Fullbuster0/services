@@ -25,7 +25,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
   jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-atomone.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

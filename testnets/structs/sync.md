@@ -20,7 +20,7 @@ Chain ID: `structstestnet-101` | Node Version: `v0.6.0-beta`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

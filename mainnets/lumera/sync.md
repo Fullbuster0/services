@@ -24,7 +24,7 @@ Chain ID: `lumera-mainnet-1` | Node Version: `v1.5.0`
   jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-lumera.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

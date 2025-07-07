@@ -20,7 +20,7 @@ Chain ID: `aeneid` | Node Version: `v1.3.0`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

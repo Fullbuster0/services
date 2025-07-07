@@ -19,7 +19,7 @@ Chain ID: `varanasi-1` | Node Version: `v0.3.2`
 
 ## Manual Upgrade
 
-### Download and build binaries
+### Download and Build Binaries
 
 ```bash
 cd $HOME

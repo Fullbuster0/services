@@ -32,7 +32,7 @@ echo "export AIR_PORT="20"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -62,7 +62,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustc --version
 ```
 
-### Download and build binaries
+### Download and Build Binaries
 
 ```bash
 cd $HOME

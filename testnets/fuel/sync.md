@@ -20,7 +20,7 @@ Chain ID: `seq-testnet-2` | Node Version: `seq-testnet-2.2`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

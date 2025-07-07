@@ -25,7 +25,7 @@ Chain ID: `pio-mainnet-1` | Node Version: `v1.24.0`
   jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-provenance.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

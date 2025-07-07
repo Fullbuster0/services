@@ -20,7 +20,7 @@ Chain ID: `cardtestnet-12` | Node Version: `v0.16.0`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

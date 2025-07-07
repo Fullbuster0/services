@@ -24,7 +24,7 @@ Chain ID: `dhealth` | Node Version: `v1.0.0`
   jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-dhealth.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

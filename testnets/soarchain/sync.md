@@ -20,7 +20,7 @@ Chain ID: `soarchaintestnet` | Node Version: `v0.2.9`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

@@ -20,7 +20,7 @@ Chain ID: `chiado_10010-1` | Node Version: `v0.6.2`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

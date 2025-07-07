@@ -32,7 +32,7 @@ echo "export WARDEN_PORT="32"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -55,7 +55,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-### Download and build binaries
+### Download and Build Binaries
 
 ```bash
 cd $HOME

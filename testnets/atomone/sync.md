@@ -25,7 +25,7 @@ Chain ID: `atomone-testnet-1` | Node Version: `v2.0.0-rc2`
   jsonUrl="https://snapshot.shazoes.xyz/testnets/metadata-atomone.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

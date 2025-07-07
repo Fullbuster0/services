@@ -19,7 +19,7 @@ Chain ID: `atomone-testnet-1` | Node Version: `v2.0.0-rc2`
 
 ## Manual Upgrade
 
-### Download and build binaries
+### Download and Build Binaries
 
 ```bash
 cd $HOME

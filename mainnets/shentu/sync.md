@@ -25,7 +25,7 @@ Chain ID: `shentu-2.2` | Node Version: `v2.14.1`
   jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-shentu.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

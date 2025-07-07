@@ -20,7 +20,7 @@ Chain ID: `tacchain_2391-1` | Node Version: `v0.0.11`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

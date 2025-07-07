@@ -25,7 +25,7 @@ Chain ID: `seda-1` | Node Version: `v0.1.10`
   jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-seda.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

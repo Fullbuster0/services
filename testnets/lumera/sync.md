@@ -24,7 +24,7 @@ Chain ID: `lumera-testnet-2` | Node Version: `v1.6.0`
   jsonUrl="https://snapshot.shazoes.xyz/testnets/metadata-lumera.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

@@ -20,7 +20,7 @@ Chain ID: `seq-mainnet-1` | Node Version: `seq-mainnet-1.2`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

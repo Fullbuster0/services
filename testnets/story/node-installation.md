@@ -33,7 +33,7 @@ echo "export STORY_PORT="36"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt update && sudo apt upgrade -y

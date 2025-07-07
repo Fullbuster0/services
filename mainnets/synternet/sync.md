@@ -25,7 +25,7 @@ Chain ID: `synternet-1` | Node Version: `v0.25`
   jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-synternet.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

@@ -21,7 +21,7 @@ Chain ID: `self-1` | Node Version: `v1.0.1`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

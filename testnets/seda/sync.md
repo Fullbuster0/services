@@ -21,7 +21,7 @@ Chain ID: `seda-1-testnet` | Node Version: `v1.0.0-rc.4`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

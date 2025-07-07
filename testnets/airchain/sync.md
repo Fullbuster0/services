@@ -25,7 +25,7 @@ Chain ID: `varanasi-1` | Node Version: `v0.3.2`
   jsonUrl="https://snapshot.shazoes.xyz/testnets/metadata-airchain.json"
 />
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

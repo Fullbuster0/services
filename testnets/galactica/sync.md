@@ -21,7 +21,7 @@ Chain ID: `galactica_9302-1` | Node Version: `v0.1.2`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

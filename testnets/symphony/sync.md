@@ -20,7 +20,7 @@ Chain ID: `symphony-testnet-4` | Node Version: `v5testnet`
 
 ## Snapshot
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt install lz4 && sudo apt install aria2

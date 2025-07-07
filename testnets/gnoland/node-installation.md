@@ -19,7 +19,7 @@ Chain ID: `test6` | Node Version: `chain/test6` | Custom Port: `42`
 
   <TabItem value="manual Installation" label="Manual Installation">
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -42,7 +42,7 @@ source $HOME/.bash_profile
 go version
 ```
 
-### Download and build binaries
+### Download and Build Binaries
 
 ```bash
 cd $HOME
