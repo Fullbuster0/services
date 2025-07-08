@@ -8,7 +8,7 @@ sidebar_position: 4
 # Hippo Protocol Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `hippo-protocol-1` | Node Version: `v1.0.1`
+Chain ID: `hippo-protocol-testnet-1` | Node Version: `v1.0.1`
 </span>
 
 ## Manual Upgrade
