@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Hippo Protocol Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `hippo-protocol-1` | Node Version: `v1.0.1` | Custom Port: `302`
+Chain ID: `hippo-protocol-1` | Node Version: `v1.0.1` | Custom Port: `37`
 
 </span>
 
