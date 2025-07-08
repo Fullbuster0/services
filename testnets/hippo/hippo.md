@@ -26,4 +26,4 @@ Experience true data sovereignty without compromising usability or regulatory co
 
 <div className="endpoints">API: https://hippo-testnet-api.shazoes.xyz</div>
 <div className="endpoints">RPC: https://hippo-testnet-rpc.shazoes.xyz</div>
-<div className="endpoints">gRPC: hippo-testnet-grpc.shazoes.xyz:30290</div>
+<div className="endpoints">gRPC: hippo-testnet-grpc.shazoes.xyz:443</div>
