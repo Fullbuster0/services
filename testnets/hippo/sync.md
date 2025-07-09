@@ -92,7 +92,7 @@ hippod tendermint unsafe-reset-all --home $HOME/.hippo
 ### Add Peers
 
 ```bash
-PEERS="65074085bfb322ac692d6fa52da34e6a6306e5e4@hippo-testnet-rpc.shazoes.xyz:37656,44d8d63d81c35202568ed6970851ec1bb560ef0c@184.107.57.139:60000,d7644db333653ffbf155f5dc1fff176010eb0a96@44.245.117.224:26656"
+PEERS="593f4477565e6c063a06871103a528de761c3537@hippo-testnet-rpc.shazoes.xyz:37656,44d8d63d81c35202568ed6970851ec1bb560ef0c@184.107.57.139:60000,d7644db333653ffbf155f5dc1fff176010eb0a96@44.245.117.224:26656"
 SNAP_RPC="https://hippo-testnet-rpc.shazoes.xyz:443"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.hippo/config/config.toml
 ```

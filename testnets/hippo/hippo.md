@@ -18,7 +18,7 @@ Experience true data sovereignty without compromising usability or regulatory co
 <a href="https://hippoprotocol.ai/"><Icon icon="tabler:world-www" width="35" height="35" /></a>
 <a href="https://x.com/Hippo_Protocol"><Icon icon="ri:twitter-x-fill" width="35" height="35" /></a>
 <a href="https://discord.com/invite/hippoprotocol"><Icon icon="bi:discord" width="35" height="35" /></a>
-<a href="https://explorer.shazoes.xyz/hippo-mainnet"><Icon icon="meteor-icons:search" width="35" height="35" /></a>
+<a href="https://explorer.shazoes.xyz/hippo-testnet"><Icon icon="meteor-icons:search" width="35" height="35" /></a>
 
 <!-- Endpouints -->
 
