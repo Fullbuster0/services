@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Seda Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `seda-1-testnet` | Node Version: `v1.0.0-rc.4` | Custom Port: `37`
+Chain ID: `seda-1-testnet` | Node Version: `v1.0.0-rc.4` | Custom Port: `43`
 </span>
 
 <Tabs>
@@ -28,7 +28,7 @@ First You Need Set Variabels
 MONIKER=<YOUR_MONIKER_NAME>
 echo "export MONIKER=$MONIKER" >> $HOME/.bash_profile
 echo "export SEDA_CHAIN_ID="seda-1-testnet"" >> $HOME/.bash_profile
-echo "export SEDA_PORT="37"" >> $HOME/.bash_profile
+echo "export SEDA_PORT="43"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
@@ -72,7 +72,7 @@ sedad init $MONIKER --chain-id $SEDA_CHAIN_ID
 sed -i \
   -e 's|^chain-id *=.*|chain-id = "seda-1-testnet"|' \
   -e 's|^keyring-backend *=.*|keyring-backend = "test"|' \
-  -e 's|^node *=.*|node = "tcp://localhost:37657"|' \
+  -e 's|^node *=.*|node = "tcp://localhost:43657"|' \
   $HOME/.sedad/config/client.toml
 ```
 

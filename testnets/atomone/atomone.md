@@ -24,4 +24,4 @@ Atomone: The vision behind this AtomOne fork is to be an alternative minimal for
 
 <div className="endpoints">API: https://atomone-testnet-api.shazoes.xyz</div>
 <div className="endpoints">RPC: https://atomone-testnet-rpc.shazoes.xyz</div>
-<div className="endpoints">gRPC: atomone-testnet-grpc.shazoes.xyz:443</div>
+<div className="endpoints">gRPC: atomone-testnet-grpc.shazoes.xyz:31090</div>

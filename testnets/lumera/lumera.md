@@ -24,4 +24,4 @@ Lumera Protocol is a high-performance blockchain purpose-built for AI-driven Web
 
 <div className="endpoints">API: https://lumera-testnet-api.shazoes.xyz</div>
 <div className="endpoints">RPC: https://lumera-testnet-rpc.shazoes.xyz</div>
-<div className="endpoints">gRPC: lumera-testnet-grpc.shazoes.xyz:443</div>
+<div className="endpoints">gRPC: lumera-testnet-grpc.shazoes.xyz:40090</div>

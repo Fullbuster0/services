@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Babylon Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `bbn-1` | Node Version: `v2.2.0` | Custom Port: `302`
+Chain ID: `bbn-1` | Node Version: `v2.2.0` | Custom Port: `301`
 
 </span>
 
