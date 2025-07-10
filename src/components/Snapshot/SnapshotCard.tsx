@@ -6,21 +6,29 @@ export default function SnapshotCard({ chain, jsonUrl, snapshotUrlPrefix, db = "
   const [fontSize, setFontSize] = useState("0.9rem");
 
   useEffect(() => {
-    fetch(jsonUrl)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Fetch error");
-        }
-        return res.json();
-      })
-      .then((json) => {
-        setData(json);
-        setError(false);
-      })
-      .catch(() => {
-        setError(true);
-        setData(null);
-      });
+    const fetchData = () => {
+      fetch(jsonUrl)
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("Fetch error");
+          }
+          return res.json();
+        })
+        .then((json) => {
+          setData(json);
+          setError(false);
+        })
+        .catch(() => {
+          setError(true);
+          setData(null);
+        });
+    };
+
+    fetchData(); // initial fetch on mount
+
+    const interval = setInterval(fetchData, 60000); // refetch every 60s
+
+    return () => clearInterval(interval); // cleanup on unmount
   }, [jsonUrl]);
 
   useEffect(() => {
