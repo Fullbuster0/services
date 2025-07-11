@@ -88,7 +88,7 @@ wget -O $HOME/.hippo/config/addrbook.json https://files.shazoes.xyz/testnets/hip
 ### Configure Seeds and Peers
 
 ```bash
-SEEDS="593f4477565e6c063a06871103a528de761c3537@hippo-testnet-rpc.shazoes.xyz:37656,44d8d63d81c35202568ed6970851ec1bb560ef0c@184.107.57.139:60000,d7644db333653ffbf155f5dc1fff176010eb0a96@44.245.117.224:26656"
+SEEDS=""
 PEERS="593f4477565e6c063a06871103a528de761c3537@hippo-testnet-rpc.shazoes.xyz:37656,44d8d63d81c35202568ed6970851ec1bb560ef0c@184.107.57.139:60000,d7644db333653ffbf155f5dc1fff176010eb0a96@44.245.117.224:26656"
 sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.hippo/config/config.toml
 ```
