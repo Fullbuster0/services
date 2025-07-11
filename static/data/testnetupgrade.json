@@ -1,0 +1,18 @@
+[
+  {
+    "network": "Hippo Protocol",
+    "link": "/testnets/hippo/",
+    "rpc": "https://hippo-testnet-rpc.shazoes.xyz",
+    "target_height": 10565,
+    "version": "v1.0.1",
+    "proposal": "https://explorer.shazoes.xyz/hippo-testnet/gov/5"
+  },
+  {
+    "network": "Shentu",
+    "link": "/testnets/shentu/",
+    "rpc": "https://lumera-testnet-rpc.shazoes.xyz",
+    "target_height": 248,
+    "version": "v2.15.0",
+    "proposal": "https://explorer.shazoes.xyz/lumera-testnet/gov/49"
+  }
+]

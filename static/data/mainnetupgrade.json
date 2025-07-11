@@ -1,0 +1,18 @@
+[
+  {
+    "network": "Hippo Protocol",
+    "link": "/mainnets/hippo/",
+    "rpc": "https://hippo-mainnet-rpc.shazoes.xyz",
+    "target_height": 1056500,
+    "version": "v1.0.1",
+    "proposal": "https://explorer.shazoes.xyz/hippo-mainnet/gov/5"
+  },
+  {
+    "network": "Shentu",
+    "link": "/mainnets/shentu/",
+    "rpc": "https://shentu-mainnet-rpc.shazoes.xyz",
+    "target_height": 24865200,
+    "version": "v2.15.0",
+    "proposal": "https://explorer.shazoes.xyz/shentu-mainnet/gov/49"
+  }
+]

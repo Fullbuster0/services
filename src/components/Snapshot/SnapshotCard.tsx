@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-export default function SnapshotCard({ chain, jsonUrl, snapshotUrlPrefix, db = "goleveldb" }) {
+export default function SnapshotCard({
+  chain,
+  jsonUrl,
+  snapshotUrlPrefix,
+  db = "goleveldb",
+}) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
   const [fontSize, setFontSize] = useState("0.9rem");
 
   useEffect(() => {
     const fetchData = () => {
-      fetch(jsonUrl)
+      fetch(`${jsonUrl}?_=${Date.now()}`, { cache: "no-store" })
         .then((res) => {
           if (!res.ok) {
             throw new Error("Fetch error");
@@ -20,13 +25,12 @@ export default function SnapshotCard({ chain, jsonUrl, snapshotUrlPrefix, db = "
         })
         .catch(() => {
           setError(true);
-          setData(null);
         });
     };
 
     fetchData(); // initial fetch on mount
 
-    const interval = setInterval(fetchData, 60000); // refetch every 60s
+    const interval = setInterval(fetchData, 30000); // refetch every 30s
 
     return () => clearInterval(interval); // cleanup on unmount
   }, [jsonUrl]);
@@ -41,24 +45,38 @@ export default function SnapshotCard({ chain, jsonUrl, snapshotUrlPrefix, db = "
       else if (window.innerWidth <= 555) setFontSize("0.7rem");
       else setFontSize("0.8rem");
     };
+
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Jika error atau tidak ada data, JANGAN TAMPILKAN APA-APA
-  if (error || !data) return null;
+  if (!data) return null;
 
-  const height = data.height;
-  const size = data.size;
-  const diffMs = Date.now() - new Date(data.timestamp).getTime();
+  const height = data.height ?? "-";
+  const size = data.size ?? "-";
+  const timestampMs = new Date(data.timestamp).getTime();
+  const diffMs = Date.now() - (isNaN(timestampMs) ? 0 : timestampMs);
   const diffMinutes = Math.floor(diffMs / 60000);
   const hours = Math.floor(diffMinutes / 60);
   const minutes = diffMinutes % 60;
-  const formattedDiff = hours > 0 ? `${hours}h ${minutes}m ago` : `${minutes} minutes ago`;
+  const formattedDiff =
+    hours > 0 ? `${hours}h ${minutes}m ago` : `${minutes} minutes ago`;
 
   return (
-    <div style={{ border: "1px solid #ddd", padding: "0.5rem", borderRadius: "8px", marginTop: "0.5rem", fontSize, display: "flex", flexWrap: "wrap", gap: "0.5rem", alignItems: "center" }}>
+    <div
+      style={{
+        border: "1px solid #ddd",
+        padding: "0.5rem",
+        borderRadius: "8px",
+        marginTop: "0.5rem",
+        fontSize,
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "0.5rem",
+        alignItems: "center",
+      }}
+    >
       <span>
         Height: <strong>{height}</strong>
       </span>

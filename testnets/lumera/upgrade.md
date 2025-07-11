@@ -4,6 +4,8 @@ title: Upgrade
 sidebar_position: 4
 ---
 
+import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemainingBlock";
+
 <div className="h1-with-icon icon-lumera">
 # Lumera Upgrade
 </div>

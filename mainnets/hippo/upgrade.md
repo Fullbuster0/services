@@ -4,6 +4,8 @@ title: Upgrade
 sidebar_position: 4
 ---
 
+import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemainingBlock";
+
 <div className="h1-with-icon icon-hippo">
 # Hippo Protocol Upgrade
 </div>
@@ -11,9 +13,12 @@ sidebar_position: 4
 Chain ID: `hippo-protocol-1` | Node Version: `v1.0.0`
 </span>
 
-<span> 
-Upgrade at height: <a href="https://explorer.shazoes.xyz/hippo-mainnet/block/1056500">1056500</a><i>Please don`t upgrade before the specified height.</i>
-</span>
+<UpgradeRemainingBlock
+rpc="https://hippo-mainnet-rpc.shazoes.xyz"
+explorerUrl="https://explorer.shazoes.xyz/hippo-mainnet/block"
+targetBlock={1056500}
+
+/>
 
 ## Manual Upgrade
 
