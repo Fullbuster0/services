@@ -24,6 +24,16 @@ const items: Item[] = [
     ],
   },
   {
+    imageUrl: "/img/axone-icon.svg",
+    title: "Axone",
+    chain_id: "axone-1",
+    buttons: [
+      { label: "Services", url: "/mainnets/axone/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/axone-mainnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/axone-mainnet/staking/axonevaloper1gf6gnfxqx0jkv86wft5zll7u5vp5ykf7uy5qwn" },
+    ],
+  },
+  {
     imageUrl: "/img/babylon-icon.svg",
     title: "Babylon",
     chain_id: "bbn-1",
