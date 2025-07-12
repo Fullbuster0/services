@@ -9,11 +9,11 @@ import TabItem from '@theme/TabItem';
 import SnapshotCard from "@site/src/components/Snapshot/SnapshotCard";
 import LivePeers from "@site/src/components/Peers/LivePeers";
 
-<div className="h1-with-icon icon-lumera">
-# Lumera Protocol Useful Commands
+<div className="h1-with-icon icon-axone">
+# Axone Protocol Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `lumera-mainnet-1` | Node Version: `v1.5.0`
+Chain ID: `axone-1` | Node Version: `v12.0.0`
 </span>
 
 :::note
@@ -23,7 +23,7 @@ First You Need Set Variabels
 ```js
 MONIKER=<YOUR_MONIKER_NAME>
 echo "export MONIKER=$MONIKER" >> $HOME/.bash_profile
-echo "export LUMERA_CHAIN_ID="lumera-mainnet-1"" >> $HOME/.bash_profile
+echo "export AXONE_CHAIN_ID="axone-1"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
@@ -35,31 +35,31 @@ source $HOME/.bash_profile
 ### Create Wallet
 
 ```bash
-lumerad keys add wallet
+axoned keys add wallet
 ```
 
 ### Recovery Wallet
 
 ```bash
-lumerad keys add wallet --recover
+axoned keys add wallet --recover
 ```
 
 ### List All Wallet
 
 ```bash
-lumerad keys list
+axoned keys list
 ```
 
 ### Delete Wallet
 
 ```bash
-lumerad keys delete wallet
+axoned keys delete wallet
 ```
 
 ### Check Wallet Balance
 
 ```bash
-lumerad q bank balances $(lumerad keys show wallet -a)
+axoned q bank balances $(axoned keys show wallet -a)
 ```
 
 </TabItem>
@@ -76,14 +76,14 @@ Make sure you have adjust YOUR_KEYBASE_ID, YOUR_DETAILS, YOUR_WEBSITE_URL
 ### Create Validator
 
 ```bash
-lumerad tx staking create-validator \
---amount=1000000ulume \
---pubkey=$(lumerad tendermint show-validator) \
+axoned tx staking create-validator \
+--amount=1000000uaxone \
+--pubkey=$(axoned tendermint show-validator) \
 --moniker=$MONIKER \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL" \
---chain-id=$LUMERA_CHAIN_ID \
+--chain-id=$AXONE_CHAIN_ID \
 --commission-rate=0.10 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -91,34 +91,34 @@ lumerad tx staking create-validator \
 --from=wallet \
 --gas-adjustment=1.5 \
 --gas="auto" \
---gas-prices=0.025ulume
+--gas-prices=0.01uaxone
 ```
 
 ### Edit Validator
 
 ```bash
-lumerad tx staking edit-validator \
+axoned tx staking edit-validator \
 --new-moniker="YOUR MONIKER" \
 --identity="IDENTITY KEYBASE" \
 --details="DETAILS VALIDATOR" \
 --website="LINK WEBSITE" \
---chain-id=$LUMERA_CHAIN_ID \
+--chain-id=$AXONE_CHAIN_ID \
 --from=wallet \
 --gas-adjustment=1.5 \
 --gas="auto" \
---gas-prices=0.025ulume
+--gas-prices=0.01uaxone
 ```
 
 ### Check Jailed Reason
 
 ```bash
-lumerad query slashing signing-info $(lumerad tendermint show-validator)
+axoned query slashing signing-info $(axoned tendermint show-validator)
 ```
 
 ### Unjail Validator
 
 ```bash
-lumerad tx slashing unjail --from wallet --chain-id $LUMERA_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.025ulume -y
+axoned tx slashing unjail --from wallet --chain-id $AXONE_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.01uaxone -y
 ```
 
 </TabItem>
@@ -129,37 +129,37 @@ lumerad tx slashing unjail --from wallet --chain-id $LUMERA_CHAIN_ID --gas-adjus
 ### Withdraw Rewards
 
 ```bash
-lumerad tx distribution withdraw-all-rewards --from wallet --chain-id $LUMERA_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.025ulume -y
+axoned tx distribution withdraw-all-rewards --from wallet --chain-id $AXONE_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.01uaxone -y
 ```
 
 ### Withdraw Rewards with Comission
 
 ```bash
-lumerad tx distribution withdraw-rewards $(lumerad keys show wallet --bech val -a) --commission --from wallet --chain-id $LUMERA_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.025ulume -y
+axoned tx distribution withdraw-rewards $(axoned keys show wallet --bech val -a) --commission --from wallet --chain-id $AXONE_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.01uaxone -y
 ```
 
 ### Delegate Tokens to Your Validator
 
 ```bash
-lumerad tx staking delegate $(lumerad keys show wallet --bech val -a) 1000000ulume --from wallet --chain-id $LUMERA_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.025ulume -y
+axoned tx staking delegate $(axoned keys show wallet --bech val -a) 1000000uaxone --from wallet --chain-id $AXONE_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.01uaxone -y
 ```
 
 ### Redelegate Tokens to Another Validator
 
 ```bash
-lumerad tx staking redelegate $(lumerad keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ulume --from wallet --chain-id $LUMERA_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.025ulume -y
+axoned tx staking redelegate $(axoned keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uaxone --from wallet --chain-id $AXONE_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.01uaxone -y
 ```
 
 ### Unbond Tokens from Your Validator
 
 ```bash
-lumerad tx staking unbond $(lumerad keys show wallet --bech val -a) 1000000ulume --from wallet --chain-id $LUMERA_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.025ulume -y
+axoned tx staking unbond $(axoned keys show wallet --bech val -a) 1000000uaxone --from wallet --chain-id $AXONE_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.01uaxone -y
 ```
 
 ### Send Tokens to Any Wallet
 
 ```bash
-lumerad tx bank send wallet <TO_WALLET_ADDRESS> 1000000ulume --from wallet --chain-id $LUMERA_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.025ulume -y
+axoned tx bank send wallet <TO_WALLET_ADDRESS> 1000000uaxone --from wallet --chain-id $AXONE_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.01uaxone -y
 ```
 
 </TabItem>
@@ -176,43 +176,43 @@ sudo systemctl daemon-reload
 ### Enable Service
 
 ```bash
-sudo systemctl enable lumerad
+sudo systemctl enable axoned
 ```
 
 ### Disable Service
 
 ```bash
-sudo systemctl disable lumerad
+sudo systemctl disable axoned
 ```
 
 ### Start Service
 
 ```bash
-sudo systemctl start lumerad
+sudo systemctl start axoned
 ```
 
 ### Stop Service
 
 ```bash
-sudo systemctl stop lumerad
+sudo systemctl stop axoned
 ```
 
 ### Restart Service
 
 ```bash
-sudo systemctl restart lumerad
+sudo systemctl restart axoned
 ```
 
 ### Check Service Status
 
 ```bash
-sudo systemctl status lumerad
+sudo systemctl status axoned
 ```
 
 ### Check Service Logs
 
 ```bash
-sudo journalctl -u lumerad -f --no-hostname -o cat
+sudo journalctl -u axoned -f --no-hostname -o cat
 ```
 
 </TabItem>
@@ -229,25 +229,25 @@ For Vote, You can change the value of yes to no, abstain, no_with_veto
 ### Vote
 
 ```bash
-lumerad tx gov vote 1 yes --from wallet --chain-id $LUMERA_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.025ulume -y
+axoned tx gov vote 1 yes --from wallet --chain-id $AXONE_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.01uaxone -y
 ```
 
 ### List all Proposals
 
 ```bash
-lumerad query gov proposals
+axoned query gov proposals
 ```
 
 ### Check Vote
 
 ```bash
-lumerad tx gov vote PROPOSAL_NUMBER VOTE_OPTION --from wallet --chain-id $LUMERA_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.025ulume -y
+axoned tx gov vote PROPOSAL_NUMBER VOTE_OPTION --from wallet --chain-id $AXONE_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 0.01uaxone -y
 ```
 
 ### Create new Proposal
 
 ```bash
-lumerad tx gov submit-proposal \
+axoned tx gov submit-proposal \
 --title="Title" \
 --description="Description" \
 --deposit=10000000uaxone \
@@ -255,7 +255,7 @@ lumerad tx gov submit-proposal \
 --from=wallet \
 --gas-adjustment 1.5 \
 --gas "auto" \
---gas-prices=0.025ulume \
+--gas-prices=0.01uaxone \
 -y
 ```
 
@@ -267,55 +267,55 @@ lumerad tx gov submit-proposal \
 ### Set Indexer null / kv
 
 ```bash
-sed -i 's|^indexer *=.*|indexer = "null"|' $HOME/.lumera/config/config.toml
+sed -i 's|^indexer *=.*|indexer = "null"|' $HOME/.axoned/config/config.toml
 ```
 
 ### Get Validator Info
 
 ```bash
-lumerad status 2>&1 | jq .ValidatorInfo
+axoned status 2>&1 | jq .ValidatorInfo
 ```
 
 ### Get Denom Info
 
 ```bash
-lumerad q bank denom-metadata -oj | jq
+axoned q bank denom-metadata -oj | jq
 ```
 
 ### Get Sync Status
 
 ```bash
-lumerad status 2>&1 | jq .SyncInfo.catching_up
+axoned status 2>&1 | jq .SyncInfo.catching_up
 ```
 
 ### Get Latest Height
 
 ```bash
-lumerad status 2>&1 | jq .SyncInfo.latest_block_height
+axoned status 2>&1 | jq .SyncInfo.latest_block_height
 ```
 
 ### Get Node Peer
 
 ```bash
-echo $(lumerad tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.lumera/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(axoned tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.axoned/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 ### Set Minimum Gas Price
 
 ```bash
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.025ulume\"/" $HOME/.lumera/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.01uaxone\"/" $HOME/.axoned/config/app.toml
 ```
 
 ### Enable Prometheus
 
 ```bash
-sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.lumera/config/config.toml
+sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.axoned/config/config.toml
 ```
 
 ### Reset Chain Data
 
 ```bash
-lumerad tendermint unsafe-reset-all --home $HOME/.lumera --keep-addr-book
+axoned tendermint unsafe-reset-all --home $HOME/.axoned --keep-addr-book
 ```
 
 </TabItem>
@@ -330,7 +330,7 @@ lumerad tendermint unsafe-reset-all --home $HOME/.lumera --keep-addr-book
 ### Delete Node
 
 ```bash
-sudo systemctl stop lumerad && sudo systemctl disable lumerad && sudo rm /etc/systemd/system/lumerad.service && sudo systemctl daemon-reload && sudo rm -rf $(which lumerad) && rm -rf $HOME/.lumera
+sudo systemctl stop axoned && sudo systemctl disable axoned && sudo rm /etc/systemd/system/axoned.service && sudo systemctl daemon-reload && sudo rm -rf $(which axoned) && rm -rf $HOME/.axoned
 ```
 
 </TabItem>

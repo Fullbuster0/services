@@ -541,3 +541,18 @@ a:focus {
   margin-right: 1px;
   vertical-align: middle;
 }
+
+.icon-axone {
+  background-image: url("../../static/img/axone-icon.svg");
+}
+.menu__link[href*="/axone"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/axone-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 1px;
+  vertical-align: middle;
+}

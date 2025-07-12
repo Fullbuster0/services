@@ -250,7 +250,7 @@ hippod tx gov vote PROPOSAL_NUMBER VOTE_OPTION --from wallet --chain-id $HIPPO_C
 hippod tx gov submit-proposal \
 --title="Title" \
 --description="Description" \
---deposit=10000000ubbn \
+--deposit=10000000uaxone \
 --type="Text" \
 --from=wallet \
 --gas-adjustment 1.5 \
