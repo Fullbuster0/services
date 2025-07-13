@@ -61,7 +61,7 @@ go version
 ```bash
 cd $HOME
 rm -rf hippo-protocol
-git clone https://github.com/hippocrat-dao/hippo-protocol
+git clone https://github.com/hippo-protocol/hippo-protocol
 cd hippo-protocol
 git checkout v1.0.0
 make install
