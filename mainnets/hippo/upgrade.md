@@ -10,7 +10,7 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Hippo Protocol Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `hippo-protocol-1` | Node Version: `v1.0.0`
+Chain ID: `hippo-protocol-1` | Node Version: `v1.0.1`
 </span>
 
 <UpgradeRemainingBlock
