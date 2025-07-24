@@ -10,7 +10,7 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Seda Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `seda-1` | Node Version: `v0.1.10`
+Chain ID: `seda-1` | Node Version: `v1.0.1`
 </span>
 
 ## Manual Upgrade

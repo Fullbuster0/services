@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Shentu Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `shentu-2.2` | Node Version: `v2.14.1` | Custom Port: `9`
+Chain ID: `shentu-2.2` | Node Version: `v2.15.0` | Custom Port: `9`
 </span>
 
 <Tabs>
@@ -62,7 +62,7 @@ cd $HOME
 rm -rf shentu
 git clone https://github.com/shentufoundation/shentu
 cd shentu
-git checkout v2.14.1
+git checkout v2.15.0
 make install
 ```
 

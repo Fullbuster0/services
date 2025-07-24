@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Provenance Sync
 </div>
 <span className="sub-lines"> 
-Chain ID: `pio-mainnet-1` | Node Version: `v1.24.0`
+Chain ID: `pio-mainnet-1` | Node Version: `v1.25.0`
 </span>
 
 <Tabs>

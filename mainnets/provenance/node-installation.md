@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Provenance Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `pio-mainnet-1` | Node Version: `v1.24.0` | Custom Port: `13`
+Chain ID: `pio-mainnet-1` | Node Version: `v1.25.0` | Custom Port: `13`
 </span>
 
 <Tabs>
@@ -60,10 +60,10 @@ go version
 ```bash
 cd $HOME
 rm -rf bin
-wget https://github.com/provenance-io/provenance/releases/download/v1.24.0/provenance-linux-amd64-v1.24.0.zip
-unzip provenance-linux-amd64-v1.24.0.zip
+wget https://github.com/provenance-io/provenance/releases/download/v1.25.0/provenance-linux-amd64-v1.25.0.zip
+unzip provenance-linux-amd64-v1.25.0.zip
 chmod +x $HOME/bin/provenanced
-rm provenance-linux-amd64-v1.24.0.zip
+rm provenance-linux-amd64-v1.25.0.zip
 mv $HOME/bin/provenanced $HOME/go/bin/
 sudo cp $HOME/bin/libwasmvm.x86_64.so /usr/lib/
 sudo ldconfig

@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Shentu Sync
 </div>
 <span className="sub-lines"> 
-Chain ID: `shentu-2.2` | Node Version: `v2.14.1`
+Chain ID: `shentu-2.2` | Node Version: `v2.15.0`
 </span>
 
 <Tabs>

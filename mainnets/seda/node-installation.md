@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Seda Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `seda-1` | Node Version: `v0.1.10` | Custom Port: `6`
+Chain ID: `seda-1` | Node Version: `v1.0.1` | Custom Port: `6`
 </span>
 
 <Tabs>
@@ -61,7 +61,7 @@ go version
 cd $HOME
 git clone https://github.com/sedaprotocol/seda-chain.git
 cd seda-chain
-git checkout v0.1.10
+git checkout v1.0.1
 make install
 ```
 

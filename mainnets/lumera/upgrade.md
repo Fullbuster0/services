@@ -10,7 +10,7 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Lumera Protocol Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `lumera-mainnet-1` | Node Version: `v1.5.0`
+Chain ID: `lumera-mainnet-1` | Node Version: `v1.6.0`
 </span>
 
 ## Manual Upgrade
