@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Lumera Protocol Sync
 </div>
 <span className="sub-lines"> 
-Chain ID: `lumera-mainnet-1` | Node Version: `v1.6.0`
+Chain ID: `lumera-mainnet-1` | Node Version: `v1.6.1`
 </span>
 <Tabs>
   <TabItem value="snapshot" label="Snapshot" default>

@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Lumera Protocol Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `lumera-mainnet-1` | Node Version: `v1.6.0` | Custom Port: `303`
+Chain ID: `lumera-mainnet-1` | Node Version: `v1.6.1` | Custom Port: `303`
 
 </span>
 
@@ -60,9 +60,9 @@ go version
 
 ```bash
 cd $HOME
-wget https://github.com/LumeraProtocol/lumera/releases/download/v1.6.0/lumera_v1.6.0_linux_amd64.tar.gz
-tar -xvf lumera_v1.6.0_linux_amd64.tar.gz
-rm lumera_v1.6.0_linux_amd64.tar.gz
+wget https://github.com/LumeraProtocol/lumera/releases/download/v1.6.1/lumera_v1.6.1_linux_amd64.tar.gz
+tar -xvf lumera_v1.6.1_linux_amd64.tar.gz
+rm lumera_v1.6.1_linux_amd64.tar.gz
 rm install.sh
 sudo mv libwasmvm.x86_64.so /usr/lib/
 chmod +x lumerad
