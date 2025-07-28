@@ -52,7 +52,7 @@ junctiond tendermint unsafe-reset-all --home $HOME/.junctiond --keep-addr-book
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-airchain.tar.lz4 && lz4 -c -d snapshot-airchain.tar.lz4 | tar -x -C $HOME/.junction && rm snapshot-airchain.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-airchain.tar.lz4 && lz4 -c -d snapshot-airchain.tar.lz4 | tar -x -C $HOME/.junctiond && rm snapshot-airchain.tar.lz4
 ```
 
 ### Restore Backup

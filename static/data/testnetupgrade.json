@@ -8,11 +8,11 @@
     "proposal": "https://explorer.shazoes.xyz/hippo-testnet/gov/5"
   },
   {
-    "network": "Shentu",
-    "link": "/testnets/shentu/",
+    "network": "Lumera",
+    "link": "/testnets/lumera/",
     "rpc": "https://lumera-testnet-rpc.shazoes.xyz",
-    "target_height": 248,
-    "version": "v2.15.0",
-    "proposal": "https://explorer.shazoes.xyz/lumera-testnet/gov/49"
+    "target_height": 425000,
+    "version": "v1.7.0",
+    "proposal": "https://explorer.shazoes.xyz/lumera-testnet/gov/1"
   }
 ]

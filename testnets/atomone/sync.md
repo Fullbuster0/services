@@ -52,7 +52,7 @@ atomoned tendermint unsafe-reset-all --home $HOME/.atomone --keep-addr-book
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-atomonetest.tar.lz4 && lz4 -c -d snapshot-atomonetest.tar.lz4 | tar -x -C $HOME/.atomone && rm snapshot-atomonetest.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/testnets/snapshot-atomone.tar.lz4 && lz4 -c -d snapshot-atomone.tar.lz4 | tar -x -C $HOME/.atomone && rm snapshot-atomone.tar.lz4
 ```
 
 ### Restore Backup

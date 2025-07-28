@@ -76,7 +76,7 @@ const items: Item[] = [
   {
     imageUrl: "/img/lumera-icon.svg",
     title: "Lumera",
-    chain_id: "lumera-testnet-1",
+    chain_id: "lumera-testnet-2",
     buttons: [
       { label: "Services", url: "/testnets/lumera/" },
       { label: "Explorer", url: "https://explorer.shazoes.xyz/lumera-testnet" },
