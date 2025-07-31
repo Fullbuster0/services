@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 # Gnolan Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `test6` | Node Version: `chain/test7.1` | Custom Port: `42`
+Chain ID: `test7.2` | Node Version: `chain/test7.2` | Custom Port: `42`
 
 </span>
 
@@ -48,7 +48,7 @@ go version
 cd $HOME
 git clone https://github.com/gnolang/gno.git
 cd gno
-git checkout chain/test7.1
+git checkout chain/test7.2
 make -C gno.land install.gnoland && make -C contribs/gnogenesis install && make install_gnokey
 gnoland --help
 ```
@@ -66,8 +66,8 @@ gnoland config set consensus.timeout_commit 3s
 gnoland config set mempool.size 10000
 gnoland config set p2p.flush_throttle_timeout 10ms
 gnoland config set p2p.max_num_outbound_peers 40
-gnoland config set p2p.persistent_peers g15y3wvtjc7tdepems32l80gf9a6tshj9nhhl388@gnolan-testnet-rpc.shazoes.xyz:42656,g137jz3hjhz6psrxxjtj5h7h4s6llfyrv2zxtfq3@gno-core-sen-01.test7.testnets.gno.land:26656,g1kpxll39mgzfhsepazzs0vne2l42mmkylxkt6un@gno-core-sen-02.test7.testnets.gno.land:26656
-gnoland config set p2p.seeds g15y3wvtjc7tdepems32l80gf9a6tshj9nhhl388@gnolan-testnet-rpc.shazoes.xyz:42656,g137jz3hjhz6psrxxjtj5h7h4s6llfyrv2zxtfq3@gno-core-sen-01.test7.testnets.gno.land:26656,g1kpxll39mgzfhsepazzs0vne2l42mmkylxkt6un@gno-core-sen-02.test7.testnets.gno.land:26656
+gnoland config set p2p.persistent_peers g1gfxfm77dl3xtfrfnx5hg5f7u85sq2a9z2fa0uc@gnolan-testnet-rpc.shazoes.xyz:42656,g137jz3hjhz6psrxxjtj5h7h4s6llfyrv2zxtfq3@gno-core-sen-01.test7.testnets.gno.land:26656,g1kpxll39mgzfhsepazzs0vne2l42mmkylxkt6un@gno-core-sen-02.test7.testnets.gno.land:26656
+gnoland config set p2p.seeds g1gfxfm77dl3xtfrfnx5hg5f7u85sq2a9z2fa0uc@gnolan-testnet-rpc.shazoes.xyz:42656,g137jz3hjhz6psrxxjtj5h7h4s6llfyrv2zxtfq3@gno-core-sen-01.test7.testnets.gno.land:26656,g1kpxll39mgzfhsepazzs0vne2l42mmkylxkt6un@gno-core-sen-02.test7.testnets.gno.land:26656
 ```
 
 ### Download Genesis

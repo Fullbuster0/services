@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Gnolan Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `test6` | Node Version: `chain/test7.1`
+Chain ID: `test7.2` | Node Version: `chain/test7.2`
 </span>
 
 :::note
@@ -31,7 +31,7 @@ echo "export MONIKER=\"$MONIKER\"" >> $HOME/.bash_profile
 echo "export ADDRESS=\"$ADDRESS\"" >> $HOME/.bash_profile
 echo "export VALOPER=\"$VALOPER\"" >> $HOME/.bash_profile
 echo "export PUBKEY=\"$PUBKEY\"" >> $HOME/.bash_profile
-echo "export GNOLAND_CHAIN_ID="test6"" >> $HOME/.bash_profile
+echo "export GNOLAND_CHAIN_ID="test7.2"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
@@ -296,7 +296,7 @@ gnoland secrets get node_id.p2p_address | sed "s/0\.0\.0\.0/$SERVER_IP/"
 ### Delete Node
 
 ```bash
-sudo systemctl stop gnoland && sudo systemctl disable gnoland && sudo rm /etc/systemd/system/gnoland.service && sudo systemctl daemon-reload && sudo rm -rf $(which gnoland) && sudo rm -rf $(which gnogenesis) && rm -rf $HOME/gnoland-data && rm -rf $HOME/gno
+sudo systemctl stop gnoland && sudo systemctl disable gnoland && sudo rm /etc/systemd/system/gnoland.service && sudo systemctl daemon-reload && sudo rm -rf $(which gnoland) && sudo rm -rf $(which gnogenesis) && sudo rm -rf $(which gnokey) && rm -rf $HOME/gnoland-data && rm -rf $HOME/gno
 ```
 
 </TabItem>

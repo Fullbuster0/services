@@ -10,7 +10,7 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Lumera Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `lumera-testnet-2` | Node Version: `v1.6.0`
+Chain ID: `lumera-testnet-2` | Node Version: `v1.7.0`
 </span>
 
 <UpgradeRemainingBlock

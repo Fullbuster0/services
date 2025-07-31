@@ -10,7 +10,7 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Gnolan Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `test6` | Node Version: `chain/test7.1`
+Chain ID: `test7.2` | Node Version: `chain/test7.2`
 </span>
 
 ## Manual Upgrade

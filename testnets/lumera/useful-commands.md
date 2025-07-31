@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Lumera Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `lumera-testnet-2` | Node Version: `v1.6.0`
+Chain ID: `lumera-testnet-2` | Node Version: `v1.7.0`
 </span>
 
 :::note
