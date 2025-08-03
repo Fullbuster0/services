@@ -34,6 +34,16 @@ const items: Item[] = [
     ],
   },
   {
+    imageUrl: "/img/axone-icon.svg",
+    title: "Axone",
+    chain_id: "axone-dentrite-1",
+    buttons: [
+      { label: "Services", url: "/testnets/axone/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/axone-testnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/axone-testnet" },
+    ],
+  },
+  {
     imageUrl: "/img/cardchain.png",
     title: "Cardchain",
     chain_id: "cardtestnet-12",
