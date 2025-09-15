@@ -113,6 +113,16 @@ const items: Item[] = [
       { label: "Delegate", url: "https://explorer.shazoes.xyz/synternet-mainnet/staking/syntvaloper198defu9l8m9dxxhqwmju0tycgfztmpg67cyuwm" },
     ],
   },
+  {
+    imageUrl: "/img/tellor-icon.svg",
+    title: "Tellor",
+    chain_id: "tellor-1",
+    buttons: [
+      { label: "Services", url: "/mainnets/tellor/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/tellor-mainnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/tellor-mainnet/staking/tellorvaloper1lk56rhnd8pzlvjxn2dapwd4wcrxxg8zflfnl4g" },
+    ],
+  },
 ];
 
 const CardMainnet: React.FC = () => {

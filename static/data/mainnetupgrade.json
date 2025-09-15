@@ -11,7 +11,7 @@
     "network": "Axone",
     "link": "/mainnets/axone/",
     "rpc": "https://axone-mainnet-rpc.shazoes.xyz",
-    "target_height": 1056500,
+    "target_height": 1054,
     "version": "v1.0.1",
     "proposal": "https://explorer.shazoes.xyz/axone-mainnet/gov/5"
   },
@@ -27,7 +27,7 @@
     "network": "Seda",
     "link": "/mainnets/seda/",
     "rpc": "https://seda-mainnet-rpc.shazoes.xyz",
-    "target_height": 24865200,
+    "target_height": 2444,
     "version": "v2.15.0",
     "proposal": "https://explorer.shazoes.xyz/seda-mainnet/gov/49"
   },
@@ -43,7 +43,7 @@
     "network": "Tellor",
     "link": "/mainnets/tellor/",
     "rpc": "https://tellor-mainnet-rpc.shazoes.xyz",
-    "target_height": 24865200,
+    "target_height": 24440,
     "version": "v2.15.0",
     "proposal": "https://explorer.shazoes.xyz/tellor-mainnet/gov/49"
   }
