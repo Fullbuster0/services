@@ -22,8 +22,6 @@ targetBlock={3240000}
 
 ## Manual Upgrade
 
-### Download and Build Binaries
-
 ```bash
 cd $HOME
 rm -rf atomone
@@ -31,10 +29,5 @@ git clone https://github.com/atomone-hub/atomone.git
 cd atomone
 git checkout v3.0.1
 make install
-```
-
-### Restart Service
-
-```bash
 sudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat
 ```
