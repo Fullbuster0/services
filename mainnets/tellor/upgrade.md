@@ -23,5 +23,5 @@ targetBlock={1056500}
 ## Manual Upgrade
 
 ```js
-
+No chain upgrades scheduled yet.
 ```
