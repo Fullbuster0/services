@@ -13,8 +13,6 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 Chain ID: `atomone-testnet-1` | Node Version: `v3.0.1`
 </span>
 
-#### Version : v3.0.1
-
 <UpgradeRemainingBlock
 rpc="https://atomone-testnet-rpc.shazoes.xyz"
 explorerUrl="https://explorer.shazoes.xyz/atomone-testnet/block"
