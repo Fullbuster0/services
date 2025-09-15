@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Atomone Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `atomone-testnet-1` | Node Version: `v2.0.0-rc2` | Custom Port: `31`
+Chain ID: `atomone-testnet-1` | Node Version: `v3.0.1` | Custom Port: `31`
 </span>
 
 <Tabs>
@@ -59,9 +59,10 @@ go version
 
 ```bash
 cd $HOME
+rm -rf atomone
 git clone https://github.com/atomone-hub/atomone.git
 cd atomone
-git checkout v2.0.0-rc2
+git checkout v3.0.1
 make install
 ```
 

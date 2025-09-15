@@ -10,14 +10,17 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Atomone Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `atomone-testnet-1` | Node Version: `v2.0.0-rc2`
+Chain ID: `atomone-testnet-1` | Node Version: `v3.0.1`
 </span>
 
-#### Version : v2.0.0-rc2
+#### Version : v3.0.1
 
-<span> 
-<i>Upgrade at Height -> </i><a href="https://explorer.shazoes.xyz/atomone-testnet/block/1240000">1240000</a>
-</span>
+<UpgradeRemainingBlock
+rpc="https://atomone-testnet-rpc.shazoes.xyz"
+explorerUrl="https://explorer.shazoes.xyz/atomone-testnet/block"
+targetBlock={3240000}
+
+/>
 
 ## Manual Upgrade
 
@@ -25,9 +28,11 @@ Chain ID: `atomone-testnet-1` | Node Version: `v2.0.0-rc2`
 
 ```bash
 cd $HOME
-wget -O atomoned https://github.com/atomone-hub/atomone/releases/download/v2.0.0-rc2/atomoned-v2.0.0-rc2-linux-amd64
-chmod +x atomoned
-mv atomoned $HOME/go/bin
+rm -rf atomone
+git clone https://github.com/atomone-hub/atomone.git
+cd atomone
+git checkout v3.0.1
+make install
 ```
 
 ### Restart Service
