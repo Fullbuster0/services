@@ -10,7 +10,7 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Warden Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `chiado_10010-1` | Node Version: `v0.6.2`
+Chain ID: `barra_9191-1` | Node Version: `v0.7.0-rc3`
 </span>
 
 ## Manual Upgrade

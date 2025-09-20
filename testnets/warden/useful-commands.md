@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Warden Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `chiado_10010-1` | Node Version: `v0.6.2`
+Chain ID: `barra_9191-1` | Node Version: `v0.7.0-rc3`
 </span>
 
 :::note
@@ -23,7 +23,7 @@ First You Need Set Variabels
 ```js
 MONIKER=<YOUR_MONIKER_NAME>
 echo "export MONIKER=$MONIKER" >> $HOME/.bash_profile
-echo "export WARDEN_CHAIN_ID="chiado_10010-1"" >> $HOME/.bash_profile
+echo "export WARDEN_CHAIN_ID="barra_9191-1"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
@@ -77,7 +77,7 @@ Make sure you have adjust YOUR_KEYBASE_ID, YOUR_DETAILS, YOUR_WEBSITE_URL
 
 ```bash
 wardend tx staking create-validator \
---amount=1000000award \
+--amount=1000000000000000000award \
 --pubkey=$(wardend tendermint show-validator) \
 --moniker=$MONIKER \
 --identity="YOUR_KEYBASE_ID" \
@@ -91,7 +91,7 @@ wardend tx staking create-validator \
 --from=wallet \
 --gas-adjustment=1.5 \
 --gas="auto" \
---gas-prices=1award
+--gas-prices=10award
 ```
 
 ### Edit Validator
@@ -106,7 +106,7 @@ wardend tx staking edit-validator \
 --from=wallet \
 --gas-adjustment=1.5 \
 --gas="auto" \
---gas-prices=1award
+--gas-prices=10award
 ```
 
 ### Check Jailed Reason
@@ -118,7 +118,7 @@ wardend query slashing signing-info $(wardend tendermint show-validator)
 ### Unjail Validator
 
 ```bash
-wardend tx slashing unjail --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 1award -y
+wardend tx slashing unjail --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 10award -y
 ```
 
 </TabItem>
@@ -129,37 +129,37 @@ wardend tx slashing unjail --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjus
 ### Withdraw Rewards
 
 ```bash
-wardend tx distribution withdraw-all-rewards --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 1award -y
+wardend tx distribution withdraw-all-rewards --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 10award -y
 ```
 
 ### Withdraw Rewards with Comission
 
 ```bash
-wardend tx distribution withdraw-rewards $(wardend keys show wallet --bech val -a) --commission --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 1award -y
+wardend tx distribution withdraw-rewards $(wardend keys show wallet --bech val -a) --commission --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 10award -y
 ```
 
 ### Delegate Tokens to Your Validator
 
 ```bash
-wardend tx staking delegate $(wardend keys show wallet --bech val -a) 100000award --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 1award -y
+wardend tx staking delegate $(wardend keys show wallet --bech val -a) 1000000000000000000award --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 10award -y
 ```
 
 ### Redelegate Tokens to Another Validator
 
 ```bash
-wardend tx staking redelegate $(wardend keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 100000award --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 1award -y
+wardend tx staking redelegate $(wardend keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000000000000000award --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 10award -y
 ```
 
 ### Unbond Tokens from Your Validator
 
 ```bash
-wardend tx staking unbond $(wardend keys show wallet --bech val -a) 100000award --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 1award -y
+wardend tx staking unbond $(wardend keys show wallet --bech val -a) 1000000000000000000award --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 10award -y
 ```
 
 ### Send Tokens to Any Wallet
 
 ```bash
-wardend tx bank send wallet <TO_WALLET_ADDRESS> 100000award --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 1award -y
+wardend tx bank send wallet <TO_WALLET_ADDRESS> 1000000000000000000award --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 10award -y
 ```
 
 </TabItem>
@@ -229,7 +229,7 @@ For Vote, You can change the value of yes to no, abstain, no_with_veto
 ### Vote
 
 ```bash
-wardend tx gov vote 1 yes --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 1award -y
+wardend tx gov vote 1 yes --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 10award -y
 ```
 
 ### List all Proposals
@@ -241,7 +241,7 @@ wardend query gov proposals
 ### Check Vote
 
 ```bash
-wardend tx gov vote PROPOSAL_NUMBER VOTE_OPTION --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 1award -y
+wardend tx gov vote PROPOSAL_NUMBER VOTE_OPTION --from wallet --chain-id $WARDEN_CHAIN_ID --gas-adjustment 1.5 --gas auto --gas-prices 10award -y
 ```
 
 ### Create new Proposal
@@ -250,12 +250,12 @@ wardend tx gov vote PROPOSAL_NUMBER VOTE_OPTION --from wallet --chain-id $WARDEN
 wardend tx gov submit-proposal \
 --title="Title" \
 --description="Description" \
---deposit=10000000award \
+--deposit=1000000000000000000award \
 --type="Text" \
 --from=wallet \
 --gas-adjustment 1.5 \
 --gas "auto" \
---gas-prices=1award \
+--gas-prices=10award \
 -y
 ```
 

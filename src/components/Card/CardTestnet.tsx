@@ -147,7 +147,7 @@ const items: Item[] = [
   {
     imageUrl: "/img/warden-icon.svg",
     title: "Warden",
-    chain_id: "chiado_10010-1",
+    chain_id: "barra_9191-1",
     buttons: [
       { label: "Services", url: "/testnets/warden/" },
       { label: "Explorer", url: "https://explorer.shazoes.xyz/warden-testnet" },

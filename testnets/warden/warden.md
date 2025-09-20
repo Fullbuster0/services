@@ -23,4 +23,4 @@ Warden Protocol is a Layer 1 blockchain designed to bring AI capabilities to the
 
 <div className="endpoints">API: https://warden-testnet-api.shazoes.xyz</div>
 <div className="endpoints">RPC: https://warden-testnet-rpc.shazoes.xyz</div>
-<div className="endpoints">gRPC: warden-testnet-grpc.shazoes.xyz:443</div>
+<div className="endpoints">gRPC: warden-testnet-grpc.shazoes.xyz:29090</div>
