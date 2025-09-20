@@ -20,6 +20,10 @@ Chain ID: `barra_9191-1` | Node Version: `v0.7.0-rc3`
 
 ## Snapshot
 
+<SnapshotCard
+  jsonUrl="https://snapshot.shazoes.xyz/testnets/metadata-warden.json"
+/>
+
 ### Install Dependencies
 
 ```bash
