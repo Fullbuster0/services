@@ -61,7 +61,7 @@ go version
 cd $HOME
 wget -O wardend https://github.com/warden-protocol/wardenprotocol/releases/download/v0.7.0-rc3/wardend-v0.7.0-rc3-linux-amd64
 chmod +x wardend
-mv $HOME/bin/wardend $HOME/go/bin
+mv wardend $HOME/go/bin
 ```
 
 ### Initialize The Node
