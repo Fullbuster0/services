@@ -22,7 +22,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 
 <SnapshotCard
   chain="atomone"
-  jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-atomone.json"
+  jsonUrl="https://snapshot1.shazoes.xyz/mainnets/metadata-atomone.json"
 />
 
 ### Install Dependencies

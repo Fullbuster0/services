@@ -22,7 +22,7 @@ Chain ID: `shentu-2.2` | Node Version: `v2.15.0`
 ## Snapshot
 
 <SnapshotCard
-  jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-shentu.json"
+  jsonUrl="https://snapshot1.shazoes.xyz/mainnets/metadata-shentu.json"
 />
 
 ### Install Dependencies
