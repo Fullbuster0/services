@@ -23,5 +23,10 @@ targetBlock={1056500}
 ## Manual Upgrade
 
 ```js
-No chain upgrades scheduled yet.
+cd $HOME
+curl -LO https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Linux_x86_64.tar.gz
+tar -xvf layer_Linux_x86_64.tar.gz
+rm layer_Linux_x86_64.tar.gz
+chmod +x layerd
+mv layerd $HOME/go/bin
 ```
