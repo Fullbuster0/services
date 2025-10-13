@@ -29,4 +29,5 @@ tar -xvf layer_Linux_x86_64.tar.gz
 rm layer_Linux_x86_64.tar.gz
 chmod +x layerd
 mv layerd $HOME/go/bin
+sudo systemctl restart layerd && sudo journalctl -fu layerd -o cat
 ```
