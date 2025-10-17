@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Gnolan Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `test7.2` | Node Version: `chain/test7.2`
+Chain ID: `test9.0` | Node Version: `chain/test9.0`
 </span>
 
 :::note
@@ -31,7 +31,7 @@ echo "export MONIKER=\"$MONIKER\"" >> $HOME/.bash_profile
 echo "export ADDRESS=\"$ADDRESS\"" >> $HOME/.bash_profile
 echo "export VALOPER=\"$VALOPER\"" >> $HOME/.bash_profile
 echo "export PUBKEY=\"$PUBKEY\"" >> $HOME/.bash_profile
-echo "export GNOLAND_CHAIN_ID="test7.2"" >> $HOME/.bash_profile
+echo "export GNOLAND_CHAIN_ID="test9"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
@@ -92,7 +92,7 @@ SEQUENCE_NUMBER=$(echo "$ACCOUNT_JSON" | jq -r '.BaseAccount.sequence')
 ```
 
 ```bash
-gnokey maketx call -pkgpath "gno.land/r/gnoland/valopers" -func "Register" -args $MONIKER -args $DESCRIPTION -args $VALOPER -args $PUBKEY -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
+gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "Register" -args $MONIKER -args $DESCRIPTION -args $VALOPER -args $PUBKEY -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
 ```
 
 ```bash
@@ -114,7 +114,7 @@ SEQUENCE_NUMBER=$(echo "$ACCOUNT_JSON" | jq -r '.BaseAccount.sequence')
 ```
 
 ```bash
-gnokey maketx call -pkgpath "gno.land/r/gnoland/valopers" -func "UpdateMoniker"  -args $VALOPER -args $NEWMONIKER -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
+gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "UpdateMoniker"  -args $VALOPER -args $NEWMONIKER -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
 ```
 
 ```bash
@@ -136,7 +136,7 @@ SEQUENCE_NUMBER=$(echo "$ACCOUNT_JSON" | jq -r '.BaseAccount.sequence')
 ```
 
 ```bash
-gnokey maketx call -pkgpath "gno.land/r/gnoland/valopers" -func "UpdateDescription"  -args $VALOPER -args $NEWDESCRIPTION -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
+gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "UpdateDescription"  -args $VALOPER -args $NEWDESCRIPTION -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
 ```
 
 ```bash
@@ -162,7 +162,7 @@ SEQUENCE_NUMBER=$(echo "$ACCOUNT_JSON" | jq -r '.BaseAccount.sequence')
 ```
 
 ```bash
-gnokey maketx call -pkgpath "gno.land/r/gnoland/valopers" -func "UpdateKeepRunning"  -args $VALOPER -args $BOOLEAN -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
+gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "UpdateKeepRunning"  -args $VALOPER -args $BOOLEAN -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
 ```
 
 ```bash
@@ -247,34 +247,19 @@ gnoland secrets get validator_key
 ### Get Validator Info
 
 ```bash
-curl -s -H "Content-type: application/json" -d '{
-  "jsonrpc": "2.0",
-  "method": "status",
-  "params": [],
-  "id": 1
-}' 'http://127.0.0.1:42657' | jq '.result.validator_info'
+curl -s http://127.0.0.1:42657/status | jq '.result.validator_info'
 ```
 
 ### Get Sync Status
 
 ```bash
-curl -s -H "Content-type: application/json" -d '{
-  "jsonrpc": "2.0",
-  "method": "status",
-  "params": [],
-  "id": 1
-}' 'http://127.0.0.1:42657' | jq '.result.sync_info.catching_up'
+curl -s http://127.0.0.1:42657/status | jq '.result.sync_info.catching_up'
 ```
 
 ### Get Latest Height
 
 ```bash
-curl -s -H "Content-type: application/json" -d '{
-  "jsonrpc": "2.0",
-  "method": "status",
-  "params": [],
-  "id": 1
-}' 'http://127.0.0.1:42657' | jq '.result.sync_info.latest_block_height'
+curl -s http://127.0.0.1:42657/status | jq '.result.sync_info.latest_block_height'
 ```
 
 ### Get Node Peer
