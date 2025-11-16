@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 # Gnolan Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `test9.0` | Node Version: `chain/test9.0` | Custom Port: `42`
+Chain ID: `test9.0` | Node Version: `chain/test9.1` | Custom Port: `42`
 
 </span>
 
@@ -49,7 +49,7 @@ cd $HOME
 rm -rf gno
 git clone https://github.com/gnolang/gno.git
 cd gno
-git checkout chain/test9.0
+git checkout chain/test9.1
 make -C gno.land install.gnoland && make -C contribs/gnogenesis install && make install_gnokey
 gnoland --help
 ```
@@ -67,8 +67,8 @@ gnoland config set consensus.timeout_commit 3s
 gnoland config set mempool.size 10000
 gnoland config set p2p.flush_throttle_timeout 10ms
 gnoland config set p2p.max_num_outbound_peers 40
-gnoland config set p2p.persistent_peers g1gcyyx3gt535cucvtty3xwm3vljpc39m864qxnh@gnolan-testnet-rpc.shazoes.xyz:42656,g1d60r9u40340kqrt62cffh6yuc0gfmevz60n8s9@gno-core-sen-01.test9.testnets.gno.land:26656,g18vg9lgndagym626q8jsgv2peyjatscykde3xju@35.242.204.82:26656,g15uvkt5exe9psedxl4dfkg9qcswzqpkg7q5gdtr@13.222.67.199:26656,g16v9g44jeg2xdlr037gryxg5lvu2ky7zvnhxcsh@52.20.155.237:26656,g1a2k2y7dtk7dw7h7gpa2mq9vlnpl5tk2ls2zrhq@54.144.26.54:26656,g1fnwswr6p5nqfvusglv7g2vy0tzwt5npwe7stvv@34.159.36.15:26656,g19w6esn9w4csncyfvr46v3dytwzajc9xfxpesjv@23.23.17.102:26656
-gnoland config set p2p.seeds g1gcyyx3gt535cucvtty3xwm3vljpc39m864qxnh@gnolan-testnet-rpc.shazoes.xyz:42656,g1d60r9u40340kqrt62cffh6yuc0gfmevz60n8s9@gno-core-sen-01.test9.testnets.gno.land:26656,g18vg9lgndagym626q8jsgv2peyjatscykde3xju@35.242.204.82:26656,g15uvkt5exe9psedxl4dfkg9qcswzqpkg7q5gdtr@13.222.67.199:26656,g16v9g44jeg2xdlr037gryxg5lvu2ky7zvnhxcsh@52.20.155.237:26656,g1a2k2y7dtk7dw7h7gpa2mq9vlnpl5tk2ls2zrhq@54.144.26.54:26656,g1fnwswr6p5nqfvusglv7g2vy0tzwt5npwe7stvv@34.159.36.15:26656,g19w6esn9w4csncyfvr46v3dytwzajc9xfxpesjv@23.23.17.102:26656
+gnoland config set p2p.persistent_peers g10l8g7l5u0ahysgj0jczkvwdvct506khfrvf2yz@gnolan-testnet-rpc.shazoes.xyz:42656,g1d60r9u40340kqrt62cffh6yuc0gfmevz60n8s9@gno-core-sen-01.test9.testnets.gno.land:26656
+gnoland config set p2p.seeds g10l8g7l5u0ahysgj0jczkvwdvct506khfrvf2yz@gnolan-testnet-rpc.shazoes.xyz:42656,g1d60r9u40340kqrt62cffh6yuc0gfmevz60n8s9@gno-core-sen-01.test9.testnets.gno.land:26656
 ```
 
 ### Download Genesis
@@ -87,7 +87,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which gnoland) start --genesis $HOME/gnoland-data/config/genesis.json --data-dir $HOME/gnoland-data
+ExecStart=$(which gnoland) start --genesis $HOME/gnoland-data/config/genesis.json --data-dir $HOME/gnoland-data --skip-genesis-sig-verification
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
