@@ -10,11 +10,11 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Atomone Upgrade
 </div>
 <span className="sub-lines"> 
- Chain ID: `atomone-1` | Node Version: `v2.0.0`
+ Chain ID: `atomone-1` | Node Version: `v3.0.3`
 </span>
 
 <span> 
-Upgrade at height: <a href="https://explorer.shazoes.xyz/atomone-mainnet/block/3318000">3318000</a><i>Please don`t upgrade before the specified height.</i>
+Upgrade at height: <a href="https://explorer.shazoes.xyz/atomone-mainnet/block/5902000">5902000</a><i>Please don`t upgrade before the specified height.</i>
 </span>
 
 ## Manual Upgrade
@@ -24,7 +24,7 @@ cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone.git
 cd atomone
-git checkout v2.0.0
+git checkout v3.0.3
 make install
 sudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat
 ```

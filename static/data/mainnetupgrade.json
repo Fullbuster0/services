@@ -3,9 +3,9 @@
     "network": "Atomone",
     "link": "/mainnets/atomone/",
     "rpc": "https://atomone-mainnet-rpc.shazoes.xyz",
-    "target_height": 1056500,
-    "version": "v1.0.1",
-    "proposal": "https://explorer.shazoes.xyz/atomone-mainnet/gov/5"
+    "target_height": 5902000,
+    "version": "v3.0.3",
+    "proposal": "https://explorer.shazoes.xyz/atomone-mainnet/gov/18"
   },
   {
     "network": "Axone",
