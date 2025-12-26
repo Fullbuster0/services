@@ -557,7 +557,6 @@ a:focus {
   vertical-align: middle;
 }
 
-
 .icon-tellor {
   background-image: url("../../static/img/tellor-icon.svg");
 }
@@ -565,6 +564,21 @@ a:focus {
   content: "";
   display: inline-block;
   background-image: url("../../static/img/tellor-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 1px;
+  vertical-align: middle;
+}
+
+.icon-lava {
+  background-image: url("../../static/img/lava-icon.svg");
+}
+.menu__link[href*="/lava"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/lava-icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 22px;

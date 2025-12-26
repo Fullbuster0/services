@@ -3,6 +3,7 @@ import Layout from "@theme/Layout";
 import AtomoneRelayer from "../components/RelayerCard/AtomoneRelayer";
 import OsmosisRelayer from "../components/RelayerCard/OsmosisRelayer";
 import BabylonRelayer from "../components/RelayerCard/BabylonRelayer";
+import LavaRelayer from "../components/RelayerCard/LavaRelayer";
 import SedaRelayer from "../components/RelayerCard/SedaRelayer";
 import ShentuRelayer from "../components/RelayerCard/ShentuRelayer";
 import SynternetRelayer from "../components/RelayerCard/SynternetRelayer";
@@ -18,6 +19,7 @@ export default function Hello() {
         <CosmosHubRelayer />
         <AtomoneRelayer />
         <BabylonRelayer />
+        <LavaRelayer />
         <SedaRelayer />
         <ShentuRelayer />
         <SynternetRelayer />

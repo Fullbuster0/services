@@ -63,6 +63,16 @@ const items: Item[] = [
       { label: "Delegate", url: "https://explorer.shazoes.xyz/hippo-mainnet/staking/hippovaloper16rl9wdjrgf7lvv89v4r4fnx26kjev0wffyvlqe" },
     ],
   },
+    {
+    imageUrl: "/img/lava-icon.svg",
+    title: "Lava",
+    chain_id: "lava-mainnet-1",
+    buttons: [
+      { label: "Services", url: "/mainnets/lava/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/lava-mainnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/lava-mainnet/staking/lava@valoper1m9en2fldt04z6cvup8u8gxxp56f3la9z5j0t6u" },
+    ],
+  },
   {
     imageUrl: "/img/lumera-icon.svg",
     title: "Lumera",

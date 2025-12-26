@@ -20,6 +20,19 @@ const CosmosHubRelayer: React.FC = () => {
           />
         </div>
         <div className="col-12 col-lg-6 col-xxl-4 mb-4">
+          {" "}
+          <RelayerCard
+            imgSrc1="/img/cosmoshub-icon.svg"
+            imgAlt1="CosmosHub"
+            title1="CosmosHub"
+            subtitleLink1="https://www.mintscan.io/cosmos/address/cosmos1238rpkaw44fys2cz27dng69anaugnkwel9kyrs"
+            imgSrc2="/img/lava-icon.svg"
+            imgAlt2="Lava"
+            title2="Lava"
+            subtitleLink2="https://lava.explorers.guru/account/lava@1238rpkaw44fys2cz27dng69anaugnkwe8appya"
+          />
+        </div>
+        <div className="col-12 col-lg-6 col-xxl-4 mb-4">
           <RelayerCard
             imgSrc1="/img/cosmoshub-icon.svg"
             imgAlt1="CosmosHub"
