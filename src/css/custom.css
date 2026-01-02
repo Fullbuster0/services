@@ -586,3 +586,34 @@ a:focus {
   margin-right: 1px;
   vertical-align: middle;
 }
+
+
+.icon-union {
+  background-image: url("../../static/img/union-icon.svg");
+}
+.menu__link[href*="/union"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/union-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 1px;
+  vertical-align: middle;
+}
+
+.icon-nillion {
+  background-image: url("../../static/img/nillion-icon.svg");
+}
+.menu__link[href*="/nillion"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/nillion-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 1px;
+  vertical-align: middle;
+}

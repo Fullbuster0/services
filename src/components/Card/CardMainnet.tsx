@@ -63,7 +63,7 @@ const items: Item[] = [
       { label: "Delegate", url: "https://explorer.shazoes.xyz/hippo-mainnet/staking/hippovaloper16rl9wdjrgf7lvv89v4r4fnx26kjev0wffyvlqe" },
     ],
   },
-    {
+  {
     imageUrl: "/img/lava-icon.svg",
     title: "Lava",
     chain_id: "lava-mainnet-1",
@@ -81,6 +81,16 @@ const items: Item[] = [
       { label: "Services", url: "/mainnets/lumera/" },
       { label: "Explorer", url: "https://explorer.shazoes.xyz/lumera-mainnet" },
       { label: "Delegate", url: "https://explorer.shazoes.xyz/lumera-mainnet/staking/lumeravaloper13pyqmz2a7u3vw3c3y3rslps9g5ms9xd754x48w" },
+    ],
+  },
+  {
+    imageUrl: "/img/nillion-icon.svg",
+    title: "Nillion",
+    chain_id: "nillion-1",
+    buttons: [
+      { label: "Services", url: "/mainnets/nillion/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/nillion-mainnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/nillion-mainnet/staking/nillionvaloper1dtpqpdehf54r025yw4g2a8c46am0ezl3sc56x5" },
     ],
   },
   {
@@ -131,6 +141,16 @@ const items: Item[] = [
       { label: "Services", url: "/mainnets/tellor/" },
       { label: "Explorer", url: "https://explorer.shazoes.xyz/tellor-mainnet" },
       { label: "Delegate", url: "https://explorer.shazoes.xyz/tellor-mainnet/staking/tellorvaloper1lk56rhnd8pzlvjxn2dapwd4wcrxxg8zflfnl4g" },
+    ],
+  },
+  {
+    imageUrl: "/img/union-icon.svg",
+    title: "Union",
+    chain_id: "union-1",
+    buttons: [
+      { label: "Services", url: "/mainnets/union/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/union-mainnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/union-mainnet/staking/unionvaloper1luw3lfsu40tmjazg3pav8r5nu8tcswretpk7gj" },
     ],
   },
 ];

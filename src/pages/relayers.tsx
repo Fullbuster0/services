@@ -4,6 +4,7 @@ import AtomoneRelayer from "../components/RelayerCard/AtomoneRelayer";
 import OsmosisRelayer from "../components/RelayerCard/OsmosisRelayer";
 import BabylonRelayer from "../components/RelayerCard/BabylonRelayer";
 import LavaRelayer from "../components/RelayerCard/LavaRelayer";
+import NillionRelayer from "../components/RelayerCard/NillionRelayer";
 import SedaRelayer from "../components/RelayerCard/SedaRelayer";
 import ShentuRelayer from "../components/RelayerCard/ShentuRelayer";
 import SynternetRelayer from "../components/RelayerCard/SynternetRelayer";
@@ -20,6 +21,7 @@ export default function Hello() {
         <AtomoneRelayer />
         <BabylonRelayer />
         <LavaRelayer />
+        <NillionRelayer />
         <SedaRelayer />
         <ShentuRelayer />
         <SynternetRelayer />

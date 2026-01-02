@@ -1,18 +1,18 @@
 import type { ReactNode } from "react";
 import RelayerCard from "./RelayerCard";
 
-const LavaRelayer: React.FC = () => {
+const NillionRelayer: React.FC = () => {
   return (
     <div className="container">
-      <h2 className="text--center mb-4">Lava Relayer Hub</h2>
+      <h2 className="text--center mb-4">Nillion Relayer Hub</h2>
       <div className="row margin-bottom--lg">
         <div className="col-12 col-lg-6 col-xxl-4 mb-4">
           {" "}
           <RelayerCard
-            imgSrc1="/img/lava-icon.svg"
-            imgAlt1="Lava"
-            title1="Lava"
-            subtitleLink1="https://lava.explorers.guru/account/lava@1238rpkaw44fys2cz27dng69anaugnkwe8appya"
+            imgSrc1="/img/nillion-icon.svg"
+            imgAlt1="Nillion"
+            title1="Nillion"
+            subtitleLink1="https://www.mintscan.io/nillion/address/nillion1238rpkaw44fys2cz27dng69anaugnkwey9ghgn"
             imgSrc2="/img/osmosis-icon.svg"
             imgAlt2="Osmosis"
             title2="Osmosis"
@@ -22,10 +22,10 @@ const LavaRelayer: React.FC = () => {
         <div className="col-12 col-lg-6 col-xxl-4 mb-4">
           {" "}
           <RelayerCard
-            imgSrc1="/img/lava-icon.svg"
-            imgAlt1="Lava"
-            title1="Lava"
-            subtitleLink1="https://lava.explorers.guru/account/lava@1238rpkaw44fys2cz27dng69anaugnkwe8appya"
+            imgSrc1="/img/nillion-icon.svg"
+            imgAlt1="Nillion"
+            title1="Nillion"
+            subtitleLink1="https://www.mintscan.io/nillion/address/nillion1238rpkaw44fys2cz27dng69anaugnkwey9ghgn"
             imgSrc2="/img/cosmoshub-icon.svg"
             imgAlt2="CosmosHub"
             title2="CosmosHub"
@@ -37,4 +37,4 @@ const LavaRelayer: React.FC = () => {
   );
 };
 
-export default LavaRelayer;
+export default NillionRelayer;

@@ -13,10 +13,10 @@ const BabylonRelayer: React.FC = () => {
             imgAlt1="Babylon"
             title1="Babylon"
             subtitleLink1="https://www.mintscan.io/babylon/address/bbn1238rpkaw44fys2cz27dng69anaugnkwegm84uf"
-            imgSrc2="/img/cosmoshub-icon.svg"
-            imgAlt2="CosmosHub"
-            title2="CosmosHub"
-            subtitleLink2="https://www.mintscan.io/cosmos/address/cosmos1238rpkaw44fys2cz27dng69anaugnkwel9kyrs"
+            imgSrc2="/img/osmosis-icon.svg"
+            imgAlt2="Osmosis"
+            title2="Osmosis"
+            subtitleLink2="https://www.mintscan.io/osmosis/address/osmo1238rpkaw44fys2cz27dng69anaugnkweh7954z"
           />
         </div>
         <div className="col-12 col-lg-6 col-xxl-4 mb-4">
@@ -26,10 +26,10 @@ const BabylonRelayer: React.FC = () => {
             imgAlt1="Babylon"
             title1="Babylon"
             subtitleLink1="https://www.mintscan.io/babylon/address/bbn1238rpkaw44fys2cz27dng69anaugnkwegm84uf"
-            imgSrc2="/img/osmosis-icon.svg"
-            imgAlt2="Osmosis"
-            title2="Osmosis"
-            subtitleLink2="https://www.mintscan.io/osmosis/address/osmo1238rpkaw44fys2cz27dng69anaugnkweh7954z"
+            imgSrc2="/img/cosmoshub-icon.svg"
+            imgAlt2="CosmosHub"
+            title2="CosmosHub"
+            subtitleLink2="https://www.mintscan.io/cosmos/address/cosmos1238rpkaw44fys2cz27dng69anaugnkwel9kyrs"
           />
         </div>
         <div className="col-12 col-lg-6 col-xxl-4 mb-4">
