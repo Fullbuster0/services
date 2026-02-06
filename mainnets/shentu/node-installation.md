@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Shentu Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `shentu-2.2` | Node Version: `v2.15.0` | Custom Port: `9`
+Chain ID: `shentu-2.2` | Node Version: `v2.16.2` | Custom Port: `9`
 </span>
 
 <Tabs>
@@ -62,7 +62,7 @@ cd $HOME
 rm -rf shentu
 git clone https://github.com/shentufoundation/shentu
 cd shentu
-git checkout v2.16.0
+git checkout v2.16.2
 make install
 ```
 
@@ -126,6 +126,12 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0001uctk\"/" $HOME/.shentud/config/app.toml
 sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.shentud/config/config.toml
 sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.shentud/config/config.toml
+```
+
+### Download Snapshot
+
+```bash
+curl https://snapshot1.shazoes.xyz/mainnets/snapshot-shentu.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.shentud
 ```
 
 ### Set Service File

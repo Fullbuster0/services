@@ -97,6 +97,19 @@ const OsmosisRelayer: React.FC = () => {
             subtitleLink2="https://explorer.shazoes.xyz/synternet-mainnet/account/synt1238rpkaw44fys2cz27dng69anaugnkwesz9f8c"
           />
         </div>
+        <div className="col-12 col-lg-6 col-xxl-4 mb-4">
+          {" "}
+          <RelayerCard
+            imgSrc1="/img/osmosis-icon.svg"
+            imgAlt1="Osmosis"
+            title1="Osmosis"
+            subtitleLink1="https://www.mintscan.io/osmosis/address/osmo1238rpkaw44fys2cz27dng69anaugnkweh7954z"
+            imgSrc2="/img/terra-icon.svg"
+            imgAlt2="Terra"
+            title2="Terra"
+            subtitleLink2="https://www.mintscan.io/terra/address/terra1238rpkaw44fys2cz27dng69anaugnkweepvyps"
+          />
+        </div>
       </div>
     </div>
   );

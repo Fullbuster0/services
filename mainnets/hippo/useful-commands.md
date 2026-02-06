@@ -73,25 +73,36 @@ Make sure you have adjust YOUR_KEYBASE_ID, YOUR_DETAILS, YOUR_WEBSITE_URL
 
 :::
 
+### Check Pubkey
+
+```bash
+hippod tendermint show-validator
+```
+
+### Make File validator.json
+
+```bash
+tee $HOME/.hippo/validator.json > /dev/null << EOF
+{
+    "pubkey": YOUR_PUBKEY,
+    "amount": "1000000000ahp",
+    "moniker": "MONIKER",
+    "identity": "YOUR_KEYBASE_ID",
+    "website": "YOUR_WEBSITE_URL",
+    "security": "YOUR_CONTACT_MAIL",
+    "details": "YOUR_DETAILS.",
+    "commission-rate": "0.1",
+    "commission-max-rate": "0.2",
+    "commission-max-change-rate": "0.01",
+    "min-self-delegation": "1"
+}
+EOF
+```
+
 ### Create Validator
 
 ```bash
-hippod tx staking create-validator \
---amount=1000000000000000000ahp \
---pubkey=$(hippod tendermint show-validator) \
---moniker=$MONIKER \
---identity="YOUR_KEYBASE_ID" \
---details="YOUR_DETAILS" \
---website="YOUR_WEBSITE_URL" \
---chain-id=$HIPPO_CHAIN_ID \
---commission-rate=0.10 \
---commission-max-rate=0.20 \
---commission-max-change-rate=0.01 \
---min-self-delegation=1000 \
---from=wallet \
---gas-adjustment=1.5 \
---gas="auto" \
---gas-prices=4000000000000ahp
+hippod tx staking create-validator $HOME/.hippo/validator.json --from wallet --chain-id $HIPPO_CHAIN_ID --gas-adjustment 1.5 --gas 225000 --gas-prices 4000000000000ahp
 ```
 
 ### Edit Validator

@@ -144,6 +144,16 @@ const items: Item[] = [
     ],
   },
   {
+    imageUrl: "/img/terra-icon.svg",
+    title: "Terra",
+    chain_id: "phoenix-1",
+    buttons: [
+      { label: "Services", url: "/mainnets/terra/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/terra-mainnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/terra-mainnet/staking/terravaloper17ux88604vmzcfduv8eul462snp74u4265sjtyz" },
+    ],
+  },
+  {
     imageUrl: "/img/union-icon.svg",
     title: "Union",
     chain_id: "union-1",
@@ -151,6 +161,16 @@ const items: Item[] = [
       { label: "Services", url: "/mainnets/union/" },
       { label: "Explorer", url: "https://explorer.shazoes.xyz/union-mainnet" },
       { label: "Delegate", url: "https://explorer.shazoes.xyz/union-mainnet/staking/unionvaloper1luw3lfsu40tmjazg3pav8r5nu8tcswretpk7gj" },
+    ],
+  },
+  {
+    imageUrl: "/img/zetachain-icon.svg",
+    title: "Zetachain",
+    chain_id: "zetachain_7000-1",
+    buttons: [
+      { label: "Services", url: "/mainnets/zetachain/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/zetachain-mainnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/zetachain-mainnet/staking/zetavaloper1n4mzgdztfd742geyuqpgfpy7atu8gc9vl3upgd" },
     ],
   },
 ];

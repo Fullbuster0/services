@@ -94,6 +94,16 @@ const items: Item[] = [
     ],
   },
   {
+    imageUrl: "/img/pushchain-icon.svg",
+    title: "Push",
+    chain_id: "push_42101-1",
+    buttons: [
+      { label: "Services", url: "/testnets/push/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/pushchain-testnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/pushchain-testnet" },
+    ],
+  },
+  {
     imageUrl: "/img/seda-icon.svg",
     title: "Seda",
     chain_id: "seda-1-testnet",

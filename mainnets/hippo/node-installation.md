@@ -63,7 +63,7 @@ cd $HOME
 rm -rf hippo-protocol
 git clone https://github.com/hippo-protocol/hippo-protocol
 cd hippo-protocol
-git checkout v1.0.1
+git checkout v1.0.2
 make install
 ```
 
@@ -130,6 +130,12 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"4000000000000ahp\"/" $HOME/.hippo/config/app.toml
 sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.hippo/config/config.toml
 sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.hippo/config/config.toml
+```
+
+### Download Snapshot
+
+```bash
+curl https://snapshot1.shazoes.xyz/mainnets/snapshot-hippo.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.hippo
 ```
 
 ### Set Service File

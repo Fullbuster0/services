@@ -88,7 +88,9 @@ a {
   color: var(--ifm-color-primary);
   text-decoration: none;
   margin-right: 1rem;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
+  transition:
+    color 0.3s ease,
+    text-decoration 0.3s ease;
 }
 
 a:hover,
@@ -587,7 +589,6 @@ a:focus {
   vertical-align: middle;
 }
 
-
 .icon-union {
   background-image: url("../../static/img/union-icon.svg");
 }
@@ -610,6 +611,51 @@ a:focus {
   content: "";
   display: inline-block;
   background-image: url("../../static/img/nillion-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 1px;
+  vertical-align: middle;
+}
+
+.icon-terra {
+  background-image: url("../../static/img/terra-icon.svg");
+}
+.menu__link[href*="/terra"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/terra-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 1px;
+  vertical-align: middle;
+}
+
+.icon-zetachain {
+  background-image: url("../../static/img/zetachain-icon.svg");
+}
+.menu__link[href*="/zetachain"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/zetachain-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 1px;
+  vertical-align: middle;
+}
+
+.icon-pushchain {
+  background-image: url("../../static/img/pushchain-icon.svg");
+}
+.menu__link[href*="/push"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/pushchain-icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 22px;

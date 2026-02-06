@@ -10,7 +10,7 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Shentu Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `shentu-2.2` | Node Version: `v2.15.0`
+Chain ID: `shentu-2.2` | Node Version: `v2.16.2`
 </span>
 
 <UpgradeRemainingBlock
@@ -27,7 +27,7 @@ cd $HOME
 rm -rf shentu
 git clone https://github.com/shentufoundation/shentu
 cd shentu
-git checkout v2.16.0
+git checkout v2.16.2
 make install
 sudo systemctl restart shentud && sudo journalctl -fu shentud -o cat
 ```

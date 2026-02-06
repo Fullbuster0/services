@@ -147,6 +147,12 @@ sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.lava/config/config.toml
 sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.lava/config/config.toml
 ```
 
+### Download Snapshot
+
+```bash
+curl https://snapshot1.shazoes.xyz/mainnets/snapshot-lava.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.lava
+```
+
 ### Set Service File
 
 ```bash

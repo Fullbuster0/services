@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Atomone Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `atomone-testnet-1` | Node Version: `v3.0.1` | Custom Port: `31`
+Chain ID: `atomone-testnet-1` | Node Version: `v3.0.3` | Custom Port: `31`
 </span>
 
 <Tabs>
@@ -126,6 +126,12 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.025uatone,0.025uphoton\"/" $HOME/.atomone/config/app.toml
 sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.atomone/config/config.toml
 sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.atomone/config/config.toml
+```
+
+### Download Snapshot
+
+```bash
+curl https://snapshot.shazoes.xyz/testnets/snapshot-atomone.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.atomone
 ```
 
 ### Set Service File

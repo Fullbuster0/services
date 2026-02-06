@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Seda Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `seda-1` | Node Version: `v1.0.1`
+Chain ID: `seda-1` | Node Version: `v1.0.7
 </span>
 
 :::note

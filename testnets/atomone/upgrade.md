@@ -10,7 +10,7 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Atomone Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `atomone-testnet-1` | Node Version: `v3.0.1`
+Chain ID: `atomone-testnet-1` | Node Version: `v3.0.3`
 </span>
 
 <UpgradeRemainingBlock

@@ -132,6 +132,12 @@ sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.axoned/config/config.toml
 sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.axoned/config/config.toml
 ```
 
+### Download Snapshot
+
+```bash
+curl https://snapshot.shazoes.xyz/mainnets/snapshot-axone.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.axoned
+```
+
 ### Set Service File
 
 ```bash

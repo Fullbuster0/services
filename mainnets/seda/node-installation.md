@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Seda Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `seda-1` | Node Version: `v1.0.1` | Custom Port: `6`
+Chain ID: `seda-1` | Node Version: `v1.0.7` | Custom Port: `6`
 </span>
 
 <Tabs>
@@ -61,7 +61,7 @@ go version
 cd $HOME
 git clone https://github.com/sedaprotocol/seda-chain.git
 cd seda-chain
-git checkout v1.0.1
+git checkout v1.0.7
 make install
 ```
 
@@ -128,6 +128,12 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"10000000000aseda\"/" $HOME/.sedad/config/app.toml
 sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.sedad/config/config.toml
 sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.sedad/config/config.toml
+```
+
+### Download Snapshot
+
+```bash
+curl https://snapshot.shazoes.xyz/mainnets/snapshot-seda.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.sedad
 ```
 
 ### Set Service File

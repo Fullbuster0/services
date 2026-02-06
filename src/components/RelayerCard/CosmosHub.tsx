@@ -57,6 +57,19 @@ const CosmosHubRelayer: React.FC = () => {
             subtitleLink2="https://seda.explorers.guru/account/seda1238rpkaw44fys2cz27dng69anaugnkweft6uq3"
           />
         </div>
+        <div className="col-12 col-lg-6 col-xxl-4 mb-4">
+          {" "}
+          <RelayerCard
+            imgSrc1="/img/cosmoshub-icon.svg"
+            imgAlt1="CosmosHub"
+            title1="CosmosHub"
+            subtitleLink1="https://www.mintscan.io/cosmos/address/cosmos1238rpkaw44fys2cz27dng69anaugnkwel9kyrs"
+            imgSrc2="/img/terra-icon.svg"
+            imgAlt2="Terra"
+            title2="Terra"
+            subtitleLink2="https://www.mintscan.io/terra/address/terra1238rpkaw44fys2cz27dng69anaugnkweepvyps"
+          />
+        </div>
       </div>
     </div>
   );
