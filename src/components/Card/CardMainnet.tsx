@@ -84,6 +84,16 @@ const items: Item[] = [
     ],
   },
   {
+    imageUrl: "/img/mantra-icon.svg",
+    title: "Mantra",
+    chain_id: "mantra-1",
+    buttons: [
+      { label: "Services", url: "/mainnets/mantra/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/mantra-mainnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/mantra-mainnet/staking/mantravaloper1ekhmc9e7fs67qz93fe99mgn99gwepqpadfcj2t" },
+    ],
+  },
+  {
     imageUrl: "/img/nillion-icon.svg",
     title: "Nillion",
     chain_id: "nillion-1",

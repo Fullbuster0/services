@@ -1,18 +1,18 @@
 import type { ReactNode } from "react";
 import RelayerCard from "./RelayerCard";
 
-const TerraRelayer: React.FC = () => {
+const MantraRelayer: React.FC = () => {
   return (
     <div className="container">
-      <h2 className="text--center mb-4">Terra Relayer Hub</h2>
+      <h2 className="text--center mb-4">Mantra Relayer Hub</h2>
       <div className="row margin-bottom--lg">
         <div className="col-12 col-lg-6 col-xxl-4 mb-4">
           {" "}
           <RelayerCard
-            imgSrc1="/img/terra-icon.svg"
-            imgAlt1="Terra"
-            title1="Terra"
-            subtitleLink1="https://www.mintscan.io/terra/address/terra1238rpkaw44fys2cz27dng69anaugnkweepvyps"
+            imgSrc1="/img/mantra-icon.svg"
+            imgAlt1="Mantra"
+            title1="Mantra"
+            subtitleLink1="https://www.mintscan.io/mantra/address/mantra1238rpkaw44fys2cz27dng69anaugnkwe5wuqq2"
             imgSrc2="/img/osmosis-icon.svg"
             imgAlt2="Osmosis"
             title2="Osmosis"
@@ -22,10 +22,10 @@ const TerraRelayer: React.FC = () => {
         <div className="col-12 col-lg-6 col-xxl-4 mb-4">
           {" "}
           <RelayerCard
-            imgSrc1="/img/terra-icon.svg"
-            imgAlt1="Terra"
-            title1="Terra"
-            subtitleLink1="https://www.mintscan.io/terra/address/terra1238rpkaw44fys2cz27dng69anaugnkweepvyps"
+            imgSrc1="/img/mantra-icon.svg"
+            imgAlt1="Mantra"
+            title1="Mantra"
+            subtitleLink1="https://www.mintscan.io/mantra/address/mantra1238rpkaw44fys2cz27dng69anaugnkwe5wuqq2"
             imgSrc2="/img/cosmoshub-icon.svg"
             imgAlt2="CosmosHub"
             title2="CosmosHub"
@@ -35,10 +35,10 @@ const TerraRelayer: React.FC = () => {
         <div className="col-12 col-lg-6 col-xxl-4 mb-4">
           {" "}
           <RelayerCard
-            imgSrc1="/img/terra-icon.svg"
-            imgAlt1="Terra"
-            title1="Terra"
-            subtitleLink1="https://www.mintscan.io/terra/address/terra1238rpkaw44fys2cz27dng69anaugnkweepvyps"
+            imgSrc1="/img/mantra-icon.svg"
+            imgAlt1="Mantra"
+            title1="Mantra"
+            subtitleLink1="https://www.mintscan.io/mantra/address/mantra1238rpkaw44fys2cz27dng69anaugnkwe5wuqq2"
             imgSrc2="/img/noble-icon.svg"
             imgAlt2="Noble"
             title2="Noble"
@@ -50,4 +50,4 @@ const TerraRelayer: React.FC = () => {
   );
 };
 
-export default TerraRelayer;
+export default MantraRelayer;
