@@ -135,7 +135,7 @@ sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.mantrachain/config/config.
 ### Download Snapshot
 
 ```bash
-curl https://snapshot1.shazoes.xyz/mainnets/snapshot-mantra.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.lava
+curl https://snapshot1.shazoes.xyz/mainnets/snapshot-mantra.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.mantrachain
 ```
 
 ### Set Service File
