@@ -132,12 +132,6 @@ sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.mantrachain/config/config.t
 sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.mantrachain/config/config.toml
 ```
 
-### Download Snapshot
-
-```bash
-curl https://snapshot1.shazoes.xyz/mainnets/snapshot-mantra.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.mantrachain
-```
-
 ### Set Service File
 
 ```bash

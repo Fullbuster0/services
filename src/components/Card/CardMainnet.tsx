@@ -44,6 +44,15 @@ const items: Item[] = [
     ],
   },
   {
+    imageUrl: "/img/cosmoshub-icon.svg",
+    title: "CosmosHub",
+    chain_id: "cosmoshub-4",
+    buttons: [
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/cosmoshub-mainnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/cosmoshub-mainnet/staking/cosmosvaloper19fs9dam0cghptddw5ddc2xysqj3dp7px3hh6af" },
+    ],
+  },
+  {
     imageUrl: "/img/fuel-icon.svg",
     title: "Fuel",
     chain_id: "seq-mainnet-1",

@@ -52,6 +52,19 @@ const OsmosisRelayer: React.FC = () => {
             imgAlt1="Osmosis"
             title1="Osmosis"
             subtitleLink1="https://www.mintscan.io/osmosis/address/osmo1238rpkaw44fys2cz27dng69anaugnkweh7954z"
+            imgSrc2="/img/mantra-icon.svg"
+            imgAlt2="Mantra"
+            title2="Mantra"
+            subtitleLink2="https://www.mintscan.io/mantra/address/mantra1238rpkaw44fys2cz27dng69anaugnkwe5wuqq2"
+          />
+        </div>
+        <div className="col-12 col-lg-6 col-xxl-4 mb-4">
+          {" "}
+          <RelayerCard
+            imgSrc1="/img/osmosis-icon.svg"
+            imgAlt1="Osmosis"
+            title1="Osmosis"
+            subtitleLink1="https://www.mintscan.io/osmosis/address/osmo1238rpkaw44fys2cz27dng69anaugnkweh7954z"
             imgSrc2="/img/nillion-icon.svg"
             imgAlt2="Nillion"
             title2="Nillion"
