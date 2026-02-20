@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function SnapshotCard({
-  chain,
-  jsonUrl,
-  snapshotUrlPrefix,
-  db = "goleveldb",
-}) {
+export default function SnapshotCard({ chain, jsonUrl, snapshotUrlPrefix }) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
   const [fontSize, setFontSize] = useState("0.9rem");
@@ -60,8 +55,8 @@ export default function SnapshotCard({
   const diffMinutes = Math.floor(diffMs / 60000);
   const hours = Math.floor(diffMinutes / 60);
   const minutes = diffMinutes % 60;
-  const formattedDiff =
-    hours > 0 ? `${hours}h ${minutes}m ago` : `${minutes} minutes ago`;
+  const formattedDiff = hours > 0 ? `${hours}h ${minutes}m ago` : `${minutes} minutes ago`;
+  const db = data.db ?? "goleveldb";
 
   return (
     <div
