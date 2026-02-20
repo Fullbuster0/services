@@ -13,7 +13,7 @@ import LivePeersGnoland from "@site/src/components/Peers/LivePeersGnoland";
 # Gnolan Sync
 </div>
 <span className="sub-lines"> 
-Chain ID: `test9.0` | Node Version: `chain/test9.1`
+Chain ID: `test11` | Node Version: `chain/test11`
 </span>
 <Tabs>
   <TabItem value="snapshot" label="Snapshot" default>
