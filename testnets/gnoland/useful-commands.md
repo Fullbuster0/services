@@ -31,7 +31,7 @@ echo "export MONIKER=\"$MONIKER\"" >> $HOME/.bash_profile
 echo "export ADDRESS=\"$ADDRESS\"" >> $HOME/.bash_profile
 echo "export VALOPER=\"$VALOPER\"" >> $HOME/.bash_profile
 echo "export PUBKEY=\"$PUBKEY\"" >> $HOME/.bash_profile
-echo "export GNOLAND_CHAIN_ID="test9"" >> $HOME/.bash_profile
+echo "export GNOLAND_CHAIN_ID="test11"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
@@ -92,11 +92,11 @@ SEQUENCE_NUMBER=$(echo "$ACCOUNT_JSON" | jq -r '.BaseAccount.sequence')
 ```
 
 ```bash
-gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "Register" -args $MONIKER -args $DESCRIPTION -args $VALOPER -args $PUBKEY -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
+gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "Register" -args "$MONIKER" -args "$DESCRIPTION" -args "$VALOPER" -args "$PUBKEY" -gas-fee 1000000ugnot -gas-wanted 30000000 -send "" $ADDRESS > call.tx
 ```
 
 ```bash
-gnokey sign -tx-path call.tx -chainid $GNOLAND_CHAIN_ID -account-number $ACCOUNT_NUMBER -account-sequence $SEQUENCE_NUMBER $ADDRESS
+gnokey sign -tx-path call.tx -chainid "$GNOLAND_CHAIN_ID" -account-number $ACCOUNT_NUMBER -account-sequence $SEQUENCE_NUMBER $ADDRESS
 ```
 
 ```bash
@@ -114,11 +114,11 @@ SEQUENCE_NUMBER=$(echo "$ACCOUNT_JSON" | jq -r '.BaseAccount.sequence')
 ```
 
 ```bash
-gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "UpdateMoniker"  -args $VALOPER -args $NEWMONIKER -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
+gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "UpdateMoniker"  -args "$VALOPER" -args $NEWMONIKER -gas-fee 1000000ugnot -gas-wanted 30000000 -send "" $ADDRESS > call.tx
 ```
 
 ```bash
-gnokey sign -tx-path call.tx -chainid $GNOLAND_CHAIN_ID -account-number $ACCOUNT_NUMBER -account-sequence $SEQUENCE_NUMBER $ADDRESS
+gnokey sign -tx-path call.tx -chainid "$GNOLAND_CHAIN_ID" -account-number $ACCOUNT_NUMBER -account-sequence $SEQUENCE_NUMBER $ADDRESS
 ```
 
 ```bash
@@ -136,11 +136,11 @@ SEQUENCE_NUMBER=$(echo "$ACCOUNT_JSON" | jq -r '.BaseAccount.sequence')
 ```
 
 ```bash
-gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "UpdateDescription"  -args $VALOPER -args $NEWDESCRIPTION -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
+gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "UpdateDescription"  -args "$VALOPER" -args "$NEWDESCRIPTION" -gas-fee 1000000ugnot -gas-wanted 30000000 -send "" $ADDRESS > call.tx
 ```
 
 ```bash
-gnokey sign -tx-path call.tx -chainid $GNOLAND_CHAIN_ID -account-number $ACCOUNT_NUMBER -account-sequence $SEQUENCE_NUMBER $ADDRESS
+gnokey sign -tx-path call.tx -chainid "$GNOLAND_CHAIN_ID" -account-number $ACCOUNT_NUMBER -account-sequence $SEQUENCE_NUMBER $ADDRESS
 ```
 
 ```bash
@@ -162,11 +162,11 @@ SEQUENCE_NUMBER=$(echo "$ACCOUNT_JSON" | jq -r '.BaseAccount.sequence')
 ```
 
 ```bash
-gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "UpdateKeepRunning"  -args $VALOPER -args $BOOLEAN -gas-fee 1000000ugnot -gas-wanted 15000000 -send "" $ADDRESS > call.tx
+gnokey maketx call -pkgpath "gno.land/r/gnops/valopers" -func "UpdateKeepRunning"  -args "$VALOPER" -args $BOOLEAN -gas-fee 1000000ugnot -gas-wanted 30000000 -send "" $ADDRESS > call.tx
 ```
 
 ```bash
-gnokey sign -tx-path call.tx -chainid $GNOLAND_CHAIN_ID -account-number $ACCOUNT_NUMBER -account-sequence $SEQUENCE_NUMBER $ADDRESS
+gnokey sign -tx-path call.tx -chainid "$GNOLAND_CHAIN_ID" -account-number $ACCOUNT_NUMBER -account-sequence $SEQUENCE_NUMBER $ADDRESS
 ```
 
 ```bash
