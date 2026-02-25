@@ -10,7 +10,7 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Shentu Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `shentu-2.2` | Node Version: `v2.16.2`
+Chain ID: `shentu-2.2` | Node Version: `v2.17.0`
 </span>
 
 <UpgradeRemainingBlock
