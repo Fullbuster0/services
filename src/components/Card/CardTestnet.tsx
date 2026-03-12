@@ -84,6 +84,16 @@ const items: Item[] = [
     ],
   },
   {
+    imageUrl: "/img/hippo-icon.svg",
+    title: "Hippo Protocol",
+    chain_id: "hippo-protocol-testnet-1",
+    buttons: [
+      { label: "Services", url: "/testnets/hippo/" },
+      { label: "Explorer", url: "https://explorer.shazoes.xyz/hippo-testnet" },
+      { label: "Delegate", url: "https://explorer.shazoes.xyz/hippo-testnet" },
+    ],
+  },
+  {
     imageUrl: "/img/lumera-icon.svg",
     title: "Lumera",
     chain_id: "lumera-testnet-2",

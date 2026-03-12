@@ -13,8 +13,21 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 Chain ID: `phoenix-1` | Node Version: `v2.18.0`
 </span>
 
+<UpgradeRemainingBlock
+rpc="https://terra-mainnet-rpc.shazoes.xyz"
+explorerUrl="https://explorer.shazoes.xyz/terra-mainnet/block"
+targetBlock={20060000}
+
+/>
+
 ## Manual Upgrade
 
 ```js
-No chain upgrades scheduled yet.
+cd $HOME
+rm -rf terra
+git clone https://github.com/phoenix-directive/core terra
+cd terra
+git checkout v2.19.0
+make install
+sudo systemctl restart terrad && sudo journalctl -fu terrad -o cat
 ```
