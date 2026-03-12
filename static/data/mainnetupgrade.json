@@ -30,5 +30,13 @@
     "target_height": 28124200,
     "version": "v2.17.0",
     "proposal": "https://explorer.shazoes.xyz/shentu-mainnet/gov/52"
+  },
+  {
+    "network": "Terra",
+    "link": "/mainnets/terra/",
+    "rpc": "https://terra-mainnet-rpc.shazoes.xyz",
+    "target_height": 20060000,
+    "version": "v2.19.0",
+    "proposal": "https://explorer.shazoes.xyz/terra-mainnet/gov/4846"
   }
 ]
