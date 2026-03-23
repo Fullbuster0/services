@@ -10,7 +10,7 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Terra Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `phoenix-1` | Node Version: `v2.18.0`
+Chain ID: `phoenix-1` | Node Version: `v2.19.0`
 </span>
 
 <UpgradeRemainingBlock

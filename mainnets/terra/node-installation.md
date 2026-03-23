@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Terra Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `phoenix-1` | Node Version: `v2.18.0` | Custom Port: `312`
+Chain ID: `phoenix-1` | Node Version: `v2.19.0` | Custom Port: `312`
 
 </span>
 
@@ -63,7 +63,7 @@ cd $HOME
 rm -rf terra
 git clone https://github.com/phoenix-directive/core terra
 cd terra
-git checkout v2.18.0
+git checkout v2.19.0
 make install
 ```
 
