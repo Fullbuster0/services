@@ -16,7 +16,7 @@ Chain ID: `shentu-2.2` | Node Version: `v2.17.0`
 <UpgradeRemainingBlock
 rpc="https://shentu-mainnet-rpc.shazoes.xyz"
 explorerUrl="https://explorer.shazoes.xyz/shentu-mainnet/block"
-targetBlock={28124200}
+targetBlock={29367500}
 
 />
 
@@ -27,7 +27,7 @@ cd $HOME
 rm -rf shentu
 git clone https://github.com/shentufoundation/shentu
 cd shentu
-git checkout v2.17.0
+git checkout v2.18.0
 make install
 sudo systemctl restart shentud && sudo journalctl -fu shentud -o cat
 ```

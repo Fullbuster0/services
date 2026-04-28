@@ -27,9 +27,9 @@
     "network": "Shentu",
     "link": "/mainnets/shentu/",
     "rpc": "https://shentu-mainnet-rpc.shazoes.xyz",
-    "target_height": 28124200,
+    "target_height": 29367500,
     "version": "v2.17.0",
-    "proposal": "https://explorer.shazoes.xyz/shentu-mainnet/gov/52"
+    "proposal": "https://explorer.shazoes.xyz/shentu-mainnet/gov/54"
   },
   {
     "network": "Terra",
