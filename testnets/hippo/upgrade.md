@@ -10,11 +10,24 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Hippo Protocol Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `hippo-protocol-testnet-1` | Node Version: `v1.0.1`
+Chain ID: `hippo-protocol-testnet-1` | Node Version: `v2.0.0`
 </span>
+
+<UpgradeRemainingBlock
+rpc="https://hippo-mainnet-rpc.shazoes.xyz"
+explorerUrl="https://explorer.shazoes.xyz/hippo-testnet/block"
+targetBlock={5328000}
+
+/>
 
 ## Manual Upgrade
 
 ```js
-No chain upgrades scheduled yet.
+cd $HOME
+rm -rf hippo-protocol
+git clone https://github.com/hippo-protocol/hippo-protocol
+cd hippo-protocol
+git checkout v2.0.0
+make install
+sudo systemctl restart hippod && sudo journalctl -fu hippod -o cat
 ```

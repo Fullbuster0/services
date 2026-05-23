@@ -101,6 +101,7 @@ const items: Item[] = [
       { label: "Explorer", url: "https://explorer.shazoes.xyz/mantra-mainnet" },
       { label: "Delegate", url: "https://explorer.shazoes.xyz/mantra-mainnet/staking/mantravaloper1ekhmc9e7fs67qz93fe99mgn99gwepqpadfcj2t" },
     ],
+    
   },
   {
     imageUrl: "/img/nillion-icon.svg",

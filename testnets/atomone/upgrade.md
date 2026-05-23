@@ -10,13 +10,13 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Atomone Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `atomone-testnet-1` | Node Version: `v3.0.3`
+Chain ID: `atomone-testnet-1` | Node Version: `v4.0.0-rc1`
 </span>
 
 <UpgradeRemainingBlock
 rpc="https://atomone-testnet-rpc.shazoes.xyz"
 explorerUrl="https://explorer.shazoes.xyz/atomone-testnet/block"
-targetBlock={3240000}
+targetBlock={7065000}
 
 />
 
@@ -27,7 +27,7 @@ cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone.git
 cd atomone
-git checkout v3.0.1
+git checkout v4.0.0-rc1
 make install
 sudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat
 ```
