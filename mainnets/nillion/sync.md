@@ -21,7 +21,7 @@ Chain ID: `nillion-1` | Node Version: `v0.2.5`
 ## Snapshot
 
 <SnapshotCard
-  jsonUrl="https://snapshot1.shazoes.xyz/mainnets/metadata-nillion.json"
+  jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-nillion.json"
 />
 
 ### Install Dependencies
@@ -51,7 +51,7 @@ nilchaind tendermint unsafe-reset-all --home $HOME/.nillionapp --keep-addr-book
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot1.shazoes.xyz/mainnets/snapshot-nillion.tar.lz4 && lz4 -c -d snapshot-nillion.tar.lz4 | tar -x -C $HOME/.nillionapp && rm snapshot-nillion.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/mainnets/snapshot-nillion.tar.lz4 && lz4 -c -d snapshot-nillion.tar.lz4 | tar -x -C $HOME/.nillionapp && rm snapshot-nillion.tar.lz4
 ```
 
 ### Restore Backup

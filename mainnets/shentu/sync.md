@@ -22,7 +22,7 @@ Chain ID: `shentu-2.2` | Node Version: `v2.18.0`
 ## Snapshot
 
 <SnapshotCard
-  jsonUrl="https://snapshot1.shazoes.xyz/mainnets/metadata-shentu.json"
+  jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-shentu.json"
 />
 
 ### Install Dependencies
@@ -52,7 +52,7 @@ shentud tendermint unsafe-reset-all --home $HOME/.shentud --keep-addr-book
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot1.shazoes.xyz/mainnets/snapshot-shentu.tar.lz4 && lz4 -c -d snapshot-shentu.tar.lz4 | tar -x -C $HOME/.shentud && rm snapshot-shentu.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/mainnets/snapshot-shentu.tar.lz4 && lz4 -c -d snapshot-shentu.tar.lz4 | tar -x -C $HOME/.shentud && rm snapshot-shentu.tar.lz4
 ```
 
 ### Restore Backup

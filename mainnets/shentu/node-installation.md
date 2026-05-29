@@ -131,7 +131,7 @@ sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.shentud/config/config.toml
 ### Download Snapshot
 
 ```bash
-curl https://snapshot1.shazoes.xyz/mainnets/snapshot-shentu.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.shentud
+curl https://snapshot.shazoes.xyz/mainnets/snapshot-shentu.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.shentud
 ```
 
 ### Set Service File

@@ -132,7 +132,7 @@ sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.atomone/config/config.toml
 ### Download Snapshot
 
 ```bash
-curl https://snapshot1.shazoes.xyz/mainnets/snapshot-atomone.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.atomone
+curl https://snapshot.shazoes.xyz/mainnets/snapshot-atomone.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.atomone
 ```
 
 ### Set Service File

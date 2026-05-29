@@ -21,7 +21,7 @@ Chain ID: `mantra-1` | Node Version: `v6.1.4`
 ## Snapshot
 
 <SnapshotCard
-  jsonUrl="https://snapshot1.shazoes.xyz/mainnets/metadata-mantra.json"
+  jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-mantra.json"
 />
 
 ### Install Dependencies
@@ -51,7 +51,7 @@ mantrachaind comet unsafe-reset-all --home $HOME/.mantrachain --keep-addr-book
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot1.shazoes.xyz/mainnets/snapshot-mantra.tar.lz4 && lz4 -c -d snapshot-mantra.tar.lz4 | tar -x -C $HOME/.mantrachain && rm snapshot-mantra.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/mainnets/snapshot-mantra.tar.lz4 && lz4 -c -d snapshot-mantra.tar.lz4 | tar -x -C $HOME/.mantrachain && rm snapshot-mantra.tar.lz4
 ```
 
 ### Restore Backup

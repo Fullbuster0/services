@@ -22,7 +22,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 
 <SnapshotCard
   chain="atomone"
-  jsonUrl="https://snapshot1.shazoes.xyz/mainnets/metadata-atomone.json"
+  jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-atomone.json"
 />
 
 ### Install Dependencies
@@ -52,7 +52,7 @@ atomoned tendermint unsafe-reset-all --home $HOME/.atomone --keep-addr-book
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot1.shazoes.xyz/mainnets/snapshot-atomone.tar.lz4 && lz4 -c -d snapshot-atomone.tar.lz4 | tar -x -C $HOME/.atomone && rm snapshot-atomone.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/mainnets/snapshot-atomone.tar.lz4 && lz4 -c -d snapshot-atomone.tar.lz4 | tar -x -C $HOME/.atomone && rm snapshot-atomone.tar.lz4
 ```
 
 ### Restore Backup

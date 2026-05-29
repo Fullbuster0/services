@@ -21,7 +21,7 @@ Chain ID: `lava-mainnet-1` | Node Version: `v5.5.1`
 ## Snapshot
 
 <SnapshotCard
-  jsonUrl="https://snapshot1.shazoes.xyz/mainnets/metadata-lava.json"
+  jsonUrl="https://snapshot.shazoes.xyz/mainnets/metadata-lava.json"
 />
 
 ### Install Dependencies
@@ -51,7 +51,7 @@ lavad tendermint unsafe-reset-all --home $HOME/.lava --keep-addr-book
 ### Download Snapshot
 
 ```bash
-aria2c -x 8 -s 8 https://snapshot1.shazoes.xyz/mainnets/snapshot-lava.tar.lz4 && lz4 -c -d snapshot-lava.tar.lz4 | tar -x -C $HOME/.lava && rm snapshot-lava.tar.lz4
+aria2c -x 8 -s 8 https://snapshot.shazoes.xyz/mainnets/snapshot-lava.tar.lz4 && lz4 -c -d snapshot-lava.tar.lz4 | tar -x -C $HOME/.lava && rm snapshot-lava.tar.lz4
 ```
 
 ### Restore Backup
