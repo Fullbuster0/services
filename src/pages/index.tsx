@@ -11,6 +11,10 @@ import "@site/src/css/custom.css";
 function HomepageHeader() {
   return (
     <div className={styles.heroBanner}>
+      {/* Floating gradient blobs */}
+      <div className={styles.floatingBlob1} />
+      <div className={styles.floatingBlob2} />
+      <div className={styles.floatingBlob3} />
       <div className={styles.heroGlow} />
       <div className="container">
         <div className={styles.heroContent}>
@@ -25,17 +29,17 @@ function HomepageHeader() {
             community.
           </p>
           <div className={styles.statsRow}>
-            <div className={styles.statItem}>
+            <div className={styles.statGlass}>
               <span className={styles.statNumber}>18</span>
               <span className={styles.statLabel}>Mainnet Chains</span>
             </div>
             <div className={styles.statDivider} />
-            <div className={styles.statItem}>
+            <div className={styles.statGlass}>
               <span className={styles.statNumber}>16</span>
               <span className={styles.statLabel}>Testnet Chains</span>
             </div>
             <div className={styles.statDivider} />
-            <div className={styles.statItem}>
+            <div className={styles.statGlass}>
               <span className={styles.statNumber}>100%</span>
               <span className={styles.statLabel}>Uptime Commitment</span>
             </div>

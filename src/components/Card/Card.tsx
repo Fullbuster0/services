@@ -14,14 +14,27 @@ type CardProps = {
   buttons: Button[];
 };
 
+function getButtonClass(label: string): string {
+  switch (label.toLowerCase()) {
+    case "services":
+      return styles.buttonPrimary;
+    case "explorer":
+      return styles.buttonOutline;
+    case "delegate":
+      return styles.buttonAccent;
+    default:
+      return "";
+  }
+}
+
 const Card: React.FC<CardProps> = ({ imageUrl, title, chain_id, buttons }) => {
   return (
     <div className="container">
-      {/* <div className="row">
-        // <div className="col col--3 margin-top--sm margin-bottom--sm"> */}
       <div className={styles.card}>
         <div className={styles.header}>
-          <img src={imageUrl} alt={title} className={styles.image} />
+          <div className={styles.imageWrapper}>
+            <img src={imageUrl} alt={title} className={styles.image} />
+          </div>
           <div className={styles.textContainer}>
             <h3 className={styles.title}>{title}</h3>
             {chain_id && <p className={styles.chain_id}>{chain_id}</p>}
@@ -29,15 +42,17 @@ const Card: React.FC<CardProps> = ({ imageUrl, title, chain_id, buttons }) => {
         </div>
         <div className={styles.buttonGroup}>
           {buttons.map((btn, idx) => (
-            <Link key={idx} href={btn.url} className={styles.button}>
+            <Link
+              key={idx}
+              href={btn.url}
+              className={`${styles.button} ${getButtonClass(btn.label)}`}
+            >
               {btn.label}
             </Link>
           ))}
         </div>
       </div>
     </div>
-    //   </div>
-    // </div>
   );
 };
 
