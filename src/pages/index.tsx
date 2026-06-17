@@ -97,9 +97,9 @@ function WhyShazoes() {
     },
     {
       icon: <FaHeartbeat />,
-      title: "Community First",
+      title: "Community Tools & Guides",
       description:
-        "Dedicated support & transparent operations for our delegators.",
+        "Comprehensive tools and guides for the blockchain community.",
     },
   ];
 
