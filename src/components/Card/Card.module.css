@@ -95,8 +95,8 @@
 .buttonGroup {
   display: flex;
   justify-content: center;
-  gap: 6px;
-  margin-top: 10px;
+  gap: 8px;
+  margin-top: 12px;
   width: 100%;
   flex-wrap: wrap;
 }
@@ -104,27 +104,37 @@
 .button {
   flex: 1;
   text-align: center;
-  background-color: var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-color-emphasis-200);
   color: var(--ifm-font-color-base);
-  font-size: 0.75rem;
-  padding: 4px 8px;
-  border-radius: 6px;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.25s ease;
   min-width: fit-content;
+  border: 1px solid transparent;
 }
 
 .button:hover {
   background-color: var(--ifm-color-primary);
   color: #ffffff;
+  border-color: var(--ifm-color-primary);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 95, 204, 0.3);
   text-decoration: none;
 }
 
+[data-theme="dark"] .button {
+  background-color: rgba(153, 204, 255, 0.08);
+  border-color: rgba(153, 204, 255, 0.12);
+}
+
 [data-theme="dark"] .button:hover {
-  box-shadow: 0 4px 12px rgba(153, 204, 255, 0.2);
+  background-color: var(--ifm-color-primary);
+  color: #0a0e27;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(153, 204, 255, 0.25);
 }
 
 /* 1 KOLOM */

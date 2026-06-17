@@ -202,77 +202,268 @@ a:focus {
 }
 
 /* ---------- Footer ---------- */
-[data-theme="dark"] .footer-dark {
-  background: linear-gradient(180deg, #0d0d14 0%, #07070a 100%) !important;
-}
 
+/* Gradient background: deep blue → near-black */
+[data-theme="dark"] .footer-dark,
 [data-theme="dark"] .footer {
-  background: linear-gradient(180deg, #0d0d14 0%, #07070a 100%) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  color: #c0c0cc;
-}
-
-[data-theme="dark"] .footer a {
-  color: #c0c0cc;
-  transition: color 0.2s ease;
-}
-
-[data-theme="dark"] .footer a:hover {
-  color: #99ccff;
+  background: linear-gradient(180deg, #0d1b3e 0%, #070e22 50%, #040812 100%) !important;
+  color: #c0c8e0;
+  position: relative;
+  border-top: 1px solid rgba(153, 204, 255, 0.08);
+  padding: 0;
 }
 
 [data-theme="light"] .footer {
-  background: linear-gradient(180deg, #f8f9fa 0%, #eef0f5 100%);
-  color: #212529;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg, #0d1b3e 0%, #070e22 50%, #040812 100%) !important;
+  color: #c0c8e0;
+  position: relative;
+  border-top: 1px solid rgba(153, 204, 255, 0.08);
+  padding: 0;
 }
 
-[data-theme="light"] .footer a {
-  color: #212529;
-  transition: color 0.2s ease;
+/* Top glow line */
+.footer-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 700px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 95, 204, 0.6) 50%,
+    transparent 100%
+  );
+  box-shadow: 0 0 18px 2px rgba(0, 95, 204, 0.45);
+  z-index: 2;
 }
 
-[data-theme="light"] .footer a:hover {
-  color: #005fcc;
+/* Brand card at the top of the footer */
+.footer-brand-card {
+  position: relative;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 95, 204, 0.5) 0%,
+    rgba(153, 204, 255, 0.15) 50%,
+    rgba(0, 95, 204, 0.4) 100%
+  );
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Social icon hover effects */
-.footer .social-icons a {
-  margin-right: -1rem;
+.footer-brand-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 95, 204, 0.25);
 }
 
-[data-theme="dark"] .footer .social-link {
-  display: inline-flex;
+.footer-brand-inner {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  color: #c0c0cc;
+  gap: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 27, 62, 0.85) 0%,
+    rgba(7, 14, 34, 0.95) 100%
+  );
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  backdrop-filter: blur(8px);
 }
 
-[data-theme="dark"] .footer .social-link:hover {
+.footer-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(153, 204, 255, 0.35);
+  box-shadow: 0 0 20px rgba(0, 95, 204, 0.35);
+  background: #ffffff;
+}
+
+.footer-brand-name {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  background: linear-gradient(135deg, #99ccff 0%, #ffffff 50%, #99ccff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.footer-brand-tagline {
+  font-size: 0.85rem;
+  color: rgba(192, 200, 224, 0.7);
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* Section headings */
+.footer-heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: #99ccff;
-  transform: scale(1.15);
-  background: rgba(153, 204, 255, 0.1);
+  margin-bottom: 0;
+  position: relative;
+  padding-bottom: 0.6rem;
 }
 
-[data-theme="light"] .footer .social-link {
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, #005fcc, transparent);
+  border-radius: 2px;
+}
+
+/* Link list */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links li a {
+  color: rgba(192, 200, 224, 0.75);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-right: 0;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding-left: 14px;
+}
+
+.footer-links li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(153, 204, 255, 0.4);
+  transition: all 0.2s ease;
+}
+
+.footer-links li a:hover {
+  color: #99ccff;
+  text-decoration: none;
+  transform: translateX(3px);
+}
+
+.footer-links li a:hover::before {
+  background: #99ccff;
+  box-shadow: 0 0 8px rgba(153, 204, 255, 0.7);
+}
+
+/* Social icons */
+.footer-social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-social-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  transition: all 0.3s ease;
-  color: #495057;
+  background: rgba(0, 95, 204, 0.12);
+  border: 1px solid rgba(153, 204, 255, 0.18);
+  color: #c0c8e0;
+  text-decoration: none;
+  margin-right: 0 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-[data-theme="light"] .footer .social-link:hover {
-  color: #005fcc;
-  transform: scale(1.15);
-  background: rgba(0, 95, 204, 0.08);
+.footer-social-link:hover {
+  color: #ffffff;
+  background: rgba(0, 95, 204, 0.25);
+  border-color: rgba(153, 204, 255, 0.5);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 95, 204, 0.45);
+  text-decoration: none;
+}
+
+.footer-social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Divider + copyright */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(153, 204, 255, 0.15) 50%,
+    transparent 100%
+  );
+  margin: 2rem 0 1rem;
+}
+
+.footer-copy {
+  text-align: center;
+  color: rgba(192, 200, 224, 0.5);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .footer-brand-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .footer-heading {
+    text-align: center;
+  }
+
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-links li a {
+    padding-left: 0;
+  }
+
+  .footer-links li a::before {
+    display: none;
+  }
+
+  .footer-social-icons {
+    justify-content: center;
+  }
+
+  .footer-copy {
+    padding: 0 1rem;
+  }
 }
 
 /* ---------- Unified menu icon generator ---------- */

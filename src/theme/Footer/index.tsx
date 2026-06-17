@@ -5,72 +5,118 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-dark bg-dark text-light">
-      <div className="container">
+    <footer className="footer footer-dark">
+      {/* Top glow line */}
+      <div className="footer-glow" />
+
+      <div className="container py-5">
+        {/* ─── Brand Card ─── */}
+        <div className="row justify-content-center mb-5">
+          <div className="col-12 col-md-8 col-lg-6">
+            <div className="footer-brand-card">
+              <div className="footer-brand-inner">
+                <img src="/img/logo.svg" alt="Shazoes" className="footer-logo" />
+                <div>
+                  <span className="footer-brand-name">SHAZOES</span>
+                  <p className="footer-brand-tagline mb-0">
+                    Trusted Blockchain Validator &amp; Services
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── 3-Column Links ─── */}
         <div className="row">
           {/* Networks */}
           <div className="col-12 col-md-4 mb-4 mb-md-0">
-            <h5>Networks</h5>
-            <ul className="list-unstyled mt-3">
+            <h5 className="footer-heading">Networks</h5>
+            <ul className="list-unstyled footer-links mt-3">
               <li>
-                <Link to="/mainnets" className="text-light">
-                  Mainnets
-                </Link>
+                <Link to="/mainnets">Mainnets</Link>
               </li>
               <li>
-                <Link to="/testnets" className="text-light">
-                  Testnets
-                </Link>
+                <Link to="/testnets">Testnets</Link>
               </li>
             </ul>
           </div>
 
           {/* Links */}
           <div className="col-12 col-md-4 mb-4 mb-md-0">
-            <h5>Links</h5>
-            <ul className="list-unstyled mt-3">
+            <h5 className="footer-heading">Links</h5>
+            <ul className="list-unstyled footer-links mt-3">
               <li>
-                <Link to="/relayers" className="text-light">
-                  Relayers
-                </Link>
+                <Link to="/relayers">Relayers</Link>
               </li>
               <li>
-                <a href="https://monitor.shazoes.xyz" className="text-light" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://monitor.shazoes.xyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Monitoring Uptime
                 </a>
               </li>
               <li>
-                <a href="https://explorer.shazoes.xyz" className="text-light" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://explorer.shazoes.xyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Explorer
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Social */}
+          {/* Connect / Social */}
           <div className="col-12 col-md-4 mb-4 mb-md-0">
-            <h5>Contacts</h5>
-            <div className="d-flex mt-3">
-              <a href="https://x.com/shazoes" target="_blank" rel="noopener noreferrer" className="text-light me-2 social-link" aria-label="Follow us on X (Twitter)">
-                <FaXTwitter size={22} />
+            <h5 className="footer-heading">Connect</h5>
+            <div className="footer-social-icons mt-3">
+              <a
+                href="https://x.com/shazoes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
+                aria-label="Follow us on X (Twitter)"
+              >
+                <FaXTwitter size={20} />
               </a>
-              <a href="http://discordapp.com/users/906483432811561000" target="_blank" rel="noopener noreferrer" className="text-light me-2 social-link" aria-label="Join our Discord">
-                <FaDiscord size={22} />
+              <a
+                href="http://discordapp.com/users/906483432811561000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
+                aria-label="Join our Discord"
+              >
+                <FaDiscord size={20} />
               </a>
-              <a href="https://t.me/shazoes" target="_blank" rel="noopener noreferrer" className="text-light me-2 social-link" aria-label="Join our Telegram">
-                <FaTelegram size={22} />
+              <a
+                href="https://t.me/shazoes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
+                aria-label="Join our Telegram"
+              >
+                <FaTelegram size={20} />
               </a>
-              <a href="mailto:hello@shazoes.xyz" className="text-light social-link" aria-label="Send us an email">
-                <FaEnvelope size={22} />
+              <a
+                href="mailto:hello@shazoes.xyz"
+                className="footer-social-link"
+                aria-label="Send us an email"
+              >
+                <FaEnvelope size={20} />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="text-center pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginTop: "1rem" }}>
-          <p style={{ marginBottom: 0, opacity: 0.6 }}>&copy; {new Date().getFullYear()} Shazoes</p>
-        </div>
+        {/* ─── Copyright ─── */}
+        <div className="footer-divider" />
+        <p className="footer-copy">
+          &copy; {new Date().getFullYear()} Shazoes
+        </p>
       </div>
     </footer>
   );
