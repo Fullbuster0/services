@@ -6,17 +6,48 @@
   color: var(--ifm-font-color-base);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
-  flex-direction: column; /* Menjaga elemen dalam kolom */
+  flex-direction: column;
   align-items: center;
-  transition: background-color 0.3s ease;
-  width: 100%; /* Pastikan lebar 100% agar sesuai dengan kolom */
-  box-sizing: border-box; /* Pastikan padding masuk dalam perhitungan lebar */
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, transparent, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: background 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 95, 204, 0.2), 0 0 20px rgba(0, 95, 204, 0.08);
+  border-color: rgba(0, 95, 204, 0.3);
+}
+
+.card:hover::before {
+  background: linear-gradient(135deg, rgba(0, 95, 204, 0.4), transparent 60%);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 8px 30px rgba(153, 204, 255, 0.12), 0 0 20px rgba(153, 204, 255, 0.05);
+  border-color: rgba(153, 204, 255, 0.25);
 }
 
 .header {
   display: flex;
-  flex-direction: row; /* Gambar di kiri, title + chain-id di kanan */
-  align-items: flex-start; /* Gambar di atas title */
+  flex-direction: row;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -25,33 +56,47 @@
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 16px; /* Memberikan jarak antara gambar dan teks */
-  /* border: 2px solid rgba(0, 0, 0, 0.2); Border transparan */
+  margin-right: 16px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
 }
 
 .textContainer {
   display: flex;
-  flex-direction: column; /* Teks (title + chain-id) di dalam kolom */
+  flex-direction: column;
 }
 
 .title {
-  font-size: 20px; /* Memperbesar font title */
+  font-size: 20px;
   margin: 0;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.card:hover .title {
+  color: var(--ifm-color-primary);
 }
 
 .chain_id {
-  font-size: 14px; /* Ukuran font chain-id */
-  color: var(--ifm-color-muted); /* Warna chain-id lebih redup */
-  opacity: 0.4;
+  font-size: 14px;
+  color: var(--ifm-color-muted);
+  opacity: 0.6;
   margin-top: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .chain_id {
+  opacity: 0.85;
 }
 
 .buttonGroup {
   display: flex;
-  justify-content: center; /* Tombol berada di tengah */
-  gap: 0.1px;
-  margin-top: 10px; /* Memberikan jarak antara tombol dan bagian atas */
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
   width: 100%;
   flex-wrap: wrap;
 }
@@ -66,11 +111,20 @@
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.2s ease;
+  transition: all 0.25s ease;
+  min-width: fit-content;
 }
 
 .button:hover {
-  background-color: var(--ifm-color-emphasis-400);
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 95, 204, 0.3);
+  text-decoration: none;
+}
+
+[data-theme="dark"] .button:hover {
+  box-shadow: 0 4px 12px rgba(153, 204, 255, 0.2);
 }
 
 /* 1 KOLOM */
@@ -80,21 +134,20 @@
     height: 55px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 14px; /* Memberikan jarak antara gambar dan teks */
-    /* border: 2px solid rgba(0, 0, 0, 0.2); Border transparan */
+    margin-right: 14px;
   }
 
   .title {
-    font-size: 15px; /* Memperbesar font title */
+    font-size: 15px;
     margin: 0;
     font-weight: bold;
   }
 
   .buttonGroup {
     display: flex;
-    justify-content: center; /* Tombol berada di tengah */
-    gap: 0.12px;
-    margin-top: 8px; /* Memberikan jarak antara tombol dan bagian atas */
+    justify-content: center;
+    gap: 4px;
+    margin-top: 8px;
     width: 100%;
     flex-wrap: wrap;
   }
@@ -109,6 +162,6 @@
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
-    transition: background-color 0.2s ease;
+    transition: all 0.25s ease;
   }
 }

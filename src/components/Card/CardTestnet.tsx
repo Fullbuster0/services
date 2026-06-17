@@ -180,7 +180,7 @@ const CardTestnet: React.FC = () => {
   return (
     <div className="row g-4">
       {items.map((item) => (
-        <div className="col-12 col-md-6 col-lg-4 col-xxl-3 mb-4">
+        <div key={item.title} className="col-12 col-md-6 col-lg-4 col-xxl-3 mb-4">
           <Card imageUrl={item.imageUrl} title={item.title} chain_id={item.chain_id} buttons={item.buttons} />
         </div>
       ))}

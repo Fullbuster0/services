@@ -51,16 +51,16 @@ const Footer = () => {
           <div className="col-12 col-md-4 mb-4 mb-md-0">
             <h5>Contacts</h5>
             <div className="d-flex mt-3">
-              <a href="https://x.com/shazoes" target="_blank" rel="noopener noreferrer" className="text-light me-2">
+              <a href="https://x.com/shazoes" target="_blank" rel="noopener noreferrer" className="text-light me-2 social-link" aria-label="Follow us on X (Twitter)">
                 <FaXTwitter size={22} />
               </a>
-              <a href="http://discordapp.com/users/906483432811561000" target="_blank" rel="noopener noreferrer" className="text-light me-2">
+              <a href="http://discordapp.com/users/906483432811561000" target="_blank" rel="noopener noreferrer" className="text-light me-2 social-link" aria-label="Join our Discord">
                 <FaDiscord size={22} />
               </a>
-              <a href="https://t.me/shazoes" target="_blank" rel="noopener noreferrer" className="text-light me-2">
+              <a href="https://t.me/shazoes" target="_blank" rel="noopener noreferrer" className="text-light me-2 social-link" aria-label="Join our Telegram">
                 <FaTelegram size={22} />
               </a>
-              <a href="mailto:hello@shazoes.xyz" className="text-light">
+              <a href="mailto:hello@shazoes.xyz" className="text-light social-link" aria-label="Send us an email">
                 <FaEnvelope size={22} />
               </a>
             </div>
@@ -68,8 +68,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="text-center pt-4">
-          <p>&copy; {new Date().getFullYear()} Shazoes</p>
+        <div className="text-center pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginTop: "1rem" }}>
+          <p style={{ marginBottom: 0, opacity: 0.6 }}>&copy; {new Date().getFullYear()} Shazoes</p>
         </div>
       </div>
     </footer>
