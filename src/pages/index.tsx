@@ -14,13 +14,6 @@ function HomepageHeader() {
       <div className={styles.heroGlow} />
       <div className="container">
         <div className={styles.heroContent}>
-          <div className={styles.logoWrapper}>
-            <img
-              src="/img/shazoe.jpg"
-              alt="Shazoes Logo"
-              className={styles.heroLogo}
-            />
-          </div>
           <h1 className={styles.heroTitle}>
             Trusted Blockchain Validator & Services Provider
           </h1>

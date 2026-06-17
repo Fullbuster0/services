@@ -10,23 +10,6 @@ const Footer = () => {
       <div className="footer-glow" />
 
       <div className="container py-5">
-        {/* ─── Brand Card ─── */}
-        <div className="row justify-content-center mb-5">
-          <div className="col-12 col-md-8 col-lg-6">
-            <div className="footer-brand-card">
-              <div className="footer-brand-inner">
-                <img src="/img/logo.svg" alt="Shazoes" className="footer-logo" />
-                <div>
-                  <span className="footer-brand-name">SHAZOES</span>
-                  <p className="footer-brand-tagline mb-0">
-                    Trusted Blockchain Validator &amp; Services
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* ─── 3-Column Links ─── */}
         <div className="row">
           {/* Networks */}

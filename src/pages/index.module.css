@@ -70,29 +70,7 @@
   color: rgba(0, 0, 0, 0.65);
 }
 
-/* Logo */
-.logoWrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.heroLogo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(153, 204, 255, 0.3);
-  box-shadow: 0 0 40px rgba(0, 95, 204, 0.3), 0 0 80px rgba(0, 95, 204, 0.1);
-  animation: float 4s ease-in-out infinite, fadeIn 0.6s ease-out both 0.2s;
-}
-
-[data-theme="light"] .heroLogo {
-  border-color: rgba(0, 61, 128, 0.2);
-  box-shadow: 0 0 30px rgba(0, 95, 204, 0.15);
-}
-
-/* Stats */
+/* Animations */
 .statsRow {
   display: flex;
   justify-content: center;
@@ -150,26 +128,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
   }
 }
 
@@ -248,7 +206,7 @@
 /* Responsive */
 @media only screen and (max-width: 768px) {
   .heroBanner {
-    padding: 3.5rem 1rem 3rem;
+    padding: 4rem 1rem 3rem;
   }
 
   .heroTitle {
@@ -257,11 +215,6 @@
 
   .heroTagline {
     font-size: 1rem;
-  }
-
-  .heroLogo {
-    width: 90px;
-    height: 90px;
   }
 
   .statsRow {
