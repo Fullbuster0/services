@@ -43,6 +43,84 @@ body,
   color: #e8e8ed;
 }
 
+/* ---------- itrocket-style ambient background glows ---------- */
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(120px);
+}
+
+/* Top-left glow */
+body::before {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -200px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 95, 204, 0.08) 0%,
+    rgba(0, 95, 204, 0.04) 40%,
+    transparent 70%
+  );
+}
+
+/* Bottom-right glow */
+body::after {
+  width: 700px;
+  height: 700px;
+  bottom: -250px;
+  right: -250px;
+  background: radial-gradient(
+    circle,
+    rgba(118, 75, 200, 0.1) 0%,
+    rgba(118, 75, 200, 0.05) 40%,
+    transparent 70%
+  );
+}
+
+[data-theme="dark"] body::before {
+  background: radial-gradient(
+    circle,
+    rgba(51, 133, 255, 0.25) 0%,
+    rgba(51, 133, 255, 0.12) 40%,
+    transparent 70%
+  );
+  width: 800px;
+  height: 800px;
+}
+
+[data-theme="dark"] body::after {
+  background: radial-gradient(
+    circle,
+    rgba(118, 75, 200, 0.22) 0%,
+    rgba(118, 75, 200, 0.1) 40%,
+    transparent 70%
+  );
+  width: 900px;
+  height: 900px;
+}
+
+/* Mid-center subtle glow for depth */
+#__docusaurus > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* Smooth section transitions */
+main {
+  position: relative;
+  z-index: 1;
+}
+
 /* ---------- Navbar ---------- */
 .navbar__inner {
   padding-left: 1rem;
