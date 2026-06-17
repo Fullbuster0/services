@@ -967,3 +967,131 @@ a:focus {
     transparent 100%
   );
 }
+
+/* ---------- Mainnets Page Styles ---------- */
+
+.mainnets-hero {
+  margin-bottom: 2rem;
+}
+
+.mainnets-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #005fcc 0%, #764bc8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] .mainnets-hero h1 {
+  background: linear-gradient(135deg, #66a3ff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mainnets-hero p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ifm-font-color-secondary);
+  max-width: 800px;
+}
+
+.mainnets-services-section {
+  margin: 2rem 0;
+}
+
+.mainnets-services-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.2rem 0.8rem;
+  background: rgba(0, 95, 204, 0.04);
+  border: 1px solid rgba(0, 95, 204, 0.12);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  background: rgba(0, 95, 204, 0.08);
+  border-color: rgba(0, 95, 204, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 95, 204, 0.12);
+}
+
+[data-theme="dark"] .service-card {
+  background: rgba(153, 204, 255, 0.05);
+  border-color: rgba(153, 204, 255, 0.1);
+}
+
+[data-theme="dark"] .service-card:hover {
+  background: rgba(153, 204, 255, 0.1);
+  border-color: rgba(153, 204, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(153, 204, 255, 0.1);
+}
+
+.service-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.service-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ifm-font-color-base);
+}
+
+.upgrade-watcher-wrapper {
+  margin: 1rem 0;
+}
+
+.upgrade-watcher-wrapper table {
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .mainnets-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .service-card {
+    padding: 0.8rem 0.4rem;
+  }
+
+  .service-icon {
+    font-size: 1.3rem;
+  }
+
+  .service-label {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

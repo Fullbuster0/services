@@ -5,21 +5,71 @@ title: "Mainnets"
 
 import MainnetUpgrade from "@site/src/components/Upgrade/MainnetUpgrade";
 
-<p>Shazoes is a validator that prioritizes stability, security, and maximum performance when supporting blockchain networks.  With dependable infrastructure, we ensure that our nodes are constantly operational and provide public services to benefit the blockchain community.</p>
+<div className="mainnets-hero">
 
-### Our Services Include
+# ⚡ Mainnets
 
-- Node Installation
-- Snapshot
-- State Sync
-- Addrbook
-- Live Peers
-- Last Upgrade
-- Useful Commands
-- Relayer
-- Explorer
-- Etc
+Shazoes is a validator that prioritizes stability, security, and maximum performance when supporting blockchain networks. With dependable infrastructure, we ensure that our nodes are constantly operational and provide public services to benefit the blockchain community.
 
-### Interchain Mainnets Upgrade Watcher
+</div>
 
-<MainnetUpgrade />
+---
+
+<div className="mainnets-services-section">
+
+## 🛠️ Our Services Include
+
+<div className="services-grid">
+  <div className="service-card">
+    <div className="service-icon">⚙️</div>
+    <div className="service-label">Node Installation</div>
+  </div>
+  <div className="service-card">
+    <div className="service-icon">📸</div>
+    <div className="service-label">Snapshot</div>
+  </div>
+  <div className="service-card">
+    <div className="service-icon">🔄</div>
+    <div className="service-label">State Sync</div>
+  </div>
+  <div className="service-card">
+    <div className="service-icon">📖</div>
+    <div className="service-label">Addrbook</div>
+  </div>
+  <div className="service-card">
+    <div className="service-icon">👥</div>
+    <div className="service-label">Live Peers</div>
+  </div>
+  <div className="service-card">
+    <div className="service-icon">⬆️</div>
+    <div className="service-label">Last Upgrade</div>
+  </div>
+  <div className="service-card">
+    <div className="service-icon">💻</div>
+    <div className="service-label">Useful Commands</div>
+  </div>
+  <div className="service-card">
+    <div className="service-icon">🔗</div>
+    <div className="service-label">Relayer</div>
+  </div>
+  <div className="service-card">
+    <div className="service-icon">🔍</div>
+    <div className="service-label">Explorer</div>
+  </div>
+  <div className="service-card">
+    <div className="service-icon">📦</div>
+    <div className="service-label">Etc</div>
+  </div>
+</div>
+
+</div>
+
+---
+
+## 📡 Interchain Mainnets Upgrade Watcher
+
+Stay updated with the latest upgrade proposals across all mainnets we support.
+
+<div className="upgrade-watcher-wrapper">
+  <MainnetUpgrade />
+</div>
