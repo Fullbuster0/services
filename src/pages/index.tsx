@@ -6,6 +6,9 @@ import TabItem from "@theme/TabItem";
 import styles from "./index.module.css";
 import CardMainnet from "../components/Card/CardMainnet";
 import CardTestnet from "../components/Card/CardTestnet";
+import { mainnetItems } from "../components/Card/CardMainnet";
+import { testnetItems } from "../components/Card/CardTestnet";
+import { FaShieldAlt, FaRocket, FaHeartbeat } from "react-icons/fa";
 import "@site/src/css/custom.css";
 
 function HomepageHeader() {
@@ -30,12 +33,12 @@ function HomepageHeader() {
           </p>
           <div className={styles.statsRow}>
             <div className={styles.statGlass}>
-              <span className={styles.statNumber}>18</span>
+              <span className={styles.statNumber}>{mainnetItems.length}</span>
               <span className={styles.statLabel}>Mainnet Chains</span>
             </div>
             <div className={styles.statDivider} />
             <div className={styles.statGlass}>
-              <span className={styles.statNumber}>16</span>
+              <span className={styles.statNumber}>{testnetItems.length}</span>
               <span className={styles.statLabel}>Testnet Chains</span>
             </div>
             <div className={styles.statDivider} />
@@ -78,6 +81,46 @@ function HomepageMain() {
   );
 }
 
+function WhyShazoes() {
+  const features = [
+    {
+      icon: <FaShieldAlt />,
+      title: "Secure & Reliable",
+      description:
+        "Reliable infrastructure with enterprise-grade security measures.",
+    },
+    {
+      icon: <FaRocket />,
+      title: "High Performance",
+      description:
+        "Optimized nodes with maximum uptime and fast synchronization.",
+    },
+    {
+      icon: <FaHeartbeat />,
+      title: "Community First",
+      description:
+        "Dedicated support & transparent operations for our delegators.",
+    },
+  ];
+
+  return (
+    <section className={styles.whySection}>
+      <div className="container">
+        <h2 className={styles.whyTitle}>Why Shazoes?</h2>
+        <div className={styles.featureGrid}>
+          {features.map((feature) => (
+            <div key={feature.title} className={styles.featureCard}>
+              <div className={styles.featureIcon}>{feature.icon}</div>
+              <h3 className={styles.featureTitle}>{feature.title}</h3>
+              <p className={styles.featureDesc}>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -86,6 +129,7 @@ export default function Home(): ReactNode {
       description="Shazoes is a validator that prioritizes stability, security, and maximum performance when supporting blockchain networks.  With dependable infrastructure, we ensure that our nodes are constantly operational and provide public services to benefit the blockchain community."
     >
       <HomepageHeader />
+      <WhyShazoes />
       <HomepageMain />
     </Layout>
   );

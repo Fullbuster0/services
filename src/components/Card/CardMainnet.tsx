@@ -195,6 +195,8 @@ const items: Item[] = [
   },
 ];
 
+export const mainnetItems = items;
+
 const CardMainnet: React.FC = () => {
   return (
     // <div className="container">

@@ -516,6 +516,242 @@
   background-color: var(--dark);
 }
 
+/* ---------- Why Shazoes Section ---------- */
+
+.whySection {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #0a0e27 0%, #0d1333 50%, #0a0e27 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="light"] .whySection {
+  background: linear-gradient(135deg, #e8f0fe 0%, #f0f4ff 50%, #e8f0fe 100%);
+}
+
+.whyTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="light"] .whyTitle {
+  color: #0a0e27;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .featureCard {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 95, 204, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 95, 204, 0.08);
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(153, 204, 255, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 95, 204, 0.25);
+}
+
+[data-theme="light"] .featureCard:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 95, 204, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 95, 204, 0.18);
+}
+
+.featureIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 95, 204, 0.15);
+  color: #99ccff;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .featureIcon {
+  background: rgba(0, 95, 204, 0.1);
+  color: #005fcc;
+}
+
+.featureCard:hover .featureIcon {
+  background: rgba(0, 95, 204, 0.25);
+  transform: scale(1.1);
+}
+
+.featureTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="light"] .featureTitle {
+  color: #0a0e27;
+}
+
+.featureDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+[data-theme="light"] .featureDesc {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Live Status Bar ---------- */
+
+.liveStatusBar {
+  background: rgba(10, 14, 39, 0.95);
+  border-top: 1px solid rgba(153, 204, 255, 0.08);
+  border-bottom: 1px solid rgba(153, 204, 255, 0.08);
+  padding: 0.85rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="light"] .liveStatusBar {
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(0, 95, 204, 0.12);
+  border-bottom: 1px solid rgba(0, 95, 204, 0.12);
+}
+
+.statusItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statusText {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.03em;
+}
+
+[data-theme="light"] .statusText {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.statusDivider {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+}
+
+[data-theme="light"] .statusDivider {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.greenDot,
+.purpleDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.greenDot {
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  animation: pulseGreen 2s ease-in-out infinite;
+}
+
+.purpleDot {
+  background: #a855f7;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+  animation: pulsePurple 2s ease-in-out infinite;
+}
+
+@keyframes pulseGreen {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.3);
+  }
+}
+
+@keyframes pulsePurple {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.3);
+  }
+}
+
+/* Responsive for Why Shazoes & Status Bar */
+@media only screen and (max-width: 768px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .whySection {
+    padding: 3.5rem 0;
+  }
+
+  .whyTitle {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .statusItems {
+    gap: 0.75rem;
+  }
+
+  .statusDivider {
+    display: none;
+  }
+
+  .statusItems {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
 /* ActionButton */
 
 .ActionButton {

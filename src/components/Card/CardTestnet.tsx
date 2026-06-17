@@ -176,6 +176,8 @@ const items: Item[] = [
   },
 ];
 
+export const testnetItems = items;
+
 const CardTestnet: React.FC = () => {
   return (
     <div className="row g-4">
