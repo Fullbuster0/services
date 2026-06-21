@@ -43,7 +43,7 @@ function HomepageHeader() {
             </div>
             <div className={styles.statDivider} />
             <div className={styles.statGlass}>
-              <span className={styles.statNumber}>100%</span>
+              <span className={styles.statNumber}>99.9%</span>
               <span className={styles.statLabel}>Uptime Commitment</span>
             </div>
           </div>
