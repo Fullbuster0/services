@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Hippo Protocol Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `hippo-protocol-testnet-1` | Node Version: `v2.0.0`
+Chain ID: `hippo-protocol-testnet-1` | Node Version: `v1.0.1`
 </span>
 
 :::note

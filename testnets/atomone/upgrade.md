@@ -9,8 +9,6 @@ sidebar_position: 4
 <span className="sub-lines">Chain ID: `atomone-testnet-1` | Node Version: `v3.0.1`</span>
 
 
-
-
 ## Manual Upgrade
 
 ```bash

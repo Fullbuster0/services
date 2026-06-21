@@ -9,8 +9,6 @@ sidebar_position: 4
 <span className="sub-lines">Chain ID: `atomone-1` | Node Version: `v3.3.0`</span>
 
 
-
-
 ## Manual Upgrade
 
 ```bash

@@ -9,8 +9,6 @@ sidebar_position: 4
 <span className="sub-lines">Chain ID: `shentu-2.2` | Node Version: `v2.2.0`</span>
 
 
-
-
 ## Manual Upgrade
 
 ```bash

@@ -9,8 +9,6 @@ sidebar_position: 4
 <span className="sub-lines">Chain ID: `hippo-testnet-1` | Node Version: `v1.0.1`</span>
 
 
-
-
 ## Manual Upgrade
 
 ```bash

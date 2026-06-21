@@ -63,7 +63,7 @@ cd $HOME
 rm -rf lava
 git clone https://github.com/lavanet/lava
 cd lava
-git checkout v5.5.1
+git checkout v1.0.0
 make install-all
 ```
 

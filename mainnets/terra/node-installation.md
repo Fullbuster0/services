@@ -63,7 +63,7 @@ cd $HOME
 rm -rf terra
 git clone https://github.com/phoenix-directive/core terra
 cd terra
-git checkout v2.19.0
+git checkout v2.4.0
 make install
 ```
 

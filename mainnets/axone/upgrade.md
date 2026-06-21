@@ -9,8 +9,6 @@ sidebar_position: 4
 <span className="sub-lines">Chain ID: `axone-1` | Node Version: `v1.0.0`</span>
 
 
-
-
 ## Manual Upgrade
 
 ```bash

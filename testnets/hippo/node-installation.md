@@ -63,7 +63,7 @@ cd $HOME
 rm -rf hippo-protocol
 git clone https://github.com/hippo-protocol/hippo-protocol
 cd hippo-protocol
-git checkout v2.0.0
+git checkout v1.0.1
 make install
 ```
 
