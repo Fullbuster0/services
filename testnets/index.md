@@ -3,7 +3,7 @@ sidebar_position: 2
 title: "Testnets"
 ---
 
-import ChainUpgradeTable from "../../src/components/Upgrade/ChainUpgradeTable";
+import ChainUpgradeTable from "../src/components/Upgrade/ChainUpgradeTable";
 
 <div className="mainnets-hero">
 
