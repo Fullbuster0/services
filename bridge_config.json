@@ -9,6 +9,11 @@
         "https://atomone-mainnet-api.itrocket.net",
         "https://mainnet-atomone-api.konsortech.xyz"
       ],
+      "rpc_endpoints": [
+        "https://atomone-mainnet-rpc.shazoes.xyz",
+        "https://atomone-mainnet-rpc.itrocket.net",
+        "https://atomone-rpc.polkachu.com"
+      ],
       "gov_module": "atomone.gov.v1",
       "doc_path": "mainnets/atomone/upgrade.md",
       "json_path": "static/data/mainnetupgrade.json",
@@ -28,6 +33,11 @@
         "https://terra-mainnet-api.shazoes.xyz",
         "https://rest.terra.org",
         "https://terra-api.polkachu.com"
+      ],
+      "rpc_endpoints": [
+        "https://terra-mainnet-rpc.shazoes.xyz",
+        "https://terra-mainnet-rpc.itrocket.net",
+        "https://terra-rpc.polkachu.com"
       ],
       "gov_module": "v1",
       "doc_path": "mainnets/terra/upgrade.md",
@@ -49,6 +59,11 @@
         "https://api.axone.cumulo.com.es",
         "https://axone-api.highstakes.ch"
       ],
+      "rpc_endpoints": [
+        "https://axone-mainnet-rpc.shazoes.xyz",
+        "https://axone-mainnet-rpc.itrocket.net",
+        "https://axone-rpc.polkachu.com"
+      ],
       "gov_module": "v1",
       "doc_path": "mainnets/axone/upgrade.md",
       "json_path": "static/data/mainnetupgrade.json",
@@ -68,6 +83,11 @@
         "https://hippo-mainnet-api.shazoes.xyz",
         "https://api.hippo-protocol.com",
         "https://hippo.api.nodeshub.online"
+      ],
+      "rpc_endpoints": [
+        "https://hippo-mainnet-rpc.shazoes.xyz",
+        "https://hippo-mainnet-rpc.itrocket.net",
+        "https://hippo-rpc.polkachu.com"
       ],
       "gov_module": "v1",
       "doc_path": "mainnets/hippo/upgrade.md",
@@ -89,6 +109,11 @@
         "https://lava.rest.lava.build",
         "https://lava-api.polkachu.com"
       ],
+      "rpc_endpoints": [
+        "https://lava-mainnet-rpc.shazoes.xyz",
+        "https://lava-mainnet-rpc.itrocket.net",
+        "https://lava-rpc.polkachu.com"
+      ],
       "gov_module": "v1",
       "doc_path": "mainnets/lava/upgrade.md",
       "json_path": "static/data/mainnetupgrade.json",
@@ -108,6 +133,11 @@
         "https://shentu-mainnet-api.shazoes.xyz",
         "https://rest.shentu.org",
         "https://shentu-api.polkachu.com"
+      ],
+      "rpc_endpoints": [
+        "https://shentu-mainnet-rpc.shazoes.xyz",
+        "https://shentu-mainnet-rpc.itrocket.net",
+        "https://shentu-rpc.polkachu.com"
       ],
       "gov_module": "v1",
       "doc_path": "mainnets/shentu/upgrade.md",
@@ -129,6 +159,11 @@
         "https://zetachain-api.polkachu.com",
         "https://zetachain-rest.publicnode.com"
       ],
+      "rpc_endpoints": [
+        "https://zetachain-mainnet-rpc.shazoes.xyz",
+        "https://zetachain-mainnet-rpc.itrocket.net",
+        "https://zetachain-rpc.polkachu.com"
+      ],
       "gov_module": "v1",
       "doc_path": "mainnets/zetachain/upgrade.md",
       "json_path": "static/data/mainnetupgrade.json",
@@ -147,6 +182,9 @@
       "rest_endpoints": [
         "https://atomone-testnet-api.shazoes.xyz"
       ],
+      "rpc_endpoints": [
+        "https://atomone-testnet-rpc.shazoes.xyz"
+      ],
       "gov_module": "atomone.gov.v1",
       "doc_path": "testnets/atomone/upgrade.md",
       "json_path": "static/data/testnetupgrade.json",
@@ -163,6 +201,9 @@
       "chain_id": "hippo-testnet-1",
       "type": "testnet",
       "rest_endpoints": [
+        "https://hippo-testnet-rpc.shazoes.xyz"
+      ],
+      "rpc_endpoints": [
         "https://hippo-testnet-rpc.shazoes.xyz"
       ],
       "gov_module": "v1",

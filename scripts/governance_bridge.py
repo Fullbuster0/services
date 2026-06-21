@@ -38,6 +38,7 @@ import re
 import ssl
 import subprocess
 import sys
+from collections import Counter
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -181,6 +182,27 @@ def get_latest_block_height(endpoint: str, timeout: int = 5) -> int | None:
     return None
 
 
+def get_consensus_height(rpc_endpoints: list[str], threshold: int = 2) -> Optional[int]:
+    """Fetch latest block height from multiple endpoints, return consensus (majority)."""
+    heights = []
+    for ep in rpc_endpoints:
+        h = get_latest_block_height(ep)
+        if h is not None:
+            heights.append(h)
+    
+    if not heights:
+        return None
+
+    counts = Counter(heights)
+    most_common, count = counts.most_common(1)[0]
+    
+    if count >= threshold:
+        log.info("  ✓ Consensus reached on height: %s (agreed by %s/%s)", most_common, count, len(heights))
+        return most_common
+    log.warning("  ✗ No consensus on height: counts=%s", counts)
+    return None
+
+
 # ── Governance proposal polling ─────────────────────────────────────────────
 def fetch_voting_proposals(chain_cfg: dict) -> list:
     eps = chain_cfg.get("rest_endpoints", [])
@@ -196,6 +218,24 @@ def fetch_voting_proposals(chain_cfg: dict) -> list:
             if data and data.get("proposals"):
                 return data["proposals"]
     return []
+
+
+def get_consensus_proposals(rest_endpoints: list[str]) -> list:
+    """Fetch proposals from multiple endpoints and merge."""
+    merged = {}
+    paths = [
+        ("/atomone/gov/v1/proposals", "2"),
+        ("/cosmos/gov/v1/proposals", "1"),
+        ("/cosmos/gov/v1beta1/proposals", "2"),
+    ]
+    for ep in rest_endpoints:
+        for path, sc in paths:
+            url = f"{ep.rstrip('/')}{path}?proposal_status={sc}&pagination.limit=10"
+            data = _http_get_json(url, timeout=args.rpc_timeout)
+            if data and data.get("proposals"):
+                for p in data["proposals"]:
+                    merged[p.get("proposal_id")] = p
+    return list(merged.values())
 
 
 def find_software_upgrade(proposals: list) -> dict | None:
@@ -363,15 +403,10 @@ def manage_upgrade_lifecycle(
 
     # If we have an active upgrade, check whether its target height has passed.
     if active:
-        endpoints = chain_cfg.get("rest_endpoints", []) or []
-        ep = get_healthiest_endpoint(endpoints)
-        if not ep:
-            log.warning("  No endpoint configured for %s; cannot check height", chain_id)
-            return upgrade
-
-        current_height = get_latest_block_height(ep, timeout=args.rpc_timeout)
+        endpoints = chain_cfg.get("rpc_endpoints", []) or []
+        current_height = get_consensus_height(endpoints)
         if current_height is None:
-            log.warning("  Could not fetch block height for %s via %s", chain_id, ep)
+            log.warning("  Could not reach consensus on block height for %s", chain_id)
             return upgrade
 
         try:

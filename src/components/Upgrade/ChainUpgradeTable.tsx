@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import DOMPurify from "dompurify";
 import mainnetUpgrades from "@site/static/data/mainnetupgrade.json";
 import testnetUpgrades from "@site/static/data/testnetupgrade.json";
 import Link from "@docusaurus/Link";
@@ -100,15 +101,15 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
             <tr key={idx} className="hover:bg-gray-100 dark:hover:bg-gray-700">
               <td className="px-4 py-2">{idx + 1}</td>
               <td className="px-4 py-2">
-                <Link href={chain.link}>{chain.network}</Link>
+                <Link href={chain.link}>{DOMPurify.sanitize(chain.network, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })}</Link>
               </td>
               <td className="px-4 py-2">
                 <Link href={chain.proposal}>Proposal</Link>
               </td>
               <td className="px-4 py-2">{chain.target_height}</td>
-              <td className="px-4 py-2">{chain.timeLeft}</td>
-              <td className="px-4 py-2">{chain.eta}</td>
-              <td className="px-4 py-2">{chain.version}</td>
+              <td className="px-4 py-2">{DOMPurify.sanitize(chain.timeLeft, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })}</td>
+              <td className="px-4 py-2">{DOMPurify.sanitize(chain.eta, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })}</td>
+              <td className="px-4 py-2">{DOMPurify.sanitize(chain.version, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })}</td>
               <td className="px-4 py-2">
                 <Link href={`${chain.link}upgrade`}>Guide</Link>
               </td>
