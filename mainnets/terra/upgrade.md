@@ -10,24 +10,23 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
 # Terra Upgrade
 </div>
 <span className="sub-lines"> 
-Chain ID: `phoenix-1` | Node Version: `v2.19.0`
+ Chain ID: `phoenix-1` | Node Version: `v2.4.0`
 </span>
 
-<UpgradeRemainingBlock
-rpc="https://terra-mainnet-rpc.shazoes.xyz"
-explorerUrl="https://explorer.shazoes.xyz/terra-mainnet/block"
-targetBlock={20060000}
 
-/>
+<span> 
+No active upgrade proposal. <i>Chain is up to date.</i>
+</span>
+
 
 ## Manual Upgrade
 
 ```js
 cd $HOME
 rm -rf terra
-git clone https://github.com/phoenix-directive/core terra
+git clone https://github.com/terra-money/core.git
 cd terra
-git checkout v2.19.0
+git checkout v2.3.0
 make install
 sudo systemctl restart terrad && sudo journalctl -fu terrad -o cat
 ```

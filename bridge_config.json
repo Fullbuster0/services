@@ -1,0 +1,27 @@
+{
+  "chains": {
+    "atomone": {
+      "chain_name": "Atomone",
+      "chain_id": "atomone-1",
+      "rest_endpoints": [
+        "https://atomone-mainnet-api.shazoes.xyz"
+      ],
+      "gov_module": "atomone.gov.v1",
+      "doc_path": "mainnets/atomone/upgrade.md",
+      "node_version": "v3.3.0",
+      "manual_upgrade": "cd $HOME\nrm -rf atomone\ngit clone https://github.com/atomone-hub/atomone.git\ncd atomone\ngit checkout v3.0.3\nmake install\nsudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat"
+    },
+    "terra": {
+      "chain_name": "Terra",
+      "chain_id": "phoenix-1",
+      "rest_endpoints": [
+        "https://terra-mainnet-api.shazoes.xyz",
+        "https://phoenix-lcd.terra.dev"
+      ],
+      "gov_module": "v1beta1",
+      "doc_path": "mainnets/terra/upgrade.md",
+      "node_version": "v2.4.0",
+      "manual_upgrade": "cd $HOME\nrm -rf terra\ngit clone https://github.com/terra-money/core.git\ncd terra\ngit checkout v2.3.0\nmake install\nsudo systemctl restart terrad && sudo journalctl -fu terrad -o cat"
+    }
+  }
+}

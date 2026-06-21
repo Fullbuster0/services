@@ -13,9 +13,11 @@ import UpgradeRemainingBlock from "@site/src/components/Upgrade/UpgradeRemaining
  Chain ID: `atomone-1` | Node Version: `v3.3.0`
 </span>
 
+
 <span> 
-Upgrade at height: <a href="https://explorer.shazoes.xyz/atomone-mainnet/block/5902000">5902000</a><i>Please don`t upgrade before the specified height.</i>
+No active upgrade proposal. <i>Chain is up to date.</i>
 </span>
+
 
 ## Manual Upgrade
 
