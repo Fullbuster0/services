@@ -1,0 +1,31 @@
+2026-06-21 06:10:25,136 [INFO] ━━━ Processing [Atomone] ━━━
+2026-06-21 06:10:25,167 [DEBUG] http_get_json failed https://atomone-mainnet-api.shazoes.xyz/atomone/gov/v1/proposals?proposal_status=VOTING_PERIOD&pagination.limit=10: HTTP Error 400: Bad Request
+2026-06-21 06:10:25,172 [DEBUG] http_get_json failed https://atomone-mainnet-api.shazoes.xyz/cosmos/gov/v1beta1/proposals?proposal_status=2&pagination.limit=10: HTTP Error 501: Not Implemented
+2026-06-21 06:10:25,177 [DEBUG] http_get_json failed https://atomone-mainnet-api.shazoes.xyz/cosmos/gov/v1beta1/proposals?proposal_status=VOTING_PERIOD&pagination.limit=10: HTTP Error 501: Not Implemented
+2026-06-21 06:10:25,182 [DEBUG] http_get_json failed https://atomone-api.itrocket.net/atomone/gov/v1/proposals?proposal_status=2&pagination.limit=10: <urlopen error [Errno -2] Name or service not known>
+2026-06-21 06:10:25,190 [DEBUG] http_get_json failed https://atomone-api.itrocket.net/atomone/gov/v1/proposals?proposal_status=VOTING_PERIOD&pagination.limit=10: <urlopen error [Errno -2] Name or service not known>
+2026-06-21 06:10:25,221 [DEBUG] http_get_json failed https://atomone-api.itrocket.net/cosmos/gov/v1beta1/proposals?proposal_status=2&pagination.limit=10: <urlopen error [Errno -2] Name or service not known>
+2026-06-21 06:10:25,229 [DEBUG] http_get_json failed https://atomone-api.itrocket.net/cosmos/gov/v1beta1/proposals?proposal_status=VOTING_PERIOD&pagination.limit=10: <urlopen error [Errno -2] Name or service not known>
+2026-06-21 06:10:25,229 [DEBUG] [atomone] No change (cached: None)
+2026-06-21 06:10:25,234 [INFO] [atomone] DRY-RUN: would update /home/hermes/services/mainnets/atomone/upgrade.md
+2026-06-21 06:10:25,234 [INFO] ━━━ Done. Updated: 1 chain(s) ━━━
+2026-06-21 06:15:25,488 [INFO] ━━━ Processing [Atomone] ━━━
+2026-06-21 06:15:25,498 [DEBUG] [Atomone] 0 proposals at https://atomone-mainnet-api.shazoes.xyz/atomone/gov/v1/proposals
+2026-06-21 06:15:25,498 [DEBUG] [atomone] No change (cached: None)
+2026-06-21 06:15:25,498 [INFO] [atomone] DRY-RUN: would update /home/hermes/services/mainnets/atomone/upgrade.md
+2026-06-21 06:15:25,498 [INFO] ━━━ Processing [Terra] ━━━
+2026-06-21 06:15:25,524 [DEBUG] [Terra] 0 proposals at https://terra-mainnet-api.shazoes.xyz/cosmos/gov/v1beta1/proposals
+2026-06-21 06:15:25,604 [DEBUG] http_get_json failed https://phoenix-lcd.terra.dev/cosmos/gov/v1beta1/proposals?proposal_status=2&pagination.limit=10: HTTP Error 500: Internal Server Error
+2026-06-21 06:15:25,604 [DEBUG] [terra] No change (cached: None)
+2026-06-21 06:15:25,616 [INFO] [terra] DRY-RUN: would update /home/hermes/services/mainnets/terra/upgrade.md
+2026-06-21 06:15:25,616 [INFO] ━━━ Done. Updated: 2 chain(s) ━━━
+2026-06-21 06:15:33,939 [INFO] ━━━ Processing [Atomone] ━━━
+2026-06-21 06:15:33,958 [INFO] [atomone] ✓ Wrote /home/hermes/services/mainnets/atomone/upgrade.md
+2026-06-21 06:15:33,958 [INFO] ━━━ Processing [Terra] ━━━
+2026-06-21 06:15:34,068 [INFO] [terra] ✓ Wrote /home/hermes/services/mainnets/terra/upgrade.md
+2026-06-21 06:15:34,068 [INFO] State saved → /home/hermes/services/bridge_state.json
+2026-06-21 06:15:34,068 [INFO] ━━━ Done. Updated: 2 chain(s) ━━━
+2026-06-21 07:16:22,496 [INFO] Processing Atomone...
+2026-06-21 07:16:22,604 [INFO] Processing Terra...
+2026-06-21 07:16:22,677 [INFO] Processing AtomOne Testnet...
+2026-06-21 07:16:22,805 [INFO] Processing Hippo Protocol Testnet...

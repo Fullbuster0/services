@@ -3,25 +3,58 @@
     "atomone": {
       "chain_name": "Atomone",
       "chain_id": "atomone-1",
+      "type": "mainnet",
       "rest_endpoints": [
         "https://atomone-mainnet-api.shazoes.xyz"
       ],
       "gov_module": "atomone.gov.v1",
       "doc_path": "mainnets/atomone/upgrade.md",
+      "json_path": "static/data/mainnetupgrade.json",
+      "explorer_url": "https://explorer.shazoes.xyz/atomone-mainnet/gov",
       "node_version": "v3.3.0",
       "manual_upgrade": "cd $HOME\nrm -rf atomone\ngit clone https://github.com/atomone-hub/atomone.git\ncd atomone\ngit checkout v3.0.3\nmake install\nsudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat"
     },
     "terra": {
       "chain_name": "Terra",
       "chain_id": "phoenix-1",
+      "type": "mainnet",
       "rest_endpoints": [
-        "https://terra-mainnet-api.shazoes.xyz",
-        "https://phoenix-lcd.terra.dev"
+        "https://terra-mainnet-api.shazoes.xyz"
       ],
-      "gov_module": "v1beta1",
+      "gov_module": "v1",
       "doc_path": "mainnets/terra/upgrade.md",
+      "json_path": "static/data/mainnetupgrade.json",
+      "explorer_url": "https://explorer.shazoes.xyz/terra-mainnet/gov",
       "node_version": "v2.4.0",
       "manual_upgrade": "cd $HOME\nrm -rf terra\ngit clone https://github.com/terra-money/core.git\ncd terra\ngit checkout v2.3.0\nmake install\nsudo systemctl restart terrad && sudo journalctl -fu terrad -o cat"
+    },
+    "atomone-testnet": {
+      "chain_name": "AtomOne Testnet",
+      "chain_id": "atomone-testnet-1",
+      "type": "testnet",
+      "rest_endpoints": [
+        "https://atomone-testnet-api.shazoes.xyz"
+      ],
+      "gov_module": "atomone.gov.v1",
+      "doc_path": "testnets/atomone/upgrade.md",
+      "json_path": "static/data/testnetupgrade.json",
+      "explorer_url": "https://explorer.shazoes.xyz/atomone-testnet/gov",
+      "node_version": "v3.0.1",
+      "manual_upgrade": "cd $HOME\nrm -rf atomone\ngit clone https://github.com/atomone-hub/atomone.git\ncd atomone\ngit checkout v3.0.1\nmake install\nsudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat"
+    },
+    "hippo-testnet": {
+      "chain_name": "Hippo Protocol Testnet",
+      "chain_id": "hippo-1",
+      "type": "testnet",
+      "rest_endpoints": [
+        "https://hippo-testnet-rpc.shazoes.xyz"
+      ],
+      "gov_module": "v1",
+      "doc_path": "testnets/hippo/upgrade.md",
+      "json_path": "static/data/testnetupgrade.json",
+      "explorer_url": "https://explorer.shazoes.xyz/hippo-testnet/gov",
+      "node_version": "v1.0.1",
+      "manual_upgrade": "# Manual upgrade not configured"
     }
   }
 }
