@@ -5,12 +5,14 @@
       "chain_id": "atomone-1",
       "type": "mainnet",
       "rest_endpoints": [
-        "https://atomone-mainnet-api.shazoes.xyz"
+        "https://atomone-mainnet-api.shazoes.xyz",
+        "https://atomone-mainnet-api.itrocket.net",
+        "https://mainnet-atomone-api.konsortech.xyz"
       ],
       "gov_module": "atomone.gov.v1",
       "doc_path": "mainnets/atomone/upgrade.md",
       "json_path": "static/data/mainnetupgrade.json",
-      "explorer_url": "https://explorer.shazoes.xyz/atomone-mainnet/gov",
+      "explorer_url": "https://explorer.shazoes.xyz/atomone-mainnet/gov/",
       "node_version": "v3.3.0",
       "manual_upgrade": "cd $HOME\nrm -rf atomone\ngit clone https://github.com/atomone-hub/atomone.git\ncd atomone\ngit checkout v3.0.3\nmake install\nsudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat"
     },
@@ -19,14 +21,96 @@
       "chain_id": "phoenix-1",
       "type": "mainnet",
       "rest_endpoints": [
-        "https://terra-mainnet-api.shazoes.xyz"
+        "https://terra-mainnet-api.shazoes.xyz",
+        "https://rest.terra.org",
+        "https://terra-api.polkachu.com"
       ],
       "gov_module": "v1",
       "doc_path": "mainnets/terra/upgrade.md",
       "json_path": "static/data/mainnetupgrade.json",
-      "explorer_url": "https://explorer.shazoes.xyz/terra-mainnet/gov",
+      "explorer_url": "https://explorer.shazoes.xyz/terra-mainnet/gov/",
       "node_version": "v2.4.0",
       "manual_upgrade": "cd $HOME\nrm -rf terra\ngit clone https://github.com/terra-money/core.git\ncd terra\ngit checkout v2.3.0\nmake install\nsudo systemctl restart terrad && sudo journalctl -fu terrad -o cat"
+    },
+    "axone": {
+      "chain_name": "Axone",
+      "chain_id": "axone-1",
+      "type": "mainnet",
+      "rest_endpoints": [
+        "https://axone-mainnet-api.shazoes.xyz",
+        "https://api.axone.cumulo.com.es",
+        "https://axone-api.highstakes.ch"
+      ],
+      "gov_module": "v1",
+      "doc_path": "mainnets/axone/upgrade.md",
+      "json_path": "static/data/mainnetupgrade.json",
+      "explorer_url": "https://explorer.shazoes.xyz/axone-mainnet/gov/",
+      "node_version": "v1.0.0",
+      "manual_upgrade": "# Manual upgrade not configured"
+    },
+    "hippo": {
+      "chain_name": "Hippo Protocol",
+      "chain_id": "hippo-1",
+      "type": "mainnet",
+      "rest_endpoints": [
+        "https://hippo-mainnet-api.shazoes.xyz",
+        "https://api.hippo-protocol.com",
+        "https://hippo.api.nodeshub.online"
+      ],
+      "gov_module": "v1",
+      "doc_path": "mainnets/hippo/upgrade.md",
+      "json_path": "static/data/mainnetupgrade.json",
+      "explorer_url": "https://explorer.shazoes.xyz/hippo-mainnet/gov/",
+      "node_version": "v1.0.0",
+      "manual_upgrade": "# Manual upgrade not configured"
+    },
+    "lava": {
+      "chain_name": "Lava Network",
+      "chain_id": "lava-1",
+      "type": "mainnet",
+      "rest_endpoints": [
+        "https://lava-mainnet-api.shazoes.xyz",
+        "https://lava.rest.lava.build",
+        "https://lava-api.polkachu.com"
+      ],
+      "gov_module": "v1",
+      "doc_path": "mainnets/lava/upgrade.md",
+      "json_path": "static/data/mainnetupgrade.json",
+      "explorer_url": "https://explorer.shazoes.xyz/lava-mainnet/gov/",
+      "node_version": "v1.0.0",
+      "manual_upgrade": "# Manual upgrade not configured"
+    },
+    "shentu": {
+      "chain_name": "Shentu",
+      "chain_id": "shentu-2.2",
+      "type": "mainnet",
+      "rest_endpoints": [
+        "https://shentu-mainnet-api.shazoes.xyz",
+        "https://rest.shentu.org",
+        "https://shentu-api.polkachu.com"
+      ],
+      "gov_module": "v1",
+      "doc_path": "mainnets/shentu/upgrade.md",
+      "json_path": "static/data/mainnetupgrade.json",
+      "explorer_url": "https://explorer.shazoes.xyz/shentu-mainnet/gov/",
+      "node_version": "v2.2.0",
+      "manual_upgrade": "# Manual upgrade not configured"
+    },
+    "zetachain": {
+      "chain_name": "Zetachain",
+      "chain_id": "zetachain_7000-1",
+      "type": "mainnet",
+      "rest_endpoints": [
+        "https://zetachain-mainnet-api.shazoes.xyz",
+        "https://zetachain-api.polkachu.com",
+        "https://zetachain-rest.publicnode.com"
+      ],
+      "gov_module": "v1",
+      "doc_path": "mainnets/zetachain/upgrade.md",
+      "json_path": "static/data/mainnetupgrade.json",
+      "explorer_url": "https://explorer.shazoes.xyz/zetachain-mainnet/gov/",
+      "node_version": "v1.0.0",
+      "manual_upgrade": "# Manual upgrade not configured"
     },
     "atomone-testnet": {
       "chain_name": "AtomOne Testnet",
@@ -38,13 +122,13 @@
       "gov_module": "atomone.gov.v1",
       "doc_path": "testnets/atomone/upgrade.md",
       "json_path": "static/data/testnetupgrade.json",
-      "explorer_url": "https://explorer.shazoes.xyz/atomone-testnet/gov",
+      "explorer_url": "https://explorer.shazoes.xyz/atomone-testnet/gov/",
       "node_version": "v3.0.1",
-      "manual_upgrade": "cd $HOME\nrm -rf atomone\ngit clone https://github.com/atomone-hub/atomone.git\ncd atomone\ngit checkout v3.0.1\nmake install\nsudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat"
+      "manual_upgrade": "# Manual upgrade not configured"
     },
     "hippo-testnet": {
       "chain_name": "Hippo Protocol Testnet",
-      "chain_id": "hippo-1",
+      "chain_id": "hippo-testnet-1",
       "type": "testnet",
       "rest_endpoints": [
         "https://hippo-testnet-rpc.shazoes.xyz"
@@ -52,7 +136,7 @@
       "gov_module": "v1",
       "doc_path": "testnets/hippo/upgrade.md",
       "json_path": "static/data/testnetupgrade.json",
-      "explorer_url": "https://explorer.shazoes.xyz/hippo-testnet/gov",
+      "explorer_url": "https://explorer.shazoes.xyz/hippo-testnet/gov/",
       "node_version": "v1.0.1",
       "manual_upgrade": "# Manual upgrade not configured"
     }
