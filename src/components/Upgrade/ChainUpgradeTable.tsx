@@ -5,10 +5,18 @@ import Link from "@docusaurus/Link";
 
 export default function ChainUpgradeTable({ chainType = "mainnet" }) {
   const [data, setData] = useState([]);
+  const [loaded, setLoaded] = useState(false);
   const upgrades = chainType === "testnet" ? testnetUpgrades : mainnetUpgrades;
 
   useEffect(() => {
     async function fetchData() {
+      // If JSON has no entries, render nothing.
+      if (!upgrades || upgrades.length === 0) {
+        setData([]);
+        setLoaded(true);
+        return;
+      }
+
       const results = await Promise.all(
         upgrades.map(async (chain) => {
           try {
@@ -17,7 +25,7 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
             const latestHeight = parseInt(json.result.sync_info.latest_block_height);
             const latestTime = new Date(json.result.sync_info.latest_block_time);
 
-            // Jika target height sudah dilewati, skip
+            // Hide items whose upgrade height has already been reached.
             if (latestHeight >= chain.target_height) {
               return null;
             }
@@ -43,7 +51,7 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
               timeLeft: `${days}d ${hours}h ${minutes}m`,
             };
           } catch (e) {
-            // Jika error, tetap tampil untuk monitoring
+            // Keep entries with RPC errors visible so the operator can debug.
             return {
               ...chain,
               latestHeight: "Error",
@@ -54,16 +62,23 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
         })
       );
 
-      // Filter chain yang null (sudah lewat)
-      const filtered = results.filter((item) => item !== null && (item.latestHeight === "Error" || item.latestHeight < item.target_height));
-
+      const filtered = results.filter(
+        (item) => item !== null && item.latestHeight !== "Error"
+      );
       setData(filtered);
+      setLoaded(true);
     }
 
     fetchData();
     const interval = setInterval(fetchData, 30000);
     return () => clearInterval(interval);
   }, [chainType]);
+
+  // Render nothing until first load completes.
+  if (!loaded) return null;
+
+  // Render nothing when there are no upcoming upgrades — no fallback text.
+  if (data.length === 0) return null;
 
   return (
     <div className="overflow-x-auto mt-4">
@@ -81,32 +96,24 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
           </tr>
         </thead>
         <tbody className="text-gray-900 dark:text-gray-100">
-          {data.length === 0 ? (
-            <tr>
-              <td colSpan={8} className="text-center px-4 py-6 text-gray-600 dark:text-gray-300">
-                No chain upgrades scheduled yet.
+          {data.map((chain, idx) => (
+            <tr key={idx} className="hover:bg-gray-100 dark:hover:bg-gray-700">
+              <td className="px-4 py-2">{idx + 1}</td>
+              <td className="px-4 py-2">
+                <Link href={chain.link}>{chain.network}</Link>
+              </td>
+              <td className="px-4 py-2">
+                <Link href={chain.proposal}>Proposal</Link>
+              </td>
+              <td className="px-4 py-2">{chain.target_height}</td>
+              <td className="px-4 py-2">{chain.timeLeft}</td>
+              <td className="px-4 py-2">{chain.eta}</td>
+              <td className="px-4 py-2">{chain.version}</td>
+              <td className="px-4 py-2">
+                <Link href={`${chain.link}upgrade`}>Guide</Link>
               </td>
             </tr>
-          ) : (
-            data.map((chain, idx) => (
-              <tr key={idx} className="hover:bg-gray-100 dark:hover:bg-gray-700">
-                <td className="px-4 py-2">{idx + 1}</td>
-                <td className="px-4 py-2">
-                  <Link href={chain.link}>{chain.network}</Link>
-                </td>
-                <td className="px-4 py-2">
-                  <Link href={chain.proposal}>Proposal</Link>
-                </td>
-                <td className="px-4 py-2">{chain.target_height}</td>
-                <td className="px-4 py-2">{chain.timeLeft}</td>
-                <td className="px-4 py-2">{chain.eta}</td>
-                <td className="px-4 py-2">{chain.version}</td>
-                <td className="px-4 py-2">
-                  <Link href={`${chain.link}upgrade`}>Guide</Link>
-                </td>
-              </tr>
-            ))
-          )}
+          ))}
         </tbody>
       </table>
     </div>
