@@ -2,7 +2,7 @@
   {
     "network": "Atomone",
     "link": "/mainnets/atomone/",
-    "rpc": "https://atomone-mainnet-api.shazoes.xyz",
+    "rpc": "https://atomone-mainnet-rpc.shazoes.xyz",
     "target_height": 9999999999,
     "version": "v3.4.0",
     "proposal": "https://explorer.shazoes.xyz/atomone/gov/47"
@@ -10,7 +10,7 @@
   {
     "network": "Axone",
     "link": "/mainnets/axone/",
-    "rpc": "https://axone-api.shazoes.xyz",
+    "rpc": "https://axone-mainnet-rpc.shazoes.xyz",
     "target_height": 9999999999,
     "version": "v0.8.0",
     "proposal": "https://explorer.shazoes.xyz/axone/gov/12"
