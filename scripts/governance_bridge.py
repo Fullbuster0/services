@@ -28,7 +28,7 @@ args = parser.parse_args()
 
 WIB = timezone(timedelta(hours=7))
 LOG_PATH = Path("bridge.log").resolve()
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", 
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s",
                     handlers=[logging.FileHandler(LOG_PATH, encoding="utf-8"), logging.StreamHandler()])
 log = logging.getLogger("bridge")
 
@@ -115,15 +115,22 @@ def extract_version_from_proposal(p: dict, fallback: str) -> str:
 
 
 def update_files(chain_id, chain_cfg, upgrade):
-    # Determine the most accurate version available.
-    if upgrade:
-        ver = extract_version_from_proposal(upgrade.get("_raw", {}), chain_cfg["node_version"])
-    else:
-        ver = chain_cfg["node_version"]
+    """
+    Update markdown and JSON files. Logic:
+    - /upgrade            : uses PROPOSAL version when active, else stable.
+    - /node-installation  : uses STABLE version (always).
+    - /sync /useful-commands : uses STABLE version in header (always).
+    """
+    # Determine both versions separately
+    ver_upgrade = (
+        extract_version_from_proposal(upgrade.get("_raw", {}), chain_cfg["node_version"])
+        if upgrade else chain_cfg["node_version"]
+    )
+    ver_stable = chain_cfg["node_version"]
 
-    log.info(f"  → version in use for {chain_cfg['chain_name']}: {ver}")
+    log.info(f"  → {chain_cfg['chain_name']}: stable={ver_stable}, upgrade={ver_upgrade}")
 
-    # 1. Update Markdown (Detail Page)
+    # 1. /upgrade.md (Detail Page) — proposal-aware
     md_path = Path(f"/home/hermes/services/{chain_cfg['doc_path']}").resolve()
     content = f"""---
 hide_table_of_contents: false
@@ -133,29 +140,74 @@ sidebar_position: 4
 <div className="h1-with-icon icon-{chain_id}">
 # {chain_cfg['chain_name']} Upgrade
 </div>
-<span className="sub-lines">Chain ID: `{chain_cfg['chain_id']}` | Node Version: `{ver}`</span>
+<span className="sub-lines">Chain ID: `{chain_cfg['chain_id']}` | Node Version: `{ver_upgrade}`</span>
 """
     if upgrade:
         content += f"""
-
 <span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']})</span>
 
 > {upgrade['description']}
+
 """
     else:
         content += "\n\n"
-    
-    # Generate manual upgrade command
+
+    # Manual Upgrade command for /upgrade.md uses proposal version
     manual_upgrade = chain_cfg['upgrade_template'].format(
         folder=chain_cfg['folder'],
         repo=chain_cfg['repo'],
         binary=chain_cfg['binary'],
-        version=ver
+        version=ver_upgrade
     )
-    content += f"\n\n## Manual Upgrade\n\n```bash\n{manual_upgrade}\n```"
-    if not args.dry_run: atomic_write_text(md_path, content)
-    
-    # 2. Update JSON (Overview Grid)
+    content += f"## Manual Upgrade\n\n```bash\n{manual_upgrade}\n```"
+
+    if not args.dry_run:
+        atomic_write_text(md_path, content)
+        log.info(f"  ✓ Wrote {md_path} (upgrade.md, ver={ver_upgrade})")
+
+    # 2. /node-installation.md — uses STABLE version only
+    install_path = Path(f"/home/hermes/services/{chain_cfg['doc_path'].replace('upgrade.md', 'node-installation.md')}").resolve()
+    if install_path.exists():
+        try:
+            install_content = install_path.read_text(encoding="utf-8")
+            install_cmd = chain_cfg['upgrade_template'].format(
+                folder=chain_cfg['folder'],
+                repo=chain_cfg['repo'],
+                binary=chain_cfg['binary'],
+                version=ver_stable
+            )
+            # Replace any `git checkout {version}` or `git checkout ...version` patterns with stable
+            install_content = re.sub(
+                r"(git checkout\s+)[^\s]+",
+                rf"\g<1>{ver_stable}",
+                install_content
+            )
+            if not args.dry_run:
+                atomic_write_text(install_path, install_content)
+                log.info(f"  ✓ Wrote {install_path} (node-installation.md, ver={ver_stable})")
+        except Exception as e:
+            log.warning(f"  ! Could not update {install_path}: {e}")
+
+    # 3. /sync.md and /useful-commands.md — STABLE version in header
+    for sibling in ("sync.md", "useful-commands.md"):
+        sibling_path = Path(f"/home/hermes/services/{chain_cfg['doc_path'].replace('upgrade.md', sibling)}").resolve()
+        if not sibling_path.exists():
+            continue
+        try:
+            sibling_content = sibling_path.read_text(encoding="utf-8")
+            # Update any `Node Version: \`...\`` line
+            sibling_content = re.sub(
+                r"(Node Version:\s*`)[^`]+(`)",
+                rf"\g<1>{ver_stable}\g<2>",
+                sibling_content
+            )
+            if not args.dry_run:
+                atomic_write_text(sibling_path, sibling_content)
+                log.info(f"  ✓ Wrote {sibling_path} ({sibling}, ver={ver_stable})")
+        except Exception as e:
+            log.warning(f"  ! Could not update {sibling_path}: {e}")
+
+    # 4. JSON (Overview Grid)
     json_path = Path(f"/home/hermes/services/{chain_cfg['json_path']}").resolve()
     if json_path.exists():
         data = json.loads(json_path.read_text(encoding="utf-8"))
@@ -166,16 +218,16 @@ sidebar_position: 4
                 "link": f"/{chain_cfg['doc_path'].replace('upgrade.md', '')}",
                 "rpc": get_healthiest_endpoint(chain_cfg['rest_endpoints']),
                 "target_height": int(upgrade['height']),
-                "version": ver,
+                "version": ver_upgrade,
                 "proposal": f"{chain_cfg['explorer_url']}/{upgrade['proposal_id']}"
             })
         if not args.dry_run:
             ok, err = validate_upgrade_json(data)
             if ok:
                 atomic_write_json(json_path, data)
-                log.info(f"Wrote {json_path}")
+                log.info(f"  ✓ Wrote {json_path} (overview grid)")
             else:
-                log.error(f"Skipped {json_path} — {err}")
+                log.error(f"  ✗ Skipped {json_path} — {err}")
 
 def main():
     config = json.loads(Path(args.config).read_text())
@@ -196,7 +248,7 @@ def main():
                 }
                 break
         update_files(cid, cfg, upgrade)
-    
+
     if args.commit and not args.dry_run:
         subprocess.run(["git", "add", "."], cwd=Path(args.config).parent)
         subprocess.run(["git", "commit", "-m", "bridge: auto-sync upgrade data"], cwd=Path(args.config).parent)
