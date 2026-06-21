@@ -53,35 +53,22 @@ UPGRADE_ITEM_SCHEMA = {
     "required": ["network", "link", "rpc", "target_height", "version", "proposal"],
     "additionalProperties": False,
 }
-
-UPGRADE_JSON_SCHEMA = {
-    "type": "array",
-    "items": UPGRADE_ITEM_SCHEMA,
-}
+UPGRADE_JSON_SCHEMA = {"type": "array", "items": UPGRADE_ITEM_SCHEMA}
 
 def validate_upgrade_json(data: list) -> tuple[bool, str]:
-    """Validate upgrade JSON array against schema.  Returns (ok, error_msg)."""
-    if not isinstance(data, list):
-        return False, "Root value must be a JSON array"
+    if not isinstance(data, list): return False, "Root must be array"
     try:
         validate(instance=data, schema=UPGRADE_JSON_SCHEMA)
         return True, ""
-    except ValidationError as e:
-        path = " → ".join(str(p) for p in e.absolute_path) if e.absolute_path else "root"
-        return False, f"Validation failed at {path}: {e.message}"
-    except SchemaError as e:
-        return False, f"Schema error: {e.message}"
+    except ValidationError as e: return False, e.message
 
 def check_endpoint_health(url: str, timeout: int = 5) -> bool:
     try:
         ctx = ssl._create_unverified_context()
         req = urllib.request.Request(f"{url.rstrip('/')}/status", headers={"User-Agent": "ServicesBridge/1.0"})
         with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
-            if r.status == 200:
-                data = json.loads(r.read().decode("utf-8"))
-                return "sync_info" in data.get("result", {})
+            return r.status == 200 and "sync_info" in json.loads(r.read().decode("utf-8")).get("result", {})
     except: return False
-    return False
 
 def get_healthiest_endpoint(endpoints: list) -> str:
     for ep in endpoints:
@@ -90,15 +77,20 @@ def get_healthiest_endpoint(endpoints: list) -> str:
 
 def fetch_voting_proposals(chain_cfg: dict) -> list:
     eps = chain_cfg.get("rest_endpoints", [])
-    gov = chain_cfg.get("gov_module", "v1beta1")
     paths = [("/atomone/gov/v1/proposals", "2"), ("/cosmos/gov/v1/proposals", "1"), ("/cosmos/gov/v1beta1/proposals", "2")]
     for ep in eps:
         for path, sc in paths:
-            data = http_get_json(f"{ep.rstrip('/')}{path}?proposal_status={sc}&pagination.limit=10")
-            if data and data.get("proposals"): return data["proposals"]
+            try:
+                with urllib.request.urlopen(f"{ep.rstrip('/')}{path}?proposal_status={sc}&pagination.limit=10", timeout=5) as r:
+                    data = json.loads(r.read().decode("utf-8"))
+                    if data and data.get("proposals"): return data["proposals"]
+            except: continue
     return []
 
 def update_files(chain_id, chain_cfg, upgrade):
+    # Detect version from proposal
+    ver = upgrade.get('version', chain_cfg['node_version']) if upgrade else chain_cfg['node_version']
+    
     # 1. Update Markdown (Detail Page)
     md_path = Path(f"/home/hermes/services/{chain_cfg['doc_path']}").resolve()
     content = f"""---
@@ -109,13 +101,24 @@ sidebar_position: 4
 <div className="h1-with-icon icon-{chain_id}">
 # {chain_cfg['chain_name']} Upgrade
 </div>
-<span className="sub-lines">Chain ID: `{chain_cfg['chain_id']}` | Node Version: `{chain_cfg['node_version']}`</span>
+<span className="sub-lines">Chain ID: `{chain_cfg['chain_id']}` | Node Version: `{ver}`</span>
 """
     if upgrade:
-        content += f"\n\n<span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']})</span>\n\n> {upgrade['description']}\n"
-    else:
-        content += "\n\n<span>No active upgrade proposal.</span>\n"
-    content += f"\n\n## Manual Upgrade\n\n```js\n{chain_cfg['manual_upgrade']}\n```"
+        content += f"""
+
+<span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']})</span>
+
+> {upgrade['description']}
+"""
+    
+    # Generate manual upgrade command
+    manual_upgrade = chain_cfg['upgrade_template'].format(
+        folder=chain_cfg['folder'],
+        repo=chain_cfg['repo'],
+        binary=chain_cfg['binary'],
+        version=ver
+    )
+    content += f"\n\n## Manual Upgrade\n\n```bash\n{manual_upgrade}\n```"
     if not args.dry_run: atomic_write_text(md_path, content)
     
     # 2. Update JSON (Overview Grid)
@@ -129,16 +132,16 @@ sidebar_position: 4
                 "link": f"/{chain_cfg['doc_path'].replace('upgrade.md', '')}",
                 "rpc": get_healthiest_endpoint(chain_cfg['rest_endpoints']),
                 "target_height": int(upgrade['height']),
-                "version": chain_cfg['node_version'],
+                "version": ver,
                 "proposal": f"{chain_cfg['explorer_url']}/{upgrade['proposal_id']}"
             })
         if not args.dry_run:
             ok, err = validate_upgrade_json(data)
             if ok:
                 atomic_write_json(json_path, data)
-                log.info(f"Wrote {json_path} ({len(data)} entr{'y' if len(data)==1 else 'ies'})")
+                log.info(f"Wrote {json_path}")
             else:
-                log.error(f"Skipped update of {json_path} — {err}")
+                log.error(f"Skipped {json_path} — {err}")
 
 def main():
     config = json.loads(Path(args.config).read_text())
@@ -149,9 +152,9 @@ def main():
         upgrade = None
         for p in props:
             if "SoftwareUpgrade" in str(p.get("content", {})):
-                # Simplified extraction for demo
                 h = p.get("content", {}).get("plan", {}).get("height", "0")
-                upgrade = {"height": h, "proposal_id": p.get("proposal_id"), "description": p.get("content", {}).get("title", "Upgrade")}
+                v = p.get("content", {}).get("plan", {}).get("name", "v?.?.?")
+                upgrade = {"height": h, "proposal_id": p.get("proposal_id"), "description": p.get("content", {}).get("title", "Upgrade"), "version": v}
                 break
         update_files(cid, cfg, upgrade)
     

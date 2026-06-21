@@ -1,0 +1,16 @@
+[
+  {
+    "network": "Celestia",
+    "link": "/mainnets/celestia/",
+    "rpc": "https://celestia-rpc.publicnode.com:443",
+    "target_height": 21499999,
+    "version": "v2.0.0",
+    "proposal": "https://www.mintscan.io/celestia/gov/70",
+    "__demo_state": "UPGRADE_COMPLETED",
+    "__demo_proposal_id": 70,
+    "__demo_title": "Celestia v1.x → v2.0 upgrade",
+    "__demo_description": "Successfully executed at the scheduled height.",
+    "__demo_completed_at": "2026-06-21T11:03:11Z",
+    "__demo_status": "PASSED"
+  }
+]

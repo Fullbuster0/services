@@ -1,0 +1,26 @@
+[
+  {
+    "network": "Osmosis",
+    "link": "/mainnets/osmosis/",
+    "rpc": "https://osmosis-rpc.publicnode.com:443",
+    "target_height": 21500100,
+    "version": "v25.0.0",
+    "proposal": "https://www.mintscan.io/osmosis/gov/915",
+    "__demo_state": "UPGRADE_ACTIVE::IMMINENT (~100 blocks)",
+    "__demo_proposal_id": 915,
+    "__demo_title": "Osmosis hot-fix upgrade",
+    "__demo_description": "Voting has concluded; the chain is approaching the scheduled upgrade height.  Operators must upgrade before this block is reached."
+  },
+  {
+    "network": "Celestia",
+    "link": "/mainnets/celestia/",
+    "rpc": "https://celestia-rpc.publicnode.com:443",
+    "target_height": 21500001,
+    "version": "v2.0.0",
+    "proposal": "https://www.mintscan.io/celestia/gov/73",
+    "__demo_state": "UPGRADE_ACTIVE::CRITICAL (~1 block)",
+    "__demo_proposal_id": 73,
+    "__demo_title": "Celestia hot-fix upgrade",
+    "__demo_description": "Voting has concluded; the chain is approaching the scheduled upgrade height.  Operators must upgrade before this block is reached."
+  }
+]

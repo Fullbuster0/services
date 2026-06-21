@@ -9,7 +9,7 @@ sidebar_position: 4
 <span className="sub-lines">Chain ID: `lava-1` | Node Version: `v1.0.0`</span>
 
 
-<span>No active upgrade proposal.</span>
+
 
 
 ## Manual Upgrade

@@ -14,7 +14,11 @@
       "json_path": "static/data/mainnetupgrade.json",
       "explorer_url": "https://explorer.shazoes.xyz/atomone-mainnet/gov/",
       "node_version": "v3.3.0",
-      "manual_upgrade": "cd $HOME\nrm -rf atomone\ngit clone https://github.com/atomone-hub/atomone.git\ncd atomone\ngit checkout v3.0.3\nmake install\nsudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat"
+      "manual_upgrade": "cd $HOME\nrm -rf atomone\ngit clone https://github.com/atomone-hub/atomone.git\ncd atomone\ngit checkout v3.0.3\nmake install\nsudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat",
+      "folder": "atomone",
+      "repo": "https://github.com/atomone-hub/atomone.git",
+      "binary": "atomoned",
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
     },
     "terra": {
       "chain_name": "Terra",
@@ -30,7 +34,11 @@
       "json_path": "static/data/mainnetupgrade.json",
       "explorer_url": "https://explorer.shazoes.xyz/terra-mainnet/gov/",
       "node_version": "v2.4.0",
-      "manual_upgrade": "cd $HOME\nrm -rf terra\ngit clone https://github.com/terra-money/core.git\ncd terra\ngit checkout v2.3.0\nmake install\nsudo systemctl restart terrad && sudo journalctl -fu terrad -o cat"
+      "manual_upgrade": "cd $HOME\nrm -rf terra\ngit clone https://github.com/terra-money/core.git\ncd terra\ngit checkout v2.3.0\nmake install\nsudo systemctl restart terrad && sudo journalctl -fu terrad -o cat",
+      "folder": "terra",
+      "repo": "https://github.com/phoenix-directive/core",
+      "binary": "terrad",
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
     },
     "axone": {
       "chain_name": "Axone",
@@ -46,7 +54,11 @@
       "json_path": "static/data/mainnetupgrade.json",
       "explorer_url": "https://explorer.shazoes.xyz/axone-mainnet/gov/",
       "node_version": "v1.0.0",
-      "manual_upgrade": "# Manual upgrade not configured"
+      "manual_upgrade": "# Manual upgrade not configured",
+      "folder": "axoned",
+      "repo": "https://github.com/axone-protocol/axoned.git",
+      "binary": "axoned",
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
     },
     "hippo": {
       "chain_name": "Hippo Protocol",
@@ -62,7 +74,11 @@
       "json_path": "static/data/mainnetupgrade.json",
       "explorer_url": "https://explorer.shazoes.xyz/hippo-mainnet/gov/",
       "node_version": "v1.0.0",
-      "manual_upgrade": "# Manual upgrade not configured"
+      "manual_upgrade": "# Manual upgrade not configured",
+      "folder": "hippo",
+      "repo": "https://github.com/hippo-protocol/hippo.git",
+      "binary": "hippod",
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
     },
     "lava": {
       "chain_name": "Lava Network",
@@ -78,7 +94,11 @@
       "json_path": "static/data/mainnetupgrade.json",
       "explorer_url": "https://explorer.shazoes.xyz/lava-mainnet/gov/",
       "node_version": "v1.0.0",
-      "manual_upgrade": "# Manual upgrade not configured"
+      "manual_upgrade": "# Manual upgrade not configured",
+      "folder": "lava",
+      "repo": "https://github.com/lavanet/lava.git",
+      "binary": "lavad",
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
     },
     "shentu": {
       "chain_name": "Shentu",
@@ -94,7 +114,11 @@
       "json_path": "static/data/mainnetupgrade.json",
       "explorer_url": "https://explorer.shazoes.xyz/shentu-mainnet/gov/",
       "node_version": "v2.2.0",
-      "manual_upgrade": "# Manual upgrade not configured"
+      "manual_upgrade": "# Manual upgrade not configured",
+      "folder": "shentu",
+      "repo": "https://github.com/shentufoundation/shentu",
+      "binary": "shentud",
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
     },
     "zetachain": {
       "chain_name": "Zetachain",
@@ -110,7 +134,11 @@
       "json_path": "static/data/mainnetupgrade.json",
       "explorer_url": "https://explorer.shazoes.xyz/zetachain-mainnet/gov/",
       "node_version": "v1.0.0",
-      "manual_upgrade": "# Manual upgrade not configured"
+      "manual_upgrade": "# Manual upgrade not configured",
+      "folder": "zetacored",
+      "repo": "https://github.com/zeta-chain/node.git",
+      "binary": "zetacored",
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
     },
     "atomone-testnet": {
       "chain_name": "AtomOne Testnet",
@@ -124,7 +152,11 @@
       "json_path": "static/data/testnetupgrade.json",
       "explorer_url": "https://explorer.shazoes.xyz/atomone-testnet/gov/",
       "node_version": "v3.0.1",
-      "manual_upgrade": "# Manual upgrade not configured"
+      "manual_upgrade": "# Manual upgrade not configured",
+      "folder": "atomone",
+      "repo": "https://github.com/atomone-hub/atomone.git",
+      "binary": "atomoned",
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
     },
     "hippo-testnet": {
       "chain_name": "Hippo Protocol Testnet",
@@ -138,7 +170,11 @@
       "json_path": "static/data/testnetupgrade.json",
       "explorer_url": "https://explorer.shazoes.xyz/hippo-testnet/gov/",
       "node_version": "v1.0.1",
-      "manual_upgrade": "# Manual upgrade not configured"
+      "manual_upgrade": "# Manual upgrade not configured",
+      "folder": "hippo",
+      "repo": "https://github.com/hippo-protocol/hippo.git",
+      "binary": "hippod",
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
     }
   }
 }
