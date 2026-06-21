@@ -6,6 +6,7 @@ import json
 import os
 import sys
 import time
+import re
 import urllib.request
 import urllib.error
 import ssl
@@ -87,10 +88,41 @@ def fetch_voting_proposals(chain_cfg: dict) -> list:
             except: continue
     return []
 
+def extract_version_from_proposal(p: dict, fallback: str) -> str:
+    """Extract binary version from a SoftwareUpgrade proposal, with layered fallbacks."""
+    plan = p.get("content", {}).get("plan", {}) or {}
+    info = plan.get("info") or ""
+
+    # 1) plan.name — usually the cleanest (e.g. "v3.4.0")
+    name = plan.get("name")
+    if name and re.match(r"^v?\d", str(name)):
+        return str(name)
+
+    # 2) scan plan.info for version-like patterns
+    match = re.search(r"(v?\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)", info)
+    if match:
+        return match.group(1)
+
+    # 3) scan title / description for a version
+    for key in ("title", "description"):
+        val = p.get("content", {}).get(key, "") or ""
+        match = re.search(r"(v?\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)", str(val))
+        if match:
+            return match.group(1)
+
+    # 4) nothing matched — keep chain's current node_version
+    return fallback
+
+
 def update_files(chain_id, chain_cfg, upgrade):
-    # Detect version from proposal
-    ver = upgrade.get('version', chain_cfg['node_version']) if upgrade else chain_cfg['node_version']
-    
+    # Determine the most accurate version available.
+    if upgrade:
+        ver = extract_version_from_proposal(upgrade.get("_raw", {}), chain_cfg["node_version"])
+    else:
+        ver = chain_cfg["node_version"]
+
+    log.info(f"  → version in use for {chain_cfg['chain_name']}: {ver}")
+
     # 1. Update Markdown (Detail Page)
     md_path = Path(f"/home/hermes/services/{chain_cfg['doc_path']}").resolve()
     content = f"""---
@@ -155,8 +187,13 @@ def main():
         for p in props:
             if "SoftwareUpgrade" in str(p.get("content", {})):
                 h = p.get("content", {}).get("plan", {}).get("height", "0")
-                v = p.get("content", {}).get("plan", {}).get("name", "v?.?.?")
-                upgrade = {"height": h, "proposal_id": p.get("proposal_id"), "description": p.get("content", {}).get("title", "Upgrade"), "version": v}
+                upgrade = {
+                    "height": h,
+                    "proposal_id": p.get("proposal_id"),
+                    "description": p.get("content", {}).get("title", "Upgrade"),
+                    "version": p.get("content", {}).get("plan", {}).get("name", ""),
+                    "_raw": p
+                }
                 break
         update_files(cid, cfg, upgrade)
     
