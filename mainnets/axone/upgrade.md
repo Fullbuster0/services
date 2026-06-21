@@ -11,9 +11,14 @@ sidebar_position: 4
 
 
 
-
 ## Manual Upgrade
 
-```js
-# Manual upgrade not configured
+```bash
+cd $HOME
+rm -rf axoned
+git clone https://github.com/axone-protocol/axoned.git axoned
+cd axoned
+git checkout v1.0.0
+make install
+sudo systemctl restart axoned && sudo journalctl -fu axoned -o cat
 ```

@@ -11,9 +11,14 @@ sidebar_position: 4
 
 
 
-
 ## Manual Upgrade
 
-```js
-# Manual upgrade not configured
+```bash
+cd $HOME
+rm -rf shentu
+git clone https://github.com/shentufoundation/shentu shentu
+cd shentu
+git checkout v2.2.0
+make install
+sudo systemctl restart shentud && sudo journalctl -fu shentud -o cat
 ```

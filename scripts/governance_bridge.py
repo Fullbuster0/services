@@ -110,6 +110,8 @@ sidebar_position: 4
 
 > {upgrade['description']}
 """
+    else:
+        content += "\n\n"
     
     # Generate manual upgrade command
     manual_upgrade = chain_cfg['upgrade_template'].format(

@@ -11,9 +11,14 @@ sidebar_position: 4
 
 
 
-
 ## Manual Upgrade
 
-```js
-# Manual upgrade not configured
+```bash
+cd $HOME
+rm -rf hippo
+git clone https://github.com/hippo-protocol/hippo.git hippo
+cd hippo
+git checkout v1.0.1
+make install
+sudo systemctl restart hippod && sudo journalctl -fu hippod -o cat
 ```

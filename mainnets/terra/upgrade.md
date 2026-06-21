@@ -11,15 +11,14 @@ sidebar_position: 4
 
 
 
-
 ## Manual Upgrade
 
-```js
+```bash
 cd $HOME
 rm -rf terra
-git clone https://github.com/terra-money/core.git
+git clone https://github.com/phoenix-directive/core terra
 cd terra
-git checkout v2.3.0
+git checkout v2.4.0
 make install
 sudo systemctl restart terrad && sudo journalctl -fu terrad -o cat
 ```

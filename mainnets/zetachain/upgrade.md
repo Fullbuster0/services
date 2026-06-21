@@ -11,9 +11,14 @@ sidebar_position: 4
 
 
 
-
 ## Manual Upgrade
 
-```js
-# Manual upgrade not configured
+```bash
+cd $HOME
+rm -rf zetacored
+git clone https://github.com/zeta-chain/node.git zetacored
+cd zetacored
+git checkout v1.0.0
+make install
+sudo systemctl restart zetacored && sudo journalctl -fu zetacored -o cat
 ```

@@ -11,9 +11,14 @@ sidebar_position: 4
 
 
 
-
 ## Manual Upgrade
 
-```js
-# Manual upgrade not configured
+```bash
+cd $HOME
+rm -rf lava
+git clone https://github.com/lavanet/lava.git lava
+cd lava
+git checkout v1.0.0
+make install
+sudo systemctl restart lavad && sudo journalctl -fu lavad -o cat
 ```
