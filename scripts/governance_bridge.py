@@ -14,6 +14,7 @@ import argparse
 import subprocess
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
+from jsonschema import validate, ValidationError, SchemaError
 
 # ── CLI args ────────────────────────────────────────────────────────────────
 parser = argparse.ArgumentParser(description="Cosmos Governance → Markdown Bridge")
@@ -38,13 +39,54 @@ def atomic_write_text(file_path: Path, content: str) -> None:
 def atomic_write_json(file_path: Path, data: dict | list) -> None:
     atomic_write_text(file_path, json.dumps(data, indent=2, ensure_ascii=False))
 
-def http_get_json(url: str, timeout: int = 15) -> dict | None:
+# ── JSON Schema validation ────────────────────────────────────────────────────
+UPGRADE_ITEM_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "network":       {"type": "string", "minLength": 1},
+        "link":          {"type": "string", "minLength": 1},
+        "rpc":           {"type": "string", "minLength": 1},
+        "target_height": {"type": "integer", "minimum": 0},
+        "version":       {"type": "string", "minLength": 1},
+        "proposal":      {"type": "string", "minLength": 1},
+    },
+    "required": ["network", "link", "rpc", "target_height", "version", "proposal"],
+    "additionalProperties": False,
+}
+
+UPGRADE_JSON_SCHEMA = {
+    "type": "array",
+    "items": UPGRADE_ITEM_SCHEMA,
+}
+
+def validate_upgrade_json(data: list) -> tuple[bool, str]:
+    """Validate upgrade JSON array against schema.  Returns (ok, error_msg)."""
+    if not isinstance(data, list):
+        return False, "Root value must be a JSON array"
+    try:
+        validate(instance=data, schema=UPGRADE_JSON_SCHEMA)
+        return True, ""
+    except ValidationError as e:
+        path = " → ".join(str(p) for p in e.absolute_path) if e.absolute_path else "root"
+        return False, f"Validation failed at {path}: {e.message}"
+    except SchemaError as e:
+        return False, f"Schema error: {e.message}"
+
+def check_endpoint_health(url: str, timeout: int = 5) -> bool:
     try:
         ctx = ssl._create_unverified_context()
-        req = urllib.request.Request(url, headers={"User-Agent": "ServicesBridge/1.0"})
+        req = urllib.request.Request(f"{url.rstrip('/')}/status", headers={"User-Agent": "ServicesBridge/1.0"})
         with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
-            return json.loads(r.read().decode("utf-8")) if r.status == 200 else None
-    except: return None
+            if r.status == 200:
+                data = json.loads(r.read().decode("utf-8"))
+                return "sync_info" in data.get("result", {})
+    except: return False
+    return False
+
+def get_healthiest_endpoint(endpoints: list) -> str:
+    for ep in endpoints:
+        if check_endpoint_health(ep): return ep
+    return endpoints[0] if endpoints else ""
 
 def fetch_voting_proposals(chain_cfg: dict) -> list:
     eps = chain_cfg.get("rest_endpoints", [])
@@ -85,12 +127,18 @@ sidebar_position: 4
             data.append({
                 "network": chain_cfg['chain_name'],
                 "link": f"/{chain_cfg['doc_path'].replace('upgrade.md', '')}",
-                "rpc": chain_cfg['rest_endpoints'][0],
+                "rpc": get_healthiest_endpoint(chain_cfg['rest_endpoints']),
                 "target_height": int(upgrade['height']),
                 "version": chain_cfg['node_version'],
                 "proposal": f"{chain_cfg['explorer_url']}/{upgrade['proposal_id']}"
             })
-        if not args.dry_run: atomic_write_json(json_path, data)
+        if not args.dry_run:
+            ok, err = validate_upgrade_json(data)
+            if ok:
+                atomic_write_json(json_path, data)
+                log.info(f"Wrote {json_path} ({len(data)} entr{'y' if len(data)==1 else 'ies'})")
+            else:
+                log.error(f"Skipped update of {json_path} — {err}")
 
 def main():
     config = json.loads(Path(args.config).read_text())

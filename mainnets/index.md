@@ -3,7 +3,7 @@ sidebar_position: 2
 title: "Mainnets"
 ---
 
-import MainnetUpgrade from "@site/src/components/Upgrade/MainnetUpgrade";
+import ChainUpgradeTable from "@site/src/components/Upgrade/ChainUpgradeTable";
 
 <div className="mainnets-hero">
 
@@ -71,5 +71,5 @@ Shazoes is a validator that prioritizes stability, security, and maximum perform
 Stay updated with the latest upgrade proposals across all mainnets we support.
 
 <div className="upgrade-watcher-wrapper">
-  <MainnetUpgrade />
+  <ChainUpgradeTable chainType="mainnet" />
 </div>

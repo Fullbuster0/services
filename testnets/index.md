@@ -3,7 +3,7 @@ sidebar_position: 2
 title: "Testnets"
 ---
 
-import TestnetUpgrade from "@site/src/components/Upgrade/TestnetUpgrade";
+import ChainUpgradeTable from "../../src/components/Upgrade/ChainUpgradeTable";
 
 <div className="mainnets-hero">
 
@@ -71,5 +71,5 @@ Shazoes is a validator that prioritizes stability, security, and maximum perform
 Stay updated with the latest upgrade proposals across all testnets we support.
 
 <div className="upgrade-watcher-wrapper">
-  <TestnetUpgrade />
+  <ChainUpgradeTable chainType="testnet" />
 </div>

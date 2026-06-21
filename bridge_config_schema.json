@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "chains": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["chain_name", "chain_id", "type", "rest_endpoints", "gov_module", "doc_path", "json_path", "explorer_url", "node_version", "manual_upgrade"],
+        "properties": {
+          "chain_name": { "type": "string" },
+          "chain_id": { "type": "string" },
+          "type": { "type": "string" },
+          "rest_endpoints": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "gov_module": { "type": "string" },
+          "doc_path": { "type": "string" },
+          "json_path": { "type": "string" },
+          "explorer_url": { "type": "string" },
+          "node_version": { "type": "string" },
+          "manual_upgrade": { "type": "string" }
+        }
+      }
+    }
+  },
+  "required": ["chains"]
+}

@@ -17,7 +17,7 @@ export default function UpgradeRemainingBlock({ targetBlock = 1056500, rpc = "ht
     };
 
     fetchLatestBlock();
-    const interval = setInterval(fetchLatestBlock, 2000); // update setiap 2 detik
+    const interval = setInterval(fetchLatestBlock, 30000); // update setiap 30 detik
     return () => clearInterval(interval);
   }, [rpc]);
 

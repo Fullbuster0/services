@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import upgrades from "@site/static/data/testnetupgrade.json";
+import mainnetUpgrades from "@site/static/data/mainnetupgrade.json";
+import testnetUpgrades from "@site/static/data/testnetupgrade.json";
 import Link from "@docusaurus/Link";
 
-export default function TestnetUpgrade() {
+export default function ChainUpgradeTable({ chainType = "mainnet" }) {
   const [data, setData] = useState([]);
+  const upgrades = chainType === "testnet" ? testnetUpgrades : mainnetUpgrades;
 
   useEffect(() => {
     async function fetchData() {
@@ -61,7 +63,7 @@ export default function TestnetUpgrade() {
     fetchData();
     const interval = setInterval(fetchData, 30000);
     return () => clearInterval(interval);
-  }, []);
+  }, [chainType]);
 
   return (
     <div className="overflow-x-auto mt-4">
@@ -90,9 +92,7 @@ export default function TestnetUpgrade() {
               <tr key={idx} className="hover:bg-gray-100 dark:hover:bg-gray-700">
                 <td className="px-4 py-2">{idx + 1}</td>
                 <td className="px-4 py-2">
-                  <Link href={chain.link}>
-                    <a>{chain.network}</a>
-                  </Link>
+                  <Link href={chain.link}>{chain.network}</Link>
                 </td>
                 <td className="px-4 py-2">
                   <Link href={chain.proposal}>Proposal</Link>
@@ -102,9 +102,7 @@ export default function TestnetUpgrade() {
                 <td className="px-4 py-2">{chain.eta}</td>
                 <td className="px-4 py-2">{chain.version}</td>
                 <td className="px-4 py-2">
-                  <Link href={`${chain.link}upgrade`}>
-                    <a>Guide</a>
-                  </Link>
+                  <Link href={`${chain.link}upgrade`}>Guide</Link>
                 </td>
               </tr>
             ))
