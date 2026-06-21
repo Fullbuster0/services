@@ -17,7 +17,7 @@ type CardProps = {
 function getButtonClass(label: string): string {
   switch (label.toLowerCase()) {
     case "services":
-      return styles.buttonPrimary;
+      return styles.buttonAccent;
     case "explorer":
       return styles.buttonOutline;
     case "delegate":
