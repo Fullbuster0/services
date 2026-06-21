@@ -15,11 +15,5 @@ sidebar_position: 4
 ## Manual Upgrade
 
 ```js
-cd $HOME
-rm -rf atomone
-git clone https://github.com/atomone-hub/atomone.git
-cd atomone
-git checkout v3.0.1
-make install
-sudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat
+# Manual upgrade not configured
 ```
