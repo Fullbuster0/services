@@ -21,7 +21,7 @@ function getButtonClass(label: string): string {
     case "explorer":
       return styles.buttonOutline;
     case "delegate":
-      return styles.buttonAccent;
+      return styles.buttonPrimary;
     default:
       return "";
   }
