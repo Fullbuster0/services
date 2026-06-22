@@ -1,0 +1,1041 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/yay",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/yay",
+          "mainDocId": "testo",
+          "docs": [
+            {
+              "id": "testo",
+              "path": "/yay/testo",
+              "sidebar": "docSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "docSidebar": {
+              "link": {
+                "path": "/yay/testo",
+                "label": "testo"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    },
+    "mainnets": {
+      "path": "/mainnets",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/mainnets",
+          "mainDocId": "index",
+          "docs": [
+            {
+              "id": "atomone/atomone",
+              "path": "/mainnets/atomone/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "atomone/node-installation",
+              "path": "/mainnets/atomone/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "atomone/sync",
+              "path": "/mainnets/atomone/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "atomone/upgrade",
+              "path": "/mainnets/atomone/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "atomone/useful-commands",
+              "path": "/mainnets/atomone/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "axone/axone",
+              "path": "/mainnets/axone/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "axone/node-installation",
+              "path": "/mainnets/axone/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "axone/sync",
+              "path": "/mainnets/axone/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "axone/upgrade",
+              "path": "/mainnets/axone/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "axone/useful-commands",
+              "path": "/mainnets/axone/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "babylon/babylon",
+              "path": "/mainnets/babylon/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "babylon/node-installation",
+              "path": "/mainnets/babylon/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "babylon/sync",
+              "path": "/mainnets/babylon/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "babylon/upgrade",
+              "path": "/mainnets/babylon/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "babylon/useful-commands",
+              "path": "/mainnets/babylon/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "dhealth/dhealth",
+              "path": "/mainnets/dhealth/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "dhealth/node-installation",
+              "path": "/mainnets/dhealth/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "dhealth/sync",
+              "path": "/mainnets/dhealth/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "dhealth/upgrade",
+              "path": "/mainnets/dhealth/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "dhealth/useful-commands",
+              "path": "/mainnets/dhealth/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "fuel/fuel",
+              "path": "/mainnets/fuel/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "fuel/node-installation",
+              "path": "/mainnets/fuel/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "fuel/sync",
+              "path": "/mainnets/fuel/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "fuel/upgrade",
+              "path": "/mainnets/fuel/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "fuel/useful-commands",
+              "path": "/mainnets/fuel/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "hippo/hippo",
+              "path": "/mainnets/hippo/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "hippo/node-installation",
+              "path": "/mainnets/hippo/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "hippo/sync",
+              "path": "/mainnets/hippo/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "hippo/upgrade",
+              "path": "/mainnets/hippo/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "hippo/useful-commands",
+              "path": "/mainnets/hippo/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "index",
+              "path": "/mainnets/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "lava/lava",
+              "path": "/mainnets/lava/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "lava/node-installation",
+              "path": "/mainnets/lava/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "lava/sync",
+              "path": "/mainnets/lava/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "lava/upgrade",
+              "path": "/mainnets/lava/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "lava/useful-commands",
+              "path": "/mainnets/lava/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "lumera/lumera",
+              "path": "/mainnets/lumera/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "lumera/node-installation",
+              "path": "/mainnets/lumera/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "lumera/sync",
+              "path": "/mainnets/lumera/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "lumera/upgrade",
+              "path": "/mainnets/lumera/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "lumera/useful-commands",
+              "path": "/mainnets/lumera/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "mantra/mantra",
+              "path": "/mainnets/mantra/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "mantra/node-installation",
+              "path": "/mainnets/mantra/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "mantra/sync",
+              "path": "/mainnets/mantra/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "mantra/upgrade",
+              "path": "/mainnets/mantra/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "mantra/useful-commands",
+              "path": "/mainnets/mantra/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "nillion/nillion",
+              "path": "/mainnets/nillion/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "nillion/node-installation",
+              "path": "/mainnets/nillion/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "nillion/sync",
+              "path": "/mainnets/nillion/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "nillion/upgrade",
+              "path": "/mainnets/nillion/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "nillion/useful-commands",
+              "path": "/mainnets/nillion/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "provenance/node-installation",
+              "path": "/mainnets/provenance/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "provenance/provenance",
+              "path": "/mainnets/provenance/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "provenance/sync",
+              "path": "/mainnets/provenance/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "provenance/upgrade",
+              "path": "/mainnets/provenance/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "provenance/useful-commands",
+              "path": "/mainnets/provenance/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "regen/node-installation",
+              "path": "/mainnets/regen/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "regen/regen",
+              "path": "/mainnets/regen/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "regen/sync",
+              "path": "/mainnets/regen/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "regen/upgrade",
+              "path": "/mainnets/regen/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "regen/useful-commands",
+              "path": "/mainnets/regen/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "seda/node-installation",
+              "path": "/mainnets/seda/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "seda/seda",
+              "path": "/mainnets/seda/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "seda/sync",
+              "path": "/mainnets/seda/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "seda/upgrade",
+              "path": "/mainnets/seda/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "seda/useful-commands",
+              "path": "/mainnets/seda/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "selfchain/node-installation",
+              "path": "/mainnets/selfchain/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "selfchain/selfchain",
+              "path": "/mainnets/selfchain/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "selfchain/sync",
+              "path": "/mainnets/selfchain/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "selfchain/upgrade",
+              "path": "/mainnets/selfchain/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "selfchain/useful-commands",
+              "path": "/mainnets/selfchain/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "shentu/node-installation",
+              "path": "/mainnets/shentu/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "shentu/shentu",
+              "path": "/mainnets/shentu/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "shentu/sync",
+              "path": "/mainnets/shentu/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "shentu/upgrade",
+              "path": "/mainnets/shentu/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "shentu/useful-commands",
+              "path": "/mainnets/shentu/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "synternet/node-installation",
+              "path": "/mainnets/synternet/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "synternet/sync",
+              "path": "/mainnets/synternet/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "synternet/synternet",
+              "path": "/mainnets/synternet/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "synternet/upgrade",
+              "path": "/mainnets/synternet/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "synternet/useful-commands",
+              "path": "/mainnets/synternet/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "tellor/node-installation",
+              "path": "/mainnets/tellor/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "tellor/sync",
+              "path": "/mainnets/tellor/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "tellor/tellor",
+              "path": "/mainnets/tellor/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "tellor/upgrade",
+              "path": "/mainnets/tellor/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "tellor/useful-commands",
+              "path": "/mainnets/tellor/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "terra/node-installation",
+              "path": "/mainnets/terra/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "terra/sync",
+              "path": "/mainnets/terra/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "terra/terra",
+              "path": "/mainnets/terra/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "terra/upgrade",
+              "path": "/mainnets/terra/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "terra/useful-commands",
+              "path": "/mainnets/terra/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "union/node-installation",
+              "path": "/mainnets/union/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "union/sync",
+              "path": "/mainnets/union/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "union/union",
+              "path": "/mainnets/union/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "union/upgrade",
+              "path": "/mainnets/union/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "union/useful-commands",
+              "path": "/mainnets/union/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "zetachain/node-installation",
+              "path": "/mainnets/zetachain/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "zetachain/sync",
+              "path": "/mainnets/zetachain/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "zetachain/upgrade",
+              "path": "/mainnets/zetachain/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "zetachain/useful-commands",
+              "path": "/mainnets/zetachain/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "zetachain/zetachain",
+              "path": "/mainnets/zetachain/",
+              "sidebar": "mainnetsSidebars"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "mainnetsSidebars": {
+              "link": {
+                "path": "/mainnets/",
+                "label": "index"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    },
+    "testnets": {
+      "path": "/testnets",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/testnets",
+          "mainDocId": "index",
+          "docs": [
+            {
+              "id": "airchain/airchain",
+              "path": "/testnets/airchain/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "airchain/node-installation",
+              "path": "/testnets/airchain/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "airchain/sync",
+              "path": "/testnets/airchain/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "airchain/upgrade",
+              "path": "/testnets/airchain/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "airchain/useful-commands",
+              "path": "/testnets/airchain/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "atomone/atomone",
+              "path": "/testnets/atomone/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "atomone/node-installation",
+              "path": "/testnets/atomone/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "atomone/sync",
+              "path": "/testnets/atomone/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "atomone/upgrade",
+              "path": "/testnets/atomone/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "atomone/useful-commands",
+              "path": "/testnets/atomone/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "axone/axone",
+              "path": "/testnets/axone/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "axone/node-installation",
+              "path": "/testnets/axone/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "axone/sync",
+              "path": "/testnets/axone/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "axone/upgrade",
+              "path": "/testnets/axone/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "axone/useful-commands",
+              "path": "/testnets/axone/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "cardchain/cardchain",
+              "path": "/testnets/cardchain/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "cardchain/node-installation",
+              "path": "/testnets/cardchain/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "cardchain/sync",
+              "path": "/testnets/cardchain/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "cardchain/upgrade",
+              "path": "/testnets/cardchain/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "cardchain/useful-commands",
+              "path": "/testnets/cardchain/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "empeiria/empeiria",
+              "path": "/testnets/empeiria/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "empeiria/node-installation",
+              "path": "/testnets/empeiria/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "empeiria/sync",
+              "path": "/testnets/empeiria/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "empeiria/upgrade",
+              "path": "/testnets/empeiria/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "empeiria/useful-commands",
+              "path": "/testnets/empeiria/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "fuel/fuel",
+              "path": "/testnets/fuel/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "fuel/node-installation",
+              "path": "/testnets/fuel/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "fuel/sync",
+              "path": "/testnets/fuel/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "fuel/upgrade",
+              "path": "/testnets/fuel/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "fuel/useful-commands",
+              "path": "/testnets/fuel/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "galactica/galactica",
+              "path": "/testnets/galactica/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "galactica/node-installation",
+              "path": "/testnets/galactica/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "galactica/sync",
+              "path": "/testnets/galactica/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "galactica/upgrade",
+              "path": "/testnets/galactica/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "galactica/useful-commands",
+              "path": "/testnets/galactica/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "gnoland/gnoland",
+              "path": "/testnets/gnoland/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "gnoland/node-installation",
+              "path": "/testnets/gnoland/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "gnoland/sync",
+              "path": "/testnets/gnoland/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "gnoland/upgrade",
+              "path": "/testnets/gnoland/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "gnoland/useful-commands",
+              "path": "/testnets/gnoland/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "hippo/hippo",
+              "path": "/testnets/hippo/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "hippo/node-installation",
+              "path": "/testnets/hippo/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "hippo/sync",
+              "path": "/testnets/hippo/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "hippo/upgrade",
+              "path": "/testnets/hippo/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "hippo/useful-commands",
+              "path": "/testnets/hippo/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "index",
+              "path": "/testnets/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "lumera/lumera",
+              "path": "/testnets/lumera/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "lumera/node-installation",
+              "path": "/testnets/lumera/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "lumera/sync",
+              "path": "/testnets/lumera/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "lumera/upgrade",
+              "path": "/testnets/lumera/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "lumera/useful-commands",
+              "path": "/testnets/lumera/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "push/node-installation",
+              "path": "/testnets/push/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "push/push",
+              "path": "/testnets/push/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "push/sync",
+              "path": "/testnets/push/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "push/upgrade",
+              "path": "/testnets/push/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "push/useful-commands",
+              "path": "/testnets/push/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "seda/node-installation",
+              "path": "/testnets/seda/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "seda/seda",
+              "path": "/testnets/seda/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "seda/sync",
+              "path": "/testnets/seda/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "seda/upgrade",
+              "path": "/testnets/seda/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "seda/useful-commands",
+              "path": "/testnets/seda/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "soarchain/node-installation",
+              "path": "/testnets/soarchain/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "soarchain/soarchain",
+              "path": "/testnets/soarchain/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "soarchain/sync",
+              "path": "/testnets/soarchain/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "soarchain/upgrade",
+              "path": "/testnets/soarchain/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "soarchain/useful-commands",
+              "path": "/testnets/soarchain/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "story/node-installation",
+              "path": "/testnets/story/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "story/story",
+              "path": "/testnets/story/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "story/sync",
+              "path": "/testnets/story/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "story/upgrade",
+              "path": "/testnets/story/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "story/useful-commands",
+              "path": "/testnets/story/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "structs/node-installation",
+              "path": "/testnets/structs/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "structs/structs",
+              "path": "/testnets/structs/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "structs/sync",
+              "path": "/testnets/structs/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "structs/upgrade",
+              "path": "/testnets/structs/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "structs/useful-commands",
+              "path": "/testnets/structs/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "symphony/node-installation",
+              "path": "/testnets/symphony/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "symphony/symphony",
+              "path": "/testnets/symphony/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "symphony/sync",
+              "path": "/testnets/symphony/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "symphony/upgrade",
+              "path": "/testnets/symphony/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "symphony/useful-commands",
+              "path": "/testnets/symphony/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "tacchain/node-installation",
+              "path": "/testnets/tacchain/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "tacchain/sync",
+              "path": "/testnets/tacchain/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "tacchain/tacchain",
+              "path": "/testnets/tacchain/",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "tacchain/upgrade",
+              "path": "/testnets/tacchain/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "tacchain/useful-commands",
+              "path": "/testnets/tacchain/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "warden/node-installation",
+              "path": "/testnets/warden/node-installation",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "warden/sync",
+              "path": "/testnets/warden/sync",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "warden/upgrade",
+              "path": "/testnets/warden/upgrade",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "warden/useful-commands",
+              "path": "/testnets/warden/useful-commands",
+              "sidebar": "testnetsSidebars"
+            },
+            {
+              "id": "warden/warden",
+              "path": "/testnets/warden/",
+              "sidebar": "testnetsSidebars"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "testnetsSidebars": {
+              "link": {
+                "path": "/testnets/",
+                "label": "index"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

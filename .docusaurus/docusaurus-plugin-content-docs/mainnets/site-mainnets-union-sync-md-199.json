@@ -1,0 +1,28 @@
+{
+  "id": "union/sync",
+  "title": "Sync",
+  "description": "Chain ID v1.2.2",
+  "source": "@site/mainnets/union/sync.md",
+  "sourceDirName": "union",
+  "slug": "/union/sync",
+  "permalink": "/mainnets/union/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/union/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/union/upgrade"
+  }
+}

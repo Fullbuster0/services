@@ -1,0 +1,28 @@
+{
+  "id": "provenance/sync",
+  "title": "Sync",
+  "description": "Chain ID v1.25.0",
+  "source": "@site/mainnets/provenance/sync.md",
+  "sourceDirName": "provenance",
+  "slug": "/provenance/sync",
+  "permalink": "/mainnets/provenance/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/provenance/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/provenance/upgrade"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "fuel/upgrade",
+  "title": "Upgrade",
+  "description": "Chain ID seq-testnet-2.2",
+  "source": "@site/testnets/fuel/upgrade.md",
+  "sourceDirName": "fuel",
+  "slug": "/fuel/upgrade",
+  "permalink": "/testnets/fuel/upgrade",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Upgrade",
+    "sidebar_position": 4
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Sync",
+    "permalink": "/testnets/fuel/sync"
+  },
+  "next": {
+    "title": "Useful Commands",
+    "permalink": "/testnets/fuel/useful-commands"
+  }
+}

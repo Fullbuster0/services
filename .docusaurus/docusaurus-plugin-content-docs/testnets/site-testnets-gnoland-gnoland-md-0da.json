@@ -1,0 +1,26 @@
+{
+  "id": "gnoland/gnoland",
+  "title": "Gnoland",
+  "description": "Gno.land is a next-generation smart contract platform using Gno, an interpreted version of the general-purpose Go programming language. On Gno.land, smart contracts can be uploaded on-chain only by publishing their full source code, making it trivial to verify the contract or fork it into an improved version. With a system to publish reusable code libraries on-chain, Gno.land serves as the “GitHub” of the ecosystem, with realms built using fully transparent, auditable code that anyone can inspect and reuse.",
+  "source": "@site/testnets/gnoland/gnoland.md",
+  "sourceDirName": "gnoland",
+  "slug": "/gnoland/",
+  "permalink": "/testnets/gnoland/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Gnoland"
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/testnets/galactica/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/testnets/gnoland/node-installation"
+  }
+}

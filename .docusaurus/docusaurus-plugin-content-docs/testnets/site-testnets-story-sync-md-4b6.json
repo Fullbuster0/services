@@ -1,0 +1,28 @@
+{
+  "id": "story/sync",
+  "title": "Sync",
+  "description": "Chain ID v1.3.0",
+  "source": "@site/testnets/story/sync.md",
+  "sourceDirName": "story",
+  "slug": "/story/sync",
+  "permalink": "/testnets/story/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/story/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/story/upgrade"
+  }
+}

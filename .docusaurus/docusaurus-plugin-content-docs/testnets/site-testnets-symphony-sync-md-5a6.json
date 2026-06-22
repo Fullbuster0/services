@@ -1,0 +1,28 @@
+{
+  "id": "symphony/sync",
+  "title": "Sync",
+  "description": "Chain ID v5testnet",
+  "source": "@site/testnets/symphony/sync.md",
+  "sourceDirName": "symphony",
+  "slug": "/symphony/sync",
+  "permalink": "/testnets/symphony/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/symphony/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/symphony/upgrade"
+  }
+}

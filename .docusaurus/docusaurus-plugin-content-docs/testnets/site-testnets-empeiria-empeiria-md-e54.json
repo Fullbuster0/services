@@ -1,0 +1,26 @@
+{
+  "id": "empeiria/empeiria",
+  "title": "Empeiria",
+  "description": "Empeiria is the first End-to-End Verifiable Data Infrastructure (EVDI). It enables seamless web3 adoption through one-click deployment, empowering organizations with the data of the future.",
+  "source": "@site/testnets/empeiria/empeiria.md",
+  "sourceDirName": "empeiria",
+  "slug": "/empeiria/",
+  "permalink": "/testnets/empeiria/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Empeiria"
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/testnets/cardchain/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/testnets/empeiria/node-installation"
+  }
+}

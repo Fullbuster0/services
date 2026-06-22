@@ -1,0 +1,28 @@
+{
+  "id": "gnoland/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID chain/test11 | Custom Port: 42",
+  "source": "@site/testnets/gnoland/node-installation.md",
+  "sourceDirName": "gnoland",
+  "slug": "/gnoland/node-installation",
+  "permalink": "/testnets/gnoland/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Gnoland",
+    "permalink": "/testnets/gnoland/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/gnoland/sync"
+  }
+}

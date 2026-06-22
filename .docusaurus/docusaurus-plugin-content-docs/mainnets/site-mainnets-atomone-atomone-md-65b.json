@@ -1,0 +1,26 @@
+{
+  "id": "atomone/atomone",
+  "title": "Atomone",
+  "description": "Atomone: The vision behind this AtomOne fork is to be an alternative minimal fork of Gaia (\"cosmoshub4\") running alongside Gaia to prepare for all contingencies, and also to operate as a political party base in relation to Gaia. We strive to complement the broader Cosmos ecosystem while introducing innovative solutions and perspectives. Our goals are not just to resolve challenges but are also to set a new precedent for adaptive and responsive self-organization in the multichain multitoken universe that we call the Cosmos.",
+  "source": "@site/mainnets/atomone/atomone.md",
+  "sourceDirName": "atomone",
+  "slug": "/atomone/",
+  "permalink": "/mainnets/atomone/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Atomone"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Mainnets",
+    "permalink": "/mainnets/"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/atomone/node-installation"
+  }
+}

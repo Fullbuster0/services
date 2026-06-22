@@ -1,0 +1,26 @@
+{
+  "id": "hippo/hippo",
+  "title": "Hippo Protocol",
+  "description": "Hippo Protocol is a purpose-built Layer 1 designed to unify fragmented healthcare systems with interoperable, privacy-preserving infrastructure.",
+  "source": "@site/mainnets/hippo/hippo.md",
+  "sourceDirName": "hippo",
+  "slug": "/hippo/",
+  "permalink": "/mainnets/hippo/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Hippo Protocol"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/fuel/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/hippo/node-installation"
+  }
+}

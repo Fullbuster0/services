@@ -1,0 +1,1 @@
+{"version":{"pluginId":"default","version":"current","label":"Next","banner":null,"badge":false,"noIndex":false,"className":"docs-version-current","isLast":true,"docsSidebars":{"docSidebar":[{"type":"link","label":"testo","href":"/yay/testo","docId":"testo","unlisted":false}]},"docs":{"testo":{"id":"testo","title":"testo","description":"hmm","sidebar":"docSidebar"}}}}

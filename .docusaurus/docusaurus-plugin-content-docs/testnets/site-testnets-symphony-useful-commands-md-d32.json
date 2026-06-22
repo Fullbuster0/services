@@ -1,0 +1,28 @@
+{
+  "id": "symphony/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v5testnet",
+  "source": "@site/testnets/symphony/useful-commands.md",
+  "sourceDirName": "symphony",
+  "slug": "/symphony/useful-commands",
+  "permalink": "/testnets/symphony/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/testnets/symphony/upgrade"
+  },
+  "next": {
+    "title": "Tacchain",
+    "permalink": "/testnets/tacchain/"
+  }
+}

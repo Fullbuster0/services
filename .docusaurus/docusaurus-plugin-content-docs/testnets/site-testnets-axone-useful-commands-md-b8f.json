@@ -1,0 +1,28 @@
+{
+  "id": "axone/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v10.0.0",
+  "source": "@site/testnets/axone/useful-commands.md",
+  "sourceDirName": "axone",
+  "slug": "/axone/useful-commands",
+  "permalink": "/testnets/axone/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/testnets/axone/upgrade"
+  },
+  "next": {
+    "title": "Cardchain",
+    "permalink": "/testnets/cardchain/"
+  }
+}

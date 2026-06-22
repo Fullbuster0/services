@@ -1,0 +1,28 @@
+{
+  "id": "tellor/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v5.1.1 | Custom Port: 305",
+  "source": "@site/mainnets/tellor/node-installation.md",
+  "sourceDirName": "tellor",
+  "slug": "/tellor/node-installation",
+  "permalink": "/mainnets/tellor/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Tellor",
+    "permalink": "/mainnets/tellor/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/tellor/sync"
+  }
+}

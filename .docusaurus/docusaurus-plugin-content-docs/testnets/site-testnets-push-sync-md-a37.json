@@ -1,0 +1,28 @@
+{
+  "id": "push/sync",
+  "title": "Sync",
+  "description": "Chain ID v0.0.15",
+  "source": "@site/testnets/push/sync.md",
+  "sourceDirName": "push",
+  "slug": "/push/sync",
+  "permalink": "/testnets/push/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/push/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/push/upgrade"
+  }
+}

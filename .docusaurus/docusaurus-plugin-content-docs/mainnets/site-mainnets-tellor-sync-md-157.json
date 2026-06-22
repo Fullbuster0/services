@@ -1,0 +1,28 @@
+{
+  "id": "tellor/sync",
+  "title": "Sync",
+  "description": "Chain ID v5.1.1",
+  "source": "@site/mainnets/tellor/sync.md",
+  "sourceDirName": "tellor",
+  "slug": "/tellor/sync",
+  "permalink": "/mainnets/tellor/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/tellor/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/tellor/upgrade"
+  }
+}

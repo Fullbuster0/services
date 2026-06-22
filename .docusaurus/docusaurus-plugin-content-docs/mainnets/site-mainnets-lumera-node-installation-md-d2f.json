@@ -1,0 +1,28 @@
+{
+  "id": "lumera/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v1.6.1 | Custom Port: 303",
+  "source": "@site/mainnets/lumera/node-installation.md",
+  "sourceDirName": "lumera",
+  "slug": "/lumera/node-installation",
+  "permalink": "/mainnets/lumera/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Lumera",
+    "permalink": "/mainnets/lumera/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/lumera/sync"
+  }
+}

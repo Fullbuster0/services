@@ -1,0 +1,28 @@
+{
+  "id": "empeiria/sync",
+  "title": "Sync",
+  "description": "Chain ID v0.2.2",
+  "source": "@site/testnets/empeiria/sync.md",
+  "sourceDirName": "empeiria",
+  "slug": "/empeiria/sync",
+  "permalink": "/testnets/empeiria/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/empeiria/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/empeiria/upgrade"
+  }
+}

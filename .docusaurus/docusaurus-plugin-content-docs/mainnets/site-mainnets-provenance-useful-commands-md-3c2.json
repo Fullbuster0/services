@@ -1,0 +1,28 @@
+{
+  "id": "provenance/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v1.25.0",
+  "source": "@site/mainnets/provenance/useful-commands.md",
+  "sourceDirName": "provenance",
+  "slug": "/provenance/useful-commands",
+  "permalink": "/mainnets/provenance/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/provenance/upgrade"
+  },
+  "next": {
+    "title": "Regen",
+    "permalink": "/mainnets/regen/"
+  }
+}

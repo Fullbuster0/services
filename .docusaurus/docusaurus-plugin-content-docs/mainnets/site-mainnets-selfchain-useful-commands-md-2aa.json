@@ -1,0 +1,28 @@
+{
+  "id": "selfchain/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v1.0.1",
+  "source": "@site/mainnets/selfchain/useful-commands.md",
+  "sourceDirName": "selfchain",
+  "slug": "/selfchain/useful-commands",
+  "permalink": "/mainnets/selfchain/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/selfchain/upgrade"
+  },
+  "next": {
+    "title": "Shentu",
+    "permalink": "/mainnets/shentu/"
+  }
+}

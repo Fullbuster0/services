@@ -1,0 +1,28 @@
+{
+  "id": "soarchain/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v0.2.9",
+  "source": "@site/testnets/soarchain/useful-commands.md",
+  "sourceDirName": "soarchain",
+  "slug": "/soarchain/useful-commands",
+  "permalink": "/testnets/soarchain/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/testnets/soarchain/upgrade"
+  },
+  "next": {
+    "title": "Story",
+    "permalink": "/testnets/story/"
+  }
+}

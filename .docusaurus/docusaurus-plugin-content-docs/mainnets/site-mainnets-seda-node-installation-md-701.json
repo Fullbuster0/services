@@ -1,0 +1,28 @@
+{
+  "id": "seda/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v1.0.7 | Custom Port: 6",
+  "source": "@site/mainnets/seda/node-installation.md",
+  "sourceDirName": "seda",
+  "slug": "/seda/node-installation",
+  "permalink": "/mainnets/seda/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Seda",
+    "permalink": "/mainnets/seda/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/seda/sync"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "airchain/airchain",
+  "title": "Airchain",
+  "description": "Airchains is distinct from RaaS providers because we built our own ZK circuit from the ground up, rather than relying on a third party. We also offer full EVM, SVM, and Cosmwasm support and interoperability, whereas RaaS providers are EVM-only.",
+  "source": "@site/testnets/airchain/airchain.md",
+  "sourceDirName": "airchain",
+  "slug": "/airchain/",
+  "permalink": "/testnets/airchain/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Airchain"
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Testnets",
+    "permalink": "/testnets/"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/testnets/airchain/node-installation"
+  }
+}

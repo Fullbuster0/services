@@ -1,0 +1,28 @@
+{
+  "id": "synternet/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v0.25",
+  "source": "@site/mainnets/synternet/useful-commands.md",
+  "sourceDirName": "synternet",
+  "slug": "/synternet/useful-commands",
+  "permalink": "/mainnets/synternet/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/synternet/upgrade"
+  },
+  "next": {
+    "title": "Tellor",
+    "permalink": "/mainnets/tellor/"
+  }
+}

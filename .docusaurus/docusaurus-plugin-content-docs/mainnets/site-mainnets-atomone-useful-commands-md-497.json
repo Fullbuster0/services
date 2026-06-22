@@ -1,0 +1,28 @@
+{
+  "id": "atomone/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v3.3.0",
+  "source": "@site/mainnets/atomone/useful-commands.md",
+  "sourceDirName": "atomone",
+  "slug": "/atomone/useful-commands",
+  "permalink": "/mainnets/atomone/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/atomone/upgrade"
+  },
+  "next": {
+    "title": "Axone",
+    "permalink": "/mainnets/axone/"
+  }
+}

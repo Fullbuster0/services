@@ -1,0 +1,28 @@
+{
+  "id": "axone/upgrade",
+  "title": "Upgrade",
+  "description": "Chain ID v1.0.0",
+  "source": "@site/mainnets/axone/upgrade.md",
+  "sourceDirName": "axone",
+  "slug": "/axone/upgrade",
+  "permalink": "/mainnets/axone/upgrade",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Upgrade",
+    "sidebar_position": 4
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Sync",
+    "permalink": "/mainnets/axone/sync"
+  },
+  "next": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/axone/useful-commands"
+  }
+}

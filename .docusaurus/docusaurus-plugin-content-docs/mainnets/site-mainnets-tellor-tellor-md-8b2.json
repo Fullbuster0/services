@@ -1,0 +1,26 @@
+{
+  "id": "tellor/tellor",
+  "title": "Tellor",
+  "description": "Tellor Layer is a new L1 built using the cosmos sdk for the purpose of coming to consensus on any subjective data. It is operated by an open public network of staked parties who are crypto-economically incentivized to honestly report requested data.",
+  "source": "@site/mainnets/tellor/tellor.md",
+  "sourceDirName": "tellor",
+  "slug": "/tellor/",
+  "permalink": "/mainnets/tellor/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Tellor"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/synternet/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/tellor/node-installation"
+  }
+}

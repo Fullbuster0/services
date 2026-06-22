@@ -1,0 +1,28 @@
+{
+  "id": "provenance/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v1.25.0 | Custom Port: 13",
+  "source": "@site/mainnets/provenance/node-installation.md",
+  "sourceDirName": "provenance",
+  "slug": "/provenance/node-installation",
+  "permalink": "/mainnets/provenance/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Provenance",
+    "permalink": "/mainnets/provenance/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/provenance/sync"
+  }
+}

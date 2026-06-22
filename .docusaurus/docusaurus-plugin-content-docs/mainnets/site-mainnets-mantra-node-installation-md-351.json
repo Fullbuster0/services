@@ -1,0 +1,28 @@
+{
+  "id": "mantra/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v6.1.4 | Custom Port: 315",
+  "source": "@site/mainnets/mantra/node-installation.md",
+  "sourceDirName": "mantra",
+  "slug": "/mantra/node-installation",
+  "permalink": "/mainnets/mantra/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Mantra",
+    "permalink": "/mainnets/mantra/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/mantra/sync"
+  }
+}

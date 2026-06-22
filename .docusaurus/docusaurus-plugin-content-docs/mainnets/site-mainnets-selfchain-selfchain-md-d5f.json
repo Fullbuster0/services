@@ -1,0 +1,26 @@
+{
+  "id": "selfchain/selfchain",
+  "title": "Selfchain",
+  "description": "Self Chain Is the First Modular Intent-Centric Access Layer L1 Blockchain and Keyless Wallet Infrastructure Service That Uses MPC-TSS/AA for Multi-Chain Web3 Access.",
+  "source": "@site/mainnets/selfchain/selfchain.md",
+  "sourceDirName": "selfchain",
+  "slug": "/selfchain/",
+  "permalink": "/mainnets/selfchain/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Selfchain"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/seda/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/selfchain/node-installation"
+  }
+}

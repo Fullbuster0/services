@@ -1,0 +1,28 @@
+{
+  "id": "zetachain/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v36.0.0 | Custom Port: 311",
+  "source": "@site/mainnets/zetachain/node-installation.md",
+  "sourceDirName": "zetachain",
+  "slug": "/zetachain/node-installation",
+  "permalink": "/mainnets/zetachain/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Zetachain",
+    "permalink": "/mainnets/zetachain/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/zetachain/sync"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "symphony/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v5testnet | Custom Port: 27",
+  "source": "@site/testnets/symphony/node-installation.md",
+  "sourceDirName": "symphony",
+  "slug": "/symphony/node-installation",
+  "permalink": "/testnets/symphony/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Symphony",
+    "permalink": "/testnets/symphony/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/symphony/sync"
+  }
+}

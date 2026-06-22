@@ -1,0 +1,28 @@
+{
+  "id": "fuel/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID seq-testnet-2.2",
+  "source": "@site/testnets/fuel/useful-commands.md",
+  "sourceDirName": "fuel",
+  "slug": "/fuel/useful-commands",
+  "permalink": "/testnets/fuel/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/testnets/fuel/upgrade"
+  },
+  "next": {
+    "title": "Galactica",
+    "permalink": "/testnets/galactica/"
+  }
+}

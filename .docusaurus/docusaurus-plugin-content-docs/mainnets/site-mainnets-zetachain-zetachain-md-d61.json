@@ -1,0 +1,26 @@
+{
+  "id": "zetachain/zetachain",
+  "title": "Zetachain",
+  "description": "ZetaChain is the Universal Layer for AI and Web3 — a platform where apps run across chains and models, memory stays private, and monetization works without infrastructure.",
+  "source": "@site/mainnets/zetachain/zetachain.md",
+  "sourceDirName": "zetachain",
+  "slug": "/zetachain/",
+  "permalink": "/mainnets/zetachain/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Zetachain"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/union/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/zetachain/node-installation"
+  }
+}

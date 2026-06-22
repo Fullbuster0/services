@@ -1,0 +1,28 @@
+{
+  "id": "axone/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v1.0.0",
+  "source": "@site/mainnets/axone/useful-commands.md",
+  "sourceDirName": "axone",
+  "slug": "/axone/useful-commands",
+  "permalink": "/mainnets/axone/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/axone/upgrade"
+  },
+  "next": {
+    "title": "Babylon",
+    "permalink": "/mainnets/babylon/"
+  }
+}

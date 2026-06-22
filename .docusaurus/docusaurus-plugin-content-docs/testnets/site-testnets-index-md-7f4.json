@@ -1,0 +1,23 @@
+{
+  "id": "index",
+  "title": "Testnets",
+  "description": "Shazoes is a validator that prioritizes stability, security, and maximum performance when supporting blockchain networks. With dependable infrastructure, we ensure that our nodes are constantly operational and provide public services to benefit the blockchain community.",
+  "source": "@site/testnets/index.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/testnets/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "title": "Testnets"
+  },
+  "sidebar": "testnetsSidebars",
+  "next": {
+    "title": "Airchain",
+    "permalink": "/testnets/airchain/"
+  }
+}

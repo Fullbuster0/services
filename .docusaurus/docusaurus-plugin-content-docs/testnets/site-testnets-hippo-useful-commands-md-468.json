@@ -1,0 +1,28 @@
+{
+  "id": "hippo/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v1.0.1",
+  "source": "@site/testnets/hippo/useful-commands.md",
+  "sourceDirName": "hippo",
+  "slug": "/hippo/useful-commands",
+  "permalink": "/testnets/hippo/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/testnets/hippo/upgrade"
+  },
+  "next": {
+    "title": "Lumera",
+    "permalink": "/testnets/lumera/"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "seda/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v1.0.0-rc.4 | Custom Port: 43",
+  "source": "@site/testnets/seda/node-installation.md",
+  "sourceDirName": "seda",
+  "slug": "/seda/node-installation",
+  "permalink": "/testnets/seda/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Seda",
+    "permalink": "/testnets/seda/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/seda/sync"
+  }
+}

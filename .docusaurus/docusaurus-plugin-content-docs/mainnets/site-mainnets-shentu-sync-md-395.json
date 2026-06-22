@@ -1,0 +1,28 @@
+{
+  "id": "shentu/sync",
+  "title": "Sync",
+  "description": "Chain ID v2.2.0",
+  "source": "@site/mainnets/shentu/sync.md",
+  "sourceDirName": "shentu",
+  "slug": "/shentu/sync",
+  "permalink": "/mainnets/shentu/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/shentu/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/shentu/upgrade"
+  }
+}

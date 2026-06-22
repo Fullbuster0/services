@@ -1,0 +1,28 @@
+{
+  "id": "structs/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v0.6.0-beta | Custom Port: 25",
+  "source": "@site/testnets/structs/node-installation.md",
+  "sourceDirName": "structs",
+  "slug": "/structs/node-installation",
+  "permalink": "/testnets/structs/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Structs",
+    "permalink": "/testnets/structs/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/structs/sync"
+  }
+}

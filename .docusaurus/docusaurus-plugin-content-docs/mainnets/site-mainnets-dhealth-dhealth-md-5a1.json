@@ -1,0 +1,26 @@
+{
+  "id": "dhealth/dhealth",
+  "title": "Dhealth",
+  "description": "dHealth Network is an open blockchain platform specifically designed for the healthcare sector. This platform enables the development of decentralized applications (dApps) and innovative business models that integrate blockchain technology with the needs of the healthcare industry.",
+  "source": "@site/mainnets/dhealth/dhealth.md",
+  "sourceDirName": "dhealth",
+  "slug": "/dhealth/",
+  "permalink": "/mainnets/dhealth/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Dhealth"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/babylon/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/dhealth/node-installation"
+  }
+}

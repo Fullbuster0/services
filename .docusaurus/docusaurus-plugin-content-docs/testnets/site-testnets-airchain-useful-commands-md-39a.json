@@ -1,0 +1,28 @@
+{
+  "id": "airchain/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v0.3.2",
+  "source": "@site/testnets/airchain/useful-commands.md",
+  "sourceDirName": "airchain",
+  "slug": "/airchain/useful-commands",
+  "permalink": "/testnets/airchain/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/testnets/airchain/upgrade"
+  },
+  "next": {
+    "title": "Atomone",
+    "permalink": "/testnets/atomone/"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "hippo/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v1.0.2 | Custom Port: 302",
+  "source": "@site/mainnets/hippo/node-installation.md",
+  "sourceDirName": "hippo",
+  "slug": "/hippo/node-installation",
+  "permalink": "/mainnets/hippo/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Hippo Protocol",
+    "permalink": "/mainnets/hippo/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/hippo/sync"
+  }
+}

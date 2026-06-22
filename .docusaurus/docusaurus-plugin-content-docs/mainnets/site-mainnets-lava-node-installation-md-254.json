@@ -1,0 +1,28 @@
+{
+  "id": "lava/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v5.5.1 | Custom Port: 307",
+  "source": "@site/mainnets/lava/node-installation.md",
+  "sourceDirName": "lava",
+  "slug": "/lava/node-installation",
+  "permalink": "/mainnets/lava/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Lava",
+    "permalink": "/mainnets/lava/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/lava/sync"
+  }
+}

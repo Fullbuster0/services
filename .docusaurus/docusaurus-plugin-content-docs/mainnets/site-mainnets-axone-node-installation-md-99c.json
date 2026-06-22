@@ -1,0 +1,28 @@
+{
+  "id": "axone/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v12.0.0 | Custom Port: 304",
+  "source": "@site/mainnets/axone/node-installation.md",
+  "sourceDirName": "axone",
+  "slug": "/axone/node-installation",
+  "permalink": "/mainnets/axone/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Axone",
+    "permalink": "/mainnets/axone/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/axone/sync"
+  }
+}

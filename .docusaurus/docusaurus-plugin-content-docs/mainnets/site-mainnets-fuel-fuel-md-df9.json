@@ -1,0 +1,26 @@
+{
+  "id": "fuel/fuel",
+  "title": "Fuel",
+  "description": "Fuel is an operating system purpose built for Ethereum Rollups. Fuel allows rollups to solve for PSI (parallelization, state minimized execution, interoperability) without making any sacrifices.",
+  "source": "@site/mainnets/fuel/fuel.md",
+  "sourceDirName": "fuel",
+  "slug": "/fuel/",
+  "permalink": "/mainnets/fuel/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Fuel"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/dhealth/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/fuel/node-installation"
+  }
+}

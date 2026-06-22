@@ -1,0 +1,28 @@
+{
+  "id": "symphony/upgrade",
+  "title": "Upgrade",
+  "description": "Chain ID v5testnet",
+  "source": "@site/testnets/symphony/upgrade.md",
+  "sourceDirName": "symphony",
+  "slug": "/symphony/upgrade",
+  "permalink": "/testnets/symphony/upgrade",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Upgrade",
+    "sidebar_position": 4
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Sync",
+    "permalink": "/testnets/symphony/sync"
+  },
+  "next": {
+    "title": "Useful Commands",
+    "permalink": "/testnets/symphony/useful-commands"
+  }
+}

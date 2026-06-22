@@ -1,0 +1,28 @@
+{
+  "id": "hippo/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v2.0.0 | Custom Port: 37",
+  "source": "@site/testnets/hippo/node-installation.md",
+  "sourceDirName": "hippo",
+  "slug": "/hippo/node-installation",
+  "permalink": "/testnets/hippo/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Hippo Protocol",
+    "permalink": "/testnets/hippo/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/hippo/sync"
+  }
+}

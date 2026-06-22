@@ -1,0 +1,28 @@
+{
+  "id": "warden/sync",
+  "title": "Sync",
+  "description": "Chain ID v0.7.0-rc3",
+  "source": "@site/testnets/warden/sync.md",
+  "sourceDirName": "warden",
+  "slug": "/warden/sync",
+  "permalink": "/testnets/warden/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/warden/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/warden/upgrade"
+  }
+}

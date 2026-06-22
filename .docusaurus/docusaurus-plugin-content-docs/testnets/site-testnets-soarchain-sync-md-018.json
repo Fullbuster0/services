@@ -1,0 +1,28 @@
+{
+  "id": "soarchain/sync",
+  "title": "Sync",
+  "description": "Chain ID v0.2.9",
+  "source": "@site/testnets/soarchain/sync.md",
+  "sourceDirName": "soarchain",
+  "slug": "/soarchain/sync",
+  "permalink": "/testnets/soarchain/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/soarchain/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/soarchain/upgrade"
+  }
+}

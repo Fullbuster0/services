@@ -1,0 +1,26 @@
+{
+  "id": "push/push",
+  "title": "Push",
+  "description": "Push Chain is the first True Universal Layer 1 blockchain, built as a 100% EVM-compatible Proof of Stake (PoS) chain. It runs seamlessly across every chain and wallet.",
+  "source": "@site/testnets/push/push.md",
+  "sourceDirName": "push",
+  "slug": "/push/",
+  "permalink": "/testnets/push/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Push"
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/testnets/lumera/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/testnets/push/node-installation"
+  }
+}

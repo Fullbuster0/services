@@ -1,0 +1,28 @@
+{
+  "id": "atomone/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v4.0.0-rc1 | Custom Port: 31",
+  "source": "@site/testnets/atomone/node-installation.md",
+  "sourceDirName": "atomone",
+  "slug": "/atomone/node-installation",
+  "permalink": "/testnets/atomone/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Atomone",
+    "permalink": "/testnets/atomone/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/atomone/sync"
+  }
+}

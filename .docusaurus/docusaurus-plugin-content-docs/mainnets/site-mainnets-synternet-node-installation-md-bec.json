@@ -1,0 +1,28 @@
+{
+  "id": "synternet/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v0.25 | Custom Port: 11",
+  "source": "@site/mainnets/synternet/node-installation.md",
+  "sourceDirName": "synternet",
+  "slug": "/synternet/node-installation",
+  "permalink": "/mainnets/synternet/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Synternet",
+    "permalink": "/mainnets/synternet/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/synternet/sync"
+  }
+}

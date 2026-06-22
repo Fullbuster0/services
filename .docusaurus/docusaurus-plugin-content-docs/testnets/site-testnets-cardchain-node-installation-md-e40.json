@@ -1,0 +1,28 @@
+{
+  "id": "cardchain/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v0.16.0 | Custom Port: 21",
+  "source": "@site/testnets/cardchain/node-installation.md",
+  "sourceDirName": "cardchain",
+  "slug": "/cardchain/node-installation",
+  "permalink": "/testnets/cardchain/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Cardchain",
+    "permalink": "/testnets/cardchain/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/cardchain/sync"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "lava/sync",
+  "title": "Sync",
+  "description": "Chain ID v1.0.0",
+  "source": "@site/mainnets/lava/sync.md",
+  "sourceDirName": "lava",
+  "slug": "/lava/sync",
+  "permalink": "/mainnets/lava/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/lava/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/lava/upgrade"
+  }
+}

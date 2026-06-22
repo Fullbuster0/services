@@ -1,0 +1,28 @@
+{
+  "id": "warden/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v0.7.0-rc3 | Custom Port: 29",
+  "source": "@site/testnets/warden/node-installation.md",
+  "sourceDirName": "warden",
+  "slug": "/warden/node-installation",
+  "permalink": "/testnets/warden/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Warden",
+    "permalink": "/testnets/warden/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/warden/sync"
+  }
+}

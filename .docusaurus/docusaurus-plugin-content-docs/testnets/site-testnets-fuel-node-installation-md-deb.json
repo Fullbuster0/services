@@ -1,0 +1,28 @@
+{
+  "id": "fuel/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID seq-testnet-2.2 | Custom Port: 38",
+  "source": "@site/testnets/fuel/node-installation.md",
+  "sourceDirName": "fuel",
+  "slug": "/fuel/node-installation",
+  "permalink": "/testnets/fuel/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Fuel",
+    "permalink": "/testnets/fuel/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/fuel/sync"
+  }
+}

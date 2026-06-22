@@ -1,0 +1,28 @@
+{
+  "id": "story/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v1.3.0 | Custom Port: 36",
+  "source": "@site/testnets/story/node-installation.md",
+  "sourceDirName": "story",
+  "slug": "/story/node-installation",
+  "permalink": "/testnets/story/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Story",
+    "permalink": "/testnets/story/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/story/sync"
+  }
+}

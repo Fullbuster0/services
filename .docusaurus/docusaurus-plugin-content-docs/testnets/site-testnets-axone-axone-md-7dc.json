@@ -1,0 +1,26 @@
+{
+  "id": "axone/axone",
+  "title": "Axone",
+  "description": "Axone is a Layer-1 blockchain for collaborative AI training, governance, and monetization. It provides a framework with custom conditions ensuring privacy, compatibility, and fair value sharing. Users can build AI ecosystems and access data or infrastructure from web2 and web3 protocols like DePIN, AI, and Data networks.",
+  "source": "@site/testnets/axone/axone.md",
+  "sourceDirName": "axone",
+  "slug": "/axone/",
+  "permalink": "/testnets/axone/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Axone"
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/testnets/atomone/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/testnets/axone/node-installation"
+  }
+}

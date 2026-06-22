@@ -1,0 +1,28 @@
+{
+  "id": "empeiria/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v0.2.2 | Custom Port: 23",
+  "source": "@site/testnets/empeiria/node-installation.md",
+  "sourceDirName": "empeiria",
+  "slug": "/empeiria/node-installation",
+  "permalink": "/testnets/empeiria/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Empeiria",
+    "permalink": "/testnets/empeiria/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/empeiria/sync"
+  }
+}

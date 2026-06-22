@@ -1,0 +1,28 @@
+{
+  "id": "push/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v0.0.15 | Custom Port: 44",
+  "source": "@site/testnets/push/node-installation.md",
+  "sourceDirName": "push",
+  "slug": "/push/node-installation",
+  "permalink": "/testnets/push/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Push",
+    "permalink": "/testnets/push/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/push/sync"
+  }
+}

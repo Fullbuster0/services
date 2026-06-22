@@ -1,0 +1,28 @@
+{
+  "id": "nillion/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v0.2.5 | Custom Port: 308",
+  "source": "@site/mainnets/nillion/node-installation.md",
+  "sourceDirName": "nillion",
+  "slug": "/nillion/node-installation",
+  "permalink": "/mainnets/nillion/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Nillion",
+    "permalink": "/mainnets/nillion/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/nillion/sync"
+  }
+}

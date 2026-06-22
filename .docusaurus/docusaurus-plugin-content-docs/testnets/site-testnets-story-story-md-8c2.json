@@ -1,0 +1,26 @@
+{
+  "id": "story/story",
+  "title": "Story",
+  "description": "Story is the World's IP Blockchain that transforms intelligence into Programmable IP assets.",
+  "source": "@site/testnets/story/story.md",
+  "sourceDirName": "story",
+  "slug": "/story/",
+  "permalink": "/testnets/story/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Story"
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/testnets/soarchain/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/testnets/story/node-installation"
+  }
+}

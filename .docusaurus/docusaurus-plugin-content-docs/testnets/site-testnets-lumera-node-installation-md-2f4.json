@@ -1,0 +1,28 @@
+{
+  "id": "lumera/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v1.7.0 | Custom Port: 40",
+  "source": "@site/testnets/lumera/node-installation.md",
+  "sourceDirName": "lumera",
+  "slug": "/lumera/node-installation",
+  "permalink": "/testnets/lumera/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Lumera",
+    "permalink": "/testnets/lumera/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/lumera/sync"
+  }
+}

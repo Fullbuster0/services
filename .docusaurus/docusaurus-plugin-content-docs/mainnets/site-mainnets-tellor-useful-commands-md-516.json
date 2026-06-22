@@ -1,0 +1,28 @@
+{
+  "id": "tellor/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v5.1.1",
+  "source": "@site/mainnets/tellor/useful-commands.md",
+  "sourceDirName": "tellor",
+  "slug": "/tellor/useful-commands",
+  "permalink": "/mainnets/tellor/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/tellor/upgrade"
+  },
+  "next": {
+    "title": "Terra",
+    "permalink": "/mainnets/terra/"
+  }
+}

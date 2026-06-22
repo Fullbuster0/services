@@ -1,0 +1,28 @@
+{
+  "id": "fuel/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID seq-mainnet-1.2 | Custom Port: 14",
+  "source": "@site/mainnets/fuel/node-installation.md",
+  "sourceDirName": "fuel",
+  "slug": "/fuel/node-installation",
+  "permalink": "/mainnets/fuel/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Fuel",
+    "permalink": "/mainnets/fuel/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/fuel/sync"
+  }
+}

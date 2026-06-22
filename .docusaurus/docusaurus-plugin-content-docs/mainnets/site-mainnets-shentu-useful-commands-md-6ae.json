@@ -1,0 +1,28 @@
+{
+  "id": "shentu/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v2.2.0",
+  "source": "@site/mainnets/shentu/useful-commands.md",
+  "sourceDirName": "shentu",
+  "slug": "/shentu/useful-commands",
+  "permalink": "/mainnets/shentu/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/shentu/upgrade"
+  },
+  "next": {
+    "title": "Synternet",
+    "permalink": "/mainnets/synternet/"
+  }
+}

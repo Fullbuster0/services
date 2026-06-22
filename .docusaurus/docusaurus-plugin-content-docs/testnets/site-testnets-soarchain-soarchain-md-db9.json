@@ -1,0 +1,26 @@
+{
+  "id": "soarchain/soarchain",
+  "title": "Soarchain",
+  "description": "Soarchain, a Layer 1 Network, aims to establish a decentralized ecosystem where participants, including vehicles, data providers, and developers, can interact and exchange value securely. It provides a platform for developers to build customized smart contracts and dApps specific to the mobility industry, fostering innovation and collaboration.",
+  "source": "@site/testnets/soarchain/soarchain.md",
+  "sourceDirName": "soarchain",
+  "slug": "/soarchain/",
+  "permalink": "/testnets/soarchain/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Soarchain"
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/testnets/seda/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/testnets/soarchain/node-installation"
+  }
+}

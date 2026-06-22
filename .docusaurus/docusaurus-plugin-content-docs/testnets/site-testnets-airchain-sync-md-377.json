@@ -1,0 +1,28 @@
+{
+  "id": "airchain/sync",
+  "title": "Sync",
+  "description": "Chain ID v0.3.2",
+  "source": "@site/testnets/airchain/sync.md",
+  "sourceDirName": "airchain",
+  "slug": "/airchain/sync",
+  "permalink": "/testnets/airchain/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/airchain/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/airchain/upgrade"
+  }
+}

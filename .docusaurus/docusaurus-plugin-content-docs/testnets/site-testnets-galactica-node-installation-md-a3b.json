@@ -1,0 +1,28 @@
+{
+  "id": "galactica/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v0.1.2 | Custom Port: 32",
+  "source": "@site/testnets/galactica/node-installation.md",
+  "sourceDirName": "galactica",
+  "slug": "/galactica/node-installation",
+  "permalink": "/testnets/galactica/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Galactica",
+    "permalink": "/testnets/galactica/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/galactica/sync"
+  }
+}

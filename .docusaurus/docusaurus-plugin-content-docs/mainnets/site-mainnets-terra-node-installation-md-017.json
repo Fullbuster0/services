@@ -1,0 +1,28 @@
+{
+  "id": "terra/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v2.19.0 | Custom Port: 312",
+  "source": "@site/mainnets/terra/node-installation.md",
+  "sourceDirName": "terra",
+  "slug": "/terra/node-installation",
+  "permalink": "/mainnets/terra/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Terra",
+    "permalink": "/mainnets/terra/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/terra/sync"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "lava/lava",
+  "title": "Lava",
+  "description": "Lava powers a trustless market for RPC data access. The protocol governs over peer to peer and private Provider-Application pairings, ensuring high quality RPC service while creating consensus around data served.",
+  "source": "@site/mainnets/lava/lava.md",
+  "sourceDirName": "lava",
+  "slug": "/lava/",
+  "permalink": "/mainnets/lava/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Lava"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/hippo/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/lava/node-installation"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "airchain/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v0.3.2 | Custom Port: 20",
+  "source": "@site/testnets/airchain/node-installation.md",
+  "sourceDirName": "airchain",
+  "slug": "/airchain/node-installation",
+  "permalink": "/testnets/airchain/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Airchain",
+    "permalink": "/testnets/airchain/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/testnets/airchain/sync"
+  }
+}

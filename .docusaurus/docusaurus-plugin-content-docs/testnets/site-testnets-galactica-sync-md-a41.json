@@ -1,0 +1,28 @@
+{
+  "id": "galactica/sync",
+  "title": "Sync",
+  "description": "Chain ID v0.1.2",
+  "source": "@site/testnets/galactica/sync.md",
+  "sourceDirName": "galactica",
+  "slug": "/galactica/sync",
+  "permalink": "/testnets/galactica/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/galactica/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/galactica/upgrade"
+  }
+}

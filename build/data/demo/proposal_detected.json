@@ -1,0 +1,14 @@
+[
+  {
+    "network": "Cosmos Hub",
+    "link": "/mainnets/cosmoshub/",
+    "rpc": "https://cosmoshub-rpc.publicnode.com:443",
+    "target_height": 21593044,
+    "version": "v18.0.0",
+    "proposal": "https://www.mintscan.io/cosmos/gov/842",
+    "__demo_state": "PROPOSAL_DETECTED",
+    "__demo_proposal_id": 842,
+    "__demo_title": "v18.x Mainnet Upgrade",
+    "__demo_description": "Scheduled protocol upgrade. Voting period is open; target height is approximately seven days from now."
+  }
+]

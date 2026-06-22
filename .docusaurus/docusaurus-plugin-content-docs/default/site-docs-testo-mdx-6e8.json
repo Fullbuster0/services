@@ -1,0 +1,15 @@
+{
+  "id": "testo",
+  "title": "testo",
+  "description": "hmm",
+  "source": "@site/docs/testo.mdx",
+  "sourceDirName": ".",
+  "slug": "/testo",
+  "permalink": "/yay/testo",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docSidebar"
+}

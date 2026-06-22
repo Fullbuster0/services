@@ -1,0 +1,28 @@
+{
+  "id": "fuel/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID seq-mainnet-1.2",
+  "source": "@site/mainnets/fuel/useful-commands.md",
+  "sourceDirName": "fuel",
+  "slug": "/fuel/useful-commands",
+  "permalink": "/mainnets/fuel/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/fuel/upgrade"
+  },
+  "next": {
+    "title": "Hippo Protocol",
+    "permalink": "/mainnets/hippo/"
+  }
+}

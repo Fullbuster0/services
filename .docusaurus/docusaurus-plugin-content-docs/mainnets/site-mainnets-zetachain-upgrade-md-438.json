@@ -1,0 +1,28 @@
+{
+  "id": "zetachain/upgrade",
+  "title": "Upgrade",
+  "description": "Chain ID v1.0.0",
+  "source": "@site/mainnets/zetachain/upgrade.md",
+  "sourceDirName": "zetachain",
+  "slug": "/zetachain/upgrade",
+  "permalink": "/mainnets/zetachain/upgrade",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Upgrade",
+    "sidebar_position": 4
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Sync",
+    "permalink": "/mainnets/zetachain/sync"
+  },
+  "next": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/zetachain/useful-commands"
+  }
+}

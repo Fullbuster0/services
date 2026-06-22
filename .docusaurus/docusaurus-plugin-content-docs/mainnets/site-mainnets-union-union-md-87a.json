@@ -1,0 +1,26 @@
+{
+  "id": "union/union",
+  "title": "Union",
+  "description": "Union is the zero-knowledge (zk) interoperability network that functions as a settlement and liquidity layer for protocols and asset issuers. Union supports direct connections between L1s, L2s, and rollups regardless of execution environment, while still being powered by the most secure consensus verification.",
+  "source": "@site/mainnets/union/union.md",
+  "sourceDirName": "union",
+  "slug": "/union/",
+  "permalink": "/mainnets/union/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Union"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/terra/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/union/node-installation"
+  }
+}

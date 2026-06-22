@@ -1,0 +1,28 @@
+{
+  "id": "regen/sync",
+  "title": "Sync",
+  "description": "Chain ID v5.1.0",
+  "source": "@site/mainnets/regen/sync.md",
+  "sourceDirName": "regen",
+  "slug": "/regen/sync",
+  "permalink": "/mainnets/regen/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/regen/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/regen/upgrade"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "lumera/upgrade",
+  "title": "Upgrade",
+  "description": "Chain ID v1.6.1",
+  "source": "@site/mainnets/lumera/upgrade.md",
+  "sourceDirName": "lumera",
+  "slug": "/lumera/upgrade",
+  "permalink": "/mainnets/lumera/upgrade",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Upgrade",
+    "sidebar_position": 4
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Sync",
+    "permalink": "/mainnets/lumera/sync"
+  },
+  "next": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/lumera/useful-commands"
+  }
+}

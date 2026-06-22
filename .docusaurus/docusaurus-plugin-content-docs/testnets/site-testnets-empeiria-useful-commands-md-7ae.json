@@ -1,0 +1,28 @@
+{
+  "id": "empeiria/useful-commands",
+  "title": "Useful Commands",
+  "description": "Chain ID v0.2.2",
+  "source": "@site/testnets/empeiria/useful-commands.md",
+  "sourceDirName": "empeiria",
+  "slug": "/empeiria/useful-commands",
+  "permalink": "/testnets/empeiria/useful-commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Useful Commands",
+    "sidebar_position": 8
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Upgrade",
+    "permalink": "/testnets/empeiria/upgrade"
+  },
+  "next": {
+    "title": "Fuel",
+    "permalink": "/testnets/fuel/"
+  }
+}

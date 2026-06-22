@@ -1,0 +1,26 @@
+{
+  "id": "terra/terra",
+  "title": "Terra",
+  "description": "Terra Phoenix is a high-performance blockchain built on Cosmos SDK, designed for DeFi applications with fast transactions and low fees.",
+  "source": "@site/mainnets/terra/terra.md",
+  "sourceDirName": "terra",
+  "slug": "/terra/",
+  "permalink": "/mainnets/terra/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Terra"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/tellor/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/terra/node-installation"
+  }
+}

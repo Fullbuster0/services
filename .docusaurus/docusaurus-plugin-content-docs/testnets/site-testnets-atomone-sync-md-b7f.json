@@ -1,0 +1,28 @@
+{
+  "id": "atomone/sync",
+  "title": "Sync",
+  "description": "Chain ID v3.0.1",
+  "source": "@site/testnets/atomone/sync.md",
+  "sourceDirName": "atomone",
+  "slug": "/atomone/sync",
+  "permalink": "/testnets/atomone/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/atomone/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/atomone/upgrade"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "gnoland/upgrade",
+  "title": "Upgrade",
+  "description": "Chain ID chain/test11",
+  "source": "@site/testnets/gnoland/upgrade.md",
+  "sourceDirName": "gnoland",
+  "slug": "/gnoland/upgrade",
+  "permalink": "/testnets/gnoland/upgrade",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Upgrade",
+    "sidebar_position": 4
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Sync",
+    "permalink": "/testnets/gnoland/sync"
+  },
+  "next": {
+    "title": "Useful Commands",
+    "permalink": "/testnets/gnoland/useful-commands"
+  }
+}

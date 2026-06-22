@@ -1,0 +1,28 @@
+{
+  "id": "dhealth/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v1.0.0 | Custom Port: 5",
+  "source": "@site/mainnets/dhealth/node-installation.md",
+  "sourceDirName": "dhealth",
+  "slug": "/dhealth/node-installation",
+  "permalink": "/mainnets/dhealth/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Dhealth",
+    "permalink": "/mainnets/dhealth/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/dhealth/sync"
+  }
+}

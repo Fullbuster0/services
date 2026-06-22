@@ -1,0 +1,28 @@
+{
+  "id": "shentu/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v2.18.0 | Custom Port: 9",
+  "source": "@site/mainnets/shentu/node-installation.md",
+  "sourceDirName": "shentu",
+  "slug": "/shentu/node-installation",
+  "permalink": "/mainnets/shentu/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Shentu",
+    "permalink": "/mainnets/shentu/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/shentu/sync"
+  }
+}

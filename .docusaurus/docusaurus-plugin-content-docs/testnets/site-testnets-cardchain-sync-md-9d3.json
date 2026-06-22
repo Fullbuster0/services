@@ -1,0 +1,28 @@
+{
+  "id": "cardchain/sync",
+  "title": "Sync",
+  "description": "Chain ID v0.16.0",
+  "source": "@site/testnets/cardchain/sync.md",
+  "sourceDirName": "cardchain",
+  "slug": "/cardchain/sync",
+  "permalink": "/testnets/cardchain/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/cardchain/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/cardchain/upgrade"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "fuel/sync",
+  "title": "Sync",
+  "description": "Chain ID seq-testnet-2.2",
+  "source": "@site/testnets/fuel/sync.md",
+  "sourceDirName": "fuel",
+  "slug": "/fuel/sync",
+  "permalink": "/testnets/fuel/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/fuel/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/fuel/upgrade"
+  }
+}

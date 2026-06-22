@@ -1,0 +1,28 @@
+{
+  "id": "atomone/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v3.3.0 | Custom Port: 12",
+  "source": "@site/mainnets/atomone/node-installation.md",
+  "sourceDirName": "atomone",
+  "slug": "/atomone/node-installation",
+  "permalink": "/mainnets/atomone/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Atomone",
+    "permalink": "/mainnets/atomone/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/atomone/sync"
+  }
+}

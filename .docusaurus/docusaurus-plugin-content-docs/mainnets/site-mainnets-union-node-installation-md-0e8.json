@@ -1,0 +1,28 @@
+{
+  "id": "union/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v1.2.2 | Custom Port: 309",
+  "source": "@site/mainnets/union/node-installation.md",
+  "sourceDirName": "union",
+  "slug": "/union/node-installation",
+  "permalink": "/mainnets/union/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Union",
+    "permalink": "/mainnets/union/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/union/sync"
+  }
+}

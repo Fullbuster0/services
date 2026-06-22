@@ -1,0 +1,28 @@
+{
+  "id": "gnoland/sync",
+  "title": "Sync",
+  "description": "Chain ID chain/test11",
+  "source": "@site/testnets/gnoland/sync.md",
+  "sourceDirName": "gnoland",
+  "slug": "/gnoland/sync",
+  "permalink": "/testnets/gnoland/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/testnets/gnoland/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/testnets/gnoland/upgrade"
+  }
+}

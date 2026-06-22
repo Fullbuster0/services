@@ -1,0 +1,26 @@
+{
+  "id": "regen/regen",
+  "title": "Regen",
+  "description": "Regen Network, a platform to originate and invest in high-integrity carbon and biodiversity credits from ecological regeneration projects",
+  "source": "@site/mainnets/regen/regen.md",
+  "sourceDirName": "regen",
+  "slug": "/regen/",
+  "permalink": "/mainnets/regen/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Regen"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/provenance/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/regen/node-installation"
+  }
+}

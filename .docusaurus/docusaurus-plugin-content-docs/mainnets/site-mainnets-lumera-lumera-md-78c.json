@@ -1,0 +1,26 @@
+{
+  "id": "lumera/lumera",
+  "title": "Lumera",
+  "description": "Lumera Protocol is a high-performance blockchain purpose-built for AI-driven Web3 economies, integrating a Validator-SuperNode architecture to enable decentralized AI services, trustless computation, and secure data storage.",
+  "source": "@site/mainnets/lumera/lumera.md",
+  "sourceDirName": "lumera",
+  "slug": "/lumera/",
+  "permalink": "/mainnets/lumera/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Lumera"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/lava/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/lumera/node-installation"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "selfchain/node-installation",
+  "title": "Node Installation",
+  "description": "Chain ID v1.0.1 | Custom Port: 8",
+  "source": "@site/mainnets/selfchain/node-installation.md",
+  "sourceDirName": "selfchain",
+  "slug": "/selfchain/node-installation",
+  "permalink": "/mainnets/selfchain/node-installation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Node Installation",
+    "sidebar_position": 2
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Selfchain",
+    "permalink": "/mainnets/selfchain/"
+  },
+  "next": {
+    "title": "Sync",
+    "permalink": "/mainnets/selfchain/sync"
+  }
+}

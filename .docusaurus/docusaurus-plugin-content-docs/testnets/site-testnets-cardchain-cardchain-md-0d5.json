@@ -1,0 +1,26 @@
+{
+  "id": "cardchain/cardchain",
+  "title": "Cardchain",
+  "description": "As a blockchain game DAO we are set to solve an everlasting game development problem. In the development of game content, the player feedback loop underlies a big time delay and the user feedback is detached from the actual content development. This leads to imbalanced games, undesired features and ultimately to player and developer frustrations. We are solving this problem by integrating blockchain technology, which allows the player to create and balance their own in-game content in an automated feedback loop.",
+  "source": "@site/testnets/cardchain/cardchain.md",
+  "sourceDirName": "cardchain",
+  "slug": "/cardchain/",
+  "permalink": "/testnets/cardchain/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Cardchain"
+  },
+  "sidebar": "testnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/testnets/axone/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/testnets/cardchain/node-installation"
+  }
+}

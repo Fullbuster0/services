@@ -1,0 +1,26 @@
+{
+  "id": "seda/seda",
+  "title": "Seda",
+  "description": "SEDA is a standard for modular data transport and querying. Any data type, for all networks.",
+  "source": "@site/mainnets/seda/seda.md",
+  "sourceDirName": "seda",
+  "slug": "/seda/",
+  "permalink": "/mainnets/seda/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Seda"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/regen/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/seda/node-installation"
+  }
+}
