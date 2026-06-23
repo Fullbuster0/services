@@ -11,15 +11,23 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
 
   useEffect(() => {
     async function fetchData() {
-      // If JSON has no entries, render nothing.
-      if (!upgrades || upgrades.length === 0) {
-        setData([]);
-        setLoaded(true);
-        return;
-      }
+      try {
+        // Fetch from runtime JSON instead of build-time import
+        const response = await fetch('/data/mainnetupgrade.json');
+        const mainnetUpgrades = await response.json();
+        const responseTestnet = await fetch('/data/testnetupgrade.json');
+        const testnetUpgrades = await responseTestnet.json();
 
-      const results = await Promise.all(
-        upgrades.map(async (chain) => {
+        const upgrades = chainType === "testnet" ? testnetUpgrades : mainnetUpgrades;
+
+        if (!upgrades || upgrades.length === 0) {
+          setData([]);
+          setLoaded(true);
+          return;
+        }
+
+        const results = await Promise.all(
+          upgrades.map(async (chain: any) => {
           try {
             const res = await fetch(`${chain.rpc}/status`);
             const json = await res.json();
@@ -64,7 +72,7 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
       );
 
       const filtered = results.filter(
-        (item) => item !== null && item.latestHeight !== "Error"
+        (item: any) => item !== null && item.latestHeight !== "Error"
       );
       setData(filtered);
       setLoaded(true);
