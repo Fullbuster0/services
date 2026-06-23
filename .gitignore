@@ -14,6 +14,16 @@ bridge.log
 bridge.log.*
 *.log.tmp
 
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+.cache/
+
 # State (not for git)
 bridge_state.json
 bridge_state.json.tmp
