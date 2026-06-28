@@ -28,54 +28,58 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
 
         const results = await Promise.all(
           upgrades.map(async (chain: any) => {
-          try {
-            const res = await fetch(`${chain.rpc}/status`);
-            const json = await res.json();
-            const latestHeight = parseInt(json.result.sync_info.latest_block_height);
-            const latestTime = new Date(json.result.sync_info.latest_block_time);
+            try {
+              const res = await fetch(`${chain.rpc}/status`);
+              const json = await res.json();
+              const latestHeight = parseInt(json.result.sync_info.latest_block_height);
+              const latestTime = new Date(json.result.sync_info.latest_block_time);
 
-            // Hide items whose upgrade height has already been reached.
-            if (latestHeight >= chain.target_height) {
-              return null;
+              // Hide items whose upgrade height has already been reached.
+              if (latestHeight >= chain.target_height) {
+                return null;
+              }
+
+              const remainingBlocks = chain.target_height - latestHeight;
+              const averageBlockTime = 6.5; // seconds per block
+              const secondsLeft = remainingBlocks * averageBlockTime;
+              const eta = new Date(latestTime.getTime() + secondsLeft * 1000);
+
+              const now = new Date();
+              const diff = eta.getTime() - now.getTime();
+              const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+              const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+              const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+              return {
+                ...chain,
+                latestHeight,
+                eta: eta.toLocaleString(undefined, {
+                  dateStyle: "medium",
+                  timeStyle: "short",
+                }),
+                timeLeft: `${days}d ${hours}h ${minutes}m`,
+              };
+            } catch (e) {
+              // Keep entries with RPC errors visible so the operator can debug.
+              return {
+                ...chain,
+                latestHeight: "Error",
+                eta: "Error",
+                timeLeft: "Error",
+              };
             }
+          })
+        );
 
-            const remainingBlocks = chain.target_height - latestHeight;
-            const averageBlockTime = 6.5; // seconds per block
-            const secondsLeft = remainingBlocks * averageBlockTime;
-            const eta = new Date(latestTime.getTime() + secondsLeft * 1000);
-
-            const now = new Date();
-            const diff = eta.getTime() - now.getTime();
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / (1000 * 60)) % 60);
-
-            return {
-              ...chain,
-              latestHeight,
-              eta: eta.toLocaleString(undefined, {
-                dateStyle: "medium",
-                timeStyle: "short",
-              }),
-              timeLeft: `${days}d ${hours}h ${minutes}m`,
-            };
-          } catch (e) {
-            // Keep entries with RPC errors visible so the operator can debug.
-            return {
-              ...chain,
-              latestHeight: "Error",
-              eta: "Error",
-              timeLeft: "Error",
-            };
-          }
-        })
-      );
-
-      const filtered = results.filter(
-        (item: any) => item !== null && item.latestHeight !== "Error"
-      );
-      setData(filtered);
-      setLoaded(true);
+        const filtered = results.filter(
+          (item: any) => item !== null && item.latestHeight !== "Error"
+        );
+        setData(filtered);
+        setLoaded(true);
+      } catch (e) {
+        console.error('fetchData error', e);
+        setLoaded(true);
+      }
     }
 
     fetchData();
