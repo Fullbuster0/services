@@ -8,9 +8,6 @@ sidebar_position: 4
 </div>
 <span className="sub-lines">Chain ID: `lava-1` | Node Version: `v5.5.1`</span>
 
-<span>Upgrade height: **4154305** (Proposal #59)</span>
-
-> Lava Mainnet Upgrade to v5.5.1
 
 ## Manual Upgrade
 

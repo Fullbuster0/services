@@ -8,9 +8,6 @@ sidebar_position: 4
 </div>
 <span className="sub-lines">Chain ID: `hippo-1` | Node Version: `v1.0.2`</span>
 
-<span>Upgrade height: **3847000** (Proposal #24)</span>
-
-> Software upgrade to v1.0.2(Security Update)
 
 ## Manual Upgrade
 

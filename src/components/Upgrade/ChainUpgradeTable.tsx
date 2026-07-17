@@ -13,8 +13,8 @@ import Link from "@docusaurus/Link";
  * /block?height=N (some LCD-only endpoints don't).
  */
 async function getAverageBlockTime(rpc: string, latestHeight: number): Promise<number> {
-  // Step size proportional to chain block time — sample every ~120s
-  // worth of blocks (≈20 blocks for a 6s chain) for a stable average.
+  // Sample blocks at fixed offsets BACKWARD from the latest height.
+  // We then sort by block height ascending so deltas are positive.
   const sampleOffsets = [1, 5, 20, 50, 100];
   try {
     const samples = await Promise.all(
@@ -26,29 +26,30 @@ async function getAverageBlockTime(rpc: string, latestHeight: number): Promise<n
           const json = await res.json();
           const timeStr = json?.result?.block?.header?.time;
           if (!timeStr) return null;
-          return new Date(timeStr).getTime();
+          return { height: h, time: new Date(timeStr).getTime() };
         } catch {
           return null;
         }
       })
     );
-    const pairs: number[] = [];
-    for (let i = 1; i < samples.length; i++) {
-      const prev = samples[i - 1];
-      const curr = samples[i];
-      if (prev != null && curr != null) {
-        const diff = Math.abs(curr - prev);
-        if (diff > 0 && diff < 60 * 60 * 1000) {
-          // Sanity bound: < 1 hour per block diff
-          pairs.push(diff);
-        }
+    const valid = samples.filter((s): s is { height: number; time: number } => s !== null);
+    if (valid.length < 2) return 6.5;
+
+    // Sort by block height ASC so delta = newer - older is positive.
+    valid.sort((a, b) => a.height - b.height);
+
+    let totalDeltaMs = 0;
+    let totalBlocks = 0;
+    for (let i = 1; i < valid.length; i++) {
+      const dt = valid[i].time - valid[i - 1].time;
+      const dh = valid[i].height - valid[i - 1].height;
+      if (dt > 0 && dh > 0 && dt < 60 * 60 * 1000) {
+        totalDeltaMs += dt;
+        totalBlocks += dh;
       }
     }
-    if (pairs.length === 0) return 6.5;
-    // Average per-block time = total time / number of blocks between samples
-    const totalDelta = pairs.reduce((a, b) => a + b, 0);
-    const totalBlocks = sampleOffsets.slice(1).reduce((a, b) => a + b, 0); // 5+20+50+100
-    return totalDelta / 1000 / totalBlocks;
+    if (totalBlocks === 0) return 6.5;
+    return totalDeltaMs / 1000 / totalBlocks;
   } catch {
     return 6.5;
   }
