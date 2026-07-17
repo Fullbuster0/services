@@ -675,8 +675,12 @@ def main() -> int:
 
         # Reconcile proposal with persisted state — may complete an upgrade,
         # migrate config, and signal a doc rebuild.
+        # Track whether the lifecycle manager touched the state — if it
+        # did (registered a new active upgrade, completed one, etc.) we
+        # must persist the change.
+        pre_state_snapshot = json.dumps(state, sort_keys=True)
         effective_upgrade = manage_upgrade_lifecycle(cid, cfg, upgrade, state)
-        if effective_upgrade != upgrade:
+        if json.dumps(state, sort_keys=True) != pre_state_snapshot:
             state_dirty = True
 
         try:
