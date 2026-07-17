@@ -3,6 +3,8 @@ hide_table_of_contents: false
 title: Upgrade
 sidebar_position: 4
 ---
+import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemainingBlock';
+
 <div className="h1-with-icon icon-atomone">
 # Atomone Upgrade
 </div>
@@ -10,6 +12,9 @@ sidebar_position: 4
 
 <br/><br/>
 <span>Upgrade height: **9550000** (Proposal #21)</span>
+<br/>
+Remaining Block :
+<UpgradeRemainingBlock targetBlock={9550000} rpc="https://atomone-mainnet-rpc.shazoes.xyz" explorerUrl="https://explorer.shazoes.xyz/atomone-mainnet/block" />
 
 > AtomOne v4 Upgrade
 

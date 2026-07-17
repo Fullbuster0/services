@@ -544,20 +544,38 @@ def update_files(chain_id, chain_cfg, upgrade):
 
     # 1. /upgrade.md
     md_path = Path(f"/home/hermes/services/{chain_cfg['doc_path']}").resolve()
+
+    # Build explorer block URL (strip "/gov/" from explorer_url, append "/block")
+    explorer_base = chain_cfg['explorer_url'].rstrip('gov/').rstrip('/')
+    explorer_block_url = f"{explorer_base}/block"
+
+    # Get RPC endpoint for live component
+    rpc_for_component = get_healthiest_endpoint(
+        chain_cfg.get('rpc_endpoints') or chain_cfg.get('rest_endpoints', [])
+    )
+
     content = f"""---
 hide_table_of_contents: false
 title: Upgrade
 sidebar_position: 4
 ---
+import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemainingBlock';
+
 <div className="h1-with-icon icon-{chain_id}">
 # {chain_cfg['chain_name']} Upgrade
 </div>
 <span className="sub-lines">Chain ID: `{chain_cfg['chain_id']}` | Node Version: `{ver_upgrade}`</span>
 """
     if upgrade:
+        # JSX numeric props need double-brace escaping in f-strings:
+        # {{ → {  and  }} → }
+        # targetBlock={{{upgrade['height']}}} → targetBlock={9550000}
         content += f"""
 <br/><br/>
 <span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']})</span>
+<br/>
+Remaining Block :
+<UpgradeRemainingBlock targetBlock={{{upgrade['height']}}} rpc="{rpc_for_component}" explorerUrl="{explorer_block_url}" />
 
 > {upgrade['description']}
 
