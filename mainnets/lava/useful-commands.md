@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Lava Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `lava-mainnet-1` | Node Version: `v1.0.0`
+Chain ID: `lava-mainnet-1` | Node Version: `v5.5.1`
 </span>
 
 :::note

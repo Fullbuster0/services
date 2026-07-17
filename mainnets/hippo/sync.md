@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Hippo Protocol Sync
 </div>
 <span className="sub-lines"> 
-Chain ID: `hippo-protocol-1` | Node Version: `v1.0.0`
+Chain ID: `hippo-protocol-1` | Node Version: `v1.0.2`
 </span>
 <Tabs>
   <TabItem value="snapshot" label="Snapshot" default>

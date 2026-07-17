@@ -72,7 +72,7 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
         );
 
         const filtered = results.filter(
-          (item: any) => item !== null && item.latestHeight !== "Error"
+          (item: any) => item !== null
         );
         setData(filtered);
         setLoaded(true);

@@ -636,7 +636,10 @@ sidebar_position: 4
             data.append({
                 "network":       chain_cfg['chain_name'],
                 "link":          f"/{chain_cfg['doc_path'].replace('upgrade.md', '')}",
-                "rpc":           get_healthiest_endpoint(chain_cfg['rest_endpoints']),
+                # Use rpc_endpoints (Tendermint RPC) so the React component
+                # can fetch /status. REST endpoints (LCD) return
+                # "code:12 Not Implemented" on /status and break the table.
+                "rpc":           get_healthiest_endpoint(chain_cfg.get('rpc_endpoints') or chain_cfg.get('rest_endpoints', [])),
                 "target_height": target_h_int,
                 "version":       ver_upgrade,
                 "proposal":      f"{chain_cfg['explorer_url']}/{upgrade['proposal_id']}",
