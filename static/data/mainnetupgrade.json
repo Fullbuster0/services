@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "network": "Terra",
+    "link": "/mainnets/terra/",
+    "rpc": "https://terra-mainnet-api.shazoes.xyz",
+    "target_height": 22055000,
+    "version": "v2.20",
+    "proposal": "https://explorer.shazoes.xyz/terra-mainnet/gov//4849"
+  }
+]
