@@ -208,12 +208,17 @@ def fetch_voting_proposals(chain_cfg: dict) -> list:
     eps = chain_cfg.get("rest_endpoints", [])
     paths = [
         ("/atomone/gov/v1/proposals", "2"),
+        ("/atomone/gov/v1/proposals", "1"),
+        ("/atomone/gov/v1/proposals", "3"),
         ("/cosmos/gov/v1/proposals", "1"),
+        ("/cosmos/gov/v1/proposals", "2"),
+        ("/cosmos/gov/v1/proposals", "3"),
         ("/cosmos/gov/v1beta1/proposals", "2"),
+        ("/cosmos/gov/v1beta1/proposals", "3"),
     ]
     for ep in eps:
         for path, sc in paths:
-            url = f"{ep.rstrip('/')}{path}?proposal_status={sc}&pagination.limit=10"
+            url = f"{ep.rstrip('/')}{path}?proposal_status={sc}&pagination.limit=50"
             data = _http_get_json(url, timeout=args.rpc_timeout)
             if data and data.get("proposals"):
                 return data["proposals"]
@@ -221,61 +226,131 @@ def fetch_voting_proposals(chain_cfg: dict) -> list:
 
 
 def get_consensus_proposals(rest_endpoints: list[str]) -> list:
-    """Fetch proposals from multiple endpoints and merge."""
+    """Fetch proposals from multiple endpoints and merge.
+
+    Note: status codes 1=DepositPeriod, 2=VotingPeriod, 3=Passed, 4=Failed,
+    5=Rejected. We also query status 3 (PASSED) so post-vote proposals that
+    are awaiting their target height still get picked up by the bridge.
+    """
     merged = {}
     paths = [
         ("/atomone/gov/v1/proposals", "2"),
+        ("/atomone/gov/v1/proposals", "1"),
+        ("/atomone/gov/v1/proposals", "3"),
         ("/cosmos/gov/v1/proposals", "1"),
+        ("/cosmos/gov/v1/proposals", "2"),
+        ("/cosmos/gov/v1/proposals", "3"),
         ("/cosmos/gov/v1beta1/proposals", "2"),
+        ("/cosmos/gov/v1beta1/proposals", "3"),
     ]
     for ep in rest_endpoints:
         for path, sc in paths:
-            url = f"{ep.rstrip('/')}{path}?proposal_status={sc}&pagination.limit=10"
+            url = f"{ep.rstrip('/')}{path}?proposal_status={sc}&pagination.limit=20"
             data = _http_get_json(url, timeout=args.rpc_timeout)
             if data and data.get("proposals"):
                 for p in data["proposals"]:
-                    merged[p.get("proposal_id")] = p
+                    pid = p.get("proposal_id") or p.get("id")
+                    merged[pid] = p
     return list(merged.values())
 
 
-def find_software_upgrade(proposals: list) -> dict | None:
-    """Return the first SoftwareUpgrade-shaped proposal, normalised, or None."""
-    for p in proposals:
-        if "SoftwareUpgrade" not in str(p.get("content", {})):
-            continue
-        content = p.get("content", {}) or {}
+def _extract_plan_from_proposal(p: dict) -> tuple[dict, str, str]:
+    """Extract (plan_dict, title, description) regardless of v1/v1beta1 shape.
+
+    v1 gov (cosmos.gov.v1 / atomone.gov.v1) puts the MsgSoftwareUpgrade in
+    `messages[0].plan` and title/summary at the top level.
+    v1beta1 gov wraps everything in `content` with `@type` discriminator.
+    """
+    raw = p
+
+    # v1 shape
+    if p.get("messages"):
+        for msg in p["messages"] or []:
+            msg_type = msg.get("@type", "")
+            if "SoftwareUpgrade" in msg_type:
+                plan = msg.get("plan", {}) or {}
+                title = p.get("title", "Upgrade")
+                desc = p.get("summary", "") or p.get("title", "Upgrade")
+                return plan, title, desc
+
+    # v1beta1 shape
+    content = p.get("content", {}) or {}
+    if "SoftwareUpgrade" in str(content):
         plan = content.get("plan", {}) or {}
-        return {
-            "height":       str(plan.get("height", "0")),
-            "proposal_id":  str(p.get("proposal_id", "")),
-            "description":  content.get("title", "Upgrade"),
+        title = content.get("title", "Upgrade")
+        desc = content.get("description", "") or content.get("title", "Upgrade")
+        return plan, title, desc
+
+    return {}, "", ""
+
+
+def find_software_upgrade(proposals: list) -> dict | None:
+    """Return the highest-id SoftwareUpgrade proposal that is still active.
+
+    A proposal counts as "active" if its target height is non-zero and
+    not yet reached. We prefer the highest id (newest) so stale upgrades
+    from earlier chains (e.g. AtomOne v2 on a long-since-passed height)
+    don't shadow the current one (e.g. AtomOne v4).
+    """
+    candidates = []
+    for p in proposals:
+        plan, title, desc = _extract_plan_from_proposal(p)
+        if not plan:
+            continue
+        try:
+            target_h = int(plan.get("height", "0") or "0")
+        except (TypeError, ValueError):
+            target_h = 0
+        if target_h <= 0:
+            continue
+        candidates.append({
+            "height":       str(target_h),
+            "proposal_id":  str(p.get("proposal_id") or p.get("id", "")),
+            "description":  title or desc or "Upgrade",
             "version":      plan.get("name", ""),
+            "target_h_int": target_h,
             "_raw":         p,
-        }
-    return None
+        })
+
+    if not candidates:
+        return None
+
+    # Newest proposal wins
+    candidates.sort(key=lambda c: int(c["proposal_id"] or "0"), reverse=True)
+    return candidates[0]
 
 
 def extract_version_from_proposal(p: dict, fallback: str) -> str:
-    """Extract binary version from a SoftwareUpgrade proposal, with fallbacks."""
-    plan = p.get("content", {}).get("plan", {}) or {}
+    """Extract binary version from a SoftwareUpgrade proposal, with fallbacks.
+
+    Handles both v1 (`messages[].plan`) and v1beta1 (`content.plan`) shapes.
+    Uses the raw _extract_plan_from_proposal helper so version extraction
+    stays consistent with the detection path.
+    """
+    plan, title, desc = _extract_plan_from_proposal(p)
+    if not plan:
+        return fallback
+
     info = plan.get("info") or ""
 
-    # 1) plan.name — usually the cleanest (e.g. "v3.4.0")
-    name = plan.get("name")
-    if name and re.match(r"^v?\d", str(name)):
-        return str(name)
-
-    # 2) scan plan.info for version-like patterns
+    # 1) plan.info — prefer the full semver embedded in binaries JSON
+    #    (e.g. "v4.0.0" inside info JSON), this is the actual release.
     match = re.search(r"(v?\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)", info)
     if match:
         return match.group(1)
 
-    # 3) scan title / description for a version
-    for key in ("title", "description"):
-        val = p.get("content", {}).get(key, "") or ""
-        match = re.search(r"(v?\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)", str(val))
-        if match:
-            return match.group(1)
+    # 2) plan.name — usually the cleanest (e.g. "v3.4.0"), but can be a
+    #    short codename like "v4" so we only accept it if it has at least
+    #    a minor version component (e.g. "v3.4" or "v3.4.0").
+    name = plan.get("name")
+    if name and re.match(r"^v?\d+\.\d+", str(name)):
+        return str(name)
+
+    # 3) scan the raw proposal text for a version
+    raw_str = str(p)
+    match = re.search(r"(v?\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)", raw_str)
+    if match:
+        return match.group(1)
 
     return fallback
 
