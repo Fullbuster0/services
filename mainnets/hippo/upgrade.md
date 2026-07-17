@@ -6,11 +6,8 @@ sidebar_position: 4
 <div className="h1-with-icon icon-hippo">
 # Hippo Protocol Upgrade
 </div>
-<span className="sub-lines">Chain ID: `hippo-1` | Node Version: `v1.0.2`</span>
+<span className="sub-lines">Chain ID: `hippo-1` | Node Version: `v1.0.0`</span>
 
-<span>Upgrade height: **3847000** (Proposal #24)</span>
-
-> Software upgrade to v1.0.2(Security Update)
 
 ## Manual Upgrade
 
@@ -19,7 +16,7 @@ cd $HOME
 rm -rf hippo
 git clone https://github.com/hippo-protocol/hippo.git hippo
 cd hippo
-git checkout v1.0.2
+git checkout v1.0.0
 make install
 sudo systemctl restart hippod && sudo journalctl -fu hippod -o cat
 ```

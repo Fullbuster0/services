@@ -335,15 +335,19 @@ def extract_version_from_proposal(p: dict, fallback: str) -> str:
 
     # 1) plan.info — prefer the full semver embedded in binaries JSON
     #    (e.g. "v4.0.0" inside info JSON), this is the actual release.
-    match = re.search(r"(v?\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)", info)
+    #    Restrict to github release URLs to avoid catching timestamps/floats.
+    match = re.search(r"releases/download/(v?\d+\.\d+(?:\.\d+)?(?:-[\w.]+)?)", info)
+    if match:
+        return match.group(1)
+    match = re.search(r"(v\d+\.\d+\.\d+(?:-[\w.]+)?)", info)
     if match:
         return match.group(1)
 
     # 2) plan.name — usually the cleanest (e.g. "v3.4.0"), but can be a
-    #    short codename like "v4" so we only accept it if it has at least
-    #    a minor version component (e.g. "v3.4" or "v3.4.0").
+    #    short codename like "v4". Accept it as long as it starts with "v"
+    #    followed by digits.
     name = plan.get("name")
-    if name and re.match(r"^v?\d+\.\d+", str(name)):
+    if name and re.match(r"^v\d+", str(name)):
         return str(name)
 
     # 3) scan the raw proposal text for a version

@@ -20,7 +20,7 @@
     "link": "/testnets/atomone/",
     "rpc": "https://atomone-testnet-api.shazoes.xyz",
     "target_height": 7065000,
-    "version": "33.123875366",
+    "version": "v4",
     "proposal": "https://explorer.shazoes.xyz/atomone-testnet/gov//12"
   }
 ]
