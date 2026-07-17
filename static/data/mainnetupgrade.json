@@ -1,14 +1,5 @@
 [
   {
-    "network": "Atomone",
-    "link": "/mainnets/atomone/",
-    "rpc": "https://atomone-mainnet-rpc.shazoes.xyz",
-    "target_height": 9550000,
-    "version": "v4.0.0",
-    "proposal_id": "21",
-    "proposal": "https://explorer.shazoes.xyz/atomone-mainnet/gov/21"
-  },
-  {
     "network": "Terra",
     "link": "/mainnets/terra/",
     "rpc": "https://terra-mainnet-rpc.shazoes.xyz",
@@ -16,5 +7,14 @@
     "version": "v2.20.0",
     "proposal_id": "4849",
     "proposal": "https://explorer.shazoes.xyz/terra-mainnet/gov/4849"
+  },
+  {
+    "network": "Atomone",
+    "link": "/mainnets/atomone/",
+    "rpc": "https://atomone-mainnet-rpc.shazoes.xyz",
+    "target_height": 9550000,
+    "version": "v4.0.0",
+    "proposal_id": "21",
+    "proposal": "https://explorer.shazoes.xyz/atomone-mainnet/gov/21"
   }
 ]

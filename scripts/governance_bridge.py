@@ -556,8 +556,8 @@ sidebar_position: 4
 """
     if upgrade:
         content += f"""
-
-Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']})
+<br/>
+<span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']})</span>
 
 > {upgrade['description']}
 
