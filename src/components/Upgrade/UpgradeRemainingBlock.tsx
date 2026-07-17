@@ -26,12 +26,8 @@ export default function UpgradeRemainingBlock({ targetBlock = 1056500, rpc = "ht
 
   return (
     <span>
-      Upgrade at height:{" "}
-      <Link href={`${explorerUrl}/${targetBlock}`} target="_blank">
-        {targetBlock}
-      </Link>
-      | &nbsp; Remaining Block: {remaining !== null ? <strong>{remaining >= 0 ? remaining : 0} </strong> : <i>Loading...</i>}
-      &nbsp;{" | "}&nbsp;&nbsp;
+      {remaining !== null ? <strong>{remaining >= 0 ? remaining : 0} </strong> : <i>Loading...</i>}
+      &nbsp;|&nbsp;
       <strong>
         <i>{remaining !== null ? (reached ? "Block reached, please upgrade." : "Please don't upgrade before the specified height.") : ""}</i>
       </strong>

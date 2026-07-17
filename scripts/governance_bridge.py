@@ -572,10 +572,7 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
         # targetBlock={{{upgrade['height']}}} → targetBlock={9550000}
         content += f"""
 <br/><br/>
-<span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']})</span>
-<br/>
-Remaining Block :
-<UpgradeRemainingBlock targetBlock={{{upgrade['height']}}} rpc="{rpc_for_component}" explorerUrl="{explorer_block_url}" />
+<span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']}) | Remaining Block : <UpgradeRemainingBlock targetBlock={{{upgrade['height']}}} rpc="{rpc_for_component}" explorerUrl="{explorer_block_url}" /></span>
 
 > {upgrade['description']}
 
