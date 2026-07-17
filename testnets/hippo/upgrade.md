@@ -3,6 +3,8 @@ hide_table_of_contents: false
 title: Upgrade
 sidebar_position: 4
 ---
+import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemainingBlock';
+
 <div className="h1-with-icon icon-hippo-testnet">
 # Hippo Protocol Testnet Upgrade
 </div>
