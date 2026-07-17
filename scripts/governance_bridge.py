@@ -564,7 +564,7 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <div className="h1-with-icon icon-{chain_id}">
 # {chain_cfg['chain_name']} Upgrade
 </div>
-<span className="sub-lines">Chain ID: `{chain_cfg['chain_id']}` | Node Version: `{ver_upgrade}`</span>
+<span className="sub-lines">Chain ID: `{chain_cfg['chain_id']}` | Node Version: `{ver_stable}`</span>
 """
     if upgrade:
         # JSX numeric props need double-brace escaping in f-strings:
@@ -573,8 +573,6 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
         content += f"""
 <br/><br/>
 <span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']}) | Remaining Block : <UpgradeRemainingBlock targetBlock={{{upgrade['height']}}} rpc="{rpc_for_component}" explorerUrl="{explorer_block_url}" /></span>
-
-> {upgrade['description']}
 
 """
     else:

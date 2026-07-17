@@ -8,12 +8,10 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <div className="h1-with-icon icon-terra">
 # Terra Upgrade
 </div>
-<span className="sub-lines">Chain ID: `phoenix-1` | Node Version: `v2.20.0`</span>
+<span className="sub-lines">Chain ID: `phoenix-1` | Node Version: `v2.4.0`</span>
 
 <br/><br/>
 <span>Upgrade height: **22055000** (Proposal #4849) | Remaining Block : <UpgradeRemainingBlock targetBlock={22055000} rpc="https://terra-mainnet-rpc.shazoes.xyz" explorerUrl="https://explorer.shazoes.xyz/terra-mainnet/block" /></span>
-
-> v2.20
 
 ## Manual Upgrade
 
