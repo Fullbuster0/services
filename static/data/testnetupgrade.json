@@ -21,6 +21,7 @@
     "rpc": "https://atomone-testnet-rpc.shazoes.xyz",
     "target_height": 7065000,
     "version": "v4",
-    "proposal": "https://explorer.shazoes.xyz/atomone-testnet/gov//12"
+    "proposal_id": "12",
+    "proposal": "https://explorer.shazoes.xyz/atomone-testnet/gov/12"
   }
 ]

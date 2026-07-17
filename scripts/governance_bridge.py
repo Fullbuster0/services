@@ -99,6 +99,7 @@ UPGRADE_ITEM_SCHEMA = {
         "rpc":           {"type": "string", "minLength": 1},
         "target_height": {"type": "integer", "minimum": 0},
         "version":       {"type": "string", "minLength": 1},
+        "proposal_id":   {"type": "string"},
         "proposal":      {"type": "string", "minLength": 1},
     },
     "required": ["network", "link", "rpc", "target_height", "version", "proposal"],
@@ -642,7 +643,10 @@ sidebar_position: 4
                 "rpc":           get_healthiest_endpoint(chain_cfg.get('rpc_endpoints') or chain_cfg.get('rest_endpoints', [])),
                 "target_height": target_h_int,
                 "version":       ver_upgrade,
-                "proposal":      f"{chain_cfg['explorer_url']}/{upgrade['proposal_id']}",
+                "proposal_id":   upgrade['proposal_id'],
+                # Normalize URL — explorer_url may end with "/" already, so
+                # strip trailing slash before appending the proposal id.
+                "proposal":      f"{chain_cfg['explorer_url'].rstrip('/')}/{upgrade['proposal_id']}",
             })
         if not args.dry_run:
             ok, err = validate_upgrade_json(data)

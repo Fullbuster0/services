@@ -8,6 +8,9 @@ sidebar_position: 4
 </div>
 <span className="sub-lines">Chain ID: `shentu-2.2` | Node Version: `v2.18.0`</span>
 
+<span>Upgrade height: **29367500** (Proposal #54)</span>
+
+> shentud v2.18.0 upgrade
 
 ## Manual Upgrade
 
