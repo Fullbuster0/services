@@ -6,8 +6,15 @@ sidebar_position: 4
 <div className="h1-with-icon icon-shentu">
 # Shentu Upgrade
 </div>
-<span className="sub-lines">Chain ID: `shentu-2.2` | Node Version: `v2.18.0`</span>
+<div className="sub-lines">
+Chain ID: `shentu-2.2` | Node Version: `v2.18.0`
+</div>
 
+<div className="sub-lines">
+Upgrade height: **29367500** (Proposal #54)
+</div>
+
+> shentud v2.18.0 upgrade
 
 ## Manual Upgrade
 

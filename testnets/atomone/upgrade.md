@@ -6,9 +6,13 @@ sidebar_position: 4
 <div className="h1-with-icon icon-atomone-testnet">
 # AtomOne Testnet Upgrade
 </div>
-<span className="sub-lines">Chain ID: `atomone-testnet-1` | Node Version: `v4`</span>
+<div className="sub-lines">
+Chain ID: `atomone-testnet-1` | Node Version: `v4`
+</div>
 
-<span>Upgrade height: **7065000** (Proposal #12)</span>
+<div className="sub-lines">
+Upgrade height: **7065000** (Proposal #12)
+</div>
 
 > v4
 

@@ -552,11 +552,15 @@ sidebar_position: 4
 <div className="h1-with-icon icon-{chain_id}">
 # {chain_cfg['chain_name']} Upgrade
 </div>
-<span className="sub-lines">Chain ID: `{chain_cfg['chain_id']}` | Node Version: `{ver_upgrade}`</span>
+<div className="sub-lines">
+Chain ID: `{chain_cfg['chain_id']}` | Node Version: `{ver_upgrade}`
+</div>
 """
     if upgrade:
         content += f"""
-<span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']})</span>
+<div className="sub-lines">
+Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']})
+</div>
 
 > {upgrade['description']}
 

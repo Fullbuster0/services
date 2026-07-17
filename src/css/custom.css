@@ -242,6 +242,11 @@ a:focus {
   background-size: 3rem 3rem;
 }
 
+.sub-lines {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
 .h1-with-icon h1 {
   padding-left: 3.5rem;
 }
