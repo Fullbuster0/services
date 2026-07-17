@@ -6,8 +6,11 @@ sidebar_position: 4
 <div className="h1-with-icon icon-atomone-testnet">
 # AtomOne Testnet Upgrade
 </div>
-<span className="sub-lines">Chain ID: `atomone-testnet-1` | Node Version: `v3.0.1`</span>
+<span className="sub-lines">Chain ID: `atomone-testnet-1` | Node Version: `33.123875366`</span>
 
+<span>Upgrade height: **7065000** (Proposal #12)</span>
+
+> v4
 
 ## Manual Upgrade
 
@@ -16,7 +19,7 @@ cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone.git atomone
 cd atomone
-git checkout v3.0.1
+git checkout 33.123875366
 make install
 sudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat
 ```
