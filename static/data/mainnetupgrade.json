@@ -1,5 +1,14 @@
 [
   {
+    "network": "Atomone",
+    "link": "/mainnets/atomone/",
+    "rpc": "https://atomone-mainnet-rpc.shazoes.xyz",
+    "target_height": 9550000,
+    "version": "v4.0.0",
+    "proposal_id": "21",
+    "proposal": "https://explorer.shazoes.xyz/atomone-mainnet/gov/21"
+  },
+  {
     "network": "Terra",
     "link": "/mainnets/terra/",
     "rpc": "https://terra-mainnet-rpc.shazoes.xyz",
@@ -9,12 +18,39 @@
     "proposal": "https://explorer.shazoes.xyz/terra-mainnet/gov/4849"
   },
   {
-    "network": "Atomone",
-    "link": "/mainnets/atomone/",
-    "rpc": "https://atomone-mainnet-rpc.shazoes.xyz",
-    "target_height": 9550000,
-    "version": "v4.0.0",
-    "proposal_id": "21",
-    "proposal": "https://explorer.shazoes.xyz/atomone-mainnet/gov/21"
+    "network": "Hippo Protocol",
+    "link": "/mainnets/hippo/",
+    "rpc": "https://hippo-mainnet-rpc.shazoes.xyz",
+    "target_height": 3847000,
+    "version": "v1.0.2",
+    "proposal_id": "24",
+    "proposal": "https://explorer.shazoes.xyz/hippo-mainnet/gov/24"
+  },
+  {
+    "network": "Lava Network",
+    "link": "/mainnets/lava/",
+    "rpc": "https://lava-mainnet-rpc.shazoes.xyz",
+    "target_height": 4154305,
+    "version": "v5.5.1",
+    "proposal_id": "59",
+    "proposal": "https://explorer.shazoes.xyz/lava-mainnet/gov/59"
+  },
+  {
+    "network": "Shentu",
+    "link": "/mainnets/shentu/",
+    "rpc": "https://shentu-mainnet-rpc.shazoes.xyz",
+    "target_height": 29367500,
+    "version": "v2.18.0",
+    "proposal_id": "54",
+    "proposal": "https://explorer.shazoes.xyz/shentu-mainnet/gov/54"
+  },
+  {
+    "network": "Zetachain",
+    "link": "/mainnets/zetachain/",
+    "rpc": "https://zetachain-mainnet-rpc.shazoes.xyz",
+    "target_height": 9384000,
+    "version": "v32.0.0",
+    "proposal_id": "62",
+    "proposal": "https://explorer.shazoes.xyz/zetachain-mainnet/gov/62"
   }
 ]

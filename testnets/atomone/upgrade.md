@@ -8,8 +8,8 @@ sidebar_position: 4
 </div>
 <span className="sub-lines">Chain ID: `atomone-testnet-1` | Node Version: `v4`</span>
 
-
-Upgrade height: **7065000** (Proposal #12)
+<br/><br/>
+<span>Upgrade height: **7065000** (Proposal #12)</span>
 
 > v4
 

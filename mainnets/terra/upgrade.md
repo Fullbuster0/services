@@ -8,8 +8,8 @@ sidebar_position: 4
 </div>
 <span className="sub-lines">Chain ID: `phoenix-1` | Node Version: `v2.20.0`</span>
 
-
-Upgrade height: **22055000** (Proposal #4849)
+<br/><br/>
+<span>Upgrade height: **22055000** (Proposal #4849)</span>
 
 > v2.20
 
