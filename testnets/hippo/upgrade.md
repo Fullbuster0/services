@@ -6,9 +6,7 @@ sidebar_position: 4
 <div className="h1-with-icon icon-hippo-testnet">
 # Hippo Protocol Testnet Upgrade
 </div>
-<div className="sub-lines">
-Chain ID: `hippo-testnet-1` | Node Version: `v1.0.1`
-</div>
+<span className="sub-lines">Chain ID: `hippo-testnet-1` | Node Version: `v1.0.1`</span>
 
 
 ## Manual Upgrade

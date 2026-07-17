@@ -6,13 +6,10 @@ sidebar_position: 4
 <div className="h1-with-icon icon-terra">
 # Terra Upgrade
 </div>
-<div className="sub-lines">
-Chain ID: `phoenix-1` | Node Version: `v2.20.0`
-</div>
+<span className="sub-lines">Chain ID: `phoenix-1` | Node Version: `v2.20.0`</span>
 
-<div className="sub-lines">
+
 Upgrade height: **22055000** (Proposal #4849)
-</div>
 
 > v2.20
 

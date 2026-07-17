@@ -6,15 +6,8 @@ sidebar_position: 4
 <div className="h1-with-icon icon-hippo">
 # Hippo Protocol Upgrade
 </div>
-<div className="sub-lines">
-Chain ID: `hippo-1` | Node Version: `v1.0.2`
-</div>
+<span className="sub-lines">Chain ID: `hippo-1` | Node Version: `v1.0.2`</span>
 
-<div className="sub-lines">
-Upgrade height: **3847000** (Proposal #24)
-</div>
-
-> Software upgrade to v1.0.2(Security Update)
 
 ## Manual Upgrade
 

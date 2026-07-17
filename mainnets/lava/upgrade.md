@@ -6,15 +6,8 @@ sidebar_position: 4
 <div className="h1-with-icon icon-lava">
 # Lava Network Upgrade
 </div>
-<div className="sub-lines">
-Chain ID: `lava-1` | Node Version: `v5.5.1`
-</div>
+<span className="sub-lines">Chain ID: `lava-1` | Node Version: `v5.5.1`</span>
 
-<div className="sub-lines">
-Upgrade height: **4154305** (Proposal #59)
-</div>
-
-> Lava Mainnet Upgrade to v5.5.1
 
 ## Manual Upgrade
 
