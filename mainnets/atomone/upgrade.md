@@ -8,7 +8,7 @@ sidebar_position: 4
 </div>
 <span className="sub-lines">Chain ID: `atomone-1` | Node Version: `v4.0.0`</span>
 
-<br/><br/><br/>
+<br/><br/>
 <span>Upgrade height: **9550000** (Proposal #21)</span>
 
 > AtomOne v4 Upgrade
