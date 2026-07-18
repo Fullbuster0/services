@@ -11,7 +11,7 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <span className="sub-lines">Chain ID: `phoenix-1` | Node Version: `v2.4.0`</span>
 
 <br/><br/>
-<span>Upgrade height: **22055000** (Proposal #4849) | Remaining Block : <UpgradeRemainingBlock targetBlock={22055000} rpc="https://terra-rpc.polkachu.com" explorerUrl="https://explorer.shazoes.xyz/terra-mainnet/block" /></span>
+<span>Upgrade height: **22055000** (Proposal #4849) | Remaining Block : <UpgradeRemainingBlock targetBlock={22055000} rpc="https://terra-mainnet-rpc.shazoes.xyz" explorerUrl="https://explorer.shazoes.xyz/terra-mainnet/block" /></span>
 
 ## Manual Upgrade
 
