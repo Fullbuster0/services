@@ -10,8 +10,6 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 </div>
 <span className="sub-lines">Chain ID: `shentu-2.2` | Node Version: `v2.18.0`</span>
 
-<br/><br/>
-<span>Upgrade height: **29367500** (Proposal #54) | Remaining Block : <UpgradeRemainingBlock targetBlock={29367500} rpc="https://shentu-mainnet-rpc.shazoes.xyz" explorerUrl="https://explorer.shazoes.xyz/shentu-mainnet/block" /></span>
 
 ## Manual Upgrade
 
