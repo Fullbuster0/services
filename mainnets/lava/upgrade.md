@@ -10,8 +10,6 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 </div>
 <span className="sub-lines">Chain ID: `lava-1` | Node Version: `v5.5.1`</span>
 
-<br/><br/>
-<span>Upgrade height: **4154305** (Proposal #59) | Remaining Block : <UpgradeRemainingBlock targetBlock={4154305} rpc="https://lava-mainnet-rpc.itrocket.net" explorerUrl="https://explorer.shazoes.xyz/lava-mainnet/block" /></span>
 
 ## Manual Upgrade
 
