@@ -10,8 +10,6 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 </div>
 <span className="sub-lines">Chain ID: `hippo-1` | Node Version: `v1.0.2`</span>
 
-<br/><br/>
-<span>Upgrade height: **3847000** (Proposal #24) | Remaining Block : <UpgradeRemainingBlock targetBlock={3847000} rpc="https://hippo-mainnet-rpc.shazoes.xyz" explorerUrl="https://explorer.shazoes.xyz/hippo-mainnet/block" /></span>
 
 ## Manual Upgrade
 
