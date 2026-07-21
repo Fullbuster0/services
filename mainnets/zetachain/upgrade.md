@@ -10,6 +10,8 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 </div>
 <span className="sub-lines">Chain ID: `zetachain_7000-1` | Node Version: `v32`</span>
 
+<br/><br/>
+<span>Upgrade height: **9384000** (Proposal #62) | Remaining Block : <UpgradeRemainingBlock targetBlock={9384000} rpc="https://zetachain-mainnet-rpc.itrocket.net" explorerUrl="https://explorer.shazoes.xyz/zetachain-mainnet/block" /></span>
 
 ## Manual Upgrade
 
@@ -18,7 +20,7 @@ cd $HOME
 rm -rf zetacored
 git clone https://github.com/zeta-chain/node.git zetacored
 cd zetacored
-git checkout v32
+git checkout v32.0.0
 make install
 sudo systemctl restart zetacored && sudo journalctl -fu zetacored -o cat
 ```
