@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Atomone Useful Commands
 </div>
 <span className="sub-lines"> 
- Chain ID: `atomone-1` | Node Version: `v3.3.0`
+ Chain ID: `atomone-1` | Node Version: `v4`
 </span>
 
 :::note

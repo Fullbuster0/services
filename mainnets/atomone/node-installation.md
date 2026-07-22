@@ -63,7 +63,7 @@ cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone.git
 cd atomone
-git checkout v3.3.0
+git checkout v4
 make install
 ```
 
