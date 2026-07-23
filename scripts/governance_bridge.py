@@ -620,8 +620,13 @@ def update_files(chain_id, chain_cfg, upgrade):
     # 1. /upgrade.md
     md_path = Path(f"/home/hermes/services/{chain_cfg['doc_path']}").resolve()
 
-    # Build explorer block URL (strip "/gov/" from explorer_url, append "/block")
-    explorer_base = chain_cfg['explorer_url'].rstrip('gov/').rstrip('/')
+    # Build explorer block URL (strip "/gov/" suffix properly, not char-set)
+    explorer_base = chain_cfg['explorer_url']
+    if explorer_base.endswith('/gov/'):
+        explorer_base = explorer_base[:-5]
+    elif explorer_base.endswith('/gov'):
+        explorer_base = explorer_base[:-4]
+    explorer_base = explorer_base.rstrip('/')
     explorer_block_url = f"{explorer_base}/block"
 
     # Get RPC endpoint for live component
@@ -765,7 +770,7 @@ def main() -> int:
         log.info("Processing %s...", cfg.get("chain_name", cid))
 
         try:
-            proposals = fetch_voting_proposals(cfg)
+            proposals = get_consensus_proposals(cfg.get("rest_endpoints", []))
         except Exception as e:  # defensive — never let one chain kill the run
             log.error("  ! Proposal fetch failed for %s: %s", cid, e)
             proposals = []
@@ -794,14 +799,22 @@ def main() -> int:
 
     if args.commit and not args.dry_run:
         cwd = Path(args.config).parent
-        for cmd in (["git", "add", "."],
-                    ["git", "commit", "-m", "bridge: auto-sync upgrade data"],
-                    ["git", "push"]):
-            try:
-                subprocess.run(cmd, cwd=cwd, check=True, timeout=60)
-            except (subprocess.CalledProcessError, subprocess.TimeoutExpired, FileNotFoundError) as e:
-                log.error("git %s failed: %s", " ".join(cmd[1:]), e)
-                return 1
+        # Check if there are changes to commit
+        result = subprocess.run(
+            ["git", "status", "--porcelain"], cwd=cwd,
+            capture_output=True, text=True, timeout=30,
+        )
+        if not result.stdout.strip():
+            log.info("  No changes to commit, skipping git push")
+        else:
+            for cmd in (["git", "add", "."],
+                        ["git", "commit", "-m", "bridge: auto-sync upgrade data"],
+                        ["git", "push"]):
+                try:
+                    subprocess.run(cmd, cwd=cwd, check=True, timeout=60)
+                except (subprocess.CalledProcessError, subprocess.TimeoutExpired, FileNotFoundError) as e:
+                    log.error("git %s failed: %s", " ".join(cmd[1:]), e)
+                    return 1
     return 0
 
 

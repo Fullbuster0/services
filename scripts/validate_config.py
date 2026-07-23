@@ -34,7 +34,7 @@ except ImportError:  # pragma: no cover - graceful degradation
 
 
 CONFIG_PATH = "/home/hermes/services/bridge_config.json"
-SCHEMA_PATH = os.path.join(os.path.dirname(__file__), "bridge_config_schema.json")
+SCHEMA_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "bridge_config_schema.json")
 
 VALID_TYPES = {"mainnet", "testnet", "devnet"}
 CHAIN_ID_RE = re.compile(r"^[a-zA-Z][a-zA-Z0-9_-]*-\d+$")
