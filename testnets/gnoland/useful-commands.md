@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Gnolan Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `test11` | Node Version: `chain/topaz`
+Chain ID: `topaz-1` | Node Version: `chain/topaz`
 </span>
 
 :::note
@@ -31,7 +31,7 @@ echo "export MONIKER=\"$MONIKER\"" >> $HOME/.bash_profile
 echo "export ADDRESS=\"$ADDRESS\"" >> $HOME/.bash_profile
 echo "export VALOPER=\"$VALOPER\"" >> $HOME/.bash_profile
 echo "export PUBKEY=\"$PUBKEY\"" >> $HOME/.bash_profile
-echo "export GNOLAND_CHAIN_ID="test11"" >> $HOME/.bash_profile
+echo "export GNOLAND_CHAIN_ID="topaz-1"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 

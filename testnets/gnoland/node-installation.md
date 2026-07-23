@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 # Gnolan Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `test11` | Node Version: `chain/topaz` | Custom Port: `42`
+Chain ID: `topaz-1` | Node Version: `chain/topaz` | Custom Port: `42`
 
 </span>
 
