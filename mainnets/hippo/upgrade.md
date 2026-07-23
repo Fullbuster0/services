@@ -8,7 +8,7 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <div className="h1-with-icon icon-hippo">
 # Hippo Protocol Upgrade
 </div>
-<span className="sub-lines">Chain ID: `hippo-1` | Node Version: `v1.0.2`</span>
+<span className="sub-lines">Chain ID: `hippo-1` | Node Version: `v1.0.1`</span>
 
 
 ## Manual Upgrade
@@ -18,7 +18,7 @@ cd $HOME
 rm -rf hippo
 git clone https://github.com/hippo-protocol/hippo.git hippo
 cd hippo
-git checkout v1.0.2
+git checkout v1.0.1
 make install
 sudo systemctl restart hippod && sudo journalctl -fu hippod -o cat
 ```

@@ -1,20 +1,36 @@
 import React, { useEffect, useState } from "react";
 import DOMPurify from "dompurify";
-import mainnetUpgrades from "@site/static/data/mainnetupgrade.json";
-import testnetUpgrades from "@site/static/data/testnetupgrade.json";
 import Link from "@docusaurus/Link";
 
 /**
+ * Fetch a Tendermint RPC path, trying multiple endpoints in order.
+ * Returns parsed JSON or throws if all endpoints fail.
+ */
+async function fetchWithFallback(rpcs: string[], path: string): Promise<any> {
+  for (const rpc of rpcs) {
+    try {
+      const controller = new AbortController();
+      const tid = setTimeout(() => controller.abort(), 5000);
+      const res = await fetch(`${rpc}${path}`, { signal: controller.signal });
+      clearTimeout(tid);
+      const json = await res.json();
+      if (json?.result) return json;
+    } catch {
+      continue; // try next RPC
+    }
+  }
+  throw new Error(`All ${rpcs.length} RPC endpoint(s) failed for ${path}`);
+}
+
+/**
  * Compute the average block time (in seconds) for a chain by sampling
- * recent blocks. We fetch the latest block height, then sample a few
- * blocks at different offsets and average the timestamp deltas.
- *
- * Falls back to a sensible default if the RPC doesn't expose
+ * recent blocks. Falls back to 6.5s if the RPC doesn't expose
  * /block?height=N (some LCD-only endpoints don't).
  */
-async function getAverageBlockTime(rpc: string, latestHeight: number): Promise<number> {
-  // Sample blocks at fixed offsets BACKWARD from the latest height.
-  // We then sort by block height ascending so deltas are positive.
+async function getAverageBlockTime(
+  rpcs: string[],
+  latestHeight: number
+): Promise<number> {
   const sampleOffsets = [1, 5, 20, 50, 100];
   try {
     const samples = await Promise.all(
@@ -22,8 +38,7 @@ async function getAverageBlockTime(rpc: string, latestHeight: number): Promise<n
         const h = latestHeight - offset;
         if (h <= 0) return null;
         try {
-          const res = await fetch(`${rpc}/block?height=${h}`);
-          const json = await res.json();
+          const json = await fetchWithFallback(rpcs, `/block?height=${h}`);
           const timeStr = json?.result?.block?.header?.time;
           if (!timeStr) return null;
           return { height: h, time: new Date(timeStr).getTime() };
@@ -32,7 +47,9 @@ async function getAverageBlockTime(rpc: string, latestHeight: number): Promise<n
         }
       })
     );
-    const valid = samples.filter((s): s is { height: number; time: number } => s !== null);
+    const valid = samples.filter(
+      (s): s is { height: number; time: number } => s !== null
+    );
     if (valid.length < 2) return 6.5;
 
     // Sort by block height ASC so delta = newer - older is positive.
@@ -55,15 +72,18 @@ async function getAverageBlockTime(rpc: string, latestHeight: number): Promise<n
   }
 }
 
-export default function ChainUpgradeTable({ chainType = "mainnet" }) {
-  const [data, setData] = useState([]);
+export default function ChainUpgradeTable({
+  chainType = "mainnet",
+}: {
+  chainType?: string;
+}) {
+  const [data, setData] = useState<any[]>([]);
   const [loaded, setLoaded] = useState(false);
-  const upgrades = chainType === "testnet" ? testnetUpgrades : mainnetUpgrades;
 
   useEffect(() => {
     async function fetchData() {
       try {
-        // Fetch from runtime JSON instead of build-time import
+        // Fetch from runtime JSON (not build-time import) so data is always fresh
         const response = await fetch("/data/mainnetupgrade.json");
         const mainnetUpgrades = await response.json();
         const responseTestnet = await fetch("/data/testnetupgrade.json");
@@ -80,11 +100,29 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
 
         const results = await Promise.all(
           upgrades.map(async (chain: any) => {
+            // Multi-RPC: prefer rpc_endpoints array, fall back to single rpc
+            const rpcs: string[] =
+              chain.rpc_endpoints?.length > 0
+                ? chain.rpc_endpoints
+                : chain.rpc
+                  ? [chain.rpc]
+                  : [];
+
+            if (rpcs.length === 0) {
+              return {
+                ...chain,
+                latestHeight: "Error",
+                eta: "Error",
+                timeLeft: "Error",
+                avgBlockTime: "Error",
+              };
+            }
+
             try {
-              const res = await fetch(`${chain.rpc}/status`);
-              const json = await res.json();
+              const json = await fetchWithFallback(rpcs, "/status");
               const latestHeight = parseInt(
-                json.result.sync_info.latest_block_height
+                json.result.sync_info.latest_block_height,
+                10
               );
               const latestTime = new Date(
                 json.result.sync_info.latest_block_time
@@ -97,13 +135,15 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
 
               // Real-time block time calculation from recent samples
               const avgBlockTime = await getAverageBlockTime(
-                chain.rpc,
+                rpcs,
                 latestHeight
               );
 
               const remainingBlocks = chain.target_height - latestHeight;
               const secondsLeft = remainingBlocks * avgBlockTime;
-              const eta = new Date(latestTime.getTime() + secondsLeft * 1000);
+              const eta = new Date(
+                latestTime.getTime() + secondsLeft * 1000
+              );
 
               const now = new Date();
               const diff = eta.getTime() - now.getTime();
@@ -172,30 +212,54 @@ export default function ChainUpgradeTable({ chainType = "mainnet" }) {
         </thead>
         <tbody className="text-gray-900 dark:text-gray-100">
           {data.map((chain, idx) => (
-            <tr key={idx} className="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <tr
+              key={idx}
+              className="hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
               <td className="px-4 py-2">{idx + 1}</td>
               <td className="px-4 py-2">
                 <Link href={chain.link}>
-                  {DOMPurify.sanitize(chain.network, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })}
+                  {DOMPurify.sanitize(chain.network, {
+                    ALLOWED_TAGS: [],
+                    ALLOWED_ATTR: [],
+                  })}
                 </Link>
               </td>
               <td className="px-4 py-2">
-                <Link href={chain.proposal}>#{DOMPurify.sanitize(chain.proposal_id, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })}</Link>
+                <Link href={chain.proposal}>
+                  #
+                  {DOMPurify.sanitize(chain.proposal_id, {
+                    ALLOWED_TAGS: [],
+                    ALLOWED_ATTR: [],
+                  })}
+                </Link>
               </td>
               <td className="px-4 py-2">{chain.target_height}</td>
               <td className="px-4 py-2">
                 {typeof chain.avgBlockTime === "number"
                   ? `${chain.avgBlockTime.toFixed(1)}s`
-                  : DOMPurify.sanitize(String(chain.avgBlockTime), { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })}
+                  : DOMPurify.sanitize(String(chain.avgBlockTime), {
+                      ALLOWED_TAGS: [],
+                      ALLOWED_ATTR: [],
+                    })}
               </td>
               <td className="px-4 py-2">
-                {DOMPurify.sanitize(chain.timeLeft, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })}
+                {DOMPurify.sanitize(chain.timeLeft, {
+                  ALLOWED_TAGS: [],
+                  ALLOWED_ATTR: [],
+                })}
               </td>
               <td className="px-4 py-2">
-                {DOMPurify.sanitize(chain.eta, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })}
+                {DOMPurify.sanitize(chain.eta, {
+                  ALLOWED_TAGS: [],
+                  ALLOWED_ATTR: [],
+                })}
               </td>
               <td className="px-4 py-2">
-                {DOMPurify.sanitize(chain.version, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })}
+                {DOMPurify.sanitize(chain.version, {
+                  ALLOWED_TAGS: [],
+                  ALLOWED_ATTR: [],
+                })}
               </td>
               <td className="px-4 py-2">
                 <Link href={`${chain.link}upgrade`}>Guide</Link>

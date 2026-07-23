@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Lava Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `lava-mainnet-1` | Node Version: `v5.5.1` | Custom Port: `307`
+Chain ID: `lava-mainnet-1` | Node Version: `v4.1.0` | Custom Port: `307`
 
 </span>
 
@@ -63,7 +63,7 @@ cd $HOME
 rm -rf lava
 git clone https://github.com/lavanet/lava
 cd lava
-git checkout v5.5.1
+git checkout v4.1.0
 make install-all
 ```
 

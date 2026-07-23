@@ -94,13 +94,14 @@ def atomic_write_json(file_path: Path, data: Any) -> None:
 UPGRADE_ITEM_SCHEMA = {
     "type": "object",
     "properties": {
-        "network":       {"type": "string", "minLength": 1},
-        "link":          {"type": "string", "minLength": 1},
-        "rpc":           {"type": "string", "minLength": 1},
-        "target_height": {"type": "integer", "minimum": 0},
-        "version":       {"type": "string", "minLength": 1},
-        "proposal_id":   {"type": "string"},
-        "proposal":      {"type": "string", "minLength": 1},
+        "network":        {"type": "string", "minLength": 1},
+        "link":           {"type": "string", "minLength": 1},
+        "rpc":            {"type": "string", "minLength": 1},
+        "rpc_endpoints":  {"type": "array", "items": {"type": "string"}},
+        "target_height":  {"type": "integer", "minimum": 0},
+        "version":        {"type": "string", "minLength": 1},
+        "proposal_id":    {"type": "string"},
+        "proposal":       {"type": "string", "minLength": 1},
     },
     "required": ["network", "link", "rpc", "target_height", "version", "proposal"],
     "additionalProperties": False,
@@ -650,9 +651,13 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
         # JSX numeric props need double-brace escaping in f-strings:
         # {{ → {  and  }} → }
         # targetBlock={{{upgrade['height']}}} → targetBlock={9550000}
+        # Multi-RPC: pass all endpoints as comma-separated `rpcs` prop;
+        # also keep single `rpc` for backward compat with older component builds.
+        all_rpcs = chain_cfg.get("rpc_endpoints") or chain_cfg.get("rest_endpoints", [])
+        rpcs_csv = ",".join(all_rpcs)
         content += f"""
 <br/><br/>
-<span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']}) | Remaining Block : <UpgradeRemainingBlock targetBlock={{{upgrade['height']}}} rpc="{rpc_for_component}" explorerUrl="{explorer_block_url}" /></span>
+<span>Upgrade height: **{upgrade['height']}** (Proposal #{upgrade['proposal_id']}) | Remaining Block : <UpgradeRemainingBlock targetBlock={{{upgrade['height']}}} rpc="{rpc_for_component}" rpcs="{rpcs_csv}" explorerUrl="{explorer_block_url}" /></span>
 
 """
     else:
@@ -727,13 +732,14 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
                 target_h_int = int(upgrade['height'])
             except (TypeError, ValueError):
                 target_h_int = 0
+            all_rpcs = chain_cfg.get("rpc_endpoints") or chain_cfg.get("rest_endpoints", [])
             data.append({
                 "network":       chain_cfg['chain_name'],
                 "link":          f"/{chain_cfg['doc_path'].replace('upgrade.md', '')}",
-                # Use rpc_endpoints (Tendermint RPC) so the React component
-                # can fetch /status. REST endpoints (LCD) return
-                # "code:12 Not Implemented" on /status and break the table.
-                "rpc":           get_healthiest_endpoint(chain_cfg.get('rpc_endpoints') or chain_cfg.get('rest_endpoints', [])),
+                # Primary RPC (first healthy) for backward compat with older frontend.
+                "rpc":           get_healthiest_endpoint(all_rpcs),
+                # Full list so frontend can fail over across providers.
+                "rpc_endpoints": list(all_rpcs),
                 "target_height": target_h_int,
                 "version":       ver_upgrade,
                 "proposal_id":   upgrade['proposal_id'],
