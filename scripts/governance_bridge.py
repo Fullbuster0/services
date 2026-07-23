@@ -500,7 +500,7 @@ def manage_upgrade_lifecycle(
                 "  ✓ %s upgrade COMPLETE: current=%s >= target=%s",
                 chain_id, current_height, target_h,
             )
-            new_version = active.get("version", "")
+            new_version = chain_cfg.get("version_override") or active.get("version", "")
             if new_version:
                 config_path = Path(args.config).resolve()
                 migrate_chain_node_version(config_path, chain_id, new_version)
@@ -535,11 +535,15 @@ def update_files(chain_id, chain_cfg, upgrade):
     - /sync.md / useful-commands.md : stable version in header (always).
     - static/data/<...>upgrade.json : overview grid entry.
     """
+    _override = chain_cfg.get("version_override")
     ver_upgrade = (
-        extract_version_from_proposal(upgrade.get("_raw", {}), chain_cfg["node_version"])
-        if upgrade else chain_cfg["node_version"]
+        _override
+        or (
+            extract_version_from_proposal(upgrade.get("_raw", {}), chain_cfg["node_version"])
+            if upgrade else chain_cfg["node_version"]
+        )
     )
-    ver_stable = chain_cfg["node_version"]
+    ver_stable = _override or chain_cfg["node_version"]
     log.info("  → %s: stable=%s, upgrade=%s", chain_cfg["chain_name"], ver_stable, ver_upgrade)
 
     # 1. /upgrade.md
@@ -597,15 +601,14 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
     if install_path.exists():
         try:
             install_content = install_path.read_text(encoding="utf-8")
-            install_cmd = chain_cfg['upgrade_template'].format(
-                folder=chain_cfg['folder'],
-                repo=chain_cfg['repo'],
-                binary=chain_cfg['binary'],
-                version=ver_stable,
-            )
             install_content = re.sub(
                 r"(git checkout\s+)[^\s]+",
                 rf"\g<1>{ver_stable}",
+                install_content,
+            )
+            install_content = re.sub(
+                r"(Node Version:\s*`)[^`]+(`)",
+                rf"\g<1>{ver_stable}\g<2>",
                 install_content,
             )
             if not args.dry_run:

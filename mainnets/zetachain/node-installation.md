@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Zetachain Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `zetachain_7000-1` | Node Version: `v36.0.0` | Custom Port: `311`
+Chain ID: `zetachain_7000-1` | Node Version: `v32` | Custom Port: `311`
 
 </span>
 

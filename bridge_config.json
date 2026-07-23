@@ -18,12 +18,13 @@
       "doc_path": "mainnets/atomone/upgrade.md",
       "json_path": "static/data/mainnetupgrade.json",
       "explorer_url": "https://explorer.shazoes.xyz/atomone-mainnet/gov/",
-      "node_version": "v4",
-      "manual_upgrade": "cd $HOME\nrm -rf atomone\ngit clone https://github.com/atomone-hub/atomone.git atomone\ncd atomone\ngit checkout v4\nmake install\nsudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat",
+      "node_version": "v4.0.1",
+      "manual_upgrade": "cd $HOME\nrm -rf atomone\ngit clone https://github.com/atomone-hub/atomone.git atomone\ncd atomone\ngit checkout v4.0.1\nmake install\nsudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat",
       "folder": "atomone",
       "repo": "https://github.com/atomone-hub/atomone.git",
       "binary": "atomoned",
-      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat",
+      "version_override": "v4.0.1"
     },
     "terra": {
       "chain_name": "Terra",

@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Axone Protocol Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `axone-1` | Node Version: `v12.0.0` | Custom Port: `304`
+Chain ID: `axone-1` | Node Version: `v1.0.0` | Custom Port: `304`
 
 </span>
 

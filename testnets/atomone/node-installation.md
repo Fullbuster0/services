@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Atomone Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `atomone-testnet-1` | Node Version: `v4.0.0-rc1` | Custom Port: `31`
+Chain ID: `atomone-testnet-1` | Node Version: `v3.0.1` | Custom Port: `31`
 </span>
 
 <Tabs>
