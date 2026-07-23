@@ -43,7 +43,7 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 try:
     from jsonschema import SchemaError, ValidationError, validate
@@ -484,8 +484,18 @@ def manage_upgrade_lifecycle(
     current_height = get_consensus_height(endpoints)
 
     def _mark_complete(record: dict, height: Optional[int]) -> None:
+        prop_id = str(record.get("proposal_id", ""))
+        target_height = str(record.get("target_height", ""))
+        # Idempotent: skip if this exact proposal+height already completed.
+        # Prevents unbounded growth of completed_upgrades on every hourly run
+        # (past-height proposals re-trigger this path each cycle).
+        already = any(
+            str(c.get("proposal_id")) == prop_id
+            and str(c.get("target_height")) == target_height
+            for c in state["completed_upgrades"].get(chain_id, [])
+        )
         new_version = chain_cfg.get("version_override") or record.get("version", "")
-        if new_version:
+        if new_version and not already:
             config_path = Path(args.config).resolve()
             migrate_chain_node_version(config_path, chain_id, new_version)
             # Keep the in-memory cfg in sync with what we just wrote to disk,
@@ -504,12 +514,13 @@ def manage_upgrade_lifecycle(
                     )
                 except KeyError:
                     pass
-        completed_entry = {
-            **record,
-            "completed_at": datetime.now(timezone.utc).isoformat(),
-            "completed_height": str(height if height is not None else ""),
-        }
-        state["completed_upgrades"].setdefault(chain_id, []).append(completed_entry)
+        if not already:
+            completed_entry = {
+                **record,
+                "completed_at": datetime.now(timezone.utc).isoformat(),
+                "completed_height": str(height if height is not None else ""),
+            }
+            state["completed_upgrades"].setdefault(chain_id, []).append(completed_entry)
         if chain_id in state["active_upgrades"]:
             del state["active_upgrades"][chain_id]
 
