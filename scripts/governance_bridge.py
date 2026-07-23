@@ -487,6 +487,22 @@ def manage_upgrade_lifecycle(
         if new_version:
             config_path = Path(args.config).resolve()
             migrate_chain_node_version(config_path, chain_id, new_version)
+            # Keep the in-memory cfg in sync with what we just wrote to disk,
+            # so update_files() in THIS same run renders the new version
+            # instead of the stale pre-upgrade value (otherwise docs lag by
+            # one run / one hour).
+            chain_cfg["node_version"] = new_version
+            template = chain_cfg.get("upgrade_template")
+            if template and "{version}" in template:
+                try:
+                    chain_cfg["manual_upgrade"] = template.format(
+                        folder=chain_cfg.get("folder", ""),
+                        repo=chain_cfg.get("repo", ""),
+                        binary=chain_cfg.get("binary", ""),
+                        version=new_version,
+                    )
+                except KeyError:
+                    pass
         completed_entry = {
             **record,
             "completed_at": datetime.now(timezone.utc).isoformat(),
