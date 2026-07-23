@@ -524,20 +524,25 @@ def manage_upgrade_lifecycle(
         except (TypeError, ValueError):
             target_h = 0
 
-        # Already past target → complete immediately, do NOT show banner.
+        # Already past target → no banner. Only migrate node_version if we were
+        # already tracking this upgrade as active. Cold discovery of an old
+        # passed proposal must NOT rewrite config (historical upgrades can be
+        # older than the current stable version — e.g. AtomOne manual pin, or
+        # a pagination hit that surfaces v4.1.0 after the chain is already on
+        # v5.5.1). Stable version lives in config / version_override.
         if current_height is not None and target_h > 0 and current_height >= target_h:
-            log.info(
-                "  ✓ %s upgrade already past target: current=%s >= target=%s (prop #%s)",
-                chain_id, current_height, target_h, prop_id,
-            )
-            record = active or {
-                "proposal_id": prop_id,
-                "version": version,
-                "target_height": target_height,
-                "description": upgrade.get("description", ""),
-                "started_at": datetime.now(timezone.utc).isoformat(),
-            }
-            _mark_complete(record, current_height)
+            if active and str(active.get("proposal_id")) == prop_id:
+                log.info(
+                    "  ✓ %s upgrade past target (was active): current=%s >= target=%s (prop #%s)",
+                    chain_id, current_height, target_h, prop_id,
+                )
+                _mark_complete(active, current_height)
+            else:
+                log.info(
+                    "  → %s prop #%s already past height %s — skip (not active; "
+                    "stable version stays at %s)",
+                    chain_id, prop_id, target_h, chain_cfg.get("node_version"),
+                )
             return None
 
         # Already completed this exact proposal+height before → stay quiet.
