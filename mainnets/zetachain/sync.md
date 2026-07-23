@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Zetachain Sync
 </div>
 <span className="sub-lines"> 
-Chain ID: `zetachain_7000-1` | Node Version: `v32`
+Chain ID: `zetachain_7000-1` | Node Version: `v36.0.0`
 </span>
 <Tabs>
   <TabItem value="snapshot" label="Snapshot" default>
