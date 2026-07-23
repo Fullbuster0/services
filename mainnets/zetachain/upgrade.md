@@ -8,7 +8,7 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <div className="h1-with-icon icon-zetachain">
 # Zetachain Upgrade
 </div>
-<span className="sub-lines">Chain ID: `zetachain_7000-1` | Node Version: `v18`</span>
+<span className="sub-lines">Chain ID: `zetachain_7000-1` | Node Version: `v32`</span>
 
 
 ## Manual Upgrade
@@ -18,7 +18,7 @@ cd $HOME
 rm -rf zetacored
 git clone https://github.com/zeta-chain/node.git zetacored
 cd zetacored
-git checkout v18
+git checkout v32
 make install
 sudo systemctl restart zetacored && sudo journalctl -fu zetacored -o cat
 ```

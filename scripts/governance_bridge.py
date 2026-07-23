@@ -776,7 +776,7 @@ def main() -> int:
         log.info("Processing %s...", cfg.get("chain_name", cid))
 
         try:
-            proposals = get_consensus_proposals(cfg.get("rest_endpoints", []))
+            proposals = fetch_voting_proposals(cfg)
         except Exception as e:  # defensive — never let one chain kill the run
             log.error("  ! Proposal fetch failed for %s: %s", cid, e)
             proposals = []

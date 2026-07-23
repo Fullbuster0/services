@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Zetachain Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `zetachain_7000-1` | Node Version: `v18`
+Chain ID: `zetachain_7000-1` | Node Version: `v32`
 </span>
 
 :::note

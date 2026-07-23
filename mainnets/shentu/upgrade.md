@@ -8,7 +8,7 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <div className="h1-with-icon icon-shentu">
 # Shentu Upgrade
 </div>
-<span className="sub-lines">Chain ID: `shentu-2.2` | Node Version: `v2.9.0`</span>
+<span className="sub-lines">Chain ID: `shentu-2.2` | Node Version: `v2.18.0`</span>
 
 
 ## Manual Upgrade
@@ -18,7 +18,7 @@ cd $HOME
 rm -rf shentu
 git clone https://github.com/shentufoundation/shentu shentu
 cd shentu
-git checkout v2.9.0
+git checkout v2.18.0
 make install
 sudo systemctl restart shentud && sudo journalctl -fu shentud -o cat
 ```

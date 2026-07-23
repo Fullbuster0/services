@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Lava Sync
 </div>
 <span className="sub-lines"> 
-Chain ID: `lava-mainnet-1` | Node Version: `v4.1.0`
+Chain ID: `lava-mainnet-1` | Node Version: `v5.5.1`
 </span>
 <Tabs>
   <TabItem value="snapshot" label="Snapshot" default>
