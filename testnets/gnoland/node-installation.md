@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 # Gnolan Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `test11` | Node Version: `chain/test11` | Custom Port: `42`
+Chain ID: `test11` | Node Version: `chain/topaz` | Custom Port: `42`
 
 </span>
 
@@ -49,9 +49,10 @@ cd $HOME
 rm -rf gno
 git clone https://github.com/gnolang/gno.git
 cd gno
-git checkout chain/test11
-make -C gno.land install.gnoland && make -C contribs/gnogenesis install && make install_gnokey
-gnoland --help
+git checkout chain/topaz
+make -C gno.land install.gnoland install.gnokey
+echo 'export GNOROOT=$HOME/gno' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 ### Config and Init App
@@ -67,14 +68,14 @@ gnoland config set consensus.timeout_commit 3s
 gnoland config set mempool.size 10000
 gnoland config set p2p.flush_throttle_timeout 10ms
 gnoland config set p2p.max_num_outbound_peers 40
-gnoland config set p2p.persistent_peers g10l8g7l5u0ahysgj0jczkvwdvct506khfrvf2yz@gnolan-testnet-rpc.shazoes.xyz:42656,g1vgvqg94xy8qj23dc8zpw6wns7q0hj9g8mx03ha@gno-core-sen-01.test11.testnets.gno.land:26656
-gnoland config set p2p.seeds g10l8g7l5u0ahysgj0jczkvwdvct506khfrvf2yz@gnolan-testnet-rpc.shazoes.xyz:42656,g1vgvqg94xy8qj23dc8zpw6wns7q0hj9g8mx03ha@gno-core-sen-01.test11.testnets.gno.land:26656
+gnoland config set p2p.persistent_peers g19q07ssuafhmg6r7ys7wp7rpc4jxc85cpvdy426@seed-1.topaz.testnets.gno.land:26656,g15k98e65gm8h7fdr3yr4tqn82lvch4a97a3sg3j@seed-2.topaz.testnets.gno.land:26656
+gnoland config set p2p.seeds g19q07ssuafhmg6r7ys7wp7rpc4jxc85cpvdy426@seed-1.topaz.testnets.gno.land:26656,g15k98e65gm8h7fdr3yr4tqn82lvch4a97a3sg3j@seed-2.topaz.testnets.gno.land:26656
 ```
 
 ### Download Genesis
 
 ```bash
-wget -O $HOME/gnoland-data/config/genesis.json https://files.shazoes.xyz/testnets/gnoland/genesis.json
+wget -O $HOME/gnoland-data/config/genesis.json https://github.com/gnolang/gno/releases/download/chain/topaz/genesis.json
 ```
 
 ### Set Service File

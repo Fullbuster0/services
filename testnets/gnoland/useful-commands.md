@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Gnolan Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `test11` | Node Version: `chain/test11`
+Chain ID: `test11` | Node Version: `chain/topaz`
 </span>
 
 :::note
