@@ -10,8 +10,6 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 </div>
 <span className="sub-lines">Chain ID: `atomone-1` | Node Version: `v4.0.1`</span>
 
-<br/><br/>
-<span>Upgrade height: **9550000** (Proposal #21) | Remaining Block : <UpgradeRemainingBlock targetBlock={9550000} rpc="https://atomone-mainnet-rpc.shazoes.xyz" explorerUrl="https://explorer.shazoes.xyz/atomone-mainnet/block" /></span>
 
 ## Manual Upgrade
 

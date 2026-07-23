@@ -183,23 +183,43 @@ def get_latest_block_height(endpoint: str, timeout: int = 5) -> int | None:
     return None
 
 
-def get_consensus_height(rpc_endpoints: list[str], threshold: int = 2) -> Optional[int]:
-    """Fetch latest block height from multiple endpoints, return consensus (majority)."""
+def get_consensus_height(rpc_endpoints: list[str], threshold: int = 2, slack: int = 3) -> Optional[int]:
+    """Fetch latest block height from multiple endpoints, return consensus.
+
+    Exact majority first. If RPCs disagree by only a few blocks (chain is
+    live — common), treat the cluster as consensus and return the max height.
+    With a single responding endpoint, that height is accepted as-is.
+    """
     heights = []
     for ep in rpc_endpoints:
         h = get_latest_block_height(ep)
         if h is not None:
             heights.append(h)
-    
+
     if not heights:
         return None
 
     counts = Counter(heights)
     most_common, count = counts.most_common(1)[0]
-    
+
     if count >= threshold:
         log.info("  ✓ Consensus reached on height: %s (agreed by %s/%s)", most_common, count, len(heights))
         return most_common
+
+    # Single endpoint that answered — accept it (better than stuck forever).
+    if len(heights) == 1:
+        log.info("  ✓ Single-endpoint height accepted: %s", heights[0])
+        return heights[0]
+
+    # Near-consensus: all heights within `slack` of each other.
+    lo, hi = min(heights), max(heights)
+    if hi - lo <= slack:
+        log.info(
+            "  ✓ Near-consensus height: %s (range %s–%s, n=%s)",
+            hi, lo, hi, len(heights),
+        )
+        return hi
+
     log.warning("  ✗ No consensus on height: counts=%s", counts)
     return None
 
@@ -455,19 +475,70 @@ def manage_upgrade_lifecycle(
 
     Returns the "effective" upgrade to use for doc generation:
       - the active upgrade (when one is in flight), or
-      - None  (when the upgrade just completed → docs must rebuild for the
-              newly-stable version).
+      - None  (when the upgrade just completed / already past target height
+              → docs must rebuild for the newly-stable version).
     """
     active = state["active_upgrades"].get(chain_id)
+    endpoints = chain_cfg.get("rpc_endpoints", []) or []
+    current_height = get_consensus_height(endpoints)
 
-    # Register a newly-observed proposal as active.
+    def _mark_complete(record: dict, height: Optional[int]) -> None:
+        new_version = chain_cfg.get("version_override") or record.get("version", "")
+        if new_version:
+            config_path = Path(args.config).resolve()
+            migrate_chain_node_version(config_path, chain_id, new_version)
+        completed_entry = {
+            **record,
+            "completed_at": datetime.now(timezone.utc).isoformat(),
+            "completed_height": str(height if height is not None else ""),
+        }
+        state["completed_upgrades"].setdefault(chain_id, []).append(completed_entry)
+        if chain_id in state["active_upgrades"]:
+            del state["active_upgrades"][chain_id]
+
+    # Register a newly-observed proposal as active (or re-evaluate it).
     if upgrade is not None:
         prop_id = str(upgrade.get("proposal_id", ""))
         target_height = str(upgrade.get("height", "0"))
         version = upgrade.get("version", "")
 
+        try:
+            target_h = int(target_height or "0")
+        except (TypeError, ValueError):
+            target_h = 0
+
+        # Already past target → complete immediately, do NOT show banner.
+        if current_height is not None and target_h > 0 and current_height >= target_h:
+            log.info(
+                "  ✓ %s upgrade already past target: current=%s >= target=%s (prop #%s)",
+                chain_id, current_height, target_h, prop_id,
+            )
+            record = active or {
+                "proposal_id": prop_id,
+                "version": version,
+                "target_height": target_height,
+                "description": upgrade.get("description", ""),
+                "started_at": datetime.now(timezone.utc).isoformat(),
+            }
+            _mark_complete(record, current_height)
+            return None
+
+        # Already completed this exact proposal+height before → stay quiet.
+        prev = state.get("completed_upgrades", {}).get(chain_id, [])
+        if any(
+            str(c.get("proposal_id")) == prop_id
+            and str(c.get("target_height")) == target_height
+            for c in prev
+        ):
+            if active and str(active.get("proposal_id")) == prop_id:
+                del state["active_upgrades"][chain_id]
+            log.info(
+                "  → %s proposal #%s already completed, skipping re-register",
+                chain_id, prop_id,
+            )
+            return None
+
         if not active or str(active.get("proposal_id")) != prop_id:
-            # Different (or no) active proposal — supersede and re-register.
             state["active_upgrades"][chain_id] = {
                 "proposal_id":   prop_id,
                 "version":       version,
@@ -483,8 +554,6 @@ def manage_upgrade_lifecycle(
 
     # If we have an active upgrade, check whether its target height has passed.
     if active:
-        endpoints = chain_cfg.get("rpc_endpoints", []) or []
-        current_height = get_consensus_height(endpoints)
         if current_height is None:
             log.warning("  Could not reach consensus on block height for %s", chain_id)
             return upgrade
@@ -500,21 +569,7 @@ def manage_upgrade_lifecycle(
                 "  ✓ %s upgrade COMPLETE: current=%s >= target=%s",
                 chain_id, current_height, target_h,
             )
-            new_version = chain_cfg.get("version_override") or active.get("version", "")
-            if new_version:
-                config_path = Path(args.config).resolve()
-                migrate_chain_node_version(config_path, chain_id, new_version)
-
-            # Move from active → completed (preserving the previous record).
-            completed_entry = {
-                **active,
-                "completed_at":    datetime.now(timezone.utc).isoformat(),
-                "completed_height": str(current_height),
-            }
-            state["completed_upgrades"].setdefault(chain_id, []).append(completed_entry)
-            del state["active_upgrades"][chain_id]
-
-            # Return None → triggers full doc rebuild reflecting the new stable.
+            _mark_complete(active, current_height)
             return None
         log.info(
             "  ⏳ %s upgrade pending: current=%s < target=%s",
