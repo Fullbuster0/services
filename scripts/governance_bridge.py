@@ -227,6 +227,16 @@ def get_consensus_height(rpc_endpoints: list[str], threshold: int = 2, slack: in
 
 # ── Governance proposal polling ─────────────────────────────────────────────
 def fetch_voting_proposals(chain_cfg: dict) -> list:
+    """Fetch upgrade-relevant proposals across all gov statuses, merged.
+
+    Uses pagination.reverse=true so the NEWEST proposals come first (without
+    this, Cosmos REST returns oldest-first and a limit=50 window misses the
+    current upgrade on chains with long histories — e.g. Terra #4849 was
+    invisible because the window stopped at #4818).
+
+    Merges all statuses (no early return) so a non-empty deposit/voting page
+    can't shadow a passed-but-pending-height upgrade. Deduplicates by id.
+    """
     eps = chain_cfg.get("rest_endpoints", [])
     paths = [
         ("/atomone/gov/v1/proposals", "2"),
@@ -238,13 +248,20 @@ def fetch_voting_proposals(chain_cfg: dict) -> list:
         ("/cosmos/gov/v1beta1/proposals", "2"),
         ("/cosmos/gov/v1beta1/proposals", "3"),
     ]
+    merged: dict = {}
     for ep in eps:
         for path, sc in paths:
-            url = f"{ep.rstrip('/')}{path}?proposal_status={sc}&pagination.limit=50"
+            url = (
+                f"{ep.rstrip('/')}{path}"
+                f"?proposal_status={sc}&pagination.limit=50&pagination.reverse=true"
+            )
             data = _http_get_json(url, timeout=args.rpc_timeout)
             if data and data.get("proposals"):
-                return data["proposals"]
-    return []
+                for p in data["proposals"]:
+                    pid = str(p.get("proposal_id") or p.get("id", ""))
+                    if pid and pid not in merged:
+                        merged[pid] = p
+    return list(merged.values())
 
 
 def get_consensus_proposals(rest_endpoints: list[str]) -> list:
@@ -528,7 +545,11 @@ def manage_upgrade_lifecycle(
     if upgrade is not None:
         prop_id = str(upgrade.get("proposal_id", ""))
         target_height = str(upgrade.get("height", "0"))
-        version = upgrade.get("version", "")
+        # Prefer full release tag from proposal binaries (v2.20.0) over plan.name (v2.20)
+        version = (
+            extract_version_from_proposal(upgrade.get("_raw") or {}, "")
+            or upgrade.get("version", "")
+        )
 
         try:
             target_h = int(target_height or "0")
@@ -541,6 +562,11 @@ def manage_upgrade_lifecycle(
         # older than the current stable version — e.g. AtomOne manual pin, or
         # a pagination hit that surfaces v4.1.0 after the chain is already on
         # v5.5.1). Stable version lives in config / version_override.
+        #
+        # CRITICAL: returning None on a cold past-height prop used to kill the
+        # banner for a DIFFERENT active upgrade still in flight (Terra: fetch
+        # returned #4818 past → return None while active #4849 v2.20 pending →
+        # docs rendered stable-only, no remaining-block banner).
         if current_height is not None and target_h > 0 and current_height >= target_h:
             if active and str(active.get("proposal_id")) == prop_id:
                 log.info(
@@ -548,54 +574,81 @@ def manage_upgrade_lifecycle(
                     chain_id, current_height, target_h, prop_id,
                 )
                 _mark_complete(active, current_height)
-            else:
+                return None
+            log.info(
+                "  → %s prop #%s already past height %s — skip (not active; "
+                "stable version stays at %s)",
+                chain_id, prop_id, target_h, chain_cfg.get("node_version"),
+            )
+            if not active:
+                return None
+            # else: fall through to the active-pending path below
+
+        else:
+            # Already completed this exact proposal+height before → stay quiet
+            # for THIS prop only. Do not blank a different active upgrade.
+            prev = state.get("completed_upgrades", {}).get(chain_id, [])
+            if any(
+                str(c.get("proposal_id")) == prop_id
+                and str(c.get("target_height")) == target_height
+                for c in prev
+            ):
+                if active and str(active.get("proposal_id")) == prop_id:
+                    del state["active_upgrades"][chain_id]
+                    active = None
                 log.info(
-                    "  → %s prop #%s already past height %s — skip (not active; "
-                    "stable version stays at %s)",
-                    chain_id, prop_id, target_h, chain_cfg.get("node_version"),
+                    "  → %s proposal #%s already completed, skipping re-register",
+                    chain_id, prop_id,
                 )
-            return None
-
-        # Already completed this exact proposal+height before → stay quiet.
-        prev = state.get("completed_upgrades", {}).get(chain_id, [])
-        if any(
-            str(c.get("proposal_id")) == prop_id
-            and str(c.get("target_height")) == target_height
-            for c in prev
-        ):
-            if active and str(active.get("proposal_id")) == prop_id:
-                del state["active_upgrades"][chain_id]
-            log.info(
-                "  → %s proposal #%s already completed, skipping re-register",
-                chain_id, prop_id,
-            )
-            return None
-
-        if not active or str(active.get("proposal_id")) != prop_id:
-            state["active_upgrades"][chain_id] = {
-                "proposal_id":   prop_id,
-                "version":       version,
-                "target_height": target_height,
-                "description":   upgrade.get("description", ""),
-                "started_at":    datetime.now(timezone.utc).isoformat(),
-            }
-            log.info(
-                "  → Registered active upgrade for %s: proposal #%s, version %s, height %s",
-                chain_id, prop_id, version, target_height,
-            )
-            return upgrade
+                if not active:
+                    return None
+            elif not active or str(active.get("proposal_id")) != prop_id:
+                state["active_upgrades"][chain_id] = {
+                    "proposal_id":   prop_id,
+                    "version":       version,
+                    "target_height": target_height,
+                    "description":   upgrade.get("description", ""),
+                    "started_at":    datetime.now(timezone.utc).isoformat(),
+                }
+                active = state["active_upgrades"][chain_id]
+                log.info(
+                    "  → Registered active upgrade for %s: proposal #%s, version %s, height %s",
+                    chain_id, prop_id, version, target_height,
+                )
+            else:
+                # Refresh stored version if we now have a fuller tag (v2.20 → v2.20.0)
+                if version and active.get("version") != version:
+                    active["version"] = version
+                    state["active_upgrades"][chain_id] = active
 
     # If we have an active upgrade, check whether its target height has passed.
     if active:
         if current_height is None:
             log.warning("  Could not reach consensus on block height for %s", chain_id)
-            return upgrade
+            # Prefer live match so docs keep _raw for full version extraction
+            if upgrade and str(upgrade.get("proposal_id")) == str(active.get("proposal_id")):
+                return upgrade
+            return {
+                "height": str(active.get("target_height", "0")),
+                "proposal_id": str(active.get("proposal_id", "")),
+                "description": active.get("description", "Upgrade"),
+                "version": active.get("version", ""),
+                "_raw": {},
+            }
 
         try:
             target_h = int(active.get("target_height", "0"))
         except (TypeError, ValueError):
             log.warning("  Invalid target_height %r for %s", active.get("target_height"), chain_id)
-            return upgrade
+            if upgrade and str(upgrade.get("proposal_id")) == str(active.get("proposal_id")):
+                return upgrade
+            return {
+                "height": str(active.get("target_height", "0")),
+                "proposal_id": str(active.get("proposal_id", "")),
+                "description": active.get("description", "Upgrade"),
+                "version": active.get("version", ""),
+                "_raw": {},
+            }
 
         if current_height >= target_h:
             log.info(
@@ -608,7 +661,17 @@ def manage_upgrade_lifecycle(
             "  ⏳ %s upgrade pending: current=%s < target=%s",
             chain_id, current_height, target_h,
         )
-        return upgrade
+        # Live proposal matching active carries _raw (full tag from binaries).
+        # Otherwise rebuild from state so a wrong/past fetch can't blank the banner.
+        if upgrade and str(upgrade.get("proposal_id")) == str(active.get("proposal_id")):
+            return upgrade
+        return {
+            "height": str(active.get("target_height", "0")),
+            "proposal_id": str(active.get("proposal_id", "")),
+            "description": active.get("description", "Upgrade"),
+            "version": active.get("version", ""),
+            "_raw": {},
+        }
 
     return upgrade
 

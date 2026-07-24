@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "network": "Terra",
+    "link": "/mainnets/terra/",
+    "rpc": "https://terra-mainnet-rpc.shazoes.xyz",
+    "rpc_endpoints": [
+      "https://terra-mainnet-rpc.shazoes.xyz",
+      "https://terra-mainnet-rpc.itrocket.net",
+      "https://terra-rpc.polkachu.com"
+    ],
+    "target_height": 22055000,
+    "version": "v2.20.0",
+    "proposal_id": "4849",
+    "proposal": "https://explorer.shazoes.xyz/terra-mainnet/gov/4849"
+  }
+]
