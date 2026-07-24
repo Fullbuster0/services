@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Terra Sync
 </div>
 <span className="sub-lines"> 
-Chain ID: `phoenix-1` | Node Version: `v2.19.0`
+Chain ID: `phoenix-1` | Node Version: `v2.20.0`
 </span>
 <Tabs>
   <TabItem value="snapshot" label="Snapshot" default>
