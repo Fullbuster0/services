@@ -606,18 +606,33 @@ def manage_upgrade_lifecycle(
                 if not active:
                     return None
             elif not active or str(active.get("proposal_id")) != prop_id:
-                state["active_upgrades"][chain_id] = {
-                    "proposal_id":   prop_id,
-                    "version":       version,
-                    "target_height": target_height,
-                    "description":   upgrade.get("description", ""),
-                    "started_at":    datetime.now(timezone.utc).isoformat(),
-                }
-                active = state["active_upgrades"][chain_id]
-                log.info(
-                    "  → Registered active upgrade for %s: proposal #%s, version %s, height %s",
-                    chain_id, prop_id, version, target_height,
-                )
+                # Cold / newly-observed proposal. Only register it as active when
+                # we have a confirmed height proving it is still pending
+                # (current_height < target). If height is unknown (all RPCs down →
+                # current_height is None) we CANNOT tell whether this proposal is
+                # already past — registering it would show a bogus banner for an
+                # upgrade that may have completed long ago. An already-tracked
+                # active upgrade is still rendered by the `if active:` block below
+                # regardless of height availability.
+                if current_height is None:
+                    log.info(
+                        "  → %s prop #%s: no height consensus — skip cold register "
+                        "(cannot confirm it is still pending)",
+                        chain_id, prop_id,
+                    )
+                else:
+                    state["active_upgrades"][chain_id] = {
+                        "proposal_id":   prop_id,
+                        "version":       version,
+                        "target_height": target_height,
+                        "description":   upgrade.get("description", ""),
+                        "started_at":    datetime.now(timezone.utc).isoformat(),
+                    }
+                    active = state["active_upgrades"][chain_id]
+                    log.info(
+                        "  → Registered active upgrade for %s: proposal #%s, version %s, height %s",
+                        chain_id, prop_id, version, target_height,
+                    )
             else:
                 # Refresh stored version if we now have a fuller tag (v2.20 → v2.20.0)
                 if version and active.get("version") != version:
@@ -680,7 +695,7 @@ def manage_upgrade_lifecycle(
 
 
 # ── Documentation writers ───────────────────────────────────────────────────
-def update_files(chain_id, chain_cfg, upgrade):
+def update_files(chain_id, chain_cfg, upgrade, known_networks=None):
     """
     Render Markdown + JSON for a chain.
 
@@ -688,6 +703,10 @@ def update_files(chain_id, chain_cfg, upgrade):
     - /node-installation.md    : stable version (always).
     - /sync.md / useful-commands.md : stable version in header (always).
     - static/data/<...>upgrade.json : overview grid entry.
+
+    `known_networks` (optional set of chain_name values that write to this
+    chain's json_path) lets the JSON writer prune orphaned rows left behind
+    by renamed chains.
     """
     _override = chain_cfg.get("version_override")
     ver_upgrade = (
@@ -808,7 +827,31 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
         except (json.JSONDecodeError, OSError) as e:
             log.error("  ✗ Could not read %s: %s", json_path, e)
             return
-        data = [i for i in data if i.get("network") != chain_cfg['chain_name']]
+        if not isinstance(data, list):
+            log.error("  ✗ %s root is not an array", json_path)
+            return
+        # Prune orphans: keep only entries whose `network` is still a known
+        # chain_name for this json_path, then drop THIS chain so we can
+        # re-append a fresh row. Orphans appear after chain_name renames
+        # (e.g. testnetupgrade.json still held "Atomone" / "Hippo Protocol"
+        # after names became "AtomOne Testnet" / "Hippo Protocol Testnet") —
+        # the old filter `network != chain_name` never matched them.
+        valid = set(known_networks) if known_networks else {chain_cfg["chain_name"]}
+        before_n = len(data)
+        self_name = chain_cfg["chain_name"]
+        had_self = any(isinstance(i, dict) and i.get("network") == self_name for i in data)
+        data = [
+            i for i in data
+            if isinstance(i, dict)
+            and i.get("network") in valid
+            and i.get("network") != self_name
+        ]
+        orphans = before_n - len(data) - (1 if had_self else 0)
+        if orphans > 0:
+            log.info(
+                "  → Pruned %s orphan entr%s from %s (unknown network name)",
+                orphans, "y" if orphans == 1 else "ies", json_path.name,
+            )
         if upgrade:
             try:
                 target_h_int = int(upgrade['height'])
@@ -852,6 +895,15 @@ def main() -> int:
     state = load_state(state_path)
     state_dirty = False
 
+    # Precompute, per json_path, the set of chain_name values that write there.
+    # Used by update_files to prune orphaned JSON rows left by renamed chains.
+    networks_by_json: dict[str, set[str]] = {}
+    for _cid, _cfg in config.get("chains", {}).items():
+        jp = _cfg.get("json_path")
+        name = _cfg.get("chain_name")
+        if jp and name:
+            networks_by_json.setdefault(jp, set()).add(name)
+
     for cid, cfg in config.get("chains", {}).items():
         if args.chain and cid != args.chain:
             continue
@@ -876,7 +928,8 @@ def main() -> int:
             state_dirty = True
 
         try:
-            update_files(cid, cfg, effective_upgrade)
+            known = networks_by_json.get(cfg.get("json_path", ""), set())
+            update_files(cid, cfg, effective_upgrade, known_networks=known)
         except Exception as e:
             log.error("  ! Doc update failed for %s: %s", cid, e)
 
