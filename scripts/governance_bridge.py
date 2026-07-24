@@ -610,16 +610,19 @@ def manage_upgrade_lifecycle(
                 # we have a confirmed height proving it is still pending
                 # (current_height < target). If height is unknown (all RPCs down →
                 # current_height is None) we CANNOT tell whether this proposal is
-                # already past — registering it would show a bogus banner for an
-                # upgrade that may have completed long ago. An already-tracked
-                # active upgrade is still rendered by the `if active:` block below
-                # regardless of height availability.
+                # already past — registering OR returning it would show a bogus
+                # banner for an upgrade that may have completed long ago.
+                # Already-tracked active upgrades still render via `if active:`
+                # below regardless of height availability.
                 if current_height is None:
                     log.info(
                         "  → %s prop #%s: no height consensus — skip cold register "
                         "(cannot confirm it is still pending)",
                         chain_id, prop_id,
                     )
+                    if not active:
+                        return None
+                    # else: fall through to active-pending path below
                 else:
                     state["active_upgrades"][chain_id] = {
                         "proposal_id":   prop_id,
