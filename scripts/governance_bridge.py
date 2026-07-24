@@ -284,7 +284,10 @@ def get_consensus_proposals(rest_endpoints: list[str]) -> list:
     ]
     for ep in rest_endpoints:
         for path, sc in paths:
-            url = f"{ep.rstrip('/')}{path}?proposal_status={sc}&pagination.limit=20"
+            url = (
+                f"{ep.rstrip('/')}{path}"
+                f"?proposal_status={sc}&pagination.limit=50&pagination.reverse=true"
+            )
             data = _http_get_json(url, timeout=args.rpc_timeout)
             if data and data.get("proposals"):
                 for p in data["proposals"]:
