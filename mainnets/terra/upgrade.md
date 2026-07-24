@@ -10,8 +10,6 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 </div>
 <span className="sub-lines">Chain ID: `phoenix-1` | Node Version: `v2.4.0`</span>
 
-<br/><br/>
-<span>Upgrade height: **22055000** (Proposal #4849) | Remaining Block : <UpgradeRemainingBlock targetBlock={22055000} rpc="https://terra-mainnet-rpc.shazoes.xyz" rpcs="https://terra-mainnet-rpc.shazoes.xyz,https://terra-mainnet-rpc.itrocket.net,https://terra-rpc.polkachu.com" explorerUrl="https://explorer.shazoes.xyz/terra-mainnet/block" /></span>
 
 ## Manual Upgrade
 
@@ -20,7 +18,7 @@ cd $HOME
 rm -rf terra
 git clone https://github.com/phoenix-directive/core terra
 cd terra
-git checkout v2.20.0
+git checkout v2.4.0
 make install
 sudo systemctl restart terrad && sudo journalctl -fu terrad -o cat
 ```
