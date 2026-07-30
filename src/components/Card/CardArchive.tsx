@@ -24,30 +24,22 @@ const items: Item[] = [
     title: "Mantra",
     chain_id: "mantra-1",
     networkType: "mainnet",
-    buttons: [
-      { label: "Services", url: "/mainnets/mantra/" },
-      { label: "Explorer", url: "https://explorer.shazoes.xyz/mantra-mainnet" },
-    ],
+    // Services only — explorer for these chains will be shut down
+    buttons: [{ label: "Services", url: "/mainnets/mantra/" }],
   },
   {
     imageUrl: "/img/nillion-icon.svg",
     title: "Nillion",
     chain_id: "nillion-1",
     networkType: "mainnet",
-    buttons: [
-      { label: "Services", url: "/mainnets/nillion/" },
-      { label: "Explorer", url: "https://explorer.shazoes.xyz/nillion-mainnet" },
-    ],
+    buttons: [{ label: "Services", url: "/mainnets/nillion/" }],
   },
   {
     imageUrl: "/img/provenance-icon.svg",
     title: "Provenance",
     chain_id: "pio-mainnet-1",
     networkType: "mainnet",
-    buttons: [
-      { label: "Services", url: "/mainnets/provenance/" },
-      { label: "Explorer", url: "https://explorer.shazoes.xyz/provenance-mainnet" },
-    ],
+    buttons: [{ label: "Services", url: "/mainnets/provenance/" }],
   },
 ];
 
