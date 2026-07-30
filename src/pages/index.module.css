@@ -4,8 +4,7 @@
  */
 
 /* ---------- Hero Section ---------- */
-/* Semi-transparent so site-wide svc-mesh shows through (services-specific). */
-
+/* Semi-transparent so site-wide svc-aurora shows through. */
 .heroBanner {
   position: relative;
   overflow: hidden;
@@ -14,9 +13,9 @@
   background:
     linear-gradient(
       165deg,
-      rgba(10, 14, 39, 0.55) 0%,
-      rgba(17, 24, 66, 0.35) 40%,
-      rgba(8, 12, 31, 0.45) 100%
+      rgba(10, 14, 39, 0.28) 0%,
+      rgba(17, 24, 66, 0.12) 40%,
+      rgba(8, 12, 31, 0.22) 100%
     );
   isolation: isolate;
 }
@@ -25,9 +24,9 @@
   background:
     linear-gradient(
       165deg,
-      rgba(220, 232, 255, 0.65) 0%,
-      rgba(197, 217, 255, 0.4) 40%,
-      rgba(245, 248, 255, 0.55) 100%
+      rgba(220, 232, 255, 0.35) 0%,
+      rgba(197, 217, 255, 0.18) 40%,
+      rgba(245, 248, 255, 0.3) 100%
     );
 }
 
@@ -249,6 +248,7 @@
   flex-wrap: wrap;
 }
 
+/* Solid glass — no backdrop-filter / shine sweep (hover flicker over aurora) */
 .statGlass {
   display: flex;
   flex-direction: column;
@@ -256,62 +256,41 @@
   gap: 0.35rem;
   padding: 1.25rem 2rem;
   min-width: 160px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #151827;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(153, 204, 255, 0.14);
   border-radius: 16px;
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .statGlass::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(153, 204, 255, 0.12) 50%,
-    transparent 100%
-  );
-  transition: left 0.7s ease;
+  content: none;
 }
 
 .statGlass:hover {
   transform: translateY(-3px);
-  border-color: rgba(153, 204, 255, 0.35);
-  box-shadow:
-    0 12px 40px rgba(0, 95, 204, 0.25),
-    0 0 24px rgba(0, 95, 204, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-}
-
-.statGlass:hover::before {
-  left: 100%;
+  border-color: rgba(153, 204, 255, 0.4);
+  box-shadow: 0 12px 32px rgba(0, 95, 204, 0.22);
 }
 
 [data-theme="light"] .statGlass {
-  background: rgba(255, 255, 255, 0.7);
+  background: #f0f5ff;
   border: 1px solid rgba(0, 95, 204, 0.18);
-  box-shadow:
-    0 8px 32px rgba(0, 95, 204, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(0, 95, 204, 0.08);
 }
 
 [data-theme="light"] .statGlass:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: #e8f0ff;
   border-color: rgba(0, 95, 204, 0.4);
-  box-shadow:
-    0 12px 40px rgba(0, 95, 204, 0.18),
-    0 0 24px rgba(0, 95, 204, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 95, 204, 0.14);
 }
 
 .statNumber {
@@ -622,34 +601,39 @@
   margin: 0 auto;
 }
 
+/* Feature cards: solid bg, no blur — hover lift without flicker */
 .featureCard {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #151827;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(153, 204, 255, 0.14);
   border-radius: 16px;
   padding: 2rem 1.5rem;
   text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+  isolation: isolate;
 }
 
 [data-theme="light"] .featureCard {
-  background: rgba(255, 255, 255, 0.7);
+  background: #f0f5ff;
   border: 1px solid rgba(0, 95, 204, 0.18);
-  box-shadow: 0 8px 32px rgba(0, 95, 204, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 95, 204, 0.08);
 }
 
 .featureCard:hover {
-  transform: translateY(-5px);
-  border-color: rgba(153, 204, 255, 0.35);
-  box-shadow: 0 12px 40px rgba(0, 95, 204, 0.25);
+  transform: translateY(-4px);
+  border-color: rgba(153, 204, 255, 0.4);
+  box-shadow: 0 12px 32px rgba(0, 95, 204, 0.22);
 }
 
 [data-theme="light"] .featureCard:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: #e8f0ff;
   border-color: rgba(0, 95, 204, 0.4);
-  box-shadow: 0 12px 40px rgba(0, 95, 204, 0.18);
+  box-shadow: 0 12px 32px rgba(0, 95, 204, 0.14);
 }
 
 .featureIcon {
@@ -659,11 +643,11 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgba(0, 95, 204, 0.15);
+  background: rgba(0, 95, 204, 0.18);
   color: #99ccff;
   font-size: 1.5rem;
   margin-bottom: 1.25rem;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, background 0.25s ease;
 }
 
 [data-theme="light"] .featureIcon {
@@ -672,8 +656,8 @@
 }
 
 .featureCard:hover .featureIcon {
-  background: rgba(0, 95, 204, 0.25);
-  transform: scale(1.1);
+  background: rgba(0, 95, 204, 0.28);
+  transform: scale(1.06);
 }
 
 .featureTitle {
