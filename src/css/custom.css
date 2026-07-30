@@ -43,295 +43,15 @@ body,
   color: #e8e8ed;
 }
 
-/* ---------- Services Aurora Field (explorer-style motion) ----------
- * Same family as explorer home: big drifting orbs + sparks + pulse rings + beams
- * CRITICAL: must stay position:fixed. Do NOT put position:relative on #__docusaurus > div
- * (that rule used to force .svc-aurora into relative → height 0 → invisible + broke mobile nav).
+/* Aurora / svc-* motion field REMOVED — flicker + barely visible.
+ * Keep body/min-height only; no animated background layers.
  */
-
 body {
   position: relative;
   min-height: 100vh;
 }
 
-/* FIXED full-viewport field — !important beats any accidental parent rules.
- * Portaled to body (see theme/Root.tsx) so it never sits inside #__docusaurus.
- * Motion is LOUD enough to see (esp. light mode) but never on text layers.
- */
-.svc-aurora {
-  position: fixed !important;
-  inset: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 0 !important;
-  overflow: hidden !important;
-  pointer-events: none !important;
-  transform: none !important;
-  isolation: isolate;
-  contain: strict;
-  /* subtle base wash so empty areas still feel alive */
-  background:
-    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(0, 95, 204, 0.14), transparent 55%),
-    radial-gradient(ellipse 70% 45% at 85% 20%, rgba(118, 75, 200, 0.12), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 50% 90%, rgba(56, 189, 248, 0.1), transparent 55%);
-}
-
-[data-theme="dark"] .svc-aurora {
-  background:
-    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(0, 95, 204, 0.22), transparent 55%),
-    radial-gradient(ellipse 70% 45% at 85% 20%, rgba(118, 75, 200, 0.2), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 50% 90%, rgba(56, 189, 248, 0.16), transparent 55%);
-}
-
-/* big soft drifting orbs — stronger + faster so motion is obvious */
-.svc-orb {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(36px);
-  will-change: transform, opacity;
-  opacity: 0.95;
-}
-
-.svc-orb-a {
-  width: 34rem;
-  height: 34rem;
-  left: -10%;
-  top: 0%;
-  background: radial-gradient(circle, rgba(0, 95, 204, 0.72) 0%, rgba(0, 95, 204, 0) 68%);
-  animation: svc-drift-a 14s ease-in-out infinite alternate;
-}
-
-.svc-orb-b {
-  width: 28rem;
-  height: 28rem;
-  right: -8%;
-  top: 10%;
-  background: radial-gradient(circle, rgba(118, 75, 200, 0.65) 0%, rgba(118, 75, 200, 0) 68%);
-  animation: svc-drift-b 18s ease-in-out infinite alternate;
-}
-
-.svc-orb-c {
-  width: 24rem;
-  height: 24rem;
-  left: 34%;
-  bottom: 0%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.55) 0%, rgba(56, 189, 248, 0) 68%);
-  animation: svc-drift-c 16s ease-in-out infinite alternate;
-}
-
-.svc-orb-d {
-  width: 18rem;
-  height: 18rem;
-  left: 12%;
-  top: 44%;
-  background: radial-gradient(circle, rgba(51, 133, 255, 0.5) 0%, transparent 68%);
-  animation: svc-drift-a 20s ease-in-out infinite alternate-reverse;
-  filter: blur(28px);
-}
-
-.svc-orb-e {
-  width: 20rem;
-  height: 20rem;
-  right: 10%;
-  bottom: 10%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.5) 0%, transparent 68%);
-  animation: svc-drift-b 15s ease-in-out infinite alternate-reverse;
-  filter: blur(30px);
-}
-
-.svc-orb-f {
-  width: 26rem;
-  height: 26rem;
-  left: 48%;
-  top: -8%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.42) 0%, transparent 68%);
-  animation: svc-drift-c 22s ease-in-out infinite alternate-reverse;
-  filter: blur(32px);
-}
-
-.svc-orb-g {
-  width: 18rem;
-  height: 18rem;
-  left: 4%;
-  bottom: 22%;
-  background: radial-gradient(circle, rgba(0, 95, 204, 0.45) 0%, transparent 68%);
-  animation: svc-drift-b 19s ease-in-out infinite alternate;
-  filter: blur(28px);
-}
-
-.svc-orb-h {
-  width: 20rem;
-  height: 20rem;
-  right: 28%;
-  top: 36%;
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.42) 0%, transparent 68%);
-  animation: svc-drift-a 17s ease-in-out infinite alternate;
-  filter: blur(30px);
-}
-
-/* floating sparks — brighter + larger travel so they read as motion */
-.svc-spark {
-  position: absolute;
-  border-radius: 999px;
-  background: #ffffff;
-  box-shadow:
-    0 0 10px rgba(153, 204, 255, 0.95),
-    0 0 22px rgba(0, 95, 204, 0.55);
-  animation: svc-spark 7s ease-in-out infinite;
-  opacity: 0;
-  will-change: transform, opacity;
-}
-
-.svc-spark-1 { width: 7px; height: 7px; left: 18%; top: 28%; animation-duration: 6.5s; animation-delay: 0s; }
-.svc-spark-2 { width: 5px; height: 5px; left: 72%; top: 18%; animation-duration: 8s; animation-delay: 1.1s; }
-.svc-spark-3 { width: 8px; height: 8px; left: 42%; top: 58%; animation-duration: 7.2s; animation-delay: 2.4s; }
-.svc-spark-4 { width: 5px; height: 5px; left: 88%; top: 48%; animation-duration: 9s; animation-delay: 0.6s; }
-.svc-spark-5 { width: 6px; height: 6px; left: 8%; top: 68%; animation-duration: 6.8s; animation-delay: 3.2s; }
-.svc-spark-6 { width: 4px; height: 4px; left: 58%; top: 10%; animation-duration: 8.5s; animation-delay: 1.8s; }
-.svc-spark-7 { width: 6px; height: 6px; left: 28%; top: 48%; animation-duration: 7.5s; animation-delay: 4s; }
-.svc-spark-8 { width: 7px; height: 7px; left: 64%; top: 36%; animation-duration: 6.2s; animation-delay: 2.1s; }
-
-/* consensus-style pulse rings — more visible expansion */
-.svc-ring {
-  position: absolute;
-  left: 50%;
-  top: 28%;
-  width: 10rem;
-  height: 10rem;
-  margin-left: -5rem;
-  margin-top: -5rem;
-  border-radius: 999px;
-  border: 2px solid rgba(0, 95, 204, 0.55);
-  box-shadow: 0 0 36px rgba(0, 95, 204, 0.28);
-  animation: svc-pulse-ring 5.5s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
-  opacity: 0;
-}
-
-.svc-ring-2 { animation-delay: 1.4s; border-color: rgba(118, 75, 200, 0.5); }
-.svc-ring-3 { animation-delay: 2.8s; border-color: rgba(56, 189, 248, 0.48); top: 62%; }
-.svc-ring-4 { animation-delay: 4.1s; border-color: rgba(153, 204, 255, 0.42); top: 18%; left: 28%; }
-
-/* soft diagonal light beams — stronger wash */
-.svc-beam {
-  position: absolute;
-  top: -20%;
-  width: 48%;
-  height: 140%;
-  filter: blur(10px);
-  will-change: transform, opacity;
-}
-
-.svc-beam-1 {
-  left: 18%;
-  background: linear-gradient(
-    105deg,
-    transparent 38%,
-    rgba(0, 95, 204, 0.16) 47%,
-    rgba(153, 204, 255, 0.28) 50%,
-    rgba(118, 75, 200, 0.16) 53%,
-    transparent 62%
-  );
-  transform: rotate(18deg);
-  animation: svc-beam-sweep 10s ease-in-out infinite alternate;
-}
-
-.svc-beam-2 {
-  left: 52%;
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(56, 189, 248, 0.14) 48%,
-    rgba(153, 204, 255, 0.22) 51%,
-    rgba(0, 95, 204, 0.14) 54%,
-    transparent 64%
-  );
-  transform: rotate(16deg);
-  animation: svc-beam-sweep 13s ease-in-out infinite alternate-reverse;
-}
-
-/* services accent lattice under orbs — clearer grid */
-.svc-lattice {
-  position: absolute;
-  inset: -20%;
-  background-image:
-    linear-gradient(rgba(0, 95, 204, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 95, 204, 0.12) 1px, transparent 1px);
-  background-size: 48px 48px;
-  transform: perspective(900px) rotateX(58deg) scale(1.4);
-  transform-origin: center 18%;
-  mask-image: radial-gradient(ellipse 75% 55% at 50% 32%, #000 15%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 75% 55% at 50% 32%, #000 15%, transparent 78%);
-  animation: svc-lattice-drift 18s linear infinite;
-  opacity: 0.85;
-}
-
-[data-theme="dark"] .svc-lattice {
-  background-image:
-    linear-gradient(rgba(153, 204, 255, 0.16) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(153, 204, 255, 0.16) 1px, transparent 1px);
-  opacity: 0.95;
-}
-
-/* larger travel distances — motion reads clearly within a few seconds */
-@keyframes svc-drift-a {
-  0%   { transform: translate(0, 0) scale(1); }
-  50%  { transform: translate(10%, 12%) scale(1.14); }
-  100% { transform: translate(3%, -8%) scale(0.92); }
-}
-
-@keyframes svc-drift-b {
-  0%   { transform: translate(0, 0) scale(1.08); }
-  50%  { transform: translate(-12%, 8%) scale(0.9); }
-  100% { transform: translate(-5%, -10%) scale(1.16); }
-}
-
-@keyframes svc-drift-c {
-  0%   { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(9%, -14%) scale(1.18); }
-}
-
-@keyframes svc-spark {
-  0%   { transform: translateY(0) translateX(0) scale(0.7); opacity: 0; }
-  12%  { opacity: 1; }
-  50%  { transform: translateY(-70px) translateX(28px) scale(1.15); opacity: 0.75; }
-  88%  { opacity: 0.95; }
-  100% { transform: translateY(-130px) translateX(-18px) scale(0.5); opacity: 0; }
-}
-
-@keyframes svc-pulse-ring {
-  0%   { transform: scale(0.28); opacity: 0.8; }
-  65%  { opacity: 0.2; }
-  100% { transform: scale(3.6); opacity: 0; }
-}
-
-@keyframes svc-beam-sweep {
-  0%   { transform: rotate(12deg) translateX(-8%); opacity: 0.55; }
-  100% { transform: rotate(24deg) translateX(10%); opacity: 1; }
-}
-
-@keyframes svc-lattice-drift {
-  0%   { background-position: 0 0, 0 0; }
-  100% { background-position: 48px 48px, 48px 48px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .svc-orb, .svc-spark, .svc-ring, .svc-beam, .svc-lattice {
-    animation: none !important;
-  }
-  .svc-ring, .svc-spark, .svc-beam {
-    display: none;
-  }
-}
-
-.svc-aurora--paused .svc-orb,
-.svc-aurora--paused .svc-spark,
-.svc-aurora--paused .svc-ring,
-.svc-aurora--paused .svc-beam,
-.svc-aurora--paused .svc-lattice {
-  animation-play-state: paused !important;
-}
-
-/* Content above aurora — NEVER target #__docusaurus > div (breaks .svc-aurora + mobile nav) */
+/* Content stacking — solid page, no animated background */
 .main-wrapper,
 main {
   position: relative;
@@ -349,13 +69,13 @@ nav.navbar.navbar--fixed-top,
 html body nav.navbar {
   position: sticky !important;
   top: 0 !important;
-  z-index: 500 !important; /* above aurora (0) and content; drawer is higher */
+  z-index: 500 !important; /* above content; drawer is higher */
   flex-wrap: nowrap !important;
   align-items: stretch !important;
 }
 
 .navbar {
-  /* Solid-ish bar — avoid heavy blur over aurora (mobile jank) */
+  /* Solid navbar bar */
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   z-index: 500 !important;
@@ -458,7 +178,7 @@ nav.navbar-sidebar--show .navbar-sidebar,
   display: inherit; /* let Infima media query control; don't force hide */
 }
 
-/* Docs left sidebar (desktop + mobile collapsible) above aurora, solid bg */
+/* Docs left sidebar solid bg */
 .theme-doc-sidebar-container,
 aside.theme-doc-sidebar-container,
 [class*="sidebarContainer"],
@@ -485,23 +205,10 @@ aside.theme-doc-sidebar-container,
   }
 }
 
-/* When mobile nav drawer open, dim aurora (no stacking fight) */
-body:has(.navbar-sidebar--show) .svc-aurora,
-.navbar-sidebar--show ~ * .svc-aurora {
-  opacity: 0.2;
-  transition: opacity 0.25s ease;
-}
-/* class is on <nav>, not body — also match that */
-.navbar-sidebar--show .svc-aurora {
-  opacity: 0.2;
-}
-
-/* Ensure #__docusaurus itself stacks above body-portaled aurora */
 #__docusaurus {
   position: relative;
   z-index: 1;
 }
-
 /* ---------- Heading ---------- */
 .markdown h1,
 h1 {
@@ -704,20 +411,10 @@ article a:focus {
     rgba(0, 95, 204, 0.6) 50%,
     transparent 100%
   );
-  box-shadow: 0 0 18px 2px rgba(0, 95, 204, 0.45);
+  box-shadow: 0 0 14px 2px rgba(0, 95, 204, 0.35);
   z-index: 2;
-  animation: glowPulse 4s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0%, 100% {
-    opacity: 0.7;
-    box-shadow: 0 0 14px 2px rgba(0, 95, 204, 0.35);
-  }
-  50% {
-    opacity: 1;
-    box-shadow: 0 0 24px 4px rgba(0, 95, 204, 0.55);
-  }
+  animation: none;
+  opacity: 0.85;
 }
 
 /* Section headings - with animated underline on hover */
@@ -1487,4 +1184,5 @@ article a:focus {
 }
 
 /* ---------- Elegant Gradient Flow Animation (Removed) ---------- */
+
 

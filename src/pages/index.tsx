@@ -14,11 +14,6 @@ import "@site/src/css/custom.css";
 function HomepageHeader() {
   return (
     <div className={styles.heroBanner}>
-      {/*
-        No floating blobs / animated glows under hero text.
-        Site-wide motion is only svc-aurora (Root portal, z=0, body).
-        Animated layers under text = mobile GPU re-composite flicker.
-      */}
       <div className="container">
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>
