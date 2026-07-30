@@ -43,280 +43,321 @@ body,
   color: #e8e8ed;
 }
 
-/* ---------- Services mesh field (infra / constellation) ----------
- /* ---------- Services Aurora Field (explorer-style motion) ---------- */
- /* Same family as explorer home: big drifting orbs + sparks + pulse rings + beams */
- /* Tuned for services infra vibe + lattice accent + scroll-pause */
+/* ---------- Services Aurora Field (explorer-style motion) ----------
+ * Same family as explorer home: big drifting orbs + sparks + pulse rings + beams
+ * CRITICAL: must stay position:fixed. Do NOT put position:relative on #__docusaurus > div
+ * (that rule used to force .svc-aurora into relative → height 0 → invisible + broke mobile nav).
+ */
 
- body {
-   position: relative;
-   min-height: 100vh;
- }
+body {
+  position: relative;
+  min-height: 100vh;
+}
 
- .svc-aurora {
-   position: fixed;
-   inset: 0;
-   z-index: 0;
-   overflow: hidden;
-   pointer-events: none;
- }
+/* Fixed full-viewport field — !important beats any accidental parent rules */
+.svc-aurora {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
 
- /* big soft drifting orbs — primary motion (like explorer) */
- .svc-orb {
-   position: absolute;
-   border-radius: 999px;
-   filter: blur(48px);
-   will-change: transform, opacity;
-   opacity: 0.55;
- }
+/* big soft drifting orbs — primary motion (like explorer), boosted for visibility */
+.svc-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(48px);
+  will-change: transform, opacity;
+  opacity: 0.7;
+}
 
- .svc-orb-a {
-   width: 30rem;
-   height: 30rem;
-   left: -8%;
-   top: 4%;
-   background: radial-gradient(circle, rgba(0, 95, 204, 0.48) 0%, rgba(0, 95, 204, 0) 70%);
-   animation: svc-drift-a 22s ease-in-out infinite alternate;
- }
+.svc-orb-a {
+  width: 30rem;
+  height: 30rem;
+  left: -8%;
+  top: 4%;
+  background: radial-gradient(circle, rgba(0, 95, 204, 0.55) 0%, rgba(0, 95, 204, 0) 70%);
+  animation: svc-drift-a 22s ease-in-out infinite alternate;
+}
 
- .svc-orb-b {
-   width: 24rem;
-   height: 24rem;
-   right: -6%;
-   top: 14%;
-   background: radial-gradient(circle, rgba(118, 75, 200, 0.42) 0%, rgba(118, 75, 200, 0) 70%);
-   animation: svc-drift-b 28s ease-in-out infinite alternate;
- }
+.svc-orb-b {
+  width: 24rem;
+  height: 24rem;
+  right: -6%;
+  top: 14%;
+  background: radial-gradient(circle, rgba(118, 75, 200, 0.48) 0%, rgba(118, 75, 200, 0) 70%);
+  animation: svc-drift-b 28s ease-in-out infinite alternate;
+}
 
- .svc-orb-c {
-   width: 20rem;
-   height: 20rem;
-   left: 36%;
-   bottom: 4%;
-   background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, rgba(56, 189, 248, 0) 70%);
-   animation: svc-drift-c 24s ease-in-out infinite alternate;
- }
+.svc-orb-c {
+  width: 20rem;
+  height: 20rem;
+  left: 36%;
+  bottom: 4%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.38) 0%, rgba(56, 189, 248, 0) 70%);
+  animation: svc-drift-c 24s ease-in-out infinite alternate;
+}
 
- .svc-orb-d {
-   width: 15rem;
-   height: 15rem;
-   left: 14%;
-   top: 48%;
-   background: radial-gradient(circle, rgba(153, 204, 255, 0.24) 0%, transparent 70%);
-   animation: svc-drift-a 30s ease-in-out infinite alternate-reverse;
-   filter: blur(36px);
- }
+.svc-orb-d {
+  width: 15rem;
+  height: 15rem;
+  left: 14%;
+  top: 48%;
+  background: radial-gradient(circle, rgba(153, 204, 255, 0.32) 0%, transparent 70%);
+  animation: svc-drift-a 30s ease-in-out infinite alternate-reverse;
+  filter: blur(36px);
+}
 
- .svc-orb-e {
-   width: 17rem;
-   height: 17rem;
-   right: 14%;
-   bottom: 14%;
-   background: radial-gradient(circle, rgba(99, 102, 241, 0.24) 0%, transparent 70%);
-   animation: svc-drift-b 26s ease-in-out infinite alternate-reverse;
-   filter: blur(40px);
- }
+.svc-orb-e {
+  width: 17rem;
+  height: 17rem;
+  right: 14%;
+  bottom: 14%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.32) 0%, transparent 70%);
+  animation: svc-drift-b 26s ease-in-out infinite alternate-reverse;
+  filter: blur(40px);
+}
 
- .svc-orb-f {
-   width: 22rem;
-   height: 22rem;
-   left: 52%;
-   top: -6%;
-   background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, transparent 70%);
-   animation: svc-drift-c 32s ease-in-out infinite alternate-reverse;
-   filter: blur(44px);
- }
+.svc-orb-f {
+  width: 22rem;
+  height: 22rem;
+  left: 52%;
+  top: -6%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.28) 0%, transparent 70%);
+  animation: svc-drift-c 32s ease-in-out infinite alternate-reverse;
+  filter: blur(44px);
+}
 
- .svc-orb-g {
-   width: 16rem;
-   height: 16rem;
-   left: 6%;
-   bottom: 28%;
-   background: radial-gradient(circle, rgba(0, 95, 204, 0.2) 0%, transparent 70%);
-   animation: svc-drift-b 34s ease-in-out infinite alternate;
-   filter: blur(38px);
- }
+.svc-orb-g {
+  width: 16rem;
+  height: 16rem;
+  left: 6%;
+  bottom: 28%;
+  background: radial-gradient(circle, rgba(0, 95, 204, 0.28) 0%, transparent 70%);
+  animation: svc-drift-b 34s ease-in-out infinite alternate;
+  filter: blur(38px);
+}
 
- .svc-orb-h {
-   width: 18rem;
-   height: 18rem;
-   right: 34%;
-   top: 40%;
-   background: radial-gradient(circle, rgba(118, 75, 200, 0.18) 0%, transparent 70%);
-   animation: svc-drift-a 27s ease-in-out infinite alternate;
-   filter: blur(42px);
- }
+.svc-orb-h {
+  width: 18rem;
+  height: 18rem;
+  right: 34%;
+  top: 40%;
+  background: radial-gradient(circle, rgba(118, 75, 200, 0.26) 0%, transparent 70%);
+  animation: svc-drift-a 27s ease-in-out infinite alternate;
+  filter: blur(42px);
+}
 
- /* floating sparks */
- .svc-spark {
-   position: absolute;
-   border-radius: 999px;
-   background: rgba(153, 204, 255, 0.5);
-   box-shadow: 0 0 12px rgba(153, 204, 255, 0.4);
-   animation: svc-spark 12s ease-in-out infinite;
-   opacity: 0;
-   will-change: transform, opacity;
- }
+/* floating sparks */
+.svc-spark {
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(153, 204, 255, 0.7);
+  box-shadow: 0 0 14px rgba(153, 204, 255, 0.55);
+  animation: svc-spark 12s ease-in-out infinite;
+  opacity: 0;
+  will-change: transform, opacity;
+}
 
- .svc-spark-1 { width: 5px; height: 5px; left: 22%; top: 30%; animation-duration: 11s; animation-delay: 0s; }
- .svc-spark-2 { width: 4px; height: 4px; left: 68%; top: 22%; animation-duration: 14s; animation-delay: 2.4s; }
- .svc-spark-3 { width: 6px; height: 6px; left: 44%; top: 62%; animation-duration: 13s; animation-delay: 4.8s; }
- .svc-spark-4 { width: 4px; height: 4px; left: 84%; top: 52%; animation-duration: 15s; animation-delay: 1.2s; }
- .svc-spark-5 { width: 5px; height: 5px; left: 10%; top: 70%; animation-duration: 12s; animation-delay: 6.5s; }
- .svc-spark-6 { width: 3px; height: 3px; left: 56%; top: 12%; animation-duration: 16s; animation-delay: 3.6s; }
- .svc-spark-7 { width: 4px; height: 4px; left: 18%; top: 55%; animation-duration: 13s; animation-delay: 8.1s; }
- .svc-spark-8 { width: 5px; height: 5px; left: 71%; top: 38%; animation-duration: 11s; animation-delay: 4.3s; }
+.svc-spark-1 { width: 5px; height: 5px; left: 22%; top: 30%; animation-duration: 11s; animation-delay: 0s; }
+.svc-spark-2 { width: 4px; height: 4px; left: 68%; top: 22%; animation-duration: 14s; animation-delay: 2.4s; }
+.svc-spark-3 { width: 6px; height: 6px; left: 44%; top: 62%; animation-duration: 13s; animation-delay: 4.8s; }
+.svc-spark-4 { width: 4px; height: 4px; left: 84%; top: 52%; animation-duration: 15s; animation-delay: 1.2s; }
+.svc-spark-5 { width: 5px; height: 5px; left: 10%; top: 70%; animation-duration: 12s; animation-delay: 6.5s; }
+.svc-spark-6 { width: 3px; height: 3px; left: 56%; top: 12%; animation-duration: 16s; animation-delay: 3.6s; }
+.svc-spark-7 { width: 4px; height: 4px; left: 18%; top: 55%; animation-duration: 13s; animation-delay: 8.1s; }
+.svc-spark-8 { width: 5px; height: 5px; left: 71%; top: 38%; animation-duration: 11s; animation-delay: 4.3s; }
 
- /* consensus-style pulse rings */
- .svc-ring {
-   position: absolute;
-   left: 50%;
-   top: 22%;
-   width: 12rem;
-   height: 12rem;
-   margin-left: -6rem;
-   margin-top: -6rem;
-   border-radius: 999px;
-   border: 1px solid rgba(0, 95, 204, 0.28);
-   box-shadow: 0 0 24px rgba(0, 95, 204, 0.08);
-   animation: svc-pulse-ring 8s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
-   opacity: 0;
- }
+/* consensus-style pulse rings */
+.svc-ring {
+  position: absolute;
+  left: 50%;
+  top: 22%;
+  width: 12rem;
+  height: 12rem;
+  margin-left: -6rem;
+  margin-top: -6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 95, 204, 0.35);
+  box-shadow: 0 0 28px rgba(0, 95, 204, 0.12);
+  animation: svc-pulse-ring 8s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  opacity: 0;
+}
 
- .svc-ring-2 { animation-delay: 2.6s; border-color: rgba(118, 75, 200, 0.22); }
- .svc-ring-3 { animation-delay: 5.2s; border-color: rgba(56, 189, 248, 0.2); }
- .svc-ring-4 { animation-delay: 6.8s; border-color: rgba(153, 204, 255, 0.16); }
+.svc-ring-2 { animation-delay: 2.6s; border-color: rgba(118, 75, 200, 0.28); }
+.svc-ring-3 { animation-delay: 5.2s; border-color: rgba(56, 189, 248, 0.26); }
+.svc-ring-4 { animation-delay: 6.8s; border-color: rgba(153, 204, 255, 0.22); }
 
- /* soft diagonal light beams */
- .svc-beam {
-   position: absolute;
-   top: -20%;
-   width: 40%;
-   height: 140%;
-   filter: blur(8px);
-   will-change: transform, opacity;
- }
+/* soft diagonal light beams */
+.svc-beam {
+  position: absolute;
+  top: -20%;
+  width: 40%;
+  height: 140%;
+  filter: blur(8px);
+  will-change: transform, opacity;
+}
 
- .svc-beam-1 {
-   left: 26%;
-   background: linear-gradient(105deg, transparent 40%, rgba(0, 95, 204, 0.06) 48%, rgba(153, 204, 255, 0.1) 50%, rgba(118, 75, 200, 0.06) 52%, transparent 60%);
-   transform: rotate(18deg);
-   animation: svc-beam-sweep 16s ease-in-out infinite alternate;
- }
+.svc-beam-1 {
+  left: 26%;
+  background: linear-gradient(105deg, transparent 40%, rgba(0, 95, 204, 0.08) 48%, rgba(153, 204, 255, 0.14) 50%, rgba(118, 75, 200, 0.08) 52%, transparent 60%);
+  transform: rotate(18deg);
+  animation: svc-beam-sweep 16s ease-in-out infinite alternate;
+}
 
- .svc-beam-2 {
-   left: 48%;
-   background: linear-gradient(105deg, transparent 42%, rgba(56, 189, 248, 0.05) 49%, rgba(153, 204, 255, 0.08) 51%, rgba(0, 95, 204, 0.05) 53%, transparent 62%);
-   transform: rotate(16deg);
-   animation: svc-beam-sweep 21s ease-in-out infinite alternate-reverse;
- }
+.svc-beam-2 {
+  left: 48%;
+  background: linear-gradient(105deg, transparent 42%, rgba(56, 189, 248, 0.07) 49%, rgba(153, 204, 255, 0.1) 51%, rgba(0, 95, 204, 0.07) 53%, transparent 62%);
+  transform: rotate(16deg);
+  animation: svc-beam-sweep 21s ease-in-out infinite alternate-reverse;
+}
 
- /* services accent lattice under orbs */
- .svc-lattice {
-   position: absolute;
-   inset: -20%;
-   background-image:
-     linear-gradient(rgba(0, 95, 204, 0.045) 1px, transparent 1px),
-     linear-gradient(90deg, rgba(0, 95, 204, 0.045) 1px, transparent 1px);
-   background-size: 56px 56px;
-   transform: perspective(900px) rotateX(62deg) scale(1.35);
-   transform-origin: center 20%;
-   mask-image: radial-gradient(ellipse 70% 55% at 50% 35%, #000 20%, transparent 75%);
-   -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 35%, #000 20%, transparent 75%);
-   animation: svc-lattice-drift 28s linear infinite;
-   opacity: 0.55;
- }
+/* services accent lattice under orbs */
+.svc-lattice {
+  position: absolute;
+  inset: -20%;
+  background-image:
+    linear-gradient(rgba(0, 95, 204, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 95, 204, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  transform: perspective(900px) rotateX(62deg) scale(1.35);
+  transform-origin: center 20%;
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 35%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 35%, #000 20%, transparent 75%);
+  animation: svc-lattice-drift 28s linear infinite;
+  opacity: 0.65;
+}
 
- [data-theme="dark"] .svc-lattice {
-   background-image:
-     linear-gradient(rgba(153, 204, 255, 0.07) 1px, transparent 1px),
-     linear-gradient(90deg, rgba(153, 204, 255, 0.07) 1px, transparent 1px);
-   opacity: 0.7;
- }
+[data-theme="dark"] .svc-lattice {
+  background-image:
+    linear-gradient(rgba(153, 204, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(153, 204, 255, 0.09) 1px, transparent 1px);
+  opacity: 0.8;
+}
 
- @keyframes svc-drift-a {
-   0%   { transform: translate(0, 0) scale(1); }
-   50%  { transform: translate(6%, 8%) scale(1.08); }
-   100% { transform: translate(2%, -4%) scale(0.96); }
- }
+@keyframes svc-drift-a {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(6%, 8%) scale(1.08); }
+  100% { transform: translate(2%, -4%) scale(0.96); }
+}
 
- @keyframes svc-drift-b {
-   0%   { transform: translate(0, 0) scale(1.05); }
-   50%  { transform: translate(-8%, 5%) scale(0.94); }
-   100% { transform: translate(-3%, -6%) scale(1.1); }
- }
+@keyframes svc-drift-b {
+  0%   { transform: translate(0, 0) scale(1.05); }
+  50%  { transform: translate(-8%, 5%) scale(0.94); }
+  100% { transform: translate(-3%, -6%) scale(1.1); }
+}
 
- @keyframes svc-drift-c {
-   0%   { transform: translate(0, 0) scale(1); }
-   100% { transform: translate(5%, -10%) scale(1.12); }
- }
+@keyframes svc-drift-c {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(5%, -10%) scale(1.12); }
+}
 
- @keyframes svc-spark {
-   0%   { transform: translateY(0) translateX(0); opacity: 0; }
-   15%  { opacity: 0.9; }
-   50%  { transform: translateY(-26px) translateX(10px); opacity: 0.5; }
-   85%  { opacity: 0.8; }
-   100% { transform: translateY(-52px) translateX(-8px); opacity: 0; }
- }
+@keyframes svc-spark {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  15%  { opacity: 0.95; }
+  50%  { transform: translateY(-26px) translateX(10px); opacity: 0.55; }
+  85%  { opacity: 0.85; }
+  100% { transform: translateY(-52px) translateX(-8px); opacity: 0; }
+}
 
- @keyframes svc-pulse-ring {
-   0%   { transform: scale(0.35); opacity: 0.55; }
-   70%  { opacity: 0.12; }
-   100% { transform: scale(3.2); opacity: 0; }
- }
+@keyframes svc-pulse-ring {
+  0%   { transform: scale(0.35); opacity: 0.65; }
+  70%  { opacity: 0.14; }
+  100% { transform: scale(3.2); opacity: 0; }
+}
 
- @keyframes svc-beam-sweep {
-   0%   { transform: rotate(14deg) translateX(-4%); opacity: 0.55; }
-   100% { transform: rotate(22deg) translateX(6%); opacity: 0.9; }
- }
+@keyframes svc-beam-sweep {
+  0%   { transform: rotate(14deg) translateX(-4%); opacity: 0.6; }
+  100% { transform: rotate(22deg) translateX(6%); opacity: 0.95; }
+}
 
- @keyframes svc-lattice-drift {
-   0%   { background-position: 0 0, 0 0; }
-   100% { background-position: 56px 56px, 56px 56px; }
- }
+@keyframes svc-lattice-drift {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 56px 56px, 56px 56px; }
+}
 
- @media (prefers-reduced-motion: reduce) {
-   .svc-orb, .svc-spark, .svc-ring, .svc-beam, .svc-lattice {
-     animation: none !important;
-   }
-   .svc-ring, .svc-spark, .svc-beam {
-     display: none;
-   }
- }
+@media (prefers-reduced-motion: reduce) {
+  .svc-orb, .svc-spark, .svc-ring, .svc-beam, .svc-lattice {
+    animation: none !important;
+  }
+  .svc-ring, .svc-spark, .svc-beam {
+    display: none;
+  }
+}
 
- .svc-aurora--paused .svc-orb,
- .svc-aurora--paused .svc-spark,
- .svc-aurora--paused .svc-ring,
- .svc-aurora--paused .svc-beam,
- .svc-aurora--paused .svc-lattice {
-   animation-play-state: paused !important;
- }
+.svc-aurora--paused .svc-orb,
+.svc-aurora--paused .svc-spark,
+.svc-aurora--paused .svc-ring,
+.svc-aurora--paused .svc-beam,
+.svc-aurora--paused .svc-lattice {
+  animation-play-state: paused !important;
+}
 
- /* Content above aurora */
- #__docusaurus > div { position: relative; z-index: 1; }
- main { position: relative; z-index: 1; }
+/* Content above aurora — NEVER target #__docusaurus > div (breaks .svc-aurora + mobile nav) */
+.main-wrapper,
+main {
+  position: relative;
+  z-index: 1;
+}
 
- /* glass navbar so aurora peeks through */
- .navbar {
-   backdrop-filter: blur(12px);
-   -webkit-backdrop-filter: blur(12px);
- }
- [data-theme="dark"] .navbar {
-   background-color: rgba(13, 13, 20, 0.72) !important;
- }
- [data-theme="light"] .navbar {
-   background-color: rgba(255, 255, 255, 0.78) !important;
- }
+/* ---------- Navbar + mobile sidebar (must stay above aurora) ---------- */
+.navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: var(--ifm-z-index-fixed, 200) !important;
+}
 
-/* ---------- Navbar ---------- */
+[data-theme="dark"] .navbar {
+  background-color: rgba(13, 13, 20, 0.88) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .navbar {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
 .navbar__inner {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-[data-theme="dark"] .navbar {
-  /* glass handled above so mesh peeks through — keep border only */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+/* Mobile drawer: solid surface so aurora doesn't bleed through menu */
+.navbar-sidebar {
+  z-index: calc(var(--ifm-z-index-fixed, 200) + 20) !important;
+  background-color: var(--ifm-navbar-background-color, #fff) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+[data-theme="dark"] .navbar-sidebar {
+  background-color: #0a0a0f !important;
+}
+
+.navbar-sidebar__backdrop {
+  z-index: calc(var(--ifm-z-index-fixed, 200) + 10) !important;
+  background-color: rgba(0, 0, 0, 0.55) !important;
+}
+
+.navbar-sidebar__brand,
+.navbar-sidebar__items {
+  background-color: inherit;
+}
+
+/* Keep hamburger / close above everything on mobile */
+.navbar__toggle,
+.navbar-sidebar__close {
+  z-index: calc(var(--ifm-z-index-fixed, 200) + 30);
+  position: relative;
+}
+
+/* When drawer open, freeze aurora so it doesn't flash behind transparent gaps */
+.navbar-sidebar--show ~ .svc-aurora,
+body:has(.navbar-sidebar--show) .svc-aurora {
+  opacity: 0.35;
 }
 
 /* ---------- Heading ---------- */
