@@ -14,15 +14,15 @@ import "@site/src/css/custom.css";
 function HomepageHeader() {
   return (
     <div className={styles.heroBanner}>
-      {/* Local hero accents only — full-page mesh lives in theme/Root */}
-      <div className={styles.floatingBlob1} />
-      <div className={styles.floatingBlob2} />
-      <div className={styles.floatingBlob3} />
-      <div className={styles.heroGlow} />
+      {/*
+        No floating blobs / animated glows under hero text.
+        Site-wide motion is only svc-aurora (Root portal, z=0, body).
+        Animated layers under text = mobile GPU re-composite flicker.
+      */}
       <div className="container">
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>
-            <span className={styles.heroBadgeDot} />
+            <span className={styles.heroBadgeDot} aria-hidden="true" />
             Validator · Infrastructure · Public Services
           </div>
           <h1 className={styles.heroTitle}>
