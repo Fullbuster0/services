@@ -1,7 +1,7 @@
 {
   "id": "gnoland/upgrade",
   "title": "Upgrade",
-  "description": "Chain ID chain/test11",
+  "description": "Chain ID chain/topaz",
   "source": "@site/testnets/gnoland/upgrade.md",
   "sourceDirName": "gnoland",
   "slug": "/gnoland/upgrade",

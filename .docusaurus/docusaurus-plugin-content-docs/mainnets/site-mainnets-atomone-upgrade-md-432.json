@@ -1,7 +1,7 @@
 {
   "id": "atomone/upgrade",
   "title": "Upgrade",
-  "description": "Chain ID v3.3.0",
+  "description": "Chain ID v4.0.1",
   "source": "@site/mainnets/atomone/upgrade.md",
   "sourceDirName": "atomone",
   "slug": "/atomone/upgrade",

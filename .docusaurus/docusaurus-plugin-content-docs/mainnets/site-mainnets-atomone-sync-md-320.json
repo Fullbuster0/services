@@ -1,7 +1,7 @@
 {
   "id": "atomone/sync",
   "title": "Sync",
-  "description": "Chain ID v3.3.0",
+  "description": "Chain ID v4.0.1",
   "source": "@site/mainnets/atomone/sync.md",
   "sourceDirName": "atomone",
   "slug": "/atomone/sync",

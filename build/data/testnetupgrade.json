@@ -1,18 +1,1 @@
-[
-  {
-    "network": "Atomone",
-    "link": "/testnets/atomone/",
-    "rpc": "https://atomone-testnet-rpc.shazoes.xyz",
-    "target_height": 3240000,
-    "version": "v3.0.1",
-    "proposal": "https://explorer.shazoes.xyz/atomone-testnet/gov/8"
-  },
-  {
-    "network": "Hippo Protocol",
-    "link": "/testnets/hippo/",
-    "rpc": "https://hippo-testnet-rpc.shazoes.xyz",
-    "target_height": 10565,
-    "version": "v1.0.1",
-    "proposal": "https://explorer.shazoes.xyz/hippo-testnet/gov/5"
-  }
-]
+[]

@@ -1,7 +1,7 @@
 {
   "id": "hippo/node-installation",
   "title": "Node Installation",
-  "description": "Chain ID v2.0.0 | Custom Port: 37",
+  "description": "Chain ID v1.0.1 | Custom Port: 37",
   "source": "@site/testnets/hippo/node-installation.md",
   "sourceDirName": "hippo",
   "slug": "/hippo/node-installation",

@@ -1,7 +1,7 @@
 {
   "id": "axone/node-installation",
   "title": "Node Installation",
-  "description": "Chain ID v12.0.0 | Custom Port: 304",
+  "description": "Chain ID v1.0.0 | Custom Port: 304",
   "source": "@site/mainnets/axone/node-installation.md",
   "sourceDirName": "axone",
   "slug": "/axone/node-installation",

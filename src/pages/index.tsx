@@ -14,13 +14,17 @@ import "@site/src/css/custom.css";
 function HomepageHeader() {
   return (
     <div className={styles.heroBanner}>
-      {/* Floating gradient blobs */}
+      {/* Local hero accents only — full-page mesh lives in theme/Root */}
       <div className={styles.floatingBlob1} />
       <div className={styles.floatingBlob2} />
       <div className={styles.floatingBlob3} />
       <div className={styles.heroGlow} />
       <div className="container">
         <div className={styles.heroContent}>
+          <div className={styles.heroBadge}>
+            <span className={styles.heroBadgeDot} />
+            Validator · Infrastructure · Public Services
+          </div>
           <h1 className={styles.heroTitle}>
             Trusted Blockchain Validator & Services Provider
           </h1>

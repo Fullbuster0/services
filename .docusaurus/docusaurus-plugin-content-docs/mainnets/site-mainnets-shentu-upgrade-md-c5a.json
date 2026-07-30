@@ -1,7 +1,7 @@
 {
   "id": "shentu/upgrade",
   "title": "Upgrade",
-  "description": "Chain ID v2.2.0",
+  "description": "Chain ID v2.18.0",
   "source": "@site/mainnets/shentu/upgrade.md",
   "sourceDirName": "shentu",
   "slug": "/shentu/upgrade",

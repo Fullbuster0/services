@@ -1,7 +1,7 @@
 {
   "id": "terra/node-installation",
   "title": "Node Installation",
-  "description": "Chain ID v2.19.0 | Custom Port: 312",
+  "description": "Chain ID v2.20.0 | Custom Port: 312",
   "source": "@site/mainnets/terra/node-installation.md",
   "sourceDirName": "terra",
   "slug": "/terra/node-installation",

@@ -1,7 +1,7 @@
 {
   "id": "shentu/sync",
   "title": "Sync",
-  "description": "Chain ID v2.2.0",
+  "description": "Chain ID v2.18.0",
   "source": "@site/mainnets/shentu/sync.md",
   "sourceDirName": "shentu",
   "slug": "/shentu/sync",

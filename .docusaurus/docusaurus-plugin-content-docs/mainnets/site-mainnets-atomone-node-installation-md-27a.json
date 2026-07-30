@@ -1,7 +1,7 @@
 {
   "id": "atomone/node-installation",
   "title": "Node Installation",
-  "description": "Chain ID v3.3.0 | Custom Port: 12",
+  "description": "Chain ID v4.0.1 | Custom Port: 12",
   "source": "@site/mainnets/atomone/node-installation.md",
   "sourceDirName": "atomone",
   "slug": "/atomone/node-installation",

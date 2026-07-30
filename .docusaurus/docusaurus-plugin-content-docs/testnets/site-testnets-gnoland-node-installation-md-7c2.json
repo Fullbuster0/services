@@ -1,7 +1,7 @@
 {
   "id": "gnoland/node-installation",
   "title": "Node Installation",
-  "description": "Chain ID chain/test11 | Custom Port: 42",
+  "description": "Chain ID chain/topaz | Custom Port: 42",
   "source": "@site/testnets/gnoland/node-installation.md",
   "sourceDirName": "gnoland",
   "slug": "/gnoland/node-installation",

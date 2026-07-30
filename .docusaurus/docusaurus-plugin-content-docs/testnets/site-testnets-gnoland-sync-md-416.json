@@ -1,7 +1,7 @@
 {
   "id": "gnoland/sync",
   "title": "Sync",
-  "description": "Chain ID chain/test11",
+  "description": "Chain ID chain/topaz",
   "source": "@site/testnets/gnoland/sync.md",
   "sourceDirName": "gnoland",
   "slug": "/gnoland/sync",

@@ -1,7 +1,7 @@
 {
   "id": "hippo/sync",
   "title": "Sync",
-  "description": "Chain ID v1.0.0",
+  "description": "Chain ID v1.0.2",
   "source": "@site/mainnets/hippo/sync.md",
   "sourceDirName": "hippo",
   "slug": "/hippo/sync",

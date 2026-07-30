@@ -1,7 +1,7 @@
 {
   "id": "zetachain/upgrade",
   "title": "Upgrade",
-  "description": "Chain ID v1.0.0",
+  "description": "Chain ID v36.0.0",
   "source": "@site/mainnets/zetachain/upgrade.md",
   "sourceDirName": "zetachain",
   "slug": "/zetachain/upgrade",
