@@ -6,8 +6,10 @@ import TabItem from "@theme/TabItem";
 import styles from "./index.module.css";
 import CardMainnet from "../components/Card/CardMainnet";
 import CardTestnet from "../components/Card/CardTestnet";
+import CardArchive from "../components/Card/CardArchive";
 import { mainnetItems } from "../components/Card/CardMainnet";
 import { testnetItems } from "../components/Card/CardTestnet";
+import { archiveItems } from "../components/Card/CardArchive";
 import { FaShieldAlt, FaRocket, FaHeartbeat } from "react-icons/fa";
 import "@site/src/css/custom.css";
 
@@ -39,11 +41,9 @@ function HomepageHeader() {
               <span className={styles.statLabel}>Testnet Chains</span>
               <span className={styles.statNumber}>{testnetItems.length}</span>
             </div>
-            <div className={styles.statGlass} data-hue="emerald">
-              <span className={styles.statLabel}>Uptime Commitment</span>
-              <span className={styles.statNumber}>
-                99.9<span className={styles.statUnit}>%</span>
-              </span>
+            <div className={styles.statGlass} data-hue="slate">
+              <span className={styles.statLabel}>Archive</span>
+              <span className={styles.statNumber}>{archiveItems.length}</span>
             </div>
           </div>
         </div>
@@ -62,7 +62,8 @@ function HomepageMain() {
             <h2 className={styles.sectionTitle}>Supported chains</h2>
           </div>
           <p className={styles.sectionHint}>
-            Public endpoints, explorers &amp; docs for every network we operate.
+            Active networks we validate, plus archived docs for chains we no
+            longer operate.
           </p>
         </div>
         <div className={styles.centerWrapper}>
@@ -81,6 +82,13 @@ function HomepageMain() {
               label={`Testnets · ${testnetItems.length}`}
             >
               <CardTestnet />
+            </TabItem>
+            <TabItem
+              className={styles.customTabsItem}
+              value="archive"
+              label={`Archive · ${archiveItems.length}`}
+            >
+              <CardArchive />
             </TabItem>
           </Tabs>
         </div>

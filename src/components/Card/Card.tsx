@@ -12,6 +12,10 @@ type CardProps = {
   title: string;
   chain_id?: string;
   buttons: Button[];
+  /** Origin network for Archive tab badge */
+  networkType?: "mainnet" | "testnet";
+  /** Muted surface + Archive chip when true */
+  archived?: boolean;
 };
 
 function getButtonClass(label: string): string {
@@ -27,17 +31,46 @@ function getButtonClass(label: string): string {
   }
 }
 
-const Card: React.FC<CardProps> = ({ imageUrl, title, chain_id, buttons }) => {
+const Card: React.FC<CardProps> = ({
+  imageUrl,
+  title,
+  chain_id,
+  buttons,
+  networkType,
+  archived = false,
+}) => {
+  const cardClass = archived
+    ? `${styles.card} ${styles.cardArchived}`
+    : styles.card;
+
   return (
     <div className="container">
-      <div className={styles.card}>
+      <div className={cardClass}>
         <div className={styles.header}>
           <div className={styles.imageWrapper}>
             <img src={imageUrl} alt={title} className={styles.image} />
           </div>
           <div className={styles.textContainer}>
-            <h3 className={styles.title}>{title}</h3>
+            <div className={styles.titleRow}>
+              <h3 className={styles.title}>{title}</h3>
+              {archived && (
+                <span className={styles.badgeArchive} title="No longer actively validated">
+                  Archive
+                </span>
+              )}
+            </div>
             {chain_id && <p className={styles.chain_id}>{chain_id}</p>}
+            {networkType && (
+              <span
+                className={
+                  networkType === "mainnet"
+                    ? styles.badgeMainnet
+                    : styles.badgeTestnet
+                }
+              >
+                {networkType === "mainnet" ? "Mainnet" : "Testnet"}
+              </span>
+            )}
           </div>
         </div>
         <div className={styles.buttonGroup}>

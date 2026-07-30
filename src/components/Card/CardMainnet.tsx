@@ -92,37 +92,7 @@ const items: Item[] = [
       { label: "Delegate", url: "https://explorer.shazoes.xyz/lumera-mainnet/staking/lumeravaloper13pyqmz2a7u3vw3c3y3rslps9g5ms9xd754x48w" },
     ],
   },
-  {
-    imageUrl: "/img/mantra-icon.svg",
-    title: "Mantra",
-    chain_id: "mantra-1",
-    buttons: [
-      { label: "Services", url: "/mainnets/mantra/" },
-      { label: "Explorer", url: "https://explorer.shazoes.xyz/mantra-mainnet" },
-      { label: "Delegate", url: "https://explorer.shazoes.xyz/mantra-mainnet/staking/mantravaloper1ekhmc9e7fs67qz93fe99mgn99gwepqpadfcj2t" },
-    ],
-    
-  },
-  {
-    imageUrl: "/img/nillion-icon.svg",
-    title: "Nillion",
-    chain_id: "nillion-1",
-    buttons: [
-      { label: "Services", url: "/mainnets/nillion/" },
-      { label: "Explorer", url: "https://explorer.shazoes.xyz/nillion-mainnet" },
-      { label: "Delegate", url: "https://explorer.shazoes.xyz/nillion-mainnet/staking/nillionvaloper1dtpqpdehf54r025yw4g2a8c46am0ezl3sc56x5" },
-    ],
-  },
-  {
-    imageUrl: "/img/provenance-icon.svg",
-    title: "Provenance",
-    chain_id: "pio-mainnet-1",
-    buttons: [
-      { label: "Services", url: "/mainnets/provenance/" },
-      { label: "Explorer", url: "https://explorer.shazoes.xyz/provenance-mainnet" },
-      { label: "Delegate", url: "https://explorer.shazoes.xyz/provenance-mainnet/staking/pbvaloper1wgdk7896u5uduuawcwwfxpsd48ennclxvruskr" },
-    ],
-  },
+  // Mantra / Nillion / Provenance → Archive tab (UI only; docs paths unchanged)
   {
     imageUrl: "/img/seda-icon.svg",
     title: "Seda",

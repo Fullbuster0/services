@@ -191,6 +191,7 @@
 .statGlass[data-hue="blue"] { --stat-hue: #3fb6ff; }
 .statGlass[data-hue="violet"] { --stat-hue: #a78bfa; }
 .statGlass[data-hue="emerald"] { --stat-hue: #34d399; }
+.statGlass[data-hue="slate"] { --stat-hue: #94a3b8; }
 
 /* top accent — short at rest, full width on hover */
 .statGlass::before {
