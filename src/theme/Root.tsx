@@ -1,10 +1,9 @@
 import React, { useEffect, useState, type ReactNode } from "react";
 
 /**
- * Site-wide Root wrapper.
- * Services mesh field = brand motion for validator/infra site.
- * Intentionally different from explorer aurora (orbs/sparks/rings/beams):
- * constellation nodes + lattice + radar arcs + light columns.
+ * Site-wide Root wrapper — animated background field.
+ * Same family as explorer home aurora (orbs / sparks / rings / beams)
+ * so motion is clearly visible, with services-tuned timing + lattice accent.
  */
 export default function Root({ children }: { children: ReactNode }): ReactNode {
   const [paused, setPaused] = useState(false);
@@ -29,32 +28,37 @@ export default function Root({ children }: { children: ReactNode }): ReactNode {
   return (
     <>
       <div
-        className={`svc-mesh${paused ? " svc-mesh--paused" : ""}`}
+        className={`svc-aurora${paused ? " svc-aurora--paused" : ""}`}
         aria-hidden="true"
       >
-        <span className="svc-mesh-lattice" />
-        <span className="svc-mesh-haze svc-mesh-haze-a" />
-        <span className="svc-mesh-haze svc-mesh-haze-b" />
-        <span className="svc-mesh-haze svc-mesh-haze-c" />
-        <span className="svc-mesh-column svc-mesh-column-1" />
-        <span className="svc-mesh-column svc-mesh-column-2" />
-        <span className="svc-mesh-column svc-mesh-column-3" />
-        <span className="svc-mesh-arc svc-mesh-arc-1" />
-        <span className="svc-mesh-arc svc-mesh-arc-2" />
-        <span className="svc-mesh-arc svc-mesh-arc-3" />
-        <span className="svc-mesh-node svc-mesh-node-1" />
-        <span className="svc-mesh-node svc-mesh-node-2" />
-        <span className="svc-mesh-node svc-mesh-node-3" />
-        <span className="svc-mesh-node svc-mesh-node-4" />
-        <span className="svc-mesh-node svc-mesh-node-5" />
-        <span className="svc-mesh-node svc-mesh-node-6" />
-        <span className="svc-mesh-node svc-mesh-node-7" />
-        <span className="svc-mesh-node svc-mesh-node-8" />
-        <span className="svc-mesh-link svc-mesh-link-1" />
-        <span className="svc-mesh-link svc-mesh-link-2" />
-        <span className="svc-mesh-link svc-mesh-link-3" />
-        <span className="svc-mesh-link svc-mesh-link-4" />
-        <span className="svc-mesh-scan" />
+        {/* big soft drifting orbs — primary motion (like explorer) */}
+        <span className="svc-orb svc-orb-a" />
+        <span className="svc-orb svc-orb-b" />
+        <span className="svc-orb svc-orb-c" />
+        <span className="svc-orb svc-orb-d" />
+        <span className="svc-orb svc-orb-e" />
+        <span className="svc-orb svc-orb-f" />
+        <span className="svc-orb svc-orb-g" />
+        <span className="svc-orb svc-orb-h" />
+        {/* floating sparks */}
+        <span className="svc-spark svc-spark-1" />
+        <span className="svc-spark svc-spark-2" />
+        <span className="svc-spark svc-spark-3" />
+        <span className="svc-spark svc-spark-4" />
+        <span className="svc-spark svc-spark-5" />
+        <span className="svc-spark svc-spark-6" />
+        <span className="svc-spark svc-spark-7" />
+        <span className="svc-spark svc-spark-8" />
+        {/* consensus-style pulse rings */}
+        <span className="svc-ring svc-ring-1" />
+        <span className="svc-ring svc-ring-2" />
+        <span className="svc-ring svc-ring-3" />
+        <span className="svc-ring svc-ring-4" />
+        {/* diagonal light beams */}
+        <span className="svc-beam svc-beam-1" />
+        <span className="svc-beam svc-beam-2" />
+        {/* services accent: soft perspective lattice under orbs */}
+        <span className="svc-lattice" />
       </div>
       {children}
     </>
