@@ -21,7 +21,7 @@ function HomepageHeader() {
             Validator · Infrastructure · Public Services
           </div>
           <h1 className={styles.heroTitle}>
-            Trusted Blockchain Validator & Services Provider
+            Trusted Blockchain Validator &amp; Services Provider
           </h1>
           <p className={styles.heroTagline}>
             Shazoes is a validator that prioritizes stability, security, and
@@ -31,19 +31,19 @@ function HomepageHeader() {
             community.
           </p>
           <div className={styles.statsRow}>
-            <div className={styles.statGlass}>
-              <span className={styles.statNumber}>{mainnetItems.length}</span>
+            <div className={styles.statGlass} data-hue="blue">
               <span className={styles.statLabel}>Mainnet Chains</span>
+              <span className={styles.statNumber}>{mainnetItems.length}</span>
             </div>
-            <div className={styles.statDivider} />
-            <div className={styles.statGlass}>
-              <span className={styles.statNumber}>{testnetItems.length}</span>
+            <div className={styles.statGlass} data-hue="violet">
               <span className={styles.statLabel}>Testnet Chains</span>
+              <span className={styles.statNumber}>{testnetItems.length}</span>
             </div>
-            <div className={styles.statDivider} />
-            <div className={styles.statGlass}>
-              <span className={styles.statNumber}>99.9%</span>
+            <div className={styles.statGlass} data-hue="emerald">
               <span className={styles.statLabel}>Uptime Commitment</span>
+              <span className={styles.statNumber}>
+                99.9<span className={styles.statUnit}>%</span>
+              </span>
             </div>
           </div>
         </div>
@@ -56,12 +56,21 @@ function HomepageMain() {
   return (
     <div className={styles.mainSection}>
       <div className="container">
+        <div className={styles.sectionHead}>
+          <div>
+            <div className={styles.sectionKicker}>Networks</div>
+            <h2 className={styles.sectionTitle}>Supported chains</h2>
+          </div>
+          <p className={styles.sectionHint}>
+            Public endpoints, explorers &amp; docs for every network we operate.
+          </p>
+        </div>
         <div className={styles.centerWrapper}>
           <Tabs className={styles.customTabs}>
             <TabItem
               className={styles.customTabsItem}
               value="mainnets"
-              label="Mainnets"
+              label={`Mainnets · ${mainnetItems.length}`}
               default
             >
               <CardMainnet />
@@ -69,7 +78,7 @@ function HomepageMain() {
             <TabItem
               className={styles.customTabsItem}
               value="testnets"
-              label="Testnets"
+              label={`Testnets · ${testnetItems.length}`}
             >
               <CardTestnet />
             </TabItem>
@@ -105,7 +114,12 @@ function WhyShazoes() {
   return (
     <section className={styles.whySection}>
       <div className="container">
-        <h2 className={styles.whyTitle}>Why Shazoes?</h2>
+        <div className={styles.sectionHead}>
+          <div>
+            <div className={styles.sectionKicker}>Why Shazoes</div>
+            <h2 className={styles.whyTitle}>Built for operators &amp; community</h2>
+          </div>
+        </div>
         <div className={styles.featureGrid}>
           {features.map((feature) => (
             <div key={feature.title} className={styles.featureCard}>
@@ -128,8 +142,8 @@ export default function Home(): ReactNode {
       description="Shazoes is a validator that prioritizes stability, security, and maximum performance when supporting blockchain networks.  With dependable infrastructure, we ensure that our nodes are constantly operational and provide public services to benefit the blockchain community."
     >
       <HomepageHeader />
-      <WhyShazoes />
       <HomepageMain />
+      <WhyShazoes />
     </Layout>
   );
 }

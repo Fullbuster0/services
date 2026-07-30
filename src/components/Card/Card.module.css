@@ -1,23 +1,24 @@
 /*
- * Card styles — production-stable:
- * solid backgrounds, no backdrop-filter, no infinite animation, hover lift only.
+ * Card styles — explorer-family surface (sz-card):
+ * solid backgrounds, no backdrop-filter, no infinite animation.
+ * Hover: soft lift + top accent sweep only.
  */
 .card {
-  border: 1px solid rgba(0, 95, 204, 0.14);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 16px;
-  padding: 18px 20px;
-  background: #f5f8ff;
+  padding: 16px 18px 15px;
+  background: #ffffff;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   color: var(--ifm-font-color-base);
-  box-shadow: 0 4px 20px rgba(0, 95, 204, 0.06);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
   transition:
-    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.25s ease;
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -27,24 +28,22 @@
   animation: none;
 }
 
-/* Soft top accent line — static */
+/* Top accent — short at rest, full on hover (sz-stat language) */
 .card::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 12%;
-  right: 12%;
+  left: 0;
+  right: 0;
   height: 2px;
-  border-radius: 0 0 2px 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 95, 204, 0.35),
-    transparent
-  );
+  background: linear-gradient(90deg, #005fcc, #764bc8);
+  transform: scaleX(0.18);
+  transform-origin: left center;
+  opacity: 0.85;
   pointer-events: none;
-  opacity: 0.7;
-  transition: opacity 0.25s ease, background 0.25s ease;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.28s ease;
 }
 
 .card::after {
@@ -52,56 +51,36 @@
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 95, 204, 0.45);
-  box-shadow:
-    0 14px 36px rgba(0, 95, 204, 0.14),
-    0 0 0 1px rgba(0, 95, 204, 0.08);
+  transform: translateY(-2px);
+  border-color: rgba(0, 95, 204, 0.32);
+  box-shadow: 0 12px 28px -14px rgba(0, 95, 204, 0.28);
 }
 
 .card:hover::before {
+  transform: scaleX(1);
   opacity: 1;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 95, 204, 0.7),
-    rgba(118, 75, 200, 0.55),
-    transparent
-  );
 }
 
 [data-theme="dark"] .card {
-  background: #12131c;
+  background: #121624;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  border: 1px solid rgba(153, 204, 255, 0.12);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 [data-theme="dark"] .card::before {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(153, 204, 255, 0.35),
-    transparent
-  );
+  background: linear-gradient(90deg, #66a3ff, #a78bfa);
 }
 
 [data-theme="dark"] .card:hover {
-  border-color: rgba(153, 204, 255, 0.4);
-  box-shadow:
-    0 14px 36px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(153, 204, 255, 0.1);
+  border-color: rgba(153, 204, 255, 0.32);
+  box-shadow: 0 12px 28px -14px rgba(153, 204, 255, 0.22);
 }
 
 [data-theme="dark"] .card:hover::before {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(153, 204, 255, 0.7),
-    rgba(167, 139, 250, 0.45),
-    transparent
-  );
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .header {
@@ -174,16 +153,21 @@
   z-index: 2;
 }
 
-/* Base button */
+/* Base button — no transition:all (anti-flicker) */
 .button {
   flex: 1;
   text-align: center;
-  font-size: 0.8rem;
-  padding: 8px 14px;
+  font-size: 0.78rem;
+  padding: 7px 12px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
   min-width: fit-content;
   position: relative;
   overflow: hidden;
@@ -191,94 +175,93 @@
 }
 
 .button:active {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
-/* Services button - Filled Primary */
+/* Delegate — primary filled */
 .buttonPrimary {
   background: linear-gradient(135deg, #005fcc 0%, #003d80 100%);
   color: #ffffff;
   border: 1px solid transparent;
-  box-shadow: 0 4px 14px rgba(0, 95, 204, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 95, 204, 0.22);
 }
 
 .buttonPrimary:hover {
   background: linear-gradient(135deg, #3385ff 0%, #005fcc 100%);
   color: #ffffff;
   border-color: transparent;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 24px rgba(0, 95, 204, 0.45);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 95, 204, 0.32);
   text-decoration: none;
 }
 
-/* Explorer button - Outline */
+/* Explorer — outline */
 .buttonOutline {
   background: transparent;
   color: var(--ifm-color-primary);
-  border: 1.5px solid rgba(0, 95, 204, 0.35);
+  border: 1.5px solid rgba(0, 95, 204, 0.28);
 }
 
 .buttonOutline:hover {
-  background: rgba(0, 95, 204, 0.08);
+  background: rgba(0, 95, 204, 0.06);
   color: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 24px rgba(0, 95, 204, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 95, 204, 0.12);
   text-decoration: none;
 }
 
-/* Delegate button - Subtle accent */
+/* Services — soft accent */
 .buttonAccent {
   background: rgba(0, 95, 204, 0.06);
   color: var(--ifm-color-primary);
-  border: 1px solid rgba(0, 95, 204, 0.15);
+  border: 1px solid rgba(0, 95, 204, 0.14);
 }
 
 .buttonAccent:hover {
-  background: rgba(0, 95, 204, 0.14);
+  background: rgba(0, 95, 204, 0.12);
   color: var(--ifm-color-primary);
-  border-color: rgba(0, 95, 204, 0.4);
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 95, 204, 0.15);
+  border-color: rgba(0, 95, 204, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 95, 204, 0.1);
   text-decoration: none;
 }
 
-/* Dark mode button overrides */
 [data-theme="dark"] .buttonPrimary {
   background: linear-gradient(135deg, #66a3ff 0%, #3385ff 100%);
   color: #0a0e27;
-  box-shadow: 0 4px 14px rgba(153, 204, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(153, 204, 255, 0.18);
 }
 
 [data-theme="dark"] .buttonPrimary:hover {
   background: linear-gradient(135deg, #99ccff 0%, #66a3ff 100%);
   color: #0a0e27;
-  box-shadow: 0 8px 24px rgba(153, 204, 255, 0.45);
+  box-shadow: 0 8px 18px rgba(153, 204, 255, 0.28);
 }
 
 [data-theme="dark"] .buttonOutline {
   color: #99ccff;
-  border-color: rgba(153, 204, 255, 0.25);
+  border-color: rgba(153, 204, 255, 0.22);
 }
 
 [data-theme="dark"] .buttonOutline:hover {
-  background: rgba(153, 204, 255, 0.1);
+  background: rgba(153, 204, 255, 0.08);
   color: #99ccff;
-  border-color: rgba(153, 204, 255, 0.5);
-  box-shadow: 0 8px 24px rgba(153, 204, 255, 0.15);
+  border-color: rgba(153, 204, 255, 0.45);
+  box-shadow: 0 6px 16px rgba(153, 204, 255, 0.1);
 }
 
 [data-theme="dark"] .buttonAccent {
   color: #99ccff;
   background: rgba(153, 204, 255, 0.06);
-  border-color: rgba(153, 204, 255, 0.15);
+  border-color: rgba(153, 204, 255, 0.14);
 }
 
 [data-theme="dark"] .buttonAccent:hover {
   background: rgba(153, 204, 255, 0.12);
   color: #99ccff;
-  border-color: rgba(153, 204, 255, 0.4);
-  box-shadow: 0 6px 20px rgba(153, 204, 255, 0.15);
+  border-color: rgba(153, 204, 255, 0.35);
+  box-shadow: 0 6px 14px rgba(153, 204, 255, 0.1);
 }
 
 /* 1 KOLOM */
