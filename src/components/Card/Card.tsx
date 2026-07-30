@@ -43,6 +43,8 @@ const Card: React.FC<CardProps> = ({
     ? `${styles.card} ${styles.cardArchived}`
     : styles.card;
 
+  const showBadges = archived || !!networkType;
+
   return (
     <div className="container">
       <div className={cardClass}>
@@ -53,24 +55,31 @@ const Card: React.FC<CardProps> = ({
           <div className={styles.textContainer}>
             <div className={styles.titleRow}>
               <h3 className={styles.title}>{title}</h3>
-              {archived && (
-                <span className={styles.badgeArchive} title="No longer actively validated">
-                  Archive
-                </span>
+              {showBadges && (
+                <div className={styles.badgeGroup}>
+                  {networkType && (
+                    <span
+                      className={
+                        networkType === "mainnet"
+                          ? styles.badgeMainnet
+                          : styles.badgeTestnet
+                      }
+                    >
+                      {networkType === "mainnet" ? "Mainnet" : "Testnet"}
+                    </span>
+                  )}
+                  {archived && (
+                    <span
+                      className={styles.badgeArchive}
+                      title="No longer actively validated"
+                    >
+                      Archive
+                    </span>
+                  )}
+                </div>
               )}
             </div>
             {chain_id && <p className={styles.chain_id}>{chain_id}</p>}
-            {networkType && (
-              <span
-                className={
-                  networkType === "mainnet"
-                    ? styles.badgeMainnet
-                    : styles.badgeTestnet
-                }
-              >
-                {networkType === "mainnet" ? "Mainnet" : "Testnet"}
-              </span>
-            )}
           </div>
         </div>
         <div className={styles.buttonGroup}>
