@@ -215,30 +215,20 @@
   line-height: 1.15;
   margin: 1.5rem 0 1.25rem;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #99ccff 0%, #ffffff 50%, #99ccff 100%);
-  background-size: 200% auto;
+  /* Static gradient only — animated shimmer made text look like it was "moving" */
+  background: linear-gradient(135deg, #99ccff 0%, #ffffff 48%, #c4b5fd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 6s linear infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
+  animation: none;
 }
 
 [data-theme="light"] .heroTitle {
-  background: linear-gradient(135deg, #003d80 0%, #1a1a2e 50%, #003d80 100%);
-  background-size: 200% auto;
+  background: linear-gradient(135deg, #003d80 0%, #1a1a2e 48%, #4c1d95 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 6s linear infinite;
+  animation: none;
 }
 
 .heroTagline {

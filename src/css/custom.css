@@ -54,7 +54,9 @@ body {
   min-height: 100vh;
 }
 
-/* Fixed full-viewport field — !important beats any accidental parent rules */
+/* FIXED full-viewport field — !important beats any accidental parent rules.
+ * Portaled to body (see theme/Root.tsx) so it never sits inside #__docusaurus.
+ */
 .svc-aurora {
   position: fixed !important;
   inset: 0 !important;
@@ -64,6 +66,8 @@ body {
   overflow: hidden !important;
   pointer-events: none !important;
   transform: none !important;
+  isolation: isolate;
+  contain: strict;
 }
 
 /* big soft drifting orbs — primary motion (like explorer), boosted for visibility */
@@ -312,12 +316,12 @@ main {
 }
 
 [data-theme="dark"] .navbar {
-  background-color: rgba(13, 13, 20, 0.88) !important;
+  background-color: rgba(13, 13, 20, 0.92) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 [data-theme="light"] .navbar {
-  background-color: rgba(255, 255, 255, 0.92) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .navbar__inner {
@@ -325,12 +329,13 @@ main {
   padding-right: 1rem;
 }
 
-/* Mobile drawer: solid surface so aurora doesn't bleed through menu */
+/* Mobile drawer: solid surface, never transparent over aurora */
 .navbar-sidebar {
-  z-index: calc(var(--ifm-z-index-fixed, 200) + 20) !important;
+  z-index: calc(var(--ifm-z-index-overlay, 400) + 10) !important;
   background-color: var(--ifm-navbar-background-color, #fff) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+  /* DO NOT force transform here — Docusaurus toggles open/closed via transform */
 }
 
 [data-theme="dark"] .navbar-sidebar {
@@ -338,8 +343,8 @@ main {
 }
 
 .navbar-sidebar__backdrop {
-  z-index: calc(var(--ifm-z-index-fixed, 200) + 10) !important;
-  background-color: rgba(0, 0, 0, 0.55) !important;
+  z-index: calc(var(--ifm-z-index-overlay, 400) + 5) !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
 }
 
 .navbar-sidebar__brand,
@@ -350,14 +355,30 @@ main {
 /* Keep hamburger / close above everything on mobile */
 .navbar__toggle,
 .navbar-sidebar__close {
-  z-index: calc(var(--ifm-z-index-fixed, 200) + 30);
+  z-index: calc(var(--ifm-z-index-overlay, 400) + 20);
   position: relative;
 }
 
-/* When drawer open, freeze aurora so it doesn't flash behind transparent gaps */
-.navbar-sidebar--show ~ .svc-aurora,
+/* Docs left sidebar (desktop + mobile collapsible) above aurora */
+.theme-doc-sidebar-container,
+aside.theme-doc-sidebar-container,
+[class*="sidebarContainer"],
+.theme-doc-sidebar-menu {
+  position: relative;
+  z-index: 2;
+  background-color: var(--ifm-background-surface-color, var(--ifm-background-color));
+}
+
+/* When mobile nav drawer open, dim aurora (no stacking fight) */
 body:has(.navbar-sidebar--show) .svc-aurora {
-  opacity: 0.35;
+  opacity: 0.25;
+  transition: opacity 0.25s ease;
+}
+
+/* Ensure #__docusaurus itself stacks above body-portaled aurora */
+#__docusaurus {
+  position: relative;
+  z-index: 1;
 }
 
 /* ---------- Heading ---------- */
