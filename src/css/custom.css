@@ -391,7 +391,8 @@ article a:focus {
   border-radius: 0.7rem !important;
   border: none !important;
   border-bottom: none !important;
-  color: #94a3b8 !important;
+  /* Dark inactive: soft blue-tint, not flat grey */
+  color: #b3c7e6 !important;
   background: transparent !important;
   white-space: nowrap;
   transition:
@@ -401,24 +402,28 @@ article a:focus {
   line-height: 1.2;
 }
 
+/* Light inactive — slate navy, clearly readable (not grey wash) */
 [data-theme="light"] .tabs__item {
-  color: #64748b !important;
+  color: #1e3a5f !important;
+  background: transparent !important;
 }
 
 .tabs__item:hover {
-  color: #e8ecf4 !important;
-  background: rgba(255, 255, 255, 0.05) !important;
+  color: #e8f1ff !important;
+  background: rgba(153, 204, 255, 0.1) !important;
 }
 
 [data-theme="light"] .tabs__item:hover {
-  color: #0f172a !important;
-  background: rgba(15, 23, 42, 0.04) !important;
+  color: #003d80 !important;
+  background: rgba(0, 95, 204, 0.08) !important;
 }
 
+/* Active tab — solid primary blue + white text (both themes) */
 .tabs__item--active {
   color: #ffffff !important;
   background: #005fcc !important;
   box-shadow: 0 8px 18px -10px rgba(0, 95, 204, 0.55);
+  font-weight: 700 !important;
 }
 
 [data-theme="dark"] .tabs__item--active {
@@ -427,9 +432,16 @@ article a:focus {
   box-shadow: 0 8px 18px -10px rgba(153, 204, 255, 0.45);
 }
 
+/* Light active — keep blue filled (never grey) */
 [data-theme="light"] .tabs__item--active {
   color: #ffffff !important;
   background: #005fcc !important;
+  box-shadow: 0 6px 16px -8px rgba(0, 95, 204, 0.5);
+}
+
+[data-theme="light"] .tabs__item--active:hover {
+  color: #ffffff !important;
+  background: #004d99 !important;
 }
 
 /* Kill Infima underline bar under tabs */
