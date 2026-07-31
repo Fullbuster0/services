@@ -1,9 +1,1 @@
-<svg width="144" height="144" viewBox="0 0 144 144" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="144" height="144" fill="black"/>
-<path d="M92 88.0001C92 105.673 77.6731 120 60 120C42.3269 120 28 105.673 28 88.0001H44C44 96.8366 51.1635 104 60 104C68.8365 104 76 96.8366 76 88.0001H92Z" fill="white"/>
-<rect x="116" y="80" width="16" height="16" transform="rotate(-180 116 80)" fill="white"/>
-<rect x="76" y="64" width="16" height="16" fill="white"/>
-<rect x="68" y="80" width="16" height="16" transform="rotate(-180 68 80)" fill="white"/>
-<rect x="28" y="64" width="16" height="16" fill="white"/>
-<path d="M52 56C52 38.3269 66.3269 24 84 24C101.673 24 116 38.3269 116 56L100 56C100 47.1634 92.8366 40 84 40C75.1635 40 68 47.1634 68 56L52 56Z" fill="white"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" fill="none" viewBox="0 0 144 144"><path fill="#000" d="M0 0h144v144H0z"/><path fill="#fff" d="M92 88c0 17.673-14.327 32-32 32s-32-14.327-32-32h16c0 8.837 7.163 16 16 16s16-7.163 16-16zM116 80h-16V64h16zM76 64h16v16H76zM68 80H52V64h16zM28 64h16v16H28zM52 56c0-17.673 14.327-32 32-32s32 14.327 32 32h-16c0-8.837-7.163-16-16-16s-16 7.163-16 16z"/></svg>
