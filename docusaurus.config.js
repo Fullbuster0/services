@@ -63,7 +63,7 @@ const config = {
       title: "Shazoes",
       logo: {
         alt: "Shazoes Logo",
-        src: "img/logo.svg",
+        src: "img/shazoes.ico",
       },
       items: [
         { to: "/mainnets", position: "left", label: "Mainnets" },
