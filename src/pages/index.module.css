@@ -825,3 +825,18 @@
   border-color: #3058e3;
 }
 
+
+
+/* Mobile: ensure last chain cards (e.g. Zetachain) are fully scrollable / not clipped */
+@media (max-width: 996px) {
+  .mainSection {
+    padding-bottom: 4.5rem;
+  }
+  .centerWrapper {
+    overflow: visible;
+  }
+  .customTabsItem {
+    overflow: visible;
+    padding-bottom: 1.5rem;
+  }
+}

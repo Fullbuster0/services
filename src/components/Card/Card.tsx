@@ -46,8 +46,7 @@ const Card: React.FC<CardProps> = ({
   const showBadges = archived || !!networkType;
 
   return (
-    <div className="container">
-      <div className={cardClass}>
+    <div className={cardClass}>
         <div className={styles.header}>
           <div className={styles.imageWrapper}>
             <img src={imageUrl} alt={title} className={styles.image} />
@@ -93,7 +92,6 @@ const Card: React.FC<CardProps> = ({
             </Link>
           ))}
         </div>
-      </div>
     </div>
   );
 };

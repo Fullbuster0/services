@@ -1372,3 +1372,31 @@ article a:focus {
   background: #94a3b8;
   color: #0f172a;
 }
+
+
+/* Homepage network tabs: never clip card grid on mobile */
+.main-wrapper {
+  overflow: visible;
+}
+.margin-vert--md,
+.tabs-container,
+[role="tabpanel"] {
+  overflow: visible !important;
+}
+/* Bootstrap row inside tab: restore bottom space after last card */
+.mainSection .row {
+  margin-bottom: 0.5rem;
+}
+.mainSection .row > [class*="col-"] {
+  margin-bottom: 1rem;
+}
+@media (max-width: 996px) {
+  .mainSection .row > [class*="col-"]:last-child {
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+  }
+  /* Extra breathing room before Why section so last card isn't flush-covered */
+  .mainSection {
+    padding-bottom: 3.5rem !important;
+  }
+}
