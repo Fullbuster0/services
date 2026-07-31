@@ -1,7 +1,7 @@
 {
   "id": "union/union",
   "title": "Union",
-  "description": "Union is the zero-knowledge (zk) interoperability network that functions as a settlement and liquidity layer for protocols and asset issuers. Union supports direct connections between L1s, L2s, and rollups regardless of execution environment, while still being powered by the most secure consensus verification.",
+  "description": "ARCHIVE",
   "source": "@site/mainnets/union/union.md",
   "sourceDirName": "union",
   "slug": "/union/",

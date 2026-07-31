@@ -1,7 +1,7 @@
 {
   "id": "warden/upgrade",
   "title": "Upgrade",
-  "description": "Chain ID v0.7.0-rc3",
+  "description": "ARCHIVE",
   "source": "@site/testnets/warden/upgrade.md",
   "sourceDirName": "warden",
   "slug": "/warden/upgrade",

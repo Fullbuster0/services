@@ -1,7 +1,7 @@
 {
   "id": "fuel/upgrade",
   "title": "Upgrade",
-  "description": "Chain ID seq-testnet-2.2",
+  "description": "ARCHIVE",
   "source": "@site/testnets/fuel/upgrade.md",
   "sourceDirName": "fuel",
   "slug": "/fuel/upgrade",

@@ -1,7 +1,7 @@
 {
   "id": "cardchain/sync",
   "title": "Sync",
-  "description": "Chain ID v0.16.0",
+  "description": "ARCHIVE",
   "source": "@site/testnets/cardchain/sync.md",
   "sourceDirName": "cardchain",
   "slug": "/cardchain/sync",

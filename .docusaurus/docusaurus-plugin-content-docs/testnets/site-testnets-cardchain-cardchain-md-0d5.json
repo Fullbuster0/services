@@ -1,7 +1,7 @@
 {
   "id": "cardchain/cardchain",
   "title": "Cardchain",
-  "description": "As a blockchain game DAO we are set to solve an everlasting game development problem. In the development of game content, the player feedback loop underlies a big time delay and the user feedback is detached from the actual content development. This leads to imbalanced games, undesired features and ultimately to player and developer frustrations. We are solving this problem by integrating blockchain technology, which allows the player to create and balance their own in-game content in an automated feedback loop.",
+  "description": "ARCHIVE",
   "source": "@site/testnets/cardchain/cardchain.md",
   "sourceDirName": "cardchain",
   "slug": "/cardchain/",

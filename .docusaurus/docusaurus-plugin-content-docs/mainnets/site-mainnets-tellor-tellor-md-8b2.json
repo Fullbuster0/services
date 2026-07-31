@@ -1,7 +1,7 @@
 {
   "id": "tellor/tellor",
   "title": "Tellor",
-  "description": "Tellor Layer is a new L1 built using the cosmos sdk for the purpose of coming to consensus on any subjective data. It is operated by an open public network of staked parties who are crypto-economically incentivized to honestly report requested data.",
+  "description": "ARCHIVE",
   "source": "@site/mainnets/tellor/tellor.md",
   "sourceDirName": "tellor",
   "slug": "/tellor/",

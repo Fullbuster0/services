@@ -1,7 +1,7 @@
 {
   "id": "fuel/fuel",
   "title": "Fuel",
-  "description": "Fuel is an operating system purpose built for Ethereum Rollups. Fuel allows rollups to solve for PSI (parallelization, state minimized execution, interoperability) without making any sacrifices.",
+  "description": "ARCHIVE",
   "source": "@site/mainnets/fuel/fuel.md",
   "sourceDirName": "fuel",
   "slug": "/fuel/",

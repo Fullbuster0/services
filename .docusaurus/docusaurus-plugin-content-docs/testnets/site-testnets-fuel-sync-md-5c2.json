@@ -1,7 +1,7 @@
 {
   "id": "fuel/sync",
   "title": "Sync",
-  "description": "Chain ID seq-testnet-2.2",
+  "description": "ARCHIVE",
   "source": "@site/testnets/fuel/sync.md",
   "sourceDirName": "fuel",
   "slug": "/fuel/sync",

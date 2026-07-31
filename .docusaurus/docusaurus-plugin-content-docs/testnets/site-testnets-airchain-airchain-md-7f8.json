@@ -1,7 +1,7 @@
 {
   "id": "airchain/airchain",
   "title": "Airchain",
-  "description": "Airchains is distinct from RaaS providers because we built our own ZK circuit from the ground up, rather than relying on a third party. We also offer full EVM, SVM, and Cosmwasm support and interoperability, whereas RaaS providers are EVM-only.",
+  "description": "ARCHIVE",
   "source": "@site/testnets/airchain/airchain.md",
   "sourceDirName": "airchain",
   "slug": "/airchain/",

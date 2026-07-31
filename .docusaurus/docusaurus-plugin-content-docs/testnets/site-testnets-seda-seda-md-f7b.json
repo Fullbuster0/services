@@ -1,7 +1,7 @@
 {
   "id": "seda/seda",
   "title": "Seda",
-  "description": "SEDA is a standard for modular data transport and querying. Any data type, for all networks.",
+  "description": "ARCHIVE",
   "source": "@site/testnets/seda/seda.md",
   "sourceDirName": "seda",
   "slug": "/seda/",

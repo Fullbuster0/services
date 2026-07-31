@@ -1,7 +1,7 @@
 {
   "id": "symphony/upgrade",
   "title": "Upgrade",
-  "description": "Chain ID v5testnet",
+  "description": "ARCHIVE",
   "source": "@site/testnets/symphony/upgrade.md",
   "sourceDirName": "symphony",
   "slug": "/symphony/upgrade",

@@ -1,7 +1,7 @@
 {
   "id": "cardchain/upgrade",
   "title": "Upgrade",
-  "description": "Chain ID v0.16.0",
+  "description": "ARCHIVE",
   "source": "@site/testnets/cardchain/upgrade.md",
   "sourceDirName": "cardchain",
   "slug": "/cardchain/upgrade",
