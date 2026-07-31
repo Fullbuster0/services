@@ -800,6 +800,19 @@ article a:focus {
 }
 
 .icon-atomone { background-image: url("../../static/img/atomone-icon.svg"); }
+.icon-cosmoshub { background-image: url("../../static/img/cosmoshub-icon.svg"); }
+.menu__link[href*="/cosmoshub"]::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../static/img/cosmoshub-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
 .menu__link[href*="/atomone"]::before {
   content: "";
   display: inline-block;
@@ -1035,7 +1048,7 @@ article a:focus {
 
 /* Additional chain icons */
 .icon-hippo { background-image: url("../../static/img/hippo-icon.svg"); }
-.icon-cosmoshub { background-image: url("../../static/img/cosmoshub-icon.svg"); }
+
 .menu__link[href*="/hippo"]::before {
   content: "";
   display: inline-block;
