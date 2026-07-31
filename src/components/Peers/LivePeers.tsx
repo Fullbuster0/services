@@ -82,6 +82,7 @@ export default function LivePeers({
   const [peerCount, setPeerCount] = useState(0);
   const [usedPeerCount, setUsedPeerCount] = useState(0);
   const [status, setStatus] = useState<Status>("loading");
+  const [usedRpc, setUsedRpc] = useState<string>("");
   const [triedCount, setTriedCount] = useState(0);
   const [lastError, setLastError] = useState<string>("");
 
@@ -158,12 +159,24 @@ sudo systemctl restart ${binaryName} && sudo journalctl -u ${binaryName} -f --no
     return (
       <>
         <p>
-          <strong>Failed to fetch peer data.</strong> Please try again later.
+          <strong>Failed to fetch peer data</strong> after trying{" "}
+          {triedCount || "all"} RPC endpoint{triedCount === 1 ? "" : "s"}.
         </p>
-        <CodeBlock language="bash">{`# Peers unavailable right now`}</CodeBlock>
+        <CodeBlock language="bash">
+          {`All configured RPCs failed (down, CORS, or network).
+${lastError ? `Last errors: ${lastError}` : ""}
+Tip: open the RPC /net_info URL in a new tab — if it fails there too, the node is down.`}
+        </CodeBlock>
       </>
     );
   }
+
+  const sourceHint =
+    status === "ok" && usedRpc
+      ? `Source RPC: ${usedRpc}${triedCount > 1 ? ` (fallback #${triedCount})` : ""}`
+      : status === "loading"
+        ? `Trying RPC${triedCount ? ` ${triedCount}…` : "…"}`
+        : "";
 
   return (
     <>
@@ -176,6 +189,11 @@ sudo systemctl restart ${binaryName} && sudo journalctl -u ${binaryName} -f --no
           </>
         ) : null}
       </p>
+      {sourceHint ? (
+        <p style={{ opacity: 0.75, fontSize: "0.9em", marginTop: "-0.4rem" }}>
+          {sourceHint}
+        </p>
+      ) : null}
       <CodeBlock language="bash">{peersOnly || "Loading peers…"}</CodeBlock>
       <CodeBlock language="bash">
         {scriptOutput || "Loading config script…"}
