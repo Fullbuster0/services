@@ -17,10 +17,10 @@ Chain ID: `cosmoshub-4` | Node Version: `v25.1.0` | Custom Port: `14`
 <Tabs>
 
   <TabItem value="manual Installation" label="Manual Installation">
-:::note
+note
 
 First You Need Set Variabels
-:::
+
 
 ```js
 MONIKER=<YOUR_MONIKER_NAME>
@@ -152,9 +152,8 @@ EOF
 sudo systemctl daemon-reload && sudo systemctl enable gaiad && sudo systemctl start gaiad && sudo journalctl -fu gaiad -o cat
 ```
 
-:::tip
 Snapshot / State Sync: see **Sync** page (currently marked **Soon**). Use LivePeers there to bootstrap peers.
-:::
+
 
   </TabItem>
 
