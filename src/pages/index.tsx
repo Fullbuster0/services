@@ -67,6 +67,9 @@ function HomepageHeader() {
 
 function HomepageMain() {
   const [query, setQuery] = useState("");
+  const [archiveOrigin, setArchiveOrigin] = useState<
+    "all" | "mainnet" | "testnet"
+  >("all");
   const q = query.trim();
 
   const mainnetCount = useMemo(
@@ -77,14 +80,36 @@ function HomepageMain() {
     () => testnetItems.filter((i) => matchChain(i, q)).length,
     [q],
   );
-  const archiveCount = useMemo(
-    () => archiveItems.filter((i) => matchChain(i, q)).length,
-    [q],
+  const archiveFiltered = useMemo(
+    () =>
+      archiveItems.filter((i) => {
+        if (archiveOrigin !== "all" && i.networkType !== archiveOrigin) {
+          return false;
+        }
+        return matchChain(i, q);
+      }),
+    [q, archiveOrigin],
+  );
+  const archiveCount = archiveFiltered.length;
+  const archiveMainnetTotal = useMemo(
+    () => archiveItems.filter((i) => i.networkType === "mainnet").length,
+    [],
+  );
+  const archiveTestnetTotal = useMemo(
+    () => archiveItems.filter((i) => i.networkType === "testnet").length,
+    [],
   );
 
-  const tabMain = q ? `Mainnets · ${mainnetCount}/${mainnetItems.length}` : `Mainnets · ${mainnetItems.length}`;
-  const tabTest = q ? `Testnets · ${testnetCount}/${testnetItems.length}` : `Testnets · ${testnetItems.length}`;
-  const tabArch = q ? `Archive · ${archiveCount}/${archiveItems.length}` : `Archive · ${archiveItems.length}`;
+  const tabMain = q
+    ? `Mainnets · ${mainnetCount}/${mainnetItems.length}`
+    : `Mainnets · ${mainnetItems.length}`;
+  const tabTest = q
+    ? `Testnets · ${testnetCount}/${testnetItems.length}`
+    : `Testnets · ${testnetItems.length}`;
+  const tabArch =
+    q || archiveOrigin !== "all"
+      ? `Archive · ${archiveCount}/${archiveItems.length}`
+      : `Archive · ${archiveItems.length}`;
 
   return (
     <div className={styles.mainSection}>
@@ -163,7 +188,39 @@ function HomepageMain() {
               value="archive"
               label={tabArch}
             >
-              <CardArchive filterQuery={q} />
+              <div className={styles.archiveFilterBar}>
+                <label
+                  className={styles.archiveFilterLabel}
+                  htmlFor="archive-origin-filter"
+                >
+                  Origin
+                </label>
+                <select
+                  id="archive-origin-filter"
+                  className={styles.archiveFilterSelect}
+                  value={archiveOrigin}
+                  onChange={(e) =>
+                    setArchiveOrigin(
+                      e.target.value as "all" | "mainnet" | "testnet",
+                    )
+                  }
+                >
+                  <option value="all">
+                    All Archive · {archiveItems.length}
+                  </option>
+                  <option value="mainnet">
+                    Mainnet origin · {archiveMainnetTotal}
+                  </option>
+                  <option value="testnet">
+                    Testnet origin · {archiveTestnetTotal}
+                  </option>
+                </select>
+                <span className={styles.archiveFilterHint}>
+                  Showing {archiveCount}
+                  {q ? " match" + (archiveCount === 1 ? "" : "es") : " chain" + (archiveCount === 1 ? "" : "s")}
+                </span>
+              </div>
+              <CardArchive filterQuery={q} originFilter={archiveOrigin} />
             </TabItem>
           </Tabs>
         </div>

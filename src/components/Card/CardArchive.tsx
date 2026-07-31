@@ -227,14 +227,34 @@ function matchesQuery(
   );
 }
 
-type Props = { filterQuery?: string };
+export type ArchiveOriginFilter = "all" | "mainnet" | "testnet";
 
-const CardArchive: React.FC<Props> = ({ filterQuery = "" }) => {
-  const filtered = items.filter((item) => matchesQuery(item, filterQuery));
+type Props = {
+  filterQuery?: string;
+  originFilter?: ArchiveOriginFilter;
+};
+
+const CardArchive: React.FC<Props> = ({
+  filterQuery = "",
+  originFilter = "all",
+}) => {
+  const filtered = items.filter((item) => {
+    if (originFilter !== "all" && item.networkType !== originFilter) {
+      return false;
+    }
+    return matchesQuery(item, filterQuery);
+  });
   if (filtered.length === 0) {
+    const originHint =
+      originFilter === "all"
+        ? "archive"
+        : originFilter === "mainnet"
+          ? "mainnet archive"
+          : "testnet archive";
     return (
       <p className="chainSearchEmpty" role="status">
-        No archive matches “{filterQuery.trim()}”.
+        No {originHint} matches
+        {filterQuery.trim() ? ` “${filterQuery.trim()}”` : ""}.
       </p>
     );
   }
