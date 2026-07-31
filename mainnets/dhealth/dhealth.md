@@ -2,8 +2,12 @@
 hide_table_of_contents: false
 title: "Dhealth"
 ---
-
 import { Icon } from "@iconify/react"; // Import the entire Iconify library.
+
+<div className="archived-notice-banner">
+  <span className="badge-archive">ARCHIVE</span>
+  <span className="notice-text">Network no longer actively validated · Services docs only (no updated)</span>
+</div>
 
 <div className="h1-with-icon icon-dhealth">
 # Dhealth 

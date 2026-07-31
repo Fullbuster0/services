@@ -91,7 +91,36 @@ const items: Item[] = [
     networkType: "mainnet",
     buttons: [{ label: "Services", url: "/mainnets/union/" }],
   },
+  {
+    imageUrl: "/img/dhealth-icon.svg",
+    title: "Dhealth",
+    chain_id: "dhealth",
+    networkType: "mainnet",
+    buttons: [{ label: "Services", url: "/mainnets/dhealth/" }],
+  },
+  {
+    imageUrl: "/img/regen-icon.svg",
+    title: "Regen",
+    chain_id: "regen-1",
+    networkType: "mainnet",
+    buttons: [{ label: "Services", url: "/mainnets/regen/" }],
+  },
   // —— former testnets ——
+  {
+    imageUrl: "/img/galactica-icon.svg",
+    title: "Galactica",
+    chain_id: "galactica_9302-1",
+    networkType: "testnet",
+    buttons: [{ label: "Services", url: "/testnets/galactica/" }],
+  },
+  {
+    imageUrl: "/img/soarchain-icon.svg",
+    title: "Soarchain",
+    chain_id: "soarchaintestnet",
+    networkType: "testnet",
+    buttons: [{ label: "Services", url: "/testnets/soarchain/" }],
+  },
+
   {
     imageUrl: "/img/airchain-icon.svg",
     title: "Airchain",

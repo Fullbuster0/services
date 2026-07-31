@@ -3,11 +3,15 @@ hide_table_of_contents: false
 title: Node Installation
 sidebar_position: 2
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SnapshotCard from "@site/src/components/Snapshot/SnapshotCard";
 import LivePeers from "@site/src/components/Peers/LivePeers";
+
+<div className="archived-notice-banner">
+  <span className="badge-archive">ARCHIVE</span>
+  <span className="notice-text">Network no longer actively validated · Services docs only (no updated)</span>
+</div>
 
 <div className="h1-with-icon icon-regen">
 # regen Node Installation
