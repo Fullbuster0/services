@@ -82,7 +82,6 @@ export default function LivePeers({
   const [peerCount, setPeerCount] = useState(0);
   const [usedPeerCount, setUsedPeerCount] = useState(0);
   const [status, setStatus] = useState<Status>("loading");
-  const [usedRpc, setUsedRpc] = useState<string>("");
   const [triedCount, setTriedCount] = useState(0);
   const [lastError, setLastError] = useState<string>("");
 
@@ -99,7 +98,6 @@ export default function LivePeers({
     async function fetchPeers() {
       setStatus("loading");
       setLastError("");
-      setUsedRpc("");
       setTriedCount(0);
 
       const errors: string[] = [];
@@ -125,7 +123,6 @@ export default function LivePeers({
           setPeerCount(allPeers.length);
           setUsedPeerCount(shuffledPeers.length);
           setPeersOnly(peersString);
-          setUsedRpc(endpoint);
           setScriptOutput(
             `PEERS="${peersString}"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${homeFolder}/config/config.toml
@@ -171,13 +168,6 @@ Tip: open the RPC /net_info URL in a new tab — if it fails there too, the node
     );
   }
 
-  const sourceHint =
-    status === "ok" && usedRpc
-      ? `Source RPC: ${usedRpc}${triedCount > 1 ? ` (fallback #${triedCount})` : ""}`
-      : status === "loading"
-        ? `Trying RPC${triedCount ? ` ${triedCount}…` : "…"}`
-        : "";
-
   return (
     <>
       <p>
@@ -189,11 +179,6 @@ Tip: open the RPC /net_info URL in a new tab — if it fails there too, the node
           </>
         ) : null}
       </p>
-      {sourceHint ? (
-        <p style={{ opacity: 0.75, fontSize: "0.9em", marginTop: "-0.4rem" }}>
-          {sourceHint}
-        </p>
-      ) : null}
       <CodeBlock language="bash">{peersOnly || "Loading peers…"}</CodeBlock>
       <CodeBlock language="bash">
         {scriptOutput || "Loading config script…"}

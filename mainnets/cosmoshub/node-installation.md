@@ -152,9 +152,6 @@ EOF
 sudo systemctl daemon-reload && sudo systemctl enable gaiad && sudo systemctl start gaiad && sudo journalctl -fu gaiad -o cat
 ```
 
-Snapshot / State Sync: see **Sync** page (currently marked **Soon**). Use LivePeers there to bootstrap peers.
-
-
   </TabItem>
 
   <TabItem value="auto installation" label="Auto Installation">
