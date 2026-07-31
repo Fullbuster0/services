@@ -8,8 +8,18 @@
           "label": "Next",
           "isLast": true,
           "path": "/yay",
-          "mainDocId": "testo",
+          "mainDocId": "mainnets/atomone/upgrade",
           "docs": [
+            {
+              "id": "mainnets/atomone/upgrade",
+              "path": "/yay/mainnets/atomone/upgrade",
+              "sidebar": "docSidebar"
+            },
+            {
+              "id": "testnets/atomone/upgrade",
+              "path": "/yay/testnets/atomone/upgrade",
+              "sidebar": "docSidebar"
+            },
             {
               "id": "testo",
               "path": "/yay/testo",
@@ -20,8 +30,8 @@
           "sidebars": {
             "docSidebar": {
               "link": {
-                "path": "/yay/testo",
-                "label": "testo"
+                "path": "/yay/mainnets/atomone/upgrade",
+                "label": "mainnets/atomone/upgrade"
               }
             }
           }

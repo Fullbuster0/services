@@ -1,0 +1,23 @@
+{
+  "id": "testnets/atomone/upgrade",
+  "title": "Atomone Testnet",
+  "description": "Overview",
+  "source": "@site/docs/testnets/atomone/upgrade.md",
+  "sourceDirName": "testnets/atomone",
+  "slug": "/testnets/atomone/upgrade",
+  "permalink": "/yay/testnets/atomone/upgrade",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docSidebar",
+  "previous": {
+    "title": "Atomone",
+    "permalink": "/yay/mainnets/atomone/upgrade"
+  },
+  "next": {
+    "title": "testo",
+    "permalink": "/yay/testo"
+  }
+}

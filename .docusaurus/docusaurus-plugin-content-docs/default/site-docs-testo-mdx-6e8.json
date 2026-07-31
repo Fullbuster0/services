@@ -11,5 +11,9 @@
   "tags": [],
   "version": "current",
   "frontMatter": {},
-  "sidebar": "docSidebar"
+  "sidebar": "docSidebar",
+  "previous": {
+    "title": "Atomone Testnet",
+    "permalink": "/yay/testnets/atomone/upgrade"
+  }
 }
