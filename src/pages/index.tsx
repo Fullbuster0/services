@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useMemo, useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Tabs from "@theme/Tabs";
@@ -12,6 +13,18 @@ import { testnetItems } from "../components/Card/CardTestnet";
 import { archiveItems } from "../components/Card/CardArchive";
 import { FaShieldAlt, FaRocket, FaHeartbeat } from "react-icons/fa";
 import "@site/src/css/custom.css";
+
+function matchChain(
+  item: { title: string; chain_id?: string },
+  q: string,
+): boolean {
+  if (!q) return true;
+  const s = q.toLowerCase().trim();
+  return (
+    item.title.toLowerCase().includes(s) ||
+    (item.chain_id ? item.chain_id.toLowerCase().includes(s) : false)
+  );
+}
 
 function HomepageHeader() {
   return (
@@ -53,6 +66,26 @@ function HomepageHeader() {
 }
 
 function HomepageMain() {
+  const [query, setQuery] = useState("");
+  const q = query.trim();
+
+  const mainnetCount = useMemo(
+    () => mainnetItems.filter((i) => matchChain(i, q)).length,
+    [q],
+  );
+  const testnetCount = useMemo(
+    () => testnetItems.filter((i) => matchChain(i, q)).length,
+    [q],
+  );
+  const archiveCount = useMemo(
+    () => archiveItems.filter((i) => matchChain(i, q)).length,
+    [q],
+  );
+
+  const tabMain = q ? `Mainnets · ${mainnetCount}/${mainnetItems.length}` : `Mainnets · ${mainnetItems.length}`;
+  const tabTest = q ? `Testnets · ${testnetCount}/${testnetItems.length}` : `Testnets · ${testnetItems.length}`;
+  const tabArch = q ? `Archive · ${archiveCount}/${archiveItems.length}` : `Archive · ${archiveItems.length}`;
+
   return (
     <div className={styles.mainSection}>
       <div className="container">
@@ -66,29 +99,71 @@ function HomepageMain() {
             longer operate.
           </p>
         </div>
+
+        <div className={styles.chainSearchWrap}>
+          <label className={styles.chainSearchLabel} htmlFor="chain-search">
+            Search chains
+          </label>
+          <div className={styles.chainSearchBox}>
+            <span className={styles.chainSearchIcon} aria-hidden="true">
+              ⌕
+            </span>
+            <input
+              id="chain-search"
+              type="search"
+              className={styles.chainSearchInput}
+              placeholder="Search by name or chain id…"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              autoComplete="off"
+              spellCheck={false}
+            />
+            {q ? (
+              <button
+                type="button"
+                className={styles.chainSearchClear}
+                onClick={() => setQuery("")}
+                aria-label="Clear search"
+              >
+                ✕
+              </button>
+            ) : null}
+          </div>
+          {q ? (
+            <p className={styles.chainSearchMeta} role="status">
+              Showing matches across tabs · Mainnet {mainnetCount} · Testnet{" "}
+              {testnetCount} · Archive {archiveCount}
+            </p>
+          ) : (
+            <p className={styles.chainSearchMeta}>
+              Filter cards by chain name or chain id (works on every tab).
+            </p>
+          )}
+        </div>
+
         <div className={styles.centerWrapper}>
           <Tabs className={styles.customTabs}>
             <TabItem
               className={styles.customTabsItem}
               value="mainnets"
-              label={`Mainnets · ${mainnetItems.length}`}
+              label={tabMain}
               default
             >
-              <CardMainnet />
+              <CardMainnet filterQuery={q} />
             </TabItem>
             <TabItem
               className={styles.customTabsItem}
               value="testnets"
-              label={`Testnets · ${testnetItems.length}`}
+              label={tabTest}
             >
-              <CardTestnet />
+              <CardTestnet filterQuery={q} />
             </TabItem>
             <TabItem
               className={styles.customTabsItem}
               value="archive"
-              label={`Archive · ${archiveItems.length}`}
+              label={tabArch}
             >
-              <CardArchive />
+              <CardArchive filterQuery={q} />
             </TabItem>
           </Tabs>
         </div>

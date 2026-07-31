@@ -120,10 +120,32 @@ const items: Item[] = [
 
 export const mainnetItems = items;
 
-const CardMainnet: React.FC = () => {
+function matchesQuery(
+  item: { title: string; chain_id?: string },
+  q: string,
+): boolean {
+  if (!q) return true;
+  const s = q.toLowerCase().trim();
+  return (
+    item.title.toLowerCase().includes(s) ||
+    (item.chain_id ? item.chain_id.toLowerCase().includes(s) : false)
+  );
+}
+
+type Props = { filterQuery?: string };
+
+const CardMainnet: React.FC<Props> = ({ filterQuery = "" }) => {
+  const filtered = items.filter((item) => matchesQuery(item, filterQuery));
+  if (filtered.length === 0) {
+    return (
+      <p className="chainSearchEmpty" role="status">
+        No mainnet matches “{filterQuery.trim()}”.
+      </p>
+    );
+  }
   return (
     <div className="row g-4">
-      {items.map((item) => (
+      {filtered.map((item) => (
         <div
           key={item.title}
           className="col-12 col-md-6 col-lg-4 col-xxl-3 mb-4"
