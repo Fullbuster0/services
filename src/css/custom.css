@@ -1400,3 +1400,190 @@ article a:focus {
     padding-bottom: 3.5rem !important;
   }
 }
+
+
+/* ========== Premium navbar (not generic Infima) ========== */
+:root {
+  --sz-nav-height: 3.5rem;
+  --sz-brand-gap: 0.55rem;
+}
+
+.navbar,
+nav.navbar.navbar--fixed-top {
+  height: var(--sz-nav-height) !important;
+  min-height: var(--sz-nav-height) !important;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+[data-theme="dark"] .navbar,
+[data-theme="dark"] nav.navbar.navbar--fixed-top {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.navbar__inner {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  align-items: center !important;
+}
+
+/* Brand: compact logo + wordmark (no flex grow mess) */
+.navbar__brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: var(--sz-brand-gap) !important;
+  margin-right: 1.25rem !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+}
+
+.navbar__brand:hover {
+  opacity: 0.92;
+  text-decoration: none !important;
+}
+
+.navbar__logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  height: 1.75rem !important;
+  width: 1.75rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.navbar__logo img {
+  height: 1.75rem !important;
+  width: 1.75rem !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Kill Infima title flex:1 which stretches brand and looks broken on mobile */
+.navbar__title,
+.navbar__brand .navbar__title,
+b.navbar__title {
+  flex: 0 0 auto !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1 !important;
+  color: #0f172a !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  max-width: none !important;
+}
+
+[data-theme="dark"] .navbar__title,
+[data-theme="dark"] b.navbar__title {
+  color: #f8fafc !important;
+}
+
+/* Left cluster: hamburger + brand + links */
+.navbar__items {
+  align-items: center !important;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.navbar__items--right {
+  margin-left: auto !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  flex: 0 0 auto !important;
+}
+
+.navbar__link {
+  font-size: 0.9rem !important;
+  font-weight: 560 !important;
+  padding: 0.35rem 0.65rem !important;
+  border-radius: 8px;
+}
+
+.navbar__link:hover {
+  background: rgba(0, 95, 204, 0.06);
+}
+
+[data-theme="dark"] .navbar__link:hover {
+  background: rgba(153, 204, 255, 0.08);
+}
+
+/* Hamburger clean */
+.navbar__toggle {
+  margin: 0 0.35rem 0 0 !important;
+  padding: 0.35rem !important;
+  border-radius: 8px;
+  color: #0f172a !important;
+}
+[data-theme="dark"] .navbar__toggle {
+  color: #f8fafc !important;
+}
+
+/* Theme toggle not glued to brand */
+.navbar .toggle_sGvI,
+.navbar .colorModeToggle_zoyI,
+.navbar [class*="colorModeToggle"],
+.navbar [class*="toggleButton"] {
+  margin-left: 0.15rem !important;
+}
+
+/* Mobile drawer brand row */
+.navbar-sidebar__brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  height: var(--sz-nav-height) !important;
+  padding: 0 1rem !important;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06) !important;
+}
+
+.navbar-sidebar__brand .navbar__brand {
+  margin-right: auto !important;
+}
+
+.navbar-sidebar__brand .navbar__logo,
+.navbar-sidebar__brand .navbar__logo img {
+  height: 1.75rem !important;
+  width: 1.75rem !important;
+}
+
+.navbar-sidebar__close {
+  margin-left: 0.5rem !important;
+  padding: 0.4rem !important;
+  border-radius: 8px;
+}
+
+@media (max-width: 996px) {
+  .navbar__inner {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .navbar__brand {
+    margin-right: 0.5rem !important;
+    gap: 0.45rem !important;
+  }
+  .navbar__title,
+  b.navbar__title {
+    font-size: 1rem !important;
+  }
+  /* Keep brand left of available space; don't center/stretch */
+  .navbar__items:not(.navbar__items--right) {
+    flex: 1 1 auto !important;
+    min-width: 0;
+  }
+  .navbar__items--right {
+    flex: 0 0 auto !important;
+  }
+}
+
