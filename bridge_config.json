@@ -176,6 +176,31 @@
       "binary": "zetacored",
       "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
     },
+    "cosmoshub": {
+      "chain_name": "CosmosHub",
+      "chain_id": "cosmoshub-4",
+      "type": "mainnet",
+      "rest_endpoints": [
+        "https://rest.cosmos.directory/cosmoshub",
+        "https://lcd-cosmoshub.keplr.app",
+        "https://cosmos-api.polkachu.com"
+      ],
+      "rpc_endpoints": [
+        "https://cosmos-rpc.polkachu.com",
+        "https://rpc-cosmoshub.keplr.app",
+        "https://rpc.cosmos.directory/cosmoshub"
+      ],
+      "gov_module": "v1",
+      "doc_path": "mainnets/cosmoshub/upgrade.md",
+      "json_path": "static/data/mainnetupgrade.json",
+      "explorer_url": "https://explorer.shazoes.xyz/CosmosHub-mainnet/gov/",
+      "node_version": "v25.1.0",
+      "manual_upgrade": "cd $HOME\nrm -rf gaia\ngit clone https://github.com/cosmos/gaia.git gaia\ncd gaia\ngit checkout v25.1.0\nmake install\nsudo systemctl restart gaiad && sudo journalctl -fu gaiad -o cat",
+      "folder": "gaia",
+      "repo": "https://github.com/cosmos/gaia.git",
+      "binary": "gaiad",
+      "upgrade_template": "cd $HOME\nrm -rf {folder}\ngit clone {repo} {folder}\ncd {folder}\ngit checkout {version}\nmake install\nsudo systemctl restart {binary} && sudo journalctl -fu {binary} -o cat"
+    },
     "atomone-testnet": {
       "chain_name": "AtomOne Testnet",
       "chain_id": "atomone-testnet-1",
