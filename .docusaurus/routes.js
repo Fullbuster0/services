@@ -14,15 +14,15 @@ export default [
   },
   {
     path: '/mainnets',
-    component: ComponentCreator('/mainnets', 'f23'),
+    component: ComponentCreator('/mainnets', '30f'),
     routes: [
       {
         path: '/mainnets',
-        component: ComponentCreator('/mainnets', 'dfb'),
+        component: ComponentCreator('/mainnets', 'd6a'),
         routes: [
           {
             path: '/mainnets',
-            component: ComponentCreator('/mainnets', '7f6'),
+            component: ComponentCreator('/mainnets', '18d'),
             routes: [
               {
                 path: '/mainnets/',
@@ -117,6 +117,36 @@ export default [
               {
                 path: '/mainnets/babylon/useful-commands',
                 component: ComponentCreator('/mainnets/babylon/useful-commands', '01b'),
+                exact: true,
+                sidebar: "mainnetsSidebars"
+              },
+              {
+                path: '/mainnets/cosmoshub/',
+                component: ComponentCreator('/mainnets/cosmoshub/', '825'),
+                exact: true,
+                sidebar: "mainnetsSidebars"
+              },
+              {
+                path: '/mainnets/cosmoshub/node-installation',
+                component: ComponentCreator('/mainnets/cosmoshub/node-installation', '049'),
+                exact: true,
+                sidebar: "mainnetsSidebars"
+              },
+              {
+                path: '/mainnets/cosmoshub/sync',
+                component: ComponentCreator('/mainnets/cosmoshub/sync', 'cdd'),
+                exact: true,
+                sidebar: "mainnetsSidebars"
+              },
+              {
+                path: '/mainnets/cosmoshub/upgrade',
+                component: ComponentCreator('/mainnets/cosmoshub/upgrade', 'dc9'),
+                exact: true,
+                sidebar: "mainnetsSidebars"
+              },
+              {
+                path: '/mainnets/cosmoshub/useful-commands',
+                component: ComponentCreator('/mainnets/cosmoshub/useful-commands', '6e0'),
                 exact: true,
                 sidebar: "mainnetsSidebars"
               },

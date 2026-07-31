@@ -1,0 +1,28 @@
+{
+  "id": "cosmoshub/sync",
+  "title": "Sync",
+  "description": "Chain ID v25.1.0",
+  "source": "@site/mainnets/cosmoshub/sync.md",
+  "sourceDirName": "cosmoshub",
+  "slug": "/cosmoshub/sync",
+  "permalink": "/mainnets/cosmoshub/sync",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "Sync",
+    "sidebar_position": 3
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/cosmoshub/node-installation"
+  },
+  "next": {
+    "title": "Upgrade",
+    "permalink": "/mainnets/cosmoshub/upgrade"
+  }
+}

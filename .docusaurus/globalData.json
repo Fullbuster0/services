@@ -115,6 +115,31 @@
               "sidebar": "mainnetsSidebars"
             },
             {
+              "id": "cosmoshub/cosmoshub",
+              "path": "/mainnets/cosmoshub/",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "cosmoshub/node-installation",
+              "path": "/mainnets/cosmoshub/node-installation",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "cosmoshub/sync",
+              "path": "/mainnets/cosmoshub/sync",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "cosmoshub/upgrade",
+              "path": "/mainnets/cosmoshub/upgrade",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
+              "id": "cosmoshub/useful-commands",
+              "path": "/mainnets/cosmoshub/useful-commands",
+              "sidebar": "mainnetsSidebars"
+            },
+            {
               "id": "dhealth/dhealth",
               "path": "/mainnets/dhealth/",
               "sidebar": "mainnetsSidebars"

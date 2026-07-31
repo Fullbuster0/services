@@ -1,0 +1,26 @@
+{
+  "id": "cosmoshub/cosmoshub",
+  "title": "CosmosHub",
+  "description": "Cosmos Hub is the first blockchain in the Cosmos Network. ATOM is the native staking coin. The Hub provides a secure and scalable foundation for the interchain, connecting many sovereign blockchains via IBC.",
+  "source": "@site/mainnets/cosmoshub/cosmoshub.md",
+  "sourceDirName": "cosmoshub",
+  "slug": "/cosmoshub/",
+  "permalink": "/mainnets/cosmoshub/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "hide_table_of_contents": false,
+    "title": "CosmosHub"
+  },
+  "sidebar": "mainnetsSidebars",
+  "previous": {
+    "title": "Useful Commands",
+    "permalink": "/mainnets/babylon/useful-commands"
+  },
+  "next": {
+    "title": "Node Installation",
+    "permalink": "/mainnets/cosmoshub/node-installation"
+  }
+}
