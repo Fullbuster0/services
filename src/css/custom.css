@@ -1035,6 +1035,7 @@ article a:focus {
 
 /* Additional chain icons */
 .icon-hippo { background-image: url("../../static/img/hippo-icon.svg"); }
+.icon-cosmoshub { background-image: url("../../static/img/cosmoshub-icon.svg"); }
 .menu__link[href*="/hippo"]::before {
   content: "";
   display: inline-block;

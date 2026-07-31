@@ -141,7 +141,11 @@ wget -O $HOME/.hippo/config/addrbook.json https://files.shazoes.xyz/mainnets/hip
 </TabItem>
 <TabItem value="livepeers" label="LivePeers">
 <LivePeers
-  rpc="https://hippo-mainnet-rpc.shazoes.xyz"
+  rpc={[
+    "https://hippo-mainnet-rpc.shazoes.xyz",
+    "https://rpc.hippo.protocol.com",
+    "https://rpc.hippo.nodeshub.online",
+  ]}
   homeFolder=".hippo"
   binaryName="hippod"
   maxPeers={25}

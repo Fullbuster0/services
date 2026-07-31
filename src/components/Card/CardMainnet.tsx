@@ -44,6 +44,7 @@ const items: Item[] = [
     title: "CosmosHub",
     chain_id: "cosmoshub-4",
     buttons: [
+      { label: "Services", url: "/mainnets/cosmoshub/" },
       { label: "Explorer", url: "https://explorer.shazoes.xyz/cosmoshub-mainnet" },
       {
         label: "Delegate",

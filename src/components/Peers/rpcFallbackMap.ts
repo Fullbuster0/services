@@ -1,8 +1,8 @@
-// AUTO-GENERATED — explorer RPCs + live /net_info|/status probe.
-// Active = home Services Mainnet+Testnet cards only → max 3 healthy RPCs.
-//   Shazoes first when healthy; if Shazoes down, public only.
-// Archive / non-home LivePeers → exactly 1 healthy non-Shazoes RPC when available.
-//   Doc primary may redirect away from dead Shazoes.
+// AUTO-GENERATED — explorer RPCs + live probe + curated active overrides.
+// Active = home Services Mainnet+Testnet → max 3 RPCs.
+// Archive → 1 non-Shazoes when possible.
+// Hippo: Shazoes + official + NodesHub (user).
+// CosmosHub LivePeers: polkachu + kjnodes + lava (3).
 export const RPC_FALLBACK_MAP: Record<string, string[]> = {
   "https://airchain-testnet-rpc.shazoes.xyz": ["https://airchains-testnet-rpc.itrocket.net"],
   "https://airchains-testnet-rpc.itrocket.net": ["https://airchains-testnet-rpc.itrocket.net"],
@@ -16,11 +16,17 @@ export const RPC_FALLBACK_MAP: Record<string, string[]> = {
   "https://babylon-mainnet-rpc.shazoes.xyz": ["https://babylon-rpc.polkachu.com"],
   "https://babylon-rpc.polkachu.com": ["https://babylon-rpc.polkachu.com"],
   "https://cardchain-testnet-rpc.itrocket.net": ["https://cardchain-testnet-rpc.itrocket.net"],
+  "https://cosmos-rpc.polkachu.com": ["https://cosmos-rpc.polkachu.com", "https://cosmoshub.rpc.kjnodes.com", "https://cosmoshub.tendermintrpc.lava.build"],
+  "https://cosmos-rpc.polkachu.com:443": ["https://cosmos-rpc.polkachu.com", "https://cosmoshub.rpc.kjnodes.com", "https://cosmoshub.tendermintrpc.lava.build"],
+  "https://cosmoshub.rpc.kjnodes.com": ["https://cosmoshub.rpc.kjnodes.com", "https://cosmos-rpc.polkachu.com", "https://cosmoshub.tendermintrpc.lava.build"],
+  "https://cosmoshub.tendermintrpc.lava.build": ["https://cosmoshub.tendermintrpc.lava.build", "https://cosmos-rpc.polkachu.com", "https://cosmoshub.rpc.kjnodes.com"],
+  "https://cosmoshub.tendermintrpc.lava.build:443": ["https://cosmoshub.tendermintrpc.lava.build", "https://cosmos-rpc.polkachu.com", "https://cosmoshub.rpc.kjnodes.com"],
   "https://empeiria-testnet-rpc.itrocket.net": ["https://empeiria-testnet-rpc.itrocket.net"],
   "https://fuel-testnet-rpc.shazoes.xyz": ["https://fuel-testnet-rpc.shazoes.xyz"],
   "https://galactica-testnet-rpc.itrocket.net": ["https://galactica-testnet-rpc.itrocket.net"],
   "https://gnoland-testnet-rpc.shazoes.xyz": ["https://gnoland-testnet-rpc.shazoes.xyz", "https://rpc.topaz.testnets.gno.land", "https://topaz-gnoland-rpc.noderuner.xyz"],
-  "https://hippo-mainnet-rpc.shazoes.xyz": ["https://hippo-mainnet-rpc.shazoes.xyz"],
+  "https://hippo-mainnet-rpc.shazoes.xyz": ["https://hippo-mainnet-rpc.shazoes.xyz", "https://rpc.hippo.protocol.com", "https://rpc.hippo.nodeshub.online"],
+  "https://hippo-rpc.polkachu.com": ["https://hippo-rpc.polkachu.com", "https://hippo-mainnet-rpc.shazoes.xyz", "https://rpc.hippo.protocol.com"],
   "https://hippo-testnet-rpc.shazoes.xyz": ["https://rpc.testnet.hippo-protocol.com"],
   "https://lava-mainnet-rpc.shazoes.xyz": ["https://lava.rpc.stakevillage.net:443", "https://lava.tendermintrpc.lava.build", "https://lava.rpc.liveraven.net"],
   "https://lava.rpc.liveraven.net": ["https://lava.rpc.liveraven.net", "https://lava.rpc.stakevillage.net:443", "https://lava.tendermintrpc.lava.build"],
@@ -43,6 +49,8 @@ export const RPC_FALLBACK_MAP: Record<string, string[]> = {
   "https://rpc.axone.citizenweb3.com": ["https://rpc.axone.citizenweb3.com", "https://rpc.cosmos.directory/axone", "https://axone-rpc.highstakes.ch"],
   "https://rpc.cosmos.directory/axone": ["https://rpc.cosmos.directory/axone", "https://rpc.axone.citizenweb3.com", "https://axone-rpc.highstakes.ch"],
   "https://rpc.dhealth.com": ["https://rpc.dhealth.com"],
+  "https://rpc.hippo.nodeshub.online": ["https://rpc.hippo.nodeshub.online", "https://hippo-mainnet-rpc.shazoes.xyz", "https://rpc.hippo.protocol.com"],
+  "https://rpc.hippo.protocol.com": ["https://rpc.hippo.protocol.com", "https://hippo-mainnet-rpc.shazoes.xyz", "https://rpc.hippo.nodeshub.online"],
   "https://rpc.lavenderfive.com:443/terra2": ["https://rpc.lavenderfive.com:443/terra2", "https://terra-mainnet-rpc.shazoes.xyz", "https://terra2.tdrsys.com:2053"],
   "https://rpc.selfchain.io:26657": ["https://rpc.selfchain.io:26657"],
   "https://rpc.shentu.org:443": ["https://rpc.shentu.org:443", "https://shentu-mainnet-rpc.shazoes.xyz", "https://shentu-rpc.polkachu.com:443"],
@@ -88,12 +96,10 @@ export function expandRpcFallbacks(primary: string, extra: string[] = []): strin
   for (const s of seed) {
     const mapped = RPC_FALLBACK_MAP[s];
     if (mapped && mapped.length) {
-      // Authoritative list (may omit dead primary / redirect archive Shazoes → public)
       mapped.forEach(push);
     } else {
       push(s);
     }
   }
-  // hard cap 3
   return out.slice(0, 3);
 }
