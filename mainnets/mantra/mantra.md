@@ -3,11 +3,17 @@ hide_table_of_contents: false
 title: "Mantra"
 ---
 
-import { Icon } from "@iconify/react"; // Import the entire Iconify library.
+import { Icon } from "@iconify/react";
+
+<div className="archived-notice-banner">
+  <span className="badge-archive">ARCHIVE</span>
+  <span className="notice-text">Network no longer actively validated · Services docs only</span>
+</div>
 
 <div className="h1-with-icon icon-mantra">
-# Mantra 
+# Mantra
 </div>
+
 <!-- deskripsi -->
 MANTRA Chain is a modular Layer-1 blockchain engineered for decentralized finance (DeFi) and real-world asset (RWA) tokenization, with a foundational commitment to regulatory compliance.
 
@@ -18,7 +24,7 @@ MANTRA Chain is a modular Layer-1 blockchain engineered for decentralized financ
 <a href="https://discord.com/invite/mantrachain"><Icon icon="bi:discord" width="35" height="35" /></a>
 <a href="https://explorer.shazoes.xyz/mantra-mainnet"><Icon icon="meteor-icons:search" width="35" height="35" /></a>
 
-<!-- Endpouints -->
+<!-- Endpoints -->
 
 ### Public Endpoints
 

@@ -3,11 +3,17 @@ hide_table_of_contents: false
 title: "Airchain"
 ---
 
-import { Icon } from "@iconify/react"; // Import the entire Iconify library.
+import { Icon } from "@iconify/react";
+
+<div className="archived-notice-banner">
+  <span className="badge-archive">ARCHIVE</span>
+  <span className="notice-text">Network no longer actively validated · Services docs only</span>
+</div>
 
 <div className="h1-with-icon icon-airchain">
-# Airchain 
+# Airchain
 </div>
+
 <!-- deskripsi -->
 Airchains is distinct from RaaS providers because we built our own ZK circuit from the ground up, rather than relying on a third party. We also offer full EVM, SVM, and Cosmwasm support and interoperability, whereas RaaS providers are EVM-only.
 
@@ -18,7 +24,7 @@ Airchains is distinct from RaaS providers because we built our own ZK circuit fr
 <a href="https://discord.gg/airchains"><Icon icon="bi:discord" width="35" height="35" /></a>
 <a href="https://explorer.shazoes.xyz/airchain-testnet"><Icon icon="meteor-icons:search" width="35" height="35" /></a>
 
-<!-- Endpouints -->
+<!-- Endpoints -->
 
 ### Public Endpoints
 
