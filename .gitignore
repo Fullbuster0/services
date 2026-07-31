@@ -15,7 +15,9 @@ bridge.log.*
 *.log.tmp
 
 # Dependencies
-node_modules/
+# NOTE: no trailing slash — must also ignore a node_modules symlink/file,
+# not just a directory (a committed symlink broke Vercel's yarn install: EEXIST)
+node_modules
 .pnp
 .pnp.js
 
