@@ -20,13 +20,20 @@ type Item = {
  * Services only (no Explorer — explorer for these will be shut down).
  */
 const items: Item[] = [
-  // —— former mainnets ——
+  // —— former mainnets (A–Z) ——
   {
     imageUrl: "/img/babylon-icon.svg",
     title: "Babylon",
     chain_id: "bbn-1",
     networkType: "mainnet",
     buttons: [{ label: "Services", url: "/mainnets/babylon/" }],
+  },
+  {
+    imageUrl: "/img/dhealth-icon.svg",
+    title: "Dhealth",
+    chain_id: "dhealth",
+    networkType: "mainnet",
+    buttons: [{ label: "Services", url: "/mainnets/dhealth/" }],
   },
   {
     imageUrl: "/img/fuel-icon.svg",
@@ -64,6 +71,13 @@ const items: Item[] = [
     buttons: [{ label: "Services", url: "/mainnets/provenance/" }],
   },
   {
+    imageUrl: "/img/regen-icon.svg",
+    title: "Regen",
+    chain_id: "regen-1",
+    networkType: "mainnet",
+    buttons: [{ label: "Services", url: "/mainnets/regen/" }],
+  },
+  {
     imageUrl: "/img/seda-icon.svg",
     title: "Seda",
     chain_id: "seda-1",
@@ -91,36 +105,7 @@ const items: Item[] = [
     networkType: "mainnet",
     buttons: [{ label: "Services", url: "/mainnets/union/" }],
   },
-  {
-    imageUrl: "/img/dhealth-icon.svg",
-    title: "Dhealth",
-    chain_id: "dhealth",
-    networkType: "mainnet",
-    buttons: [{ label: "Services", url: "/mainnets/dhealth/" }],
-  },
-  {
-    imageUrl: "/img/regen-icon.svg",
-    title: "Regen",
-    chain_id: "regen-1",
-    networkType: "mainnet",
-    buttons: [{ label: "Services", url: "/mainnets/regen/" }],
-  },
-  // —— former testnets ——
-  {
-    imageUrl: "/img/galactica-icon.svg",
-    title: "Galactica",
-    chain_id: "galactica_9302-1",
-    networkType: "testnet",
-    buttons: [{ label: "Services", url: "/testnets/galactica/" }],
-  },
-  {
-    imageUrl: "/img/soarchain-icon.svg",
-    title: "Soarchain",
-    chain_id: "soarchaintestnet",
-    networkType: "testnet",
-    buttons: [{ label: "Services", url: "/testnets/soarchain/" }],
-  },
-
+  // —— former testnets (A–Z) ——
   {
     imageUrl: "/img/airchain-icon.svg",
     title: "Airchain",
@@ -157,6 +142,13 @@ const items: Item[] = [
     buttons: [{ label: "Services", url: "/testnets/fuel/" }],
   },
   {
+    imageUrl: "/img/galactica-icon.svg",
+    title: "Galactica",
+    chain_id: "galactica_9302-1",
+    networkType: "testnet",
+    buttons: [{ label: "Services", url: "/testnets/galactica/" }],
+  },
+  {
     imageUrl: "/img/lumera-icon.svg",
     title: "Lumera",
     chain_id: "lumera-testnet-2",
@@ -176,6 +168,13 @@ const items: Item[] = [
     chain_id: "seda-1-testnet",
     networkType: "testnet",
     buttons: [{ label: "Services", url: "/testnets/seda/" }],
+  },
+  {
+    imageUrl: "/img/soarchain-icon.svg",
+    title: "Soarchain",
+    chain_id: "soarchaintestnet",
+    networkType: "testnet",
+    buttons: [{ label: "Services", url: "/testnets/soarchain/" }],
   },
   {
     imageUrl: "/img/story-icon.svg",
