@@ -1,0 +1,144 @@
+/* Relayers page — hub sections & route grid.
+ * Card language mirrors src/components/Card/Card.module.css (solid panels,
+ * top accent bar, hover lift — no glass, no infinite animation). */
+
+.hubSection {
+  margin-bottom: 2.75rem;
+}
+
+.hubSection:last-child {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Hub header ---------- */
+
+.hubHeader {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem 0.85rem;
+  margin-bottom: 1.1rem;
+  padding: 0 0.25rem;
+}
+
+.hubIcon {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="dark"] .hubIcon {
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+.hubName {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+[data-theme="dark"] .hubName {
+  color: #e8ecf4;
+}
+
+.hubCount {
+  font-family: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  color: #005fcc;
+  background: rgba(0, 95, 204, 0.08);
+  border: 1px solid rgba(0, 95, 204, 0.2);
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .hubCount {
+  color: #8eb4e0;
+  background: rgba(74, 116, 168, 0.14);
+  border-color: rgba(122, 168, 224, 0.22);
+}
+
+.hubWallet {
+  margin-left: auto;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #64748b;
+  text-decoration: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(100, 116, 139, 0.25);
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.hubWallet:hover {
+  color: #005fcc;
+  border-color: rgba(0, 95, 204, 0.4);
+  background: rgba(0, 95, 204, 0.06);
+  text-decoration: none;
+}
+
+[data-theme="dark"] .hubWallet {
+  color: rgba(148, 163, 184, 0.95);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="dark"] .hubWallet:hover {
+  color: #8eb4e0;
+  border-color: rgba(122, 168, 224, 0.4);
+  background: rgba(74, 116, 168, 0.12);
+}
+
+/* ---------- Route grid ---------- */
+
+.routeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .routeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hubWallet {
+    margin-left: 0;
+  }
+}
+
+/* ---------- Empty state (search) ---------- */
+
+.emptyState {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: #64748b;
+  font-size: 0.95rem;
+  border: 1px dashed rgba(100, 116, 139, 0.3);
+  border-radius: 16px;
+}
+
+[data-theme="dark"] .emptyState {
+  color: rgba(148, 163, 184, 0.9);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.emptyState strong {
+  color: #0f172a;
+}
+
+[data-theme="dark"] .emptyState strong {
+  color: #e8ecf4;
+}
