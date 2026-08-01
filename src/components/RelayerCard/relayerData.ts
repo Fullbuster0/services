@@ -26,7 +26,7 @@ const chains: Record<string, RelayerChain> = {
     name: "CosmosHub",
     icon: "/img/cosmoshub-icon.svg",
     walletUrl:
-      "https://www.mintscan.io/cosmos/address/cosmos1238rpkaw44fys2cz27dng69anaugnkwel9kyrs",
+      "https://explorer.shazoes.xyz/cosmoshub-mainnet/account/cosmos1238rpkaw44fys2cz27dng69anaugnkwel9kyrs",
   },
   noble: {
     name: "Noble",
@@ -38,7 +38,7 @@ const chains: Record<string, RelayerChain> = {
     name: "Atomone",
     icon: "/img/atomone-icon.svg",
     walletUrl:
-      "https://www.mintscan.io/atomone/address/atone1238rpkaw44fys2cz27dng69anaugnkwe392r4g",
+      "https://explorer.shazoes.xyz/atomone-mainnet/account/atone1238rpkaw44fys2cz27dng69anaugnkwe392r4g",
   },
   babylon: {
     name: "Babylon",
@@ -50,7 +50,7 @@ const chains: Record<string, RelayerChain> = {
     name: "Lava",
     icon: "/img/lava-icon.svg",
     walletUrl:
-      "https://lava.explorers.guru/account/lava@1238rpkaw44fys2cz27dng69anaugnkwe8appya",
+      "https://explorer.shazoes.xyz/lava-mainnet/account/lava@1238rpkaw44fys2cz27dng69anaugnkwe8appya",
   },
   mantra: {
     name: "Mantra",
@@ -74,19 +74,19 @@ const chains: Record<string, RelayerChain> = {
     name: "Shentu",
     icon: "/img/shentu-icon.svg",
     walletUrl:
-      "https://www.mintscan.io/shentu/address/shentu1238rpkaw44fys2cz27dng69anaugnkweh3ja3d",
+      "https://explorer.shazoes.xyz/shentu-mainnet/account/shentu1238rpkaw44fys2cz27dng69anaugnkweh3ja3d",
   },
   synternet: {
     name: "Synternet",
     icon: "/img/synternet-icon.svg",
     walletUrl:
-      "https://explorer.shazoes.xyz/synternet-mainnet/account/synt1238rpkaw44fys2cz27dng69anaugnkwesz9f8c",
+      "https://ping.pub/synternet/account/synt1238rpkaw44fys2cz27dng69anaugnkwesz9f8c",
   },
   terra: {
     name: "Terra",
     icon: "/img/terra-icon.svg",
     walletUrl:
-      "https://www.mintscan.io/terra/address/terra1238rpkaw44fys2cz27dng69anaugnkweepvyps",
+      "https://explorer.shazoes.xyz/terra-mainnet/account/terra1238rpkaw44fys2cz27dng69anaugnkweepvyps",
   },
 };
 
