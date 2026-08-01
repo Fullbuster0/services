@@ -226,7 +226,9 @@ article a:focus {
   color: var(--ifm-color-primary-dark);
 }
 
-/* Neutralize Bootstrap link underline fighting Infima menu/footer */
+/* Neutralize Bootstrap link underline fighting Infima navbar/menu/footer */
+.navbar a,
+.navbar-sidebar a,
 .menu a,
 .footer a {
   text-decoration: none !important;
