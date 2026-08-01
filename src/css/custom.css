@@ -230,7 +230,9 @@ article a:focus {
 .navbar a,
 .navbar-sidebar a,
 .menu a,
-.footer a {
+.footer a,
+.pagination-nav a,
+.table-of-contents a {
   text-decoration: none !important;
 }
 
