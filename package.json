@@ -22,7 +22,7 @@
     "bootstrap": "^5.3.5",
     "bootstrap-icons": "^1.11.3",
     "clsx": "^2.0.0",
-    "dompurify": "^3.4.11",
+    "dompurify": "3.4.12",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
