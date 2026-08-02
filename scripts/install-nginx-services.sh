@@ -39,8 +39,11 @@ fi
 # ----------------------------- SEC_HEADERS ----------------------------------
 # Di-inject ke location / (add_header TIDAK inherit kalau location punya
 # add_header sendiri). CSP pragmatis untuk static Docusaurus.
+# connect-src 'self' https: — LivePeers fetch /net_info ke RPC publik HTTPS
+# (subdomain shazoes.xyz + polkachu/kjnodes/lava/dll). 'self' saja = browser
+# BLOK semua RPC → "Failed to fetch peer data" di SEMUA chain walau node up.
 read -r -d '' SEC_HEADERS <<'SEC' || true
-        add_header Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests" always;
+        add_header Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests" always;
         add_header X-Frame-Options "SAMEORIGIN" always;
         add_header X-Content-Type-Options "nosniff" always;
         add_header Referrer-Policy "strict-origin-when-cross-origin" always;
