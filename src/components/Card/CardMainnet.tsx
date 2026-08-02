@@ -22,7 +22,7 @@ const items: Item[] = [
       { label: "Explorer", url: "https://explorer.shazoes.xyz/atomone-mainnet" },
       {
         label: "Delegate",
-        url: "https://explorer.shazoes.xyz/atomone-mainnet/staking/atonevaloper17f2sq92lqjxwztemmy0aeave07xqg4qtdtp73l",
+        url: "https://explorer.shazoes.xyz/atomone-mainnet/validator/atonevaloper17f2sq92lqjxwztemmy0aeave07xqg4qtdtp73l",
       },
     ],
   },
@@ -35,7 +35,7 @@ const items: Item[] = [
       { label: "Explorer", url: "https://explorer.shazoes.xyz/axone-mainnet" },
       {
         label: "Delegate",
-        url: "https://explorer.shazoes.xyz/axone-mainnet/staking/axonevaloper1gf6gnfxqx0jkv86wft5zll7u5vp5ykf7uy5qwn",
+        url: "https://explorer.shazoes.xyz/axone-mainnet/validator/axonevaloper1gf6gnfxqx0jkv86wft5zll7u5vp5ykf7uy5qwn",
       },
     ],
   },
@@ -48,7 +48,7 @@ const items: Item[] = [
       { label: "Explorer", url: "https://explorer.shazoes.xyz/cosmoshub-mainnet" },
       {
         label: "Delegate",
-        url: "https://explorer.shazoes.xyz/cosmoshub-mainnet/staking/cosmosvaloper19fs9dam0cghptddw5ddc2xysqj3dp7px3hh6af",
+        url: "https://explorer.shazoes.xyz/cosmoshub-mainnet/validator/cosmosvaloper19fs9dam0cghptddw5ddc2xysqj3dp7px3hh6af",
       },
     ],
   },
@@ -61,7 +61,7 @@ const items: Item[] = [
       { label: "Explorer", url: "https://explorer.shazoes.xyz/hippo-mainnet" },
       {
         label: "Delegate",
-        url: "https://explorer.shazoes.xyz/hippo-mainnet/staking/hippovaloper16rl9wdjrgf7lvv89v4r4fnx26kjev0wffyvlqe",
+        url: "https://explorer.shazoes.xyz/hippo-mainnet/validator/hippovaloper16rl9wdjrgf7lvv89v4r4fnx26kjev0wffyvlqe",
       },
     ],
   },
@@ -74,7 +74,7 @@ const items: Item[] = [
       { label: "Explorer", url: "https://explorer.shazoes.xyz/lava-mainnet" },
       {
         label: "Delegate",
-        url: "https://explorer.shazoes.xyz/lava-mainnet/staking/lava@valoper1m9en2fldt04z6cvup8u8gxxp56f3la9z5j0t6u",
+        url: "https://explorer.shazoes.xyz/lava-mainnet/validator/lava@valoper1m9en2fldt04z6cvup8u8gxxp56f3la9z5j0t6u",
       },
     ],
   },
@@ -87,7 +87,7 @@ const items: Item[] = [
       { label: "Explorer", url: "https://explorer.shazoes.xyz/shentu-mainnet" },
       {
         label: "Delegate",
-        url: "https://explorer.shazoes.xyz/shentu-mainnet/staking/shentuvaloper1jrnns3nkkrzu7qn5xel088488jv6jmuafm2vdh",
+        url: "https://explorer.shazoes.xyz/shentu-mainnet/validator/shentuvaloper1jrnns3nkkrzu7qn5xel088488jv6jmuafm2vdh",
       },
     ],
   },
@@ -100,7 +100,7 @@ const items: Item[] = [
       { label: "Explorer", url: "https://explorer.shazoes.xyz/terra-mainnet" },
       {
         label: "Delegate",
-        url: "https://explorer.shazoes.xyz/terra-mainnet/staking/terravaloper17ux88604vmzcfduv8eul462snp74u4265sjtyz",
+        url: "https://explorer.shazoes.xyz/terra-mainnet/validator/terravaloper17ux88604vmzcfduv8eul462snp74u4265sjtyz",
       },
     ],
   },
@@ -113,7 +113,7 @@ const items: Item[] = [
       { label: "Explorer", url: "https://explorer.shazoes.xyz/zetachain-mainnet" },
       {
         label: "Delegate",
-        url: "https://explorer.shazoes.xyz/zetachain-mainnet/staking/zetavaloper1n4mzgdztfd742geyuqpgfpy7atu8gc9vl3upgd",
+        url: "https://explorer.shazoes.xyz/zetachain-mainnet/validator/zetavaloper1n4mzgdztfd742geyuqpgfpy7atu8gc9vl3upgd",
       },
     ],
   },
