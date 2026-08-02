@@ -50,8 +50,13 @@ read -r -d '' SEC_HEADERS <<'SEC' || true
 SEC
 
 # ----------------------------- BACKUP ---------------------------------------
+# PENTING: backup HARUS di luar sites-enabled/ — nginx meng-include
+# sites-enabled/*, jadi .bak di sana jadi duplicate server block
+# ("conflicting server name" warning + risiko config lama aktif lagi).
+BK_DIR="/etc/nginx/backups"
+mkdir -p "$BK_DIR"
 if [ -f "$CONF_FILE" ]; then
-  BK="${CONF_FILE}.bak.$(date +%Y%m%d-%H%M%S)"
+  BK="${BK_DIR}/services.bak.$(date +%Y%m%d-%H%M%S)"
   cp "$CONF_FILE" "$BK"
   echo "==> Backup config lama → ${BK}"
 fi
