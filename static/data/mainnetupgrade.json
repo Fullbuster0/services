@@ -2,7 +2,7 @@
   {
     "network": "CosmosHub",
     "link": "/mainnets/cosmoshub/",
-    "rpc": "https://rpc-cosmoshub.keplr.app",
+    "rpc": "https://cosmos-rpc.polkachu.com",
     "rpc_endpoints": [
       "https://cosmos-rpc.polkachu.com",
       "https://rpc-cosmoshub.keplr.app",

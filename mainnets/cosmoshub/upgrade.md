@@ -11,7 +11,7 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <span className="sub-lines">Chain ID: `cosmoshub-4` | Node Version: `v25.1.0`</span>
 
 <br/><br/>
-<span>Upgrade height: **32361600** (Proposal #1049) | Remaining Block : <UpgradeRemainingBlock targetBlock={32361600} rpc="https://rpc-cosmoshub.keplr.app" rpcs="https://cosmos-rpc.polkachu.com,https://rpc-cosmoshub.keplr.app,https://rpc.cosmos.directory/cosmoshub" explorerUrl="https://explorer.shazoes.xyz/CosmosHub-mainnet/block" /></span>
+<span>Upgrade height: **32361600** (Proposal #1049) | Remaining Block : <UpgradeRemainingBlock targetBlock={32361600} rpc="https://cosmos-rpc.polkachu.com" rpcs="https://cosmos-rpc.polkachu.com,https://rpc-cosmoshub.keplr.app,https://rpc.cosmos.directory/cosmoshub" explorerUrl="https://explorer.shazoes.xyz/CosmosHub-mainnet/block" /></span>
 
 ## Manual Upgrade
 
