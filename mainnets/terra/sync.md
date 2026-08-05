@@ -141,7 +141,11 @@ wget -O $HOME/.terra/config/addrbook.json https://files.shazoes.xyz/mainnets/ter
 </TabItem>
 <TabItem value="livepeers" label="LivePeers">
 <LivePeers
-  rpc="https://terra-mainnet-rpc.shazoes.xyz"
+rpc={[
+    "https://terra-rpc.polkachu.com",
+    "https://terra-rpc.publicnode.com",
+    "https://terra-mainnet-rpc.shazoes.xyz",
+  ]}
   homeFolder=".terra"
   binaryName="terrad"
   maxPeers={25}

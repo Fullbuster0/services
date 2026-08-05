@@ -141,7 +141,11 @@ wget -O $HOME/.lava/config/addrbook.json https://files.shazoes.xyz/mainnets/lava
 </TabItem>
 <TabItem value="livepeers" label="LivePeers">
 <LivePeers
-  rpc="https://lava-mainnet-rpc.shazoes.xyz"
+rpc={[
+    "https://lava-mainnet-rpc.itrocket.net",
+    "https://lava-rpc.polkachu.com",
+    "https://lava-mainnet-rpc.shazoes.xyz",
+  ]}
   homeFolder=".lava"
   binaryName="lavad"
   maxPeers={25}

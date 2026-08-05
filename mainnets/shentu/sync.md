@@ -142,7 +142,11 @@ wget -O $HOME/.shentud/config/addrbook.json https://files.shazoes.xyz/mainnets/s
 </TabItem>
 <TabItem value="livepeers" label="LivePeers">
 <LivePeers
-  rpc="https://shentu-mainnet-rpc.shazoes.xyz"
+rpc={[
+    "https://shentu-rpc.polkachu.com",
+    "https://shentu-mainnet-rpc.shazoes.xyz",
+    "https://shentu.rpc.m.stavr.tech",
+  ]}
   homeFolder=".shentud"
   binaryName="shentud"
   maxPeers={25}

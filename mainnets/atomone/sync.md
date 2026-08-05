@@ -142,7 +142,11 @@ wget -O $HOME/.atomone/config/addrbook.json https://files.shazoes.xyz/mainnets/a
 </TabItem>
 <TabItem value="livepeers" label="LivePeers">
 <LivePeers
-  rpc="https://atomone-mainnet-rpc.shazoes.xyz"
+rpc={[
+    "https://atomone-mainnet-rpc.itrocket.net",
+    "https://atomone-rpc.polkachu.com",
+    "https://atomone-mainnet-rpc.shazoes.xyz",
+  ]}
   homeFolder=".atomone"
   binaryName="atomoned"
   maxPeers={25}

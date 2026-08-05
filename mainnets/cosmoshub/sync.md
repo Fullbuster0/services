@@ -12,7 +12,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # CosmosHub Sync
 </div>
 <span className="sub-lines"> 
-Chain ID: `cosmoshub-4` | Node Version: `v25.1.0`
+Chain ID: `cosmoshub-4` | Node Version: `v25.3.0`
 </span>
 <Tabs>
   <TabItem value="snapshot" label="Snapshot" default>
@@ -35,12 +35,12 @@ Chain ID: `cosmoshub-4` | Node Version: `v25.1.0`
 </TabItem>
 <TabItem value="genesis" label="Genesis">
 ```bash
-wget -O $HOME/.gaia/config/genesis.json https://snapshots.polkachu.com/genesis/cosmos/genesis.json
+wget -O $HOME/.gaia/config/genesis.json https://files.shazoes.xyz/mainnets/cosmoshub/genesis.json
 ```
 </TabItem>
 <TabItem value="Addrbook" label="Addrbook">
 ```bash
-wget -O $HOME/.gaia/config/addrbook.json https://snapshots.polkachu.com/addrbook/cosmos/addrbook.json
+wget -O $HOME/.gaia/config/addrbook.json https://files.shazoes.xyz/mainnets/cosmoshub/addrbook.json
 ```
 </TabItem>
 <TabItem value="livepeers" label="LivePeers">
@@ -48,7 +48,7 @@ wget -O $HOME/.gaia/config/addrbook.json https://snapshots.polkachu.com/addrbook
   rpc={[
     "https://cosmos-rpc.polkachu.com",
     "https://cosmoshub.rpc.kjnodes.com",
-    "https://cosmoshub.tendermintrpc.lava.build",
+    "https://cosmoshub-mainnet-rpc.itrocket.net",
   ]}
   homeFolder=".gaia"
   binaryName="gaiad"

@@ -141,7 +141,11 @@ wget -O $HOME/.zetacored/config/addrbook.json https://files.shazoes.xyz/mainnets
 </TabItem>
 <TabItem value="livepeers" label="LivePeers">
 <LivePeers
-  rpc="https://zetachain-mainnet-rpc.shazoes.xyz"
+rpc={[
+    "https://zetachain-mainnet-rpc.itrocket.net",
+    "https://zetachain-rpc.polkachu.com",
+    "https://zetachain-mainnet-rpc.shazoes.xyz",
+  ]}
   homeFolder=".zetacored"
   binaryName="zetacored"
   maxPeers={25}
