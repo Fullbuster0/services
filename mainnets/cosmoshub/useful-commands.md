@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Lava Useful Commands
 </div>
 <span className="sub-lines"> 
-Chain ID: `cosmoshub-4` | Node Version: `v25.1.0`
+Chain ID: `cosmoshub-4` | Node Version: `v27.6.0`
 </span>
 
 :::note
