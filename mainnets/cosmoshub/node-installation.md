@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 # CosmosHub Node Installation
 </div>
 <span className="sub-lines">
-Chain ID: `cosmoshub-4` | Node Version: `v25.3.0` | Custom Port: `306`
+Chain ID: `cosmoshub-4` | Node Version: `v25.1.0` | Custom Port: `306`
 </span>
 
 <Tabs>
@@ -59,7 +59,7 @@ cd $HOME
 rm -rf cosmos
 git clone https://github.com/cosmos/gaia cosmos
 cd cosmos
-git checkout v25.3.0
+git checkout v25.1.0
 make install
 ```
 
