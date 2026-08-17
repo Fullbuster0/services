@@ -40,3 +40,4 @@ bridge_state.json.tmp
 # OS
 Thumbs.db
 .vercel
+.docusaurus/

@@ -50,6 +50,15 @@ const Footer = () => {
                   Explorer
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://faucet.shazoes.xyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Faucet
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -71,6 +71,7 @@ const config = {
         { to: "/relayers", label: "Relayers", position: "left" },
         { href: "https://monitor.shazoes.xyz", label: "Monitoring", position: "right" },
         { href: "https://explorer.shazoes.xyz", label: "Explorer", position: "right" },
+        { href: "https://faucet.shazoes.xyz", label: "Faucet", position: "right" },
       ],
     },
 
