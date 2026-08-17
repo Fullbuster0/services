@@ -8,7 +8,7 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <div className="h1-with-icon icon-atomone-testnet">
 # AtomOne Testnet Upgrade
 </div>
-<span className="sub-lines">Chain ID: `atomone-testnet-1` | Node Version: `v4`</span>
+<span className="sub-lines">Chain ID: `atomone-testnet-1` | Node Version: `v4.1.0`</span>
 
 
 ## Manual Upgrade

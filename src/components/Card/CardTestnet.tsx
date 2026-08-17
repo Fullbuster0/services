@@ -26,7 +26,7 @@ const items: Item[] = [
   {
     imageUrl: "/img/gnoland-icon.svg",
     title: "Gnoland",
-    chain_id: "test11",
+    chain_id: "sapphire-1",
     buttons: [
       { label: "Services", url: "/testnets/gnoland/" },
       { label: "Explorer", url: "https://gnoscan.io" },

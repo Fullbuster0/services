@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 # Gnolan Node Installation
 </div>
 <span className="sub-lines"> 
-Chain ID: `topaz-1` | Node Version: `chain/topaz` | Custom Port: `42`
+Chain ID: `sapphire-1` | Node Version: `chain/sapphire` | Custom Port: `42`
 
 </span>
 
@@ -49,7 +49,7 @@ cd $HOME
 rm -rf gno
 git clone https://github.com/gnolang/gno.git
 cd gno
-git checkout chain/topaz
+git checkout chain/sapphire
 make -C gno.land install.gnoland install.gnokey
 echo 'export GNOROOT=$HOME/gno' >> ~/.bashrc
 source ~/.bashrc
@@ -68,14 +68,14 @@ gnoland config set consensus.timeout_commit 3s
 gnoland config set mempool.size 10000
 gnoland config set p2p.flush_throttle_timeout 10ms
 gnoland config set p2p.max_num_outbound_peers 40
-gnoland config set p2p.persistent_peers g19q07ssuafhmg6r7ys7wp7rpc4jxc85cpvdy426@seed-1.topaz.testnets.gno.land:26656,g15k98e65gm8h7fdr3yr4tqn82lvch4a97a3sg3j@seed-2.topaz.testnets.gno.land:26656
-gnoland config set p2p.seeds g19q07ssuafhmg6r7ys7wp7rpc4jxc85cpvdy426@seed-1.topaz.testnets.gno.land:26656,g15k98e65gm8h7fdr3yr4tqn82lvch4a97a3sg3j@seed-2.topaz.testnets.gno.land:26656
+gnoland config set p2p.persistent_peers g19q07ssuafhmg6r7ys7wp7rpc4jxc85cpvdy426@seed-1.sapphire.testnets.gno.land:26656,g15k98e65gm8h7fdr3yr4tqn82lvch4a97a3sg3j@seed-2.sapphire.testnets.gno.land:26656
+gnoland config set p2p.seeds g19q07ssuafhmg6r7ys7wp7rpc4jxc85cpvdy426@seed-1.sapphire.testnets.gno.land:26656,g15k98e65gm8h7fdr3yr4tqn82lvch4a97a3sg3j@seed-2.sapphire.testnets.gno.land:26656
 ```
 
 ### Download Genesis
 
 ```bash
-wget -O $HOME/gnoland-data/config/genesis.json https://github.com/gnolang/gno/releases/download/chain/topaz/genesis.json
+wget -O $HOME/gnoland-data/config/genesis.json https://github.com/gnolang/gno/releases/download/chain/sapphire/genesis.json
 ```
 
 ### Set Service File

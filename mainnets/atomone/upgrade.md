@@ -8,7 +8,7 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <div className="h1-with-icon icon-atomone">
 # Atomone Upgrade
 </div>
-<span className="sub-lines">Chain ID: `atomone-1` | Node Version: `v4.0.1`</span>
+<span className="sub-lines">Chain ID: `atomone-1` | Node Version: `v4.1.0`</span>
 
 
 ## Manual Upgrade
@@ -18,7 +18,7 @@ cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone.git atomone
 cd atomone
-git checkout v4.0.1
+git checkout v4.1.0
 make install
 sudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat
 ```
