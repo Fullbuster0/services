@@ -18,7 +18,7 @@ cd $HOME
 rm -rf atomone
 git clone https://github.com/atomone-hub/atomone.git atomone
 cd atomone
-git checkout v4
+git checkout v4.1.0
 make install
 sudo systemctl restart atomoned && sudo journalctl -fu atomoned -o cat
 ```
