@@ -13,7 +13,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # Atomone Sync
 </div>
 <span className="sub-lines"> 
- Chain ID: `atomone-1` | Node Version: `v4.1.0`
+ Chain ID: `atomone-1` | Node Version: `v4.0.1`
 </span>
 <Tabs>
   <TabItem value="snapshot" label="Snapshot" default>
