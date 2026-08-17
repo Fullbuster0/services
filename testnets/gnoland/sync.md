@@ -65,6 +65,10 @@ wget -O $HOME/gnoland-data/config/genesis.json https://files.shazoes.xyz/testnet
 <TabItem value="livepeers" label="LivePeers">
 <LivePeersGnoland
   rpc="https://gnoland-testnet-rpc.shazoes.xyz"
+  rpcs={[
+    "https://rpc.sapphire.testnets.gno.land",
+    "https://gnoland-testnet-rpc.itrocket.net",
+  ]}
   homeFolder="gnoland-data"
   binaryName="gnoland"
   maxPeers={25}
