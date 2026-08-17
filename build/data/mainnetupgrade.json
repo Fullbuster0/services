@@ -1,16 +1,1 @@
-[
-  {
-    "network": "CosmosHub",
-    "link": "/mainnets/cosmoshub/",
-    "rpc": "https://cosmos-rpc.polkachu.com",
-    "rpc_endpoints": [
-      "https://cosmos-rpc.polkachu.com",
-      "https://rpc-cosmoshub.keplr.app",
-      "https://rpc.cosmos.directory/cosmoshub"
-    ],
-    "target_height": 32361600,
-    "version": "v27.6.0",
-    "proposal_id": "1049",
-    "proposal": "https://explorer.shazoes.xyz/CosmosHub-mainnet/gov/1049"
-  }
-]
+[]

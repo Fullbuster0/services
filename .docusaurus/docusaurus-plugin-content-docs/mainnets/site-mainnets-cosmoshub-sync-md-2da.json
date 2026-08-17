@@ -1,7 +1,7 @@
 {
   "id": "cosmoshub/sync",
   "title": "Sync",
-  "description": "Chain ID v25.1.0",
+  "description": "Chain ID v27.6.0",
   "source": "@site/mainnets/cosmoshub/sync.md",
   "sourceDirName": "cosmoshub",
   "slug": "/cosmoshub/sync",

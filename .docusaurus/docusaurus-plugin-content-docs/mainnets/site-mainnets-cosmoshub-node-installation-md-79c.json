@@ -1,7 +1,7 @@
 {
   "id": "cosmoshub/node-installation",
   "title": "Node Installation",
-  "description": "Chain ID v25.1.0 | Custom Port: 14",
+  "description": "Chain ID v27.6.0 | Custom Port: 306",
   "source": "@site/mainnets/cosmoshub/node-installation.md",
   "sourceDirName": "cosmoshub",
   "slug": "/cosmoshub/node-installation",

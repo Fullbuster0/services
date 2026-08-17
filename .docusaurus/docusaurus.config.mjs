@@ -88,6 +88,11 @@ export default {
           "href": "https://explorer.shazoes.xyz",
           "label": "Explorer",
           "position": "right"
+        },
+        {
+          "href": "https://faucet.shazoes.xyz",
+          "label": "Faucet",
+          "position": "right"
         }
       ],
       "hideOnScroll": false
