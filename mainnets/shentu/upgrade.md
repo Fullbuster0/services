@@ -10,6 +10,8 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 </div>
 <span className="sub-lines">Chain ID: `shentu-2.2` | Node Version: `v2.18.0`</span>
 
+<br/><br/>
+<span>Upgrade height: **31150500** (Proposal #55) | Remaining Block : <UpgradeRemainingBlock targetBlock={31150500} rpc="https://shentu-mainnet-rpc.shazoes.xyz" rpcs="https://shentu-mainnet-rpc.shazoes.xyz,https://shentu-mainnet-rpc.itrocket.net,https://shentu-rpc.polkachu.com" explorerUrl="https://explorer.shazoes.xyz/shentu-mainnet/block" /></span>
 
 ## Manual Upgrade
 
@@ -18,7 +20,7 @@ cd $HOME
 rm -rf shentu
 git clone https://github.com/shentufoundation/shentu shentu
 cd shentu
-git checkout v2.18.0
+git checkout v2.19.0
 make install
 sudo systemctl restart shentud && sudo journalctl -fu shentud -o cat
 ```
