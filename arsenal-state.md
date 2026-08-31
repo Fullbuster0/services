@@ -38,7 +38,7 @@ Moved 16 audit/security skills that lived OUTSIDE security/ into the umbrella
 - SpiderFoot documented-only (NOT installed — runs unauth web server, adds attack surface).
 - security-arsenal index updated to point at osint-framework under recon.
 
-### Whitehat toolchain install (2026-08-31) — DONE (57 tools verified)
+### Whitehat toolchain install (2026-08-31) — DONE (59 tools verified)
 Scanned 398 skill files → 97 CLI tools referenced. Installed the missing set.
 **Single env-file:** `source ~/.hermes/tools/security/toolchain-env.sh` → all on PATH.
 Once installed, agent runs them WITHOUT sudo (sudo only needed at install time).
@@ -51,10 +51,16 @@ Once installed, agent runs them WITHOUT sudo (sudo only needed at install time).
 - **OSINT (5)** @ `osint-venv` + dirs: sherlock, holehe, maigret, recon-ng(git+venv), exiftool 13.59.
 - **binary/TLS**: radare2 6.2.1 (built from source → `radare2-install/`, needs
   LD_LIBRARY_PATH — env-file handles it), testssl.sh 3.3.
+- **mobile RE (2, 2026-08-31)**: jadx 1.5.6 + apktool 3.0.3 as PATH wrappers @
+  `~/.hermes/tools/security/bin/` pinning user-local **Temurin 17 JRE** (`mobile/jre`,
+  JAVA_HOME set by env-file). JVM CLI-only → 0 RAM idle, spins up per-decompile then exits.
+  VERIFIED: apktool decodes AndroidManifest, jadx produces 930 Java sources from a real APK.
+  Mobile dir ~225 MB (jre 136M + jadx 75M + apktool 15M). `java` NOT on PATH (deliberate;
+  wrappers use JAVA_HOME internally).
 - **apt/sudo (17, user installed)**: nmap, dig, whois, nc, socat, proxychains4,
   hydra, john, hashcat, gdb, strace, ltrace, smbclient, ldapsearch, masscan, tcpdump, nikto.
-- Disk ~1.8G. whitehat-audit-toolkit SKILL patched with the env-file + full manifest.
-- **Still gap (need decision):** jadx/apktool (need Java/JRE), frida-server (device-side),
+- Disk ~2.0G. whitehat-audit-toolkit SKILL patched with the env-file + full manifest.
+- **Still gap (need decision):** frida-server (device-side, physical devices only),
   ghidra/burp (GUI, skipped — Ghidra covered by binary-reverse-engineering skill).
 
 ### Dead Links: 40 fixed
