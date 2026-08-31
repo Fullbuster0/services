@@ -74,12 +74,49 @@ boundary-not-prefix, parent-returns-all). Fresh-subprocess E2E confirms all
 counts above. Live in-process `skills_list` tool reflects after next gateway
 restart (Python module cache); source + subprocess already correct.
 
+## Outliers — 16 audit/security skills OUTSIDE the security/ umbrella
+**Found:** 2026-08-30 review. `security/` umbrella = 131, but 16 more
+audit/security skills live in OTHER top-level categories → real
+security-related total = **147**, not 131.
+
+| Origin folder | Count | Skills |
+|---|---|---|
+| `defensive-security/` | 12 | manual-review-engine, manual-review-training, audit-finding-patterns, audit-completion-protocol, openzeppelin-audit-patterns, smart-contract-audit-tooling, solidity-invariant-verification, formal-verification-tooling, standalone-audit-project, onchain-contract-verification, wallet-drainer-analysis, bug-bounty-submission |
+| `defi/` | 3 | onchain-security-toolkit, solidity-audit-toolchain, flash-loan-arb |
+| `smart-contract-audit-techniques/` | 1 | smart-contract-audit-techniques (uncategorized — SKILL.md at folder root, not `<cat>/<name>/`) |
+
+**Move-safety validated (fresh):**
+- Name collision vs the 131 umbrella skills: **NONE**.
+- Cross-ref / broken-link risk: only 1 mention in `security/web3/audit-tooling-pitfalls`
+  (`related_skills:` by-name + a prose LIGHT-ZIP note) — both by-name, do NOT
+  break on a folder move.
+
+**Nature of the 16 (NOT pentest — these are code/contract AUDIT):**
+- **13 = smart-contract / Solidity audit** → candidate for a new `security/audit`
+  sub-domain (methodology + tooling + formal verification).
+- **1 = generic bounty workflow** (bug-bounty-submission) → fits `security/_core`.
+- **1 = web3 drainer defense** (wallet-drainer-analysis) → `security/web3` or audit.
+- **1 = offensive DeFi/MEV, NOT security** (flash-loan-arb) → leave in `defi/`
+  (revenue/offensive, not defensive audit).
+
+## Opti B done — disclosure skill merge (2026-08-30)
+User-shared `bug-bounty-disclosure.zip` was ~60-70% duplicate of existing
+`security/_core/responsible-disclosure-off-program`. Merged only the net-new
+value (no duplicate skill created):
+- `templates/first-contact-email.md` — bilingual ID/EN first-contact email (existing had EN-only full letter)
+- `references/contact-discovery.md` — WHOIS/DNS-SOA/pkg-registry/on-chain/CERT-CC + ID-SIRTII/CSIRT + disclose.io
+- SKILL.md patched to point at both. `skill_view` resolves: 2 templates + 2 refs + 1 script. ✅
+
 ## Pending User Decisions
 - [x] ~~Fix core bug?~~ DONE (narrow full-path + boundary-prefix, no snapshot tests)
-- [ ] Any further library→promote candidates
-- [ ] Any new skills to add
-- [ ] Upstream the skills_tool.py fix as a PR to hermes-agent? (bug affects all
-      nested-category installs, not just this host)
+- [ ] **Consolidate 16 outliers into security/ umbrella?** Recommend new
+      `security/audit` sub-domain for the 13 SC-audit skills; route bug-bounty-submission
+      → `_core`, wallet-drainer-analysis → web3, leave flash-loan-arb in defi/.
+      Validated safe (0 collision, 0 broken links). Awaiting go/no-go on naming.
+- [ ] Audit-tooling overlap: 5 skills tumpang-tindih (smart-contract-audit-tooling,
+      solidity-audit-toolchain, whitehat-audit-toolkit, sc-audit-toolkit-ext,
+      smart-contract-audit-techniques) — consolidate later?
+- [ ] Upstream the skills_tool.py fix as a PR to hermes-agent? (user said: NO)
 
 ## Backup
 - Folder-in snapshot still available if rollback needed
