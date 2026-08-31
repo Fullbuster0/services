@@ -38,6 +38,25 @@ Moved 16 audit/security skills that lived OUTSIDE security/ into the umbrella
 - SpiderFoot documented-only (NOT installed — runs unauth web server, adds attack surface).
 - security-arsenal index updated to point at osint-framework under recon.
 
+### Whitehat toolchain install (2026-08-31) — DONE (57 tools verified)
+Scanned 398 skill files → 97 CLI tools referenced. Installed the missing set.
+**Single env-file:** `source ~/.hermes/tools/security/toolchain-env.sh` → all on PATH.
+Once installed, agent runs them WITHOUT sudo (sudo only needed at install time).
+- **Go recon (20)** @ `~/.hermes/tools/go-tools/bin` (Go SDK user-local `~/.hermes/tools/go-sdk`, go1.27):
+  subfinder, nuclei, httpx, dnsx, naabu, katana, gau, waybackurls, assetfinder,
+  anew, gf, qsreplace, unfurl, ffuf, amass, dalfox, gobuster, kerbrute, hakrawler, puredns.
+  subfinder smoke-tested; nuclei-templates fetched @ ~/nuclei-templates.
+- **pip pentest/RE (11)** @ `pentest-venv`: sqlmap, wafw00f, arjun, dirsearch,
+  pwntools(+checksec), ropper, ROPgadget, objection, frida-tools, uro, dnsgen.
+- **OSINT (5)** @ `osint-venv` + dirs: sherlock, holehe, maigret, recon-ng(git+venv), exiftool 13.59.
+- **binary/TLS**: radare2 6.2.1 (built from source → `radare2-install/`, needs
+  LD_LIBRARY_PATH — env-file handles it), testssl.sh 3.3.
+- **apt/sudo (17, user installed)**: nmap, dig, whois, nc, socat, proxychains4,
+  hydra, john, hashcat, gdb, strace, ltrace, smbclient, ldapsearch, masscan, tcpdump, nikto.
+- Disk ~1.8G. whitehat-audit-toolkit SKILL patched with the env-file + full manifest.
+- **Still gap (need decision):** jadx/apktool (need Java/JRE), frida-server (device-side),
+  ghidra/burp (GUI, skipped — Ghidra covered by binary-reverse-engineering skill).
+
 ### Dead Links: 40 fixed
 - 8 GONE → repointed to active equivalents
 - 9 PROMOTED (library→active)
