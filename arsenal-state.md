@@ -3,20 +3,40 @@
 
 ## What's Done
 
-### Reorganization: 131 skills → 9 sub-domains
-All under `~/.hermes/skills/security/`:
+### Reorganization: security/ umbrella — 10 sub-domains (147 after consolidation)
+All under `~/.hermes/skills/security/`. Original reorg = 131; +16 outliers folded
+in 2026-08-30 (see "Outlier consolidation" below); +1 new osint-framework = 147.
 
 | Sub-domain | Count | Key skills |
 |---|---|---|
-| `_core` | 15 | bb-methodology, exploit-to-confirm, triage-validation, verifier-agent |
+| `_core` | 16 | bb-methodology, exploit-to-confirm, triage-validation, verifier-agent, bug-bounty-submission |
 | `ai` | 2 | ai-ml-security, llm-prompt-injection |
-| `binary` | 8 | kernel-exploitation (PROMOTED), heap-exploitation, rop, format-string |
-| `infra` | 18 | linux-lateral-movement (PROMOTED), AD-kerberos, AV-evasion, tunneling, pivoting |
+| `audit` | 13 | manual-review-engine, audit-finding-patterns, openzeppelin-audit-patterns, formal-verification-tooling, smart-contract-audit-techniques (NEW sub-domain) |
+| `binary` | 8 | kernel-exploitation, heap-exploitation, rop, format-string |
+| `infra` | 18 | linux-lateral-movement, AD-kerberos, AV-evasion, tunneling, pivoting |
 | `mobile` | 4 | android-pentesting, ios-pentesting, mssl-pinning |
-| `recon` | 6 | web2-recon, shodan, spring-boot-recon |
+| `recon` | 7 | web2-recon, shodan, spring-boot-recon, osint-framework (NEW) |
 | `tooling` | 5 | burp-suite, godmode, whitehat-audit-toolkit |
 | `web` | 50 | sqli, xss, ssrf, race-condition, graphql, jwt, waf-bypass, prototype-pollution |
-| `web3` | 23 | alpenglow-audit, solana, sui, cosmwasm, consensus, meme-coin-audit |
+| `web3` | 24 | alpenglow-audit, solana, sui, cosmwasm, consensus, meme-coin-audit, wallet-drainer-analysis |
+
+### Outlier consolidation (2026-08-30) — DONE
+Moved 16 audit/security skills that lived OUTSIDE security/ into the umbrella
+(0 name collisions, 0 broken links — validated before move; backup in /tmp):
+- 12 SC-audit + 2 from defi/ + 1 top-level → new **`security/audit/`** (13 total)
+- bug-bounty-submission → `security/_core/`
+- wallet-drainer-analysis → `security/web3/`
+- `flash-loan-arb` LEFT in `defi/` (offensive MEV/revenue, NOT defensive audit)
+- `defensive-security/` removed (emptied); `defi/` now holds only flash-loan-arb
+
+### OSINT recon added (2026-08-31) — DONE
+- Skill **`security/recon/osint-framework`** — catalog of 1169 OSINT tools (from
+  lockfale/OSINT-Framework, MIT-credited) + tier-1 shortlist + opsec passive-first rules.
+- Installed tool: **theHarvester** tag 4.11.0 @ `~/.hermes/tools/security/theHarvester/`
+  (Python 3.12 venv). VERIFIED: `-d cosmos.network -b crtsh` → 17 hosts, exit 0.
+  Pinned to tag 4.11.0 because master needs Py3.14 (host has 3.12). GPL-2.0 (run-only).
+- SpiderFoot documented-only (NOT installed — runs unauth web server, adds attack surface).
+- security-arsenal index updated to point at osint-framework under recon.
 
 ### Dead Links: 40 fixed
 - 8 GONE → repointed to active equivalents
