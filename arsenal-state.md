@@ -38,7 +38,7 @@ Moved 16 audit/security skills that lived OUTSIDE security/ into the umbrella
 - SpiderFoot documented-only (NOT installed — runs unauth web server, adds attack surface).
 - security-arsenal index updated to point at osint-framework under recon.
 
-### Whitehat toolchain install (2026-08-31) — DONE (59 tools verified)
+### Whitehat toolchain install (2026-08-31) — DONE (61 tools verified)
 Scanned 398 skill files → 97 CLI tools referenced. Installed the missing set.
 **Single env-file:** `source ~/.hermes/tools/security/toolchain-env.sh` → all on PATH.
 Once installed, agent runs them WITHOUT sudo (sudo only needed at install time).
@@ -57,6 +57,10 @@ Once installed, agent runs them WITHOUT sudo (sudo only needed at install time).
   VERIFIED: apktool decodes AndroidManifest, jadx produces 930 Java sources from a real APK.
   Mobile dir ~225 MB (jre 136M + jadx 75M + apktool 15M). `java` NOT on PATH (deliberate;
   wrappers use JAVA_HOME internally).
+- **mobile runtime (2, 2026-08-31)** @ `pentest-venv`: mitmproxy 12.2.3 (traffic intercept,
+  CA auto-gen on first run) + apkleaks (APK endpoint/secret sweep, auto-uses our jadx).
+  VERIFIED: mitmdump binds :port + generates CA PEM; apkleaks extracts URIs from real APK.
+  Both 0 RAM idle. Completes the runtime-first mobile-pentest flow (proxy → replay → decompile).
 - **apt/sudo (17, user installed)**: nmap, dig, whois, nc, socat, proxychains4,
   hydra, john, hashcat, gdb, strace, ltrace, smbclient, ldapsearch, masscan, tcpdump, nikto.
 - Disk ~2.0G. whitehat-audit-toolkit SKILL patched with the env-file + full manifest.
