@@ -12,7 +12,7 @@ import LivePeers from "@site/src/components/Peers/LivePeers";
 # CosmosHub Sync
 </div>
 <span className="sub-lines"> 
-Chain ID: `cosmoshub-4` | Node Version: `v27.6.0`
+Chain ID: `cosmoshub-4` | Node Version: `v28.0.0`
 </span>
 <Tabs>
   <TabItem value="snapshot" label="Snapshot" default>

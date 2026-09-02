@@ -12,19 +12,5 @@
     "version": "v2.19.0",
     "proposal_id": "55",
     "proposal": "https://explorer.shazoes.xyz/shentu-mainnet/gov/55"
-  },
-  {
-    "network": "CosmosHub",
-    "link": "/mainnets/cosmoshub/",
-    "rpc": "https://cosmos-rpc.polkachu.com",
-    "rpc_endpoints": [
-      "https://cosmos-rpc.polkachu.com",
-      "https://rpc-cosmoshub.keplr.app",
-      "https://rpc.cosmos.directory/cosmoshub"
-    ],
-    "target_height": 32785900,
-    "version": "v28.0.0",
-    "proposal_id": "1052",
-    "proposal": "https://explorer.shazoes.xyz/cosmoshub-mainnet/gov/1052"
   }
 ]

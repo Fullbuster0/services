@@ -8,10 +8,8 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <div className="h1-with-icon icon-cosmoshub">
 # CosmosHub Upgrade
 </div>
-<span className="sub-lines">Chain ID: `cosmoshub-4` | Node Version: `v27.6.0`</span>
+<span className="sub-lines">Chain ID: `cosmoshub-4` | Node Version: `v28.0.0`</span>
 
-<br/><br/>
-<span>Upgrade height: **32785900** (Proposal #1052) | Remaining Block : <UpgradeRemainingBlock targetBlock={32785900} rpc="https://cosmos-rpc.polkachu.com" rpcs="https://cosmos-rpc.polkachu.com,https://rpc-cosmoshub.keplr.app,https://rpc.cosmos.directory/cosmoshub" explorerUrl="https://explorer.shazoes.xyz/cosmoshub-mainnet/block" /></span>
 
 ## Manual Upgrade
 
