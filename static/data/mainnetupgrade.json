@@ -1,5 +1,19 @@
 [
   {
+    "network": "Terra",
+    "link": "/mainnets/terra/",
+    "rpc": "https://terra-mainnet-rpc.shazoes.xyz",
+    "rpc_endpoints": [
+      "https://terra-mainnet-rpc.shazoes.xyz",
+      "https://terra-mainnet-rpc.itrocket.net",
+      "https://terra-rpc.polkachu.com"
+    ],
+    "target_height": 22942000,
+    "version": "v2.21.0",
+    "proposal_id": "4851",
+    "proposal": "https://explorer.shazoes.xyz/terra-mainnet/gov/4851"
+  },
+  {
     "network": "Hippo Protocol",
     "link": "/mainnets/hippo/",
     "rpc": "https://hippo-mainnet-rpc.shazoes.xyz",
