@@ -2,7 +2,7 @@
   {
     "network": "Terra",
     "link": "/mainnets/terra/",
-    "rpc": "https://terra-mainnet-rpc.shazoes.xyz",
+    "rpc": "https://terra-rpc.polkachu.com",
     "rpc_endpoints": [
       "https://terra-mainnet-rpc.shazoes.xyz",
       "https://terra-mainnet-rpc.itrocket.net",
