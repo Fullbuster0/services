@@ -8,10 +8,8 @@ import UpgradeRemainingBlock from '@site/src/components/Upgrade/UpgradeRemaining
 <div className="h1-with-icon icon-hippo">
 # Hippo Protocol Upgrade
 </div>
-<span className="sub-lines">Chain ID: `hippo-1` | Node Version: `v1.0.2`</span>
+<span className="sub-lines">Chain ID: `hippo-1` | Node Version: `v2.0.0`</span>
 
-<br/><br/>
-<span>Upgrade height: **7165000** (Proposal #30) | Remaining Block : <UpgradeRemainingBlock targetBlock={7165000} rpc="https://hippo-mainnet-rpc.shazoes.xyz" rpcs="https://hippo-mainnet-rpc.shazoes.xyz,https://hippo-mainnet-rpc.itrocket.net,https://hippo-rpc.polkachu.com" explorerUrl="https://explorer.shazoes.xyz/hippo-mainnet/block" /></span>
 
 ## Manual Upgrade
 

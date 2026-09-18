@@ -14,20 +14,6 @@
     "proposal": "https://explorer.shazoes.xyz/terra-mainnet/gov/4851"
   },
   {
-    "network": "Hippo Protocol",
-    "link": "/mainnets/hippo/",
-    "rpc": "https://hippo-mainnet-rpc.shazoes.xyz",
-    "rpc_endpoints": [
-      "https://hippo-mainnet-rpc.shazoes.xyz",
-      "https://hippo-mainnet-rpc.itrocket.net",
-      "https://hippo-rpc.polkachu.com"
-    ],
-    "target_height": 7165000,
-    "version": "v2.0.0",
-    "proposal_id": "30",
-    "proposal": "https://explorer.shazoes.xyz/hippo-mainnet/gov/30"
-  },
-  {
     "network": "CosmosHub",
     "link": "/mainnets/cosmoshub/",
     "rpc": "https://cosmos-rpc.polkachu.com",
